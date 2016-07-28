@@ -33,8 +33,8 @@ Script language: english;
 
 Mode: Asynchronous.
 
-The main functionality of the configuration is based on “Repositories
-catalog”. Each element of the catalog corresponds to a particular
+The main functionality of the configuration is based on "Repositories"
+catalog. Each element of the catalog corresponds to a particular
 developing repository. For each element of the catalog defined list of
 users that have a permission of working with the repository.
 
