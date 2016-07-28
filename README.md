@@ -52,7 +52,7 @@ running one after one according to serial number of action in the list.
 Each action is an element of the catalog “Actions”. An action is
 connected to a data processor which could be internal or external, from
 AdditionalReportsAndDataProcessors SSL subsystem catalog. Data
-processors provide an algorithm that should be executed while task
+processors provide an algorithm that should be executed during task
 running.
 
 ![alt tag](https://github.com/alexkmbk/1CI/blob/master/Description/TasksDiagram.png)
