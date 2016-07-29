@@ -379,7 +379,7 @@ catalog.
 The requests should be with “Basic Authentication”.
 
 The same request in Python 2 language:
-
+...
 import urllib
 
 import urllib2
@@ -402,7 +402,7 @@ request.add\_header(key,value)
 response = urllib2.urlopen(request)
 
 print response.getcode()
-
+...
 There the name of the database user is - Administrator, and the Password
 - password.
 
