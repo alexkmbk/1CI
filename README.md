@@ -379,7 +379,7 @@ catalog.
 The requests should be with “Basic Authentication”.
 
 The same request in Python 2 language:
-```
+```python
 import urllib
 
 import urllib2
