@@ -281,7 +281,7 @@ where
 
 LogLineNumber - serial number of event.
 
-CommonParams - structore with common params that exist while task
+CommonParams - structure with common params that exist while task
 running.
 
 Action - reference to the Action catalog element.
