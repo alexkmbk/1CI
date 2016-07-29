@@ -276,7 +276,7 @@ Action data processors
 If a data processor is intended to be connected to “Actions” catalog, it
 should provide several export functions:
 
-Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages),
+Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)
 where
 
 LogLineNumber - serial number of event.
@@ -350,11 +350,11 @@ to set a special parameter in command line of the platform:
 run\_RepTasks.RunTaskByCode(&lt;RepositoryCatalogCode&gt;,&lt;TaskCatalogCode&gt;)
 
 Example:
-
+```
 "C:\\Program Files (x86)\\1cv8\\common\\1cestart.exe" Enterprise
 /F"D:\\MyDB" /N Administrator /P Password
 /C"run\_RepTasks.RunTaskByCode(1,2)"
-
+```
 In this example, a task with code 2 of a repository with code 1 will be
 run.
 
@@ -403,6 +403,5 @@ response = urllib2.urlopen(request)
 
 print response.getcode()
 ```
-There the name of the database user is - Administrator, and the Password
-- password.
+There the name of the database user is - Administrator, and the Password - password.
 
