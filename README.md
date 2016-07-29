@@ -62,8 +62,8 @@ memory which is available for data processors and shared between them.
 The list exists only while a task is running. One of the most important
 parameters is a path to a dump of a configuration. The path parameter is
 being created before making a dump and it guaranties that all data
-processor would work with the same path. So, for example, if a task has
-two actions: one for making a dump and another for making a test, you
+processors would work with the same path. So, for example, if a task has
+two actions: one for making a dump and another one for making a test, you
 need to place the dumping action at a first position in an action list
 so, for another one there will be available the dump at known path.
 
