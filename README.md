@@ -361,23 +361,48 @@ run.
 Run tasks by HTTP-service
 =========================
 
-There is an HTTP-service in the configuration. The base URL of the service is “RunTask”.
+There is an HTTP-service in the configuration. The base URL of the
+service is “RunTask”.
+
 A task could be run by htttp-request in the format:
-hs/RunTask/<RepositoryCatalogCode>/<TaskCatalogCode>
-For example, if DB is published on the web-server “localhost”  under name “OneCI», then the line of the http-request would looks like:
-http://localhost/OneCI/hs/RunTask/1/2
-there 1 - code of repository in the catalog, 2 – code of task in the catalog.
+
+hs/RunTask/&lt;RepositoryCatalogCode&gt;/&lt;TaskCatalogCode&gt;
+
+For example, if DB is published on the web-server “localhost” under name
+“OneCI», then the line of the http-request would looks like:
+
+<http://localhost/OneCI/hs/RunTask/1/2>
+
+there 1 - code of repository in the catalog, 2 – code of task in the
+catalog.
+
 The requests should be with “Basic Authentication”.
+
 The same request in Python 2 language:
+
 import urllib
+
 import urllib2
+
 import base64
+
 url = "http://localhost/OneCI/hs/RunTask/1/2"
+
 authKey = base64.b64encode("Administrator:password")
-headers = {"Content-Type":"application/json", "Authorization":"Basic " + authKey}
-request = urllib2.Request(url)\
+
+headers = {"Content-Type":"application/json", "Authorization":"Basic " +
+authKey}
+
+request = urllib2.Request(url)\\
+
 for key,value in headers.items():
-  request.add_header(key,value)
+
+request.add\_header(key,value)
+
 response = urllib2.urlopen(request)
+
 print response.getcode()
-There the name of the database user is -  Administrator, and the Password -  password.
+
+There the name of the database user is - Administrator, and the Password
+- password.
+
