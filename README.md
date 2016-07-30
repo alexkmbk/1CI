@@ -276,12 +276,12 @@ Action data processors
 If a data processor is intended to be connected to “Actions” catalog, it
 should provide several export functions:
 
-Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages),
+```Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```
 where
 
 LogLineNumber - serial number of event.
 
-CommonParams - structore with common params that exist while task
+CommonParams - structure with common params that exist while task
 running.
 
 Action - reference to the Action catalog element.
@@ -291,10 +291,10 @@ ActionParams - params that was set for the action only.
 ShowMessages (bool) - determines if it is needed to show interactive
 messages .
 
-IsRepositoryDataProcessor() - returns True if it is repository data
+```IsRepositoryDataProcessor()``` - returns True if it is repository data
 processor.
 
-IsParamsForm() -returns True if there available an action parameters
+```IsParamsForm()``` -returns True if there available an action parameters
 form in the data processor.
 
 At that moment, in the configuration available two internal data
@@ -350,11 +350,11 @@ to set a special parameter in command line of the platform:
 run\_RepTasks.RunTaskByCode(&lt;RepositoryCatalogCode&gt;,&lt;TaskCatalogCode&gt;)
 
 Example:
-
+```
 "C:\\Program Files (x86)\\1cv8\\common\\1cestart.exe" Enterprise
 /F"D:\\MyDB" /N Administrator /P Password
 /C"run\_RepTasks.RunTaskByCode(1,2)"
-
+```
 In this example, a task with code 2 of a repository with code 1 will be
 run.
 
@@ -379,7 +379,7 @@ catalog.
 The requests should be with “Basic Authentication”.
 
 The same request in Python 2 language:
-
+```python
 import urllib
 
 import urllib2
@@ -402,7 +402,6 @@ request.add\_header(key,value)
 response = urllib2.urlopen(request)
 
 print response.getcode()
-
-There the name of the database user is - Administrator, and the Password
-- password.
+```
+There the name of the database user is - Administrator, and the Password - password.
 
