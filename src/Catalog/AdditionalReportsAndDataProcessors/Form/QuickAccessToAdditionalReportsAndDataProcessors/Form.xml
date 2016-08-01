@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="OK" id="10">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<DefaultItem>true</DefaultItem>
+				<CommandName>Form.Command.OK</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="OKExtendedTooltip" id="31"/>
+			</Button>
+			<Button name="Cancel" id="11">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="CancelExtendedTooltip" id="32"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="UsersGroup" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="UsersGroupExtendedTooltip" id="33"/>
+			<ChildItems>
+				<Table name="AllUsers" id="1">
+					<Representation>List</Representation>
+					<TitleLocation>Top</TitleLocation>
+					<SkipOnInput>false</SkipOnInput>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>AllUsers</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Quick access does not provide the command</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="AllUsersContextMenu" id="2"/>
+					<AutoCommandBar name="AllUsersCommandBar" id="3">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="UsersFind" id="8">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.AllUsers.StandardCommand.Find</CommandName>
+								<Parameter xsi:nil="true"/>
+								<ExtendedTooltip name="UsersFindExtendedTooltip" id="34"/>
+							</Button>
+							<Button name="UsersCancelSearch" id="9">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.AllUsers.StandardCommand.CancelSearch</CommandName>
+								<Parameter xsi:nil="true"/>
+								<ExtendedTooltip name="UsersCancelSearchExtendedTooltip" id="35"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="AllUsersExtendedTooltip" id="36"/>
+					<SearchStringAddition name="AllUsersSearchString" id="48">
+						<Source>
+							<lf:elementId>1</lf:elementId>
+							<lf:additionId>0</lf:additionId>
+						</Source>
+						<ContextMenu name="AllUsersSearchStringContextMenu" id="49"/>
+						<ExtendedTooltip name="AllUsersSearchStringExtendedTooltip" id="50"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="AllUsersViewStatus" id="51">
+						<Source>
+							<lf:elementId>1</lf:elementId>
+							<lf:additionId>1</lf:additionId>
+						</Source>
+						<ContextMenu name="AllUsersViewStatusContextMenu" id="52"/>
+						<ExtendedTooltip name="AllUsersViewStatusExtendedTooltip" id="53"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="AllUsersSearchControl" id="54">
+						<Source>
+							<lf:elementId>1</lf:elementId>
+							<lf:additionId>2</lf:additionId>
+						</Source>
+						<ContextMenu name="AllUsersSearchControlContextMenu" id="55"/>
+						<ExtendedTooltip name="AllUsersSearchControlExtendedTooltip" id="56"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="DragCheck">AllUsersDragCheck</Event>
+						<Event name="Drag">AllUsersDrag</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="UsersRef" id="4">
+							<DataPath>AllUsers.User</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="UsersRefContextMenu" id="5"/>
+							<ExtendedTooltip name="UsersRefExtendedTooltip" id="37"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="ListManagementCommands" id="20">
+					<EnableContentChange>true</EnableContentChange>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>List management commands</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ListManagementCommandsExtendedTooltip" id="38"/>
+					<ChildItems>
+						<LabelDecoration name="EmptyDecoration" id="25">
+							<ContextMenu name="EmptyDecorationContextMenu" id="26"/>
+							<ExtendedTooltip name="EmptyDecorationExtendedTooltip" id="39"/>
+						</LabelDecoration>
+						<Button name="SetCommandForSelectedUsers" id="28">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.SetCommandForSelectedUsers</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="SetCommandForSelectedUsersExtendedTooltip" id="40"/>
+						</Button>
+						<Button name="SetAccessForAllUsers" id="27">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.SetAccessForAllUsers</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="SetAccessForAllUsersExtendedTooltip" id="41"/>
+						</Button>
+						<Button name="ClearCommandAccessForAllUsers" id="29">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ClearCommandAccessForAllUsers</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ClearCommandAccessForAllUsersExtendedTooltip" id="42"/>
+						</Button>
+						<Button name="ClearCommandAccessForSelectedUsers" id="30">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ClearCommandAccessForSelectedUsers</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ClearCommandAccessForSelectedUsersExtendedTooltip" id="43"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="ShortListUsers" id="13">
+					<Representation>List</Representation>
+					<TitleLocation>Top</TitleLocation>
+					<SkipOnInput>false</SkipOnInput>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ShortListUsers</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Quick access provides the command</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSet>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+					</CommandSet>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ShortListUsersContextMenu" id="14"/>
+					<AutoCommandBar name="ShortListUsersCommandBar" id="15">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ShortListUsersFind" id="18">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.ShortListUsers.StandardCommand.Find</CommandName>
+								<Parameter xsi:nil="true"/>
+								<ExtendedTooltip name="ShortListUsersFindExtendedTooltip" id="44"/>
+							</Button>
+							<Button name="ShortListUsersCancelSearch" id="19">
+								<Type>CommandBarButton</Type>
+								<SkipOnInput>false</SkipOnInput>
+								<CommandName>Form.Item.ShortListUsers.StandardCommand.CancelSearch</CommandName>
+								<Parameter xsi:nil="true"/>
+								<ExtendedTooltip name="ShortListUsersCancelSearchExtendedTooltip" id="45"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ShortListUsersExtendedTooltip" id="46"/>
+					<SearchStringAddition name="ShortListUsersSearchString" id="57">
+						<Source>
+							<lf:elementId>13</lf:elementId>
+							<lf:additionId>0</lf:additionId>
+						</Source>
+						<ContextMenu name="ShortListUsersSearchStringContextMenu" id="58"/>
+						<ExtendedTooltip name="ShortListUsersSearchStringExtendedTooltip" id="59"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ShortListUsersViewStatus" id="60">
+						<Source>
+							<lf:elementId>13</lf:elementId>
+							<lf:additionId>1</lf:additionId>
+						</Source>
+						<ContextMenu name="ShortListUsersViewStatusContextMenu" id="61"/>
+						<ExtendedTooltip name="ShortListUsersViewStatusExtendedTooltip" id="62"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ShortListUsersSearchControl" id="63">
+						<Source>
+							<lf:elementId>13</lf:elementId>
+							<lf:additionId>2</lf:additionId>
+						</Source>
+						<ContextMenu name="ShortListUsersSearchControlContextMenu" id="64"/>
+						<ExtendedTooltip name="ShortListUsersSearchControlExtendedTooltip" id="65"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="DragCheck">ShortListUsersDragCheck</Event>
+						<Event name="Drag">ShortListUsersDrag</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ShortListUsersUser" id="16">
+							<DataPath>ShortListUsers.User</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ShortListUsersUserContextMenu" id="17"/>
+							<ExtendedTooltip name="ShortListUsersUserExtendedTooltip" id="47"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="AllUsers" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="User" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>User</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Users</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ShortListUsers" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Short list users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="User" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>User</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Users</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="OK" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>OK</Action>
+		</Command>
+		<Command name="SetAccessForAllUsers" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add all &gt;&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add all users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetAccessForAllUsers</Action>
+		</Command>
+		<Command name="SetCommandForSelectedUsers" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add &gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add selected users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetCommandForSelectedUsers</Action>
+		</Command>
+		<Command name="ClearCommandAccessForAllUsers" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>&lt;&lt; Remove all</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Remove all users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearCommandAccessForAllUsers</Action>
+		</Command>
+		<Command name="ClearCommandAccessForSelectedUsers" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>&lt; Remove</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Remove selected users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearCommandAccessForSelectedUsers</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="UsersWithQuickAccess">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="CommandPresentation">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

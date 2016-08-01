@@ -1,0 +1,219 @@
+﻿&AtServer
+Procedure UpdateWarnings()
+	
+	If (Object.SuccessReportRecipients.Count() <> 0 or Object.FailureReportRecipients.Count() <> 0) and Not RepTasks.SystemEmailAccountIsSet()Then
+		Items.Warnings.Visible = True;
+		Items.Warnings.Title = "It seems like the system email account is not set.";
+	Else
+		Items.Warnings.Visible = False;
+	EndIf; 
+	
+EndProcedure
+
+
+&AtClient
+Procedure SetAvailabilityForSchedulePresentation()
+	Items.SchedulePresentation.Enabled = Object.RunBySchedule;		
+EndProcedure
+
+
+&AtClient
+Procedure RunTask(Command)
+	RepTasksClient.RunTask(Object.Ref, ThisForm);	
+EndProcedure
+
+&AtClient
+Procedure OpenActionSettings(Command)
+	
+	CurData = Items.Actions.CurrentData;
+	
+	FormPath = RepTasks.GetActionsParamsFormPath(CurData.Action);
+	If Not ValueIsFilled(FormPath) Then
+		Return; 
+	EndIf; 
+	
+	
+	OpenForm(FormPath,New Structure("Task,ActionParamsUUID", Object.Ref, CurData.UUID), ThisForm);
+	
+EndProcedure
+
+&AtClient
+Procedure ActionsOnActivateRow(Item)
+	If Item.CurrentData <> Undefined Then
+		Items.OpenActionSettingsButton.Enabled = RepTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
+	Else
+		Items.OpenActionSettingsButton.Enabled = False;	
+	EndIf; 		
+EndProcedure
+
+&AtServer
+Procedure UpdateSchedulePresentation()
+	
+	
+	SchedulePresentation = String(JobSchedule);
+	
+	
+	Если SchedulePresentation = String(New JobSchedule) Тогда
+		
+		SchedulePresentation = NStr("eu = 'Schedule is not specified'");
+		
+	КонецЕсли;
+	
+	Items.SchedulePresentation.Title = SchedulePresentation;
+	
+EndProcedure
+
+&AtClient
+Procedure ScheduledJobDialogClose(Schedule, Params) Export
+	
+	If Schedule <> Undefined Then
+		JobSchedule = Schedule;		
+	EndIf; 
+	
+	UpdateSchedulePresentation();
+	
+EndProcedure
+
+
+&AtClient
+Procedure OpenScheduleSettings(Command)
+	
+	If JobSchedule = Undefined Then
+		JobSchedule = New JobSchedule();
+	EndIf; 
+	
+	Dlg = New ScheduledJobDialog(JobSchedule);
+	
+	ND = New NotifyDescription("ScheduledJobDialogClose", ThisObject);
+	Dlg.Show(ND);
+	
+EndProcedure
+
+&AtClient
+Procedure RunByScheduleOnChange(Item)
+	SetAvailabilityForSchedulePresentation();
+EndProcedure
+
+&AtServer
+Procedure SetScheduleJob(Cancel, CurrentObject)
+	
+	If Object.RunBySchedule Then
+		
+		If ValueIsFilled(Object.ScheduledJobGUID) Then
+			ScheduleJobObj = ScheduledJobs.FindByUUID(Object.ScheduledJobGUID);
+		Else
+			ScheduleJobObj = ScheduledJobs.CreateScheduledJob("RunRepositoryTask");
+			ScheduleJobObj.Description = "Repository task running on schedule";
+			ScheduleJobObj.Use = True;
+			CurrentObject.ScheduledJobGUID = ScheduleJobObj.UUID;  
+			Params = New Array;
+			Params.Add(Object.Code);
+			ScheduleJobObj.Parameters = Params;
+		EndIf; 
+		ScheduleJobObj.Schedule = JobSchedule;
+		ScheduleJobObj.Write();
+	else
+		If ValueIsFilled(CurrentObject.ScheduledJobGUID) Then
+			CurrentObject.ScheduledJobGUID = Undefined;
+			ScheduleJobObj = ScheduledJobs.FindByUUID(Object.ScheduledJobGUID);
+			If ScheduleJobObj = Undefined Then
+				return;
+			EndIf; 
+			ScheduleJobObj.Delete();
+			ScheduleJobObj.Write();
+		EndIf;
+		
+	EndIf; 
+	
+EndProcedure
+
+&AtServer
+Procedure BeforeWriteAtServer(Cancel, CurrentObject, WriteParameters)
+	
+	SetScheduleJob(Cancel, CurrentObject);
+	
+EndProcedure
+
+&AtServer
+Procedure FillCheckProcessingAtServer(Cancel, CheckedAttributes)
+	
+	If Object.RunBySchedule And JobSchedule = Undefined Then
+		Message = New UserMessage();
+		Message.Text = "Task running schedule is not specified.";
+		Message.Field = "Object.RunBySchedule";
+		Message.Message();
+		Cancel = True;
+		Return;
+	EndIf; 
+	
+EndProcedure
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	If ValueIsFilled(Object.ScheduledJobGUID) Then
+		ScheduledJobObj = ScheduledJobs.FindByUUID(Object.ScheduledJobGUID);
+		If ScheduledJobObj <> Undefined Then
+			JobSchedule = ScheduledJobObj.Schedule;
+		EndIf; 		
+	EndIf; 
+	UpdateSchedulePresentation();		
+	UpdateWarnings();
+EndProcedure
+
+&AtClient
+Procedure OnOpen(Cancel)
+	SetAvailabilityForSchedulePresentation();
+EndProcedure
+
+&AtServer
+Procedure SetActionParams(UUID, Params)
+	
+	Rows = Object.Actions.FindRows(New Structure("UUID", UUID));
+	If Rows.Count() > 0 Then
+		Rows[0].ActionParams = ValueToStringInternal(Params);
+	EndIf; 
+	
+EndProcedure
+
+&AtClient
+Procedure ChoiceProcessing(SelectedValue, ChoiceSource)
+	
+	SetActionParams(SelectedValue.ActionParamsUUID, SelectedValue.DataProcessorParams);
+	
+EndProcedure     
+
+
+&AtClient
+Procedure ActionsOnEditEnd(Item, NewRow, CancelEdit)
+	If NewRow And Not CancelEdit Then
+		Item.CurrentData.UUID = New UUID();
+	EndIf; 
+EndProcedure
+
+&AtClient
+Procedure ShowEmailAccountEditFormResult() Export 
+	UpdateWarnings();		
+EndProcedure
+   
+&AtClient
+Procedure WarningsClick(Item)
+	ShowValue(New NotifyDescription("ShowEmailAccountEditFormResult", ThisObject),RepTasksClient.GetSystemEmailAccount());
+EndProcedure
+
+
+&AtClient
+Procedure FailureReportRecipientsOnEditEnd(Item, NewRow, CancelEdit)
+	If Not CancelEdit Then
+		UpdateWarnings();
+	EndIf; 
+EndProcedure
+
+
+&AtClient
+Procedure SuccessReportRecipientsOnEditEnd(Item, NewRow, CancelEdit)
+	If Not CancelEdit Then
+		UpdateWarnings();
+	EndIf; 
+EndProcedure
+

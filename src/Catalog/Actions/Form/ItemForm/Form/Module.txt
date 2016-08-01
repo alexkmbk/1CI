@@ -1,0 +1,55 @@
+﻿
+
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	Items.PathToInternaldataProcessor.Visible = Object.IsInternal;
+	Items.DataProcessor.Visible = not Object.IsInternal;
+	
+EndProcedure
+
+&AtClient
+Procedure IsInternalOnChange(Item)
+	
+	Items.PathToInternaldataProcessor.Visible = Object.IsInternal;
+	Items.DataProcessor.Visible = not Object.IsInternal;
+
+EndProcedure
+
+&AtServer 
+//
+//
+Function GetInternalDataProcessors()
+	DataProcessorsList = New ValueList;
+	For Each Item In Metadata.DataProcessors Do
+		obj = DataProcessors[Item.Name].Create();
+		IsRepositoryDataProcessor = False;
+		Try
+			IsRepositoryDataProcessor = obj.IsRepositoryDataProcessor();	
+		Except
+		EndTry; 
+		If IsRepositoryDataProcessor Then
+			DataProcessorsList.Add(Item.Name, Item.Synonym);	
+		EndIf; 
+	EndDo; 		
+	Return DataProcessorsList;
+EndFunction
+ 
+&AtClient 
+//
+//
+Procedure ItemChoose(Item, Params) Export 
+	Object.InternaldataProcessor = Item.Value;	
+EndProcedure
+ 
+
+&AtClient
+Procedure PathToInternaldataProcessorStartChoice(Item, ChoiceData, StandardProcessing)
+ 	
+	List = GetInternalDataProcessors();
+	ND = new NotifyDescription("ItemChoose",ThisObject);
+	List.ShowChooseItem(ND);
+		
+EndProcedure
+

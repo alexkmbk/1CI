@@ -1,0 +1,90 @@
+﻿
+&AtClient
+Procedure ChoiceDlgChoose(SelectedFiles, Params) Export 
+	
+	For Each File in SelectedFiles Do
+		Object.Path = File;		
+	EndDo 
+	
+EndProcedure
+
+&AtClient
+Procedure PathStartChoice(Item, ChoiceData, StandardProcessing)
+	
+	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
+	DirChoiceDlg.Title = "Repository path"; 
+	Notify = New NotifyDescription("ChoiceDlgChoose",ThisObject);
+	DirChoiceDlg.Show(Notify);
+	
+EndProcedure
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	If Object.Ref.IsEmpty() Then
+		NewLine = RepUsers.Add();	
+		NewLine.User = UsersClientServer.CurrentUser();
+	Else
+		Query = New Query;
+		Query.Text = "SELECT
+		|	RepUsers.RepUserName,
+		|	RepUsers.RepPassword,
+		|	RepUsers.User
+		|FROM
+		|	InformationRegister.RepUsers AS RepUsers
+		|WHERE
+		|	RepUsers.Repository = &Repository";
+		Query.SetParameter("Repository", Object.Ref);
+		
+		RepUsers.Load(Query.Execute().Unload());		
+	EndIf; 
+	
+EndProcedure
+
+&AtServer
+Procedure OnWriteAtServer(Cancel, CurrentObject, WriteParameters)
+	
+	IsUsers = False;
+	
+	RecordSet = InformationRegisters.RepUsers.CreateRecordSet();
+	RecordSet.Filter.Repository.Set(Object.Ref);
+	For Each Item In RepUsers Do
+		// Check if there is at least one user defined for the repository
+		If ValueIsFilled(Item.User) Then
+			
+			NewRecord = RecordSet.Add();
+			NewRecord.User = Item.User;
+			NewRecord.RepUserName = Item.RepUserName;
+			NewRecord.RepPassword = Item.RepPassword;
+			NewRecord.Repository = Object.Ref;
+			IsUsers = True;
+		EndIf; 
+	EndDo; 	
+	
+	If IsUsers Then
+		RecordSet.Write(True);	
+	Else
+		Message("No users is defined for repository """ + Object.Description  + """", MessageStatus.Ordinary); 
+		Cancel = True;		
+	EndIf; 
+	
+EndProcedure
+
+&AtClient
+Procedure WorkingDirChoose(SelectedFiles, Params) Export
+	
+	For Each File in SelectedFiles Do
+		Object.WorkingDir = File;		
+	EndDo 
+	
+EndProcedure
+
+&AtClient
+Procedure WorkingDirStartChoice(Item, ChoiceData, StandardProcessing)
+	
+	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
+	DirChoiceDlg.Title = "Repository path"; 
+	Notify = New NotifyDescription("WorkingDirChoose",ThisObject);
+	DirChoiceDlg.Show(Notify);
+	
+EndProcedure

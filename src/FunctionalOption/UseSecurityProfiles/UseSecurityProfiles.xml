@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<FunctionalOption uuid="bf75c4de-b36a-4a7f-8d84-9fa3d020a6cb">
+		<Properties>
+			<Name>UseSecurityProfiles</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use security profiles</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<Location>Constant.UseSecurityProfiles</Location>
+			<PrivilegedGetMode>true</PrivilegedGetMode>
+			<Content>
+				<xr:Object>InformationRegister.ExternalModuleAddingModes</xr:Object>
+				<xr:Object>DataProcessor.ExternalResourcePermissionSetup</xr:Object>
+				<xr:Object>InformationRegister.AllowedFileSystemDirectories</xr:Object>
+				<xr:Object>InformationRegister.AllowedCOMClasses</xr:Object>
+				<xr:Object>InformationRegister.AllowedAddIns</xr:Object>
+				<xr:Object>InformationRegister.AllowedOperatingSystemApplications</xr:Object>
+				<xr:Object>InformationRegister.AllowedInternetResources</xr:Object>
+				<xr:Object>InformationRegister.RequestsForPermissionsToUseExternalResources</xr:Object>
+				<xr:Object>Enum.OperationsWithPermissionSets</xr:Object>
+				<xr:Object>InformationRegister.PermissionsForSwichingToPrivilegedMode</xr:Object>
+				<xr:Object>InformationRegister.ExternalResourcePermissionAdministrationRequests</xr:Object>
+				<xr:Object>Enum.ExternalResourceRequestStates</xr:Object>
+			</Content>
+		</Properties>
+	</FunctionalOption>
+</MetaDataObject>

@@ -1,0 +1,1205 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Spreadsheet document (create)</v8:content>
+		</v8:item>
+	</Title>
+	<Width>100</Width>
+	<Height>20</Height>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="BeforeClose">BeforeClose</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="CommandBar" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command bar</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command bar</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="CommandBarExtendedTooltip" id="94"/>
+			<ChildItems>
+				<ButtonGroup name="ActionsWithDocument" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Actions with document</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Actions with document</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ActionsWithDocumentExtendedTooltip" id="95"/>
+					<ChildItems>
+						<Button name="WriteAndClose" id="51">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.WriteAndClose</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="WriteAndCloseExtendedTooltip" id="96"/>
+						</Button>
+						<Button name="Write" id="52">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Write</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="WriteExtendedTooltip" id="97"/>
+						</Button>
+						<Button name="Edit" id="84">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Edit</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="EditExtendedTooltip" id="98"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<ButtonGroup name="EditingCommands" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Editing commands</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Editing commands</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="EditingCommandsExtendedTooltip" id="99"/>
+					<ChildItems>
+						<ButtonGroup name="TextFormatting" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Text formatting</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Text formatting</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="TextFormattingExtendedTooltip" id="100"/>
+							<ChildItems>
+								<ButtonGroup name="Font" id="57">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Font</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Font</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="FontExtendedTooltip" id="101"/>
+									<ChildItems>
+										<Button name="FontChanging" id="54">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Font</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="FontChangingExtendedTooltip" id="102"/>
+										</Button>
+										<Button name="IncreaseFontSize" id="55">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.IncreaseFontSize</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="IncreaseFontSizeExtendedTooltip" id="103"/>
+										</Button>
+										<Button name="DecreaseFontSize" id="56">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.DecreaseFontSize</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="DecreaseFontSizeExtendedTooltip" id="104"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+								<ButtonGroup name="Typeface" id="58">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Typeface</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Typeface</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="TypefaceExtendedTooltip" id="105"/>
+									<ChildItems>
+										<Button name="Bold" id="59">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Bold</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="BoldExtendedTooltip" id="106"/>
+										</Button>
+										<Button name="Italic" id="60">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Italic</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="ItalicExtendedTooltip" id="107"/>
+										</Button>
+										<Button name="Underline" id="61">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Underline</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="UnderlineExtendedTooltip" id="108"/>
+										</Button>
+										<Button name="Strikeout" id="86">
+											<Type>CommandBarButton</Type>
+											<OnlyInAllActions>false</OnlyInAllActions>
+											<CommandName>Form.Command.Strikeout</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="StrikeoutExtendedTooltip" id="109"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+								<ButtonGroup name="Color" id="62">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Color</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Color</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ColorExtendedTooltip" id="110"/>
+									<ChildItems>
+										<Button name="BgColor" id="64">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.BgColor</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="BgColorExtendedTooltip" id="111"/>
+										</Button>
+										<Button name="TextColor" id="63">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.TextColor</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="TextColorExtendedTooltip" id="112"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+								<ButtonGroup name="Align" id="65">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Align</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Align</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="AlignExtendedTooltip" id="113"/>
+									<ChildItems>
+										<Button name="AlignLeft" id="66">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.AlignLeft</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="AlignLeftExtendedTooltip" id="114"/>
+										</Button>
+										<Button name="Center" id="67">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Center</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CenterExtendedTooltip" id="115"/>
+										</Button>
+										<Button name="AlignRight" id="68">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.AlignRight</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="AlignRightExtendedTooltip" id="116"/>
+										</Button>
+										<Button name="Justify" id="69">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.Justify</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="JustifyExtendedTooltip" id="117"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+							</ChildItems>
+						</ButtonGroup>
+						<Popup name="Borders" id="70">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Borders</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Borders</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>CommonPicture.OutsideBorder</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<Representation>Picture</Representation>
+							<ExtendedTooltip name="BordersExtendedTooltip" id="118"/>
+							<ChildItems>
+								<Button name="LeftBorder" id="72">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.LeftBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="LeftBorderExtendedTooltip" id="119"/>
+								</Button>
+								<Button name="TopBorder" id="71">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.TopBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="TopBorderExtendedTooltip" id="120"/>
+								</Button>
+								<Button name="RightBorder" id="75">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.RightBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="RightBorderExtendedTooltip" id="121"/>
+								</Button>
+								<Button name="BottomBorder" id="73">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.BottomBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="BottomBorderExtendedTooltip" id="122"/>
+								</Button>
+								<Button name="AllBorders" id="74">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.AllBorders</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="AllBordersExtendedTooltip" id="123"/>
+								</Button>
+								<Button name="OutsideBorder" id="76">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.OutsideBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="OutsideBorderExtendedTooltip" id="124"/>
+								</Button>
+								<Button name="InsideBorder" id="77">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.InsideBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="InsideBorderExtendedTooltip" id="125"/>
+								</Button>
+								<Button name="ThickOutsideBorder" id="78">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ThickOutsideBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ThickOutsideBorderExtendedTooltip" id="126"/>
+								</Button>
+								<Button name="BoldTopBorder" id="79">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.BoldTopBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ThickTopBorderExtendedTooltip" id="127"/>
+								</Button>
+								<Button name="ThickBottomBorder" id="80">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ThickBottomBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ThickBottomBorderExtendedTooltip" id="128"/>
+								</Button>
+								<Button name="NoBorder" id="88">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.NoBorder</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="NoBorderExtendedTooltip" id="129"/>
+								</Button>
+							</ChildItems>
+						</Popup>
+						<ButtonGroup name="ActionsWithCells" id="50">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Actions with cells</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Actions with cells</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ActionsWithCellsExtendedTooltip" id="130"/>
+							<ChildItems>
+								<Button name="Merge" id="81">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Merge</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="MergeExtendedTooltip" id="131"/>
+								</Button>
+								<Button name="UndoMerge" id="87">
+									<Type>CommandBarButton</Type>
+									<OnlyInAllActions>false</OnlyInAllActions>
+									<CommandName>Form.Command.UndoMerge</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="UndoMergeExtendedTooltip" id="132"/>
+								</Button>
+								<Button name="InsertComment" id="82">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.InsertComment</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="InsertCommentExtendedTooltip" id="133"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+					</ChildItems>
+				</ButtonGroup>
+				<ButtonGroup name="AllActions" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>All actions</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>All actions</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="AllActionsExtendedTooltip" id="134"/>
+					<ChildItems>
+						<ButtonGroup name="ActionsWithGroups" id="34">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Actions with groups</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Actions with groups</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ActionsWithGroupsExtendedTooltip" id="135"/>
+							<ChildItems>
+								<Button name="ShowGroups" id="35">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Item.SpreadsheetDocument.StandardCommand.ShowGroups</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ShowGroupsExtendedTooltip" id="136"/>
+								</Button>
+								<Button name="CollapseAllGroups" id="36">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Item.SpreadsheetDocument.StandardCommand.CollapseAllGroups</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="CollapseAllGroupsExtendedTooltip" id="137"/>
+								</Button>
+								<Button name="ExpandAllGroups" id="37">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Item.SpreadsheetDocument.StandardCommand.ExpandAllGroups</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ExpandAllGroupsExtendedTooltip" id="138"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+						<Button name="CustomizeForm" id="6">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="CustomizeFormExtendedTooltip" id="139"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="Help" id="7">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<Parameter xsi:nil="true"/>
+					<ExtendedTooltip name="HelpExtendedTooltip" id="140"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<UsualGroup name="Warning" id="91">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Warning</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="WarningExtendedTooltip" id="141"/>
+			<ChildItems>
+				<PictureDecoration name="WarningPicture" id="92">
+					<Width>2</Width>
+					<Height>1</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Warning picture</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Warning</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="WarningPictureContextMenu" id="93"/>
+					<ExtendedTooltip name="WarningPictureExtendedTooltip" id="142"/>
+				</PictureDecoration>
+				<LabelDecoration name="WarningText" id="89">
+					<TextColor>style:InformationText</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Changing area names, as well as template parameters, may lead to loss of a print form functionality.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="WarningTextContextMenu" id="90"/>
+					<ExtendedTooltip name="WarningTextExtendedTooltip" id="143"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<SpreadSheetDocumentField name="SpreadsheetDocument" id="1">
+			<DataPath>SpreadsheetDocument</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ShowGrid>true</ShowGrid>
+			<ShowHeaders>true</ShowHeaders>
+			<Edit>true</Edit>
+			<ContextMenu name="SpreadsheetDocumentContextMenu" id="2"/>
+			<ExtendedTooltip name="SpreadsheetDocumentExtendedTooltip" id="144"/>
+			<Events>
+				<Event name="OnActivateArea">SpreadsheetDocumentOnAreaActivate</Event>
+			</Events>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="SpreadsheetDocument" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Spreadsheet document</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="DocumentName" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EditingProhibited" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Editing prohibited</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="WritingComplited" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Saved</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="WriteAndClose" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save and close</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save and close</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>WriteAndClose</Action>
+		</Command>
+		<Command name="Edit" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Edit</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Edit</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetReadOnly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Edit</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Font" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Font</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Font</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ChangeFont</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Font</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Bold" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bold</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bold</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Bold</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Bold</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="TextColor" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Text color</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Text color</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.TextColor</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>TextColor</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Merge" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Merge</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Merge</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.MergeCells</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Merge</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="InsertComment" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insert comment</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Insert comment</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SpreadsheetInsertComment</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>InsertComment</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Italic" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Italic</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Italic</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Italic</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Italic</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Underline" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Underline</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Underline</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Underline</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Underline</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="IncreaseFontSize" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Increase font size</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Increase font size</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.IncreaseFontSize</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>IncreaseFontSize</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="DecreaseFontSize" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Decrease font size</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Decrease font size</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.DecreaseFontSize</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>DecreaseFontSize</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="BgColor" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Background color</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Background color</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.BgColor</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>BgColor</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Justify" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Justify</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Justify</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>0</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Justify</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Center" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Center</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Center</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>0</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Center</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="AlignLeft" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>AlignLeft</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>AlignLeft</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>0</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>AlignLeft</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="AlignRight" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>AlignRight</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>AlignRight</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>0</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>AlignRight</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="LeftBorder" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Left border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Left border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.LeftBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>LeftBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="RightBorder" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Right border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Right border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.RightBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>RightBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="TopBorder" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Top border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Top border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.TopBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>TopBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="BottomBorder" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bottom border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bottom border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.BottomBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>BottomBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="AllBorders" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All borders</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All borders</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.AllBorders</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>AllBorders</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="OutsideBorder" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Outside border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Outside border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.OutsideBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>OutsideBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="InsideBorder" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Inside border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Inside border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.InsideBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>InsideBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ThickOutsideBorder" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Thick outside border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Thick outside border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ThickOutsideBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ThickOutsideBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ThickBottomBorder" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Thick bottom border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Thick bottom border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ThickBottomBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ThickBottomBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="BoldTopBorder" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bold top border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Bold top border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.BoldTopBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>BoldTopBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="NoBorder" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>No border</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>No border</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.NoBorder</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>NoBorder</Action>
+			<Representation>Picture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="Write" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Write</Action>
+		</Command>
+		<Command name="Strikeout" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Strikeout</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Strikeout</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Strikeout</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="UndoMerge" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unmerge</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unmerge</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>UndoMerge</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="SpreadsheetDocument">
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="PathToFile">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="WindowOpeningMode">
+			<Type/>
+		</Parameter>
+		<Parameter name="Edit">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="TemplateMetadataObjectName">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="DocumentName">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>Inserting <a href="Catalog.AdditionalReportsAndDataProcessors/Help">additional reports and data processors</a>. </p>
+<p>Some of the data in additional report or data processor cards is filled in automatically. This data was specified by developers in external data processor or report files and cannot be modified (command list, additional information). Any additional data processor can support one or several commands available in applied object windows or in application sections.</p>
+<p>Depending on their purpose and settings, additional reports and data processors can contain multiple tabs. In this case, mandatory commands are located on a separate <strong>Commands</strong> tab<strong>. </strong>Names and content of other tabs may vary. Special commands can also be located on additional tabs.</p>
+<p>Two types of additional reports and data processors are available: </p>
+<ul><li><a href="#A">Assignable</a> - intended for use with one or several specific application lists or documents. The list of objects to which an additional report or data processor can be assigned is predefined by the developer and specified in the text of the additional report or data processor. When inserting an additional report or data processor, you can only select them from the list. 
+</li><li><a href="#B">Global (or common)</a> - containing commands that can only be called from command interface sections. The commands are independent of any applied objects. The list of sections where commands can be placed is predefined by the developer, included in additional report or data processor file, and cannot be modified.</li></ul><p>When inserting an additional report or data processor, you need to specify its primary parameters:</p>
+<ul><li>
+<div><strong>Description</strong> - provided by developer and filled in automatically. Can be modified if necessary.</div>
+</li><li>
+<div>
+<p><strong>Publication</strong> radio button - controls report or data processor availability. Can be used to limit access to reports or data processors. You can make a report or data processor available for anyone, available for administrator only, or unavailable. This parameter can take on the following values:</p>
+<ul><li>
+<div><strong>Used</strong> - data processor or report is available for use. Data processor commands are available for all application users with the <strong>Use additional reports and data processors</strong> role assigned.</div>
+</li><li>
+<div>
+<div><strong>Debug mode</strong> - data processor or report is only available to users with the <strong>Add and edit additional data processors</strong> or <strong>Full access</strong> role assigned (marked in red in the list). For all other users, these commands are hidden. We recommend selecting this mode when an additional report or data processor requires validations.</div></div>
+</li><li>
+<div><strong>Disabled</strong> - data processor or report is unavailable and cannot be selected from the list. We recommend selecting this mode when you need to make a data processor or report temporarily unavailable while keeping all its settings intact. To make a data processor or report available again, select any other mode.</div></li></ul></div>
+</li><li>
+<div><strong>Group</strong> - to add an additional data processor or report into a list group, click <img src="StdPicture.Select" width="12" height="12"></img>. Select a group from the list. Using groups makes it easier to work with additional reports and data processors.</div>
+</li><li>
+<div><strong>Responsible - </strong>you can assign a user to be responsible for additional report or data processor status monitoring, updates, etc. Administrator is assigned as <strong>Responsible</strong> by default.</div>
+</li><li>
+<div><strong>Comment</strong> - enter detailed description here.</div></li></ul><h3>Loading from file</h3>
+<p>To update a data processor in internal application storage, use the <strong>Load from file</strong> command. Specify file path and click <strong>Open</strong>. </p>
+<h3>Saving to file</h3>
+<p>To export a data processor or report from storage to computer file, use the <strong>Save to file</strong> command. Specify folder and click <strong>Save</strong>. File name will be generated automatically but can be changed if necessary.</p>
+<h3>Working in safe mode</h3>
+<p>As a rule, data processors should be executed in safe mode. This is a safeguard against untrusted code being executed on server side. However, certain data processors may require execution in unsafe mode. In this case, a warning will be displayed in the additional report or data processor window. These data processors should only be obtained from trusted sources (vendors) or manually audited before execution.</p>
+<p>For more information on safe mode, refer to the 1C:Enterprise platform documentation.</p>
+<h3>Notes on <a name="#A">inserting</a> assignable additional reports or data processors</h3>
+<p>For additional reports and data processors intended for work with application lists or documents, you can select objects for which data processing or report generation commands should be available.</p>
+<ul><li><strong>Assignment</strong>  - to select applied objects, click the hyperlink that lists the selected objects or displays <strong>Undefined</strong> when no objects are selected. Select the required objects via check boxes. 
+</li><li><strong>Show</strong> - data processing and report generation commands are accessible from: 
+<ul><li>the list of selected objects, if the <strong>In lists</strong> check box is selected;  
+</li><li>the applied object window, if the <strong>In catalog and document item forms</strong> check box is selected. The check boxes are not mutually exclusive and can be both selected.</li></ul></li><li>
+<div><strong>Commands - </strong>the command list is filled in on the basis of the list prepared by developers, by default. These commands will become available in the specified list or document after the additional report or data processor is added.</div></li></ul><h3>Notes on <a name="#B">inserting</a> global (common) additional reports and data processors</h3>
+<p>For each report or data processor accessible from command interface (not attached to a configuration object), you need to specify interface sections where the processing commands will be available via the <strong>Additional reports</strong> and <strong>Additional data processors</strong> commands. Command list and settings can be located on a separate <strong>Commands</strong> tab. </p>
+<ul><li><strong>Placement</strong> - to select interface sections, click the hyperlink that lists the selected sections or displays <strong>Undefined</strong> when no sections are selected. Select the required sections via check boxes and click <strong>OK</strong> to confirm the selection.</li></ul><p>For each command, you can set up the following:</p>
+<ul><li>In the <strong>Quick access</strong> column, click <img src="StdPicture.Select"></img> (or press<strong> F4</strong>) and select the users that should have access to this command by default. The default value is <strong>None</strong>. Add users to the list and click <strong>OK</strong> to confirm selection and return to the setup procedure. 
+</li><li>In the<strong> Schedule</strong> column, for each global report/data processor command executed on server side, click <img src="StdPicture.Select"></img> and specify the execution schedule for running this command as a <a href="../id95a8e790-25ef-4ef3-a44a-f150bf1ceb1f/038b5c85-fb1c-4082-9c4c-e69f8928bf3a">scheduled job</a>. Commands with the <strong>Open form</strong> execution option enabled cannot be scheduled.</li></ul><h3>See also:</h3>
+<ul><li><a href="v8help://1cv8/ExtReports">External reports and data processors</a>.</li></ul></body></html>

@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<ScalingMode>Normal</ScalingMode>
+	<CommandSet>
+		<ExcludedCommand>WriteAndClose</ExcludedCommand>
+	</CommandSet>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="FormWriteAndClose" id="208">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.WriteAndClose</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="FormWriteAndCloseExtendedTooltip" id="209"/>
+			</Button>
+			<ButtonGroup name="FormStandardCommands" id="210">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form standard commands</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form standard commands</v8:content>
+					</v8:item>
+				</ToolTip>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="FormStandardCommandsExtendedTooltip" id="211"/>
+			</ButtonGroup>
+			<Button name="FormCatalogEmailAccountsValidateAccount" id="78">
+				<Type>CommandBarButton</Type>
+				<CommandName>Catalog.EmailAccounts.Command.CheckAccount</CommandName>
+				<Parameter xsi:nil="true"/>
+				<DataPath>Object.Ref</DataPath>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Check settings</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormCatalogEmailAccountsValidateAccountExtendedTooltip" id="79"/>
+			</Button>
+			<Button name="FormHelp" id="212">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="FormHelpExtendedTooltip" id="213"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">AfterWrite</Event>
+		<Event name="BeforeClose">BeforeClose</Event>
+		<Event name="BeforeWrite">BeforeWrite</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Header" id="86">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Header</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ExtendedTooltipHeader" id="87"/>
+			<ChildItems>
+				<InputField name="Description" id="1">
+					<DataPath>Object.Description</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Description</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Email account description</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>25</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Wrap>false</Wrap>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChooseType>false</ChooseType>
+					<TypeDomainEnabled>false</TypeDomainEnabled>
+					<ContextMenu name="DescriptionContextMenu" id="3"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="4"/>
+				</InputField>
+				<InputField name="EmailAddress" id="80">
+					<DataPath>Object.EmailAddress</DataPath>
+					<Width>25</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="EmailAddressContextMenu" id="81"/>
+					<ExtendedTooltip name="EmailAddressExtendedTooltip" id="82"/>
+					<Events>
+						<Event name="OnChange">EmailAddressOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="EmailSenderName" id="83">
+					<DataPath>Object.UserName</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Email sender name</v8:content>
+						</v8:item>
+					</Title>
+					<Width>25</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="EmailSenderNameContextMenu" id="84"/>
+					<ExtendedTooltip name="EmailSenderNameExtendedTooltip" id="85"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="UseAccount" id="88">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use account</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use account</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="UseAccountExtendedTooltip" id="89"/>
+			<ChildItems>
+				<CheckBoxField name="ForSending" id="90">
+					<DataPath>Object.UseForSending</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>For sending emails</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ForSendingContextMenu" id="91"/>
+					<ExtendedTooltip name="ForSendingExtendedTooltip" id="92"/>
+				</CheckBoxField>
+				<CheckBoxField name="ForReceiving" id="93">
+					<DataPath>Object.UseForReceiving</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>For receiving emails</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ForReceivingContextMenu" id="94"/>
+					<ExtendedTooltip name="ForReceivingExtendedTooltip" id="95"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ConnectionSettings" id="96">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Connection settings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Connection settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<ExtendedTooltip name="ConnectionSettingsExtendedTooltip" id="97"/>
+			<ChildItems>
+				<Page name="SendingEmails" id="100">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sending emails</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sending emails</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="SendingEmailsExtendedTooltip" id="101"/>
+					<ChildItems>
+						<UsualGroup name="AuthorizationForSendingEmails" id="192">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Authorization for sending emails</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Authorization for sending emails</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="AuthorizationForSendingEmailsExtendedTooltip" id="193"/>
+							<ChildItems>
+								<InputField name="UserNameForSendingEmails" id="149">
+									<DataPath>Object.SMTPUser</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>User name</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="UserNameForSendingEmailsContextMenu" id="150"/>
+									<ExtendedTooltip name="UserNameForSendingEmailsExtendedTooltip" id="151"/>
+								</InputField>
+								<InputField name="PasswordForSendingEmails" id="152">
+									<DataPath>Object.SMTPPassword</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Password</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="PasswordForSendingEmailsContextMenu" id="153"/>
+									<ExtendedTooltip name="PasswordForSendingEmailsExtendedTooltip" id="154"/>
+								</InputField>
+								<CheckBoxField name="UseSafeLogonToOutgoingMailServer" id="155">
+									<DataPath>Object.UseSafeLogonToOutgoingMailServer</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Safe logon</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="UseSafeLogonToOutgoingMailServerContextMenu" id="156"/>
+									<ExtendedTooltip name="UseSafeLogonToOutgoingMailServerExtendedTooltip" id="157"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="OutgoingMailServerSettings" id="158">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Incoming mail server settings</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Incoming mail server settings</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="OutgoingMailServerSettingsExtendedTooltip" id="159"/>
+							<ChildItems>
+								<InputField name="OutgoingMailServer" id="174">
+									<DataPath>Object.OutgoingMailServer</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Server</v8:content>
+										</v8:item>
+									</Title>
+									<Width>22</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="OutgoingMailServerContextMenu" id="175"/>
+									<ExtendedTooltip name="OutgoingMailServerExtendedTooltip" id="176"/>
+									<Events>
+										<Event name="OnChange">OutgoingMailServerOnChange</Event>
+									</Events>
+								</InputField>
+								<InputField name="OutgoingMailServerPort" id="177">
+									<DataPath>Object.OutgoingMailServerPort</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Port</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="OutgoingMailServerPortContextMenu" id="178"/>
+									<ExtendedTooltip name="OutgoingMailServerPortExtendedTooltip" id="179"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ConnectionTypeAndTimeoutWhenSending" id="202">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Connection type and timeout when sending</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Connection type and timeout when sending</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ConnectionTypeAndTimeoutWhenSendingExtendedTooltip" id="203"/>
+							<ChildItems>
+								<CheckBoxField name="UseSecureConnectionForOutgoingMail" id="180">
+									<DataPath>Object.UseSecureConnectionForOutgoingMail</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Use secure connection (SSL)</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="UseSecureConnectionForOutgoingMailContextMenu" id="181"/>
+									<ExtendedTooltip name="UseSecureConnectionForOutgoingMailExtendedTooltip" id="182"/>
+									<Events>
+										<Event name="OnChange">UseSecureConnectionForOutgoingMailOnChange</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="POPBeforeSMTP" id="204">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>POP before SMTP</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>POP before SMTP</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="POPBeforeSMTPExtendedTooltip" id="205"/>
+							<ChildItems>
+								<CheckBoxField name="LogonBeforeSending" id="189">
+									<DataPath>Object.LogonBeforeSending</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="LogonBeforeSendingContextMenu" id="190"/>
+									<ExtendedTooltip name="LogonBeforeSendingExtendedTooltip" id="191"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="GetEmails" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Receiving emails</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Getting emails</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GetEmailsExtendedTooltip" id="99"/>
+					<ChildItems>
+						<InputField name="UserNameForReceivingEmails" id="102">
+							<DataPath>Object.User</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>User name</v8:content>
+								</v8:item>
+							</Title>
+							<Width>25</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="UserNameForReceivingEmailsContextMenu" id="103"/>
+							<ExtendedTooltip name="UserNameForReceivingEmailsExtendedTooltip" id="104"/>
+						</InputField>
+						<InputField name="PasswordForReceivingEmails" id="105">
+							<DataPath>Object.Password</DataPath>
+							<Width>25</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="PasswordForReceivingEmailsContextMenu" id="106"/>
+							<ExtendedTooltip name="PasswordForReceivingEmailsExtendedTooltip" id="107"/>
+						</InputField>
+						<CheckBoxField name="UseSafeLogonToIncomingMailServer" id="143">
+							<DataPath>Object.UseSafeLogonToIncomingMailServer</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Safe logon</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="UseSafeLogonToIncomingMailServerContextMenu" id="144"/>
+							<ExtendedTooltip name="UseSafeLogonToIncomingMailServerExtendedTooltip" id="145"/>
+						</CheckBoxField>
+						<UsualGroup name="IncomingMailServerSettings" id="125">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Incoming mail server settings</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Incoming mail server settings</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="IncomingMailServerSettingsExtendedTooltip" id="126"/>
+							<ChildItems>
+								<InputField name="IncomingMailServer" id="113">
+									<DataPath>Object.IncomingMailServer</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Server</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<Width>22</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="IncomingMailServerContextMenu" id="114"/>
+									<ExtendedTooltip name="IncomingMailServerExtendedTooltip" id="115"/>
+									<Events>
+										<Event name="OnChange">IncomingMailServerOnChange</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="ProtocolAndIncomingMailServerPort" id="111">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Protocol and incoming mail server port</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Protocol and incoming mail server port</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ProtocolAndIncomingMailServerPortExtendedTooltip" id="112"/>
+									<ChildItems>
+										<InputField name="Protocol" id="108">
+											<DataPath>Object.ProtocolForIncomingMail</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Protocol</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ListChoiceMode>true</ListChoiceMode>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<TextEdit>false</TextEdit>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:string">IMAP</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:string">POP</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<DropListWidth>4</DropListWidth>
+											<ContextMenu name="ProtocolContextMenu" id="109"/>
+											<ExtendedTooltip name="ProtocolExtendedTooltip" id="110"/>
+											<Events>
+												<Event name="OnChange">ProtocolOnChange</Event>
+											</Events>
+										</InputField>
+										<InputField name="IncomingMailPort" id="122">
+											<DataPath>Object.IncomingMailServerPort</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Port</v8:content>
+												</v8:item>
+											</Title>
+											<Width>8</Width>
+											<ContextMenu name="IncomingMailPortContextMenu" id="123"/>
+											<ExtendedTooltip name="IncomingMailPortExtendedTooltip" id="124"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ConnectionTypeAndTimeout" id="187">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Connection type and timeout</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Connection type and timeout</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ConnectionTypeAndTimeoutExtendedTooltip" id="188"/>
+									<ChildItems>
+										<CheckBoxField name="UseSecureConnectionForIncomingEmail" id="119">
+											<DataPath>Object.UseSecureConnectionForIncomingMail</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Use secure connection (SSL)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="UseSecureConnectionForIncomingMailContextMenu" id="120"/>
+											<ExtendedTooltip name="UseSecureConnectionForIncomingMailExtendedTooltip" id="121"/>
+											<Events>
+												<Event name="OnChange">UseSecureConnectionForIncomingMailOnChange</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="KeepMessagesOnServer" id="185">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Keep messages on server</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Keep messages on server</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="KeepMessagesOnServerExtendedTooltip" id="186"/>
+							<ChildItems>
+								<CheckBoxField name="KeepEmailCopiesOnServer" id="130">
+									<DataPath>Object.KeepMessageCopiesAtServer</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Keep email copies on server</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="KeepEmailCopiesOnServerContextMenu" id="131"/>
+									<ExtendedTooltip name="KeepEmailCopiesOnServerExtendedTooltip" id="132"/>
+								</CheckBoxField>
+								<UsualGroup name="DeleteEmailsFromServer" id="141">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Delete emails from server</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Delete emails from server</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="DeleteEmailsFromServerExtendedTooltip" id="142"/>
+									<ChildItems>
+										<InputField name="DeleteEmailsFromServerAfter" id="133">
+											<DataPath>Object.KeepMessagesOnServerPeriod</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Delete emails from server after</v8:content>
+												</v8:item>
+											</Title>
+											<SpinButton>true</SpinButton>
+											<MinValue xsi:type="xs:decimal">1</MinValue>
+											<ContextMenu name="DeleteEmailsFromServerAfterContextMenu" id="134"/>
+											<ExtendedTooltip name="DeleteEmailsFromServerAfterExtendedTooltip" id="135"/>
+										</InputField>
+										<LabelDecoration name="DaysLabel" id="146">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>days</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="DaysLabelContextMenu" id="147"/>
+											<ExtendedTooltip name="DaysLabelExtendedTooltip" id="148"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="OtherSettings" id="206">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Other settings</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Other settings</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="OtherSetingsExtendedTooltip" id="207"/>
+					<ChildItems>
+						<UsualGroup name="WaitTime" id="136">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Timeout</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Timeout</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="WaitTimeExtendedTooltip" id="137"/>
+							<ChildItems>
+								<InputField name="ServerTimeout" id="127">
+									<DataPath>Object.Timeout</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Server timeout</v8:content>
+										</v8:item>
+									</Title>
+									<SpinButton>true</SpinButton>
+									<MinValue xsi:type="xs:decimal">10</MinValue>
+									<ContextMenu name="ServerTimeoutContextMenu" id="128"/>
+									<ExtendedTooltip name="ServerTimeoutExtendedTooltip" id="129"/>
+								</InputField>
+								<LabelDecoration name="LabelSeconds" id="138">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>sec.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="LabelSecondsContextMenu" id="139"/>
+									<ExtendedTooltip name="LabelSecondsExtendedTooltip" id="140"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.EmailAccounts</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="WriteAndClose" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save and close</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save and close</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>WriteAndClose</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="BlockUser">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

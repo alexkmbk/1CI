@@ -1,0 +1,2556 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.Password</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPAuthenticationMode</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPPassword</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseForSending</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPAuthentication</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.KeepMessageCopiesAtServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Command.CheckAccount</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.OutgoingMailServerPort</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>#ByValues( "Catalog.EmailAccounts", "","",
+"EmailAccounts", "Ref",
+"","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","")</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Predefined</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Ref</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.IsFolder</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Owner</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Parent</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Description</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Code</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.IncomingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPUser</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseForReceiving</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.Timeout</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.EmailAddress</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.IncomingMailServerPort</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.KeepMessagesOnServerPeriod</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UserName</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.AccountPasswordConfirmation</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.SendMessage</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.User</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.OutgoingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.POP3AuthenticationMode</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<restrictionTemplate>
+		<name>ByValues</name>
+		<condition>// ByValues(Table, -, Modifier, V1,P1, V2,P2, ..., IN(n), P(n)).
+// № parameter: 1, 2, 3, 4, 5, 6, 7, ..., 2+n*2,3+n*2.
+// Read so: "access restriction by values".
+// Parameters:
+// Table - The current table name, for example, "Document.ProductAndServiceReceipt".
+// Modifier - changes the template.
+// 1-st modifier - the
+// "DontLimitAccessToGroups" string specifies to unconditionally select hierarchical catalog groups. 
+// There is no other modifier in this version of the template.
+// V(n) - Access kind - name of access kind, for example, "Companies". For composite type
+// fields, to boost performance, better specify several
+// names, for example, "Companies,IndividualGroups" than use several parameter blocks with the same field name.
+// You can use special types
+// of access such as "Condition", "RightsSettings", "ReadRight", "EditRight" only separately.
+// When V(n) = "Condition" (or ""), then P(n) contains a condition
+// string in the
+// language of queries, for example, "T.Author = &amp;AuthorizedUser", "VALUETYPE(T.Owner) = TYPE(Catalog.Companies)", where T - alias of current table.
+// When V(n)
+// = "ReadRight" Or "EditRight", run right check for the T.P(n) value table.
+// P(n) - Validated value field, except when V(n) = "Condition" (or "").
+// Note: you can increase the maximum number of field
+// values checked at the same time by changing the template, but you must specify all the template parameters, i.e. empty rows, when the number of fields is less than maximum.
+// The pattern has the following structure:
+// &lt;Common part of conditions&gt; &lt;Condition by parameter group 1&gt; And &lt;Condition by parameter group 2&gt; And ... &lt;Condition
+// by the parameter group(n)&gt; Example:
+// ByValues("Document.ProductAndServiceReceipt", "", "",
+// "Companies","Company",
+// "Vendors","Counterparty", "","", ...)
+
+// Checking the Right parameter.
+#If Not ("#Parameter(2)" = "Read" Or "#Parameter(2)" = "Insert" Or
+ "#Parameter(2)" = "Update" Or "#Parameter(2)" = "Delete" Or "#Parameter(2)" = "")
+ Or #CurrentAccessRightName &lt;&gt; "Read" And "#Parameter(2)" = "Read"
+ Or #CurrentAccessRightName = "Read" And "#Parameter(2)" &lt;&gt; "Read" And "#Parameter(2)" &lt;&gt; "" #Then
+ // When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+ InvalidRight: #Parameter(2)
+#EndIf
+
+// Checking the modifier parameter TableName.
+#If "#Parameter(1)" &lt;&gt; #CurrentTableName #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	IncorrectCurrentTableName: "#Parameter(1)"
+#EndIf
+
+// Checking the Modifier parameter.
+#If Not ("#Parameter(3)" = "DontLimitAccessToGroups" Or "#Parameter(3)" = "") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	InvalidModifier: #Parameter(3)
+#EndIf
+
+// The common check of using access restrictions
+// at the record level and the check of using at least one restriction from the specified access kinds.
+#If &amp;UseRecordLevelSecurity
+ And Not (True
+ And ("#Parameter(4)" = "" And "#Parameter(5)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(4),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(4),"))
+ And ("#Parameter(6)" = "" And "#Parameter(7)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(6),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(6),"))
+ And ("#Parameter(8)" = "" And "#Parameter(9)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(8),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(8),"))
+ And ("#Parameter(10)" = "" And "#Parameter(11)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(10),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(10),"))
+ And ("#Parameter(12)" = "" And "#Parameter(13)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(12),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(12),"))
+ And ("#Parameter(14)" = "" And "#Parameter(15)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(14),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(14),"))
+ And ("#Parameter(16)" = "" And "#Parameter(17)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(16),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(16),"))
+ And ("#Parameter(18)" = "" And "#Parameter(19)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(18),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(18),"))
+ And ("#Parameter(20)" = "" And "#Parameter(21)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(20),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(20),"))
+ And ("#Parameter(22)" = "" And "#Parameter(23)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(22),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(22),"))
+ And ("#Parameter(24)" = "" And "#Parameter(25)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(24),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(24),"))
+ And ("#Parameter(26)" = "" And "#Parameter(27)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(26),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(26),"))
+ And ("#Parameter(28)" = "" And "#Parameter(29)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(28),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(28),"))
+ And ("#Parameter(30)" = "" And "#Parameter(31)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(30),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(30),"))
+ And ("#Parameter(32)" = "" And "#Parameter(33)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(32),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(32),"))
+ And ("#Parameter(34)" = "" And "#Parameter(35)" = ""
+ Or &amp;DisabledAccessKinds = "All"
+ And Not StrContains(",Condition,,RightSettings,Object, ,ReadRight,EditRight,", ",#Parameter(34),")
+ Or StrContains(&amp;DisabledAccessKinds, ",#Parameter(34),"))
+ ) #Then
+
+T WHERE // T - is the current table alias (selected short to reduce the number of characters in the text of the parameter condition in the query language).
+
+// Unconditional selection of folders in a hierarchical metadata object (if required).
+#If "#Parameter(3)" = "DontLimitAccessToGroups" #Then
+	T.IsFolder OR
+#EndIf
+
+TRUE IN
+(	// Checking user rights for the entire current table.
+	// Rights for tables are generated by the set of roles of the access group.
+	SELECT TOP 1 TRUE
+	FROM
+		Catalog.MetadataObjectIDs AS CurrentTableProperties
+		INNER JOIN Catalog.AccessGroups AS AccessGroups
+		ON
+			 CurrentTableProperties.FullName = "#Parameter(1)" And TRUE IN
+			 (
+				SELECT TOP 1 TRUE
+				FROM
+					InformationRegister.AccessGroupTables AS AccessGroupTables
+					WHERE
+						 AccessGroupTables.Table = CurrentTableProperties.Ref And AccessGroupTables.AccessGroup = AccessGroups.Ref
+					#If Not #CurrentAccessRightName = "Read" #Then And AccessGroupTables.Update
+					#EndIf
+			 ) And AccessGroups.Ref IN
+			 (
+				SELECT
+					AccessGroupsUsers.Ref AS AccessGroup
+				FROM
+					Catalog.AccessGroups.Users AS AccessGroupsUsers
+					INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+					ON
+						 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = AccessGroupsUsers.User
+			 )
+	WHERE
+ ( // Search for values of the specified fields in allowed groups access values (users).
+
+//// Checking field value of the parameter 1 group.
+#If "#Parameter(4)" = "Condition" Or "#Parameter(4)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	( #Parameter(5) )
+#ElsIf "#Parameter(4)" = "ReadRight" Or "#Parameter(4)" = "EditRight" #Then
+	 T.#Parameter(5) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(5))
+		#If Not "#Parameter(4)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(4)" = "RightsSettings" #Then
+	
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(5) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser
+					And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And NOT FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(5) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(4),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(4)", ",") #Then
+		IncorrectAccessKind: "#Parameter(4)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(4)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(4),") #Then
+	
+	 (
+			ISNULL(T.#Parameter(5), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(4),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(4),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(5) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(4),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref
+					And Values.AccessValue = T.#Parameter(5)
+		#ElsIf "T.#Parameter(5)" = "T.Ref" #Then
+			#If StrContains("#Parameter(4)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(4)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(4),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(5)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(5)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(5))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#Else
+	TRUE
+#EndIf
+
+//// Checking field value of the parameter 2 group.
+#If "#Parameter(6)" = "" And "#Parameter(7)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(6)" = "Condition" Or "#Parameter(6)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(7) )
+#ElsIf "#Parameter(6)" = "ReadRight" Or "#Parameter(6)" = "EditRight" #Then
+	AND T.#Parameter(7) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(7))
+		#If Not "#Parameter(6)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(6)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(7) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(7) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(6),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(6)", ",") #Then
+		IncorrectAccessKind: "#Parameter(6)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(6)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(6),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(7), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(6),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(6),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(7) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(6),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(7)
+		#ElsIf "T.#Parameter(7)" = "T.Ref" #Then
+			#If StrContains("#Parameter(6)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(6)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(6),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(7)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(7)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(7))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 3 group.
+#If "#Parameter(8)" = "" And "#Parameter(9)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(8)" = "Condition" Or "#Parameter(8)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(9) )
+#ElsIf "#Parameter(8)" = "ReadRight" Or "#Parameter(8)" = "EditRight" #Then
+	AND T.#Parameter(9) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(9))
+		#If Not "#Parameter(8)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(8)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(9) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(9) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(8),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(8)", ",") #Then
+		IncorrectAccessKind: "#Parameter(8)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(8)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(8),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(9), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(8),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(8),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(9) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(8),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(9)
+		#ElsIf "T.#Parameter(9)" = "T.Ref" #Then
+			#If StrContains("#Parameter(8)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(8)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(8),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(9)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(9)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(9))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 4 group.
+#If "#Parameter(10)" = "" And "#Parameter(11)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(10)" = "Condition" Or "#Parameter(10)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(11) )
+#ElsIf "#Parameter(10)" = "ReadRight" Or "#Parameter(10)" = "EditRight" #Then
+	AND T.#Parameter(11) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(11))
+		#If Not "#Parameter(10)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(10)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(11) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(11) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(10),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(10)", ",") #Then
+		IncorrectAccessKind: "#Parameter(10)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(10)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(10),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(11), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(10),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(10),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(11) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(10),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(11)
+		#ElsIf "T.#Parameter(11)" = "T.Ref" #Then
+			#If StrContains("#Parameter(10)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(10)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(10),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(11)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(11)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(11))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 5 group.
+#If "#Parameter(12)" = "" And "#Parameter(13)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(12)" = "Condition" Or "#Parameter(12)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(13) )
+#ElsIf "#Parameter(12)" = "ReadRight" Or "#Parameter(12)" = "EditRight" #Then
+	AND T.#Parameter(13) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(13))
+		#If Not "#Parameter(12)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(12)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(13) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(13) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(12),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(12)", ",") #Then
+		IncorrectAccessKind: "#Parameter(12)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(12)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(12),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(13), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(12),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(12),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(13) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(12),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(13)
+		#ElsIf "T.#Parameter(13)" = "T.Ref" #Then
+			#If StrContains("#Parameter(12)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(12)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(12),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(13)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(13)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(13))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 6 group.
+#If "#Parameter(14)" = "" And "#Parameter(15)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(14)" = "Condition" Or "#Parameter(14)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(15) )
+#ElsIf "#Parameter(14)" = "ReadRight" Or "#Parameter(14)" = "EditRight" #Then
+	AND T.#Parameter(15) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(15))
+		#If Not "#Parameter(14)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(14)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(15) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(15) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(14),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(14)", ",") #Then
+		IncorrectAccessKind: "#Parameter(14)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(14)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(14),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(15), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(14),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(14),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(15) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(14),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(15)
+		#ElsIf "T.#Parameter(15)" = "T.Ref" #Then
+			#If StrContains("#Parameter(14)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(14)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(14),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(15)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(15)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(15))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 7 group.
+#If "#Parameter(16)" = "" And "#Parameter(17)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(16)" = "Condition" Or "#Parameter(16)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(17) )
+#ElsIf "#Parameter(16)" = "ReadRight" Or "#Parameter(16)" = "EditRight" #Then
+	AND T.#Parameter(17) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(17))
+		#If Not "#Parameter(16)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(16)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(17) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(17) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(16),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(16)", ",") #Then
+		IncorrectAccessKind: "#Parameter(16)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(16)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(16),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(17), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(16),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(16),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(17) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(16),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(17)
+		#ElsIf "T.#Parameter(17)" = "T.Ref" #Then
+			#If StrContains("#Parameter(16)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(16)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(16),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(17)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(17)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(17))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 8 group.
+#If "#Parameter(18)" = "" And "#Parameter(19)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(18)" = "Condition" Or "#Parameter(18)" = "" #Then
+	// When the access kind name is ""Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(19) )
+#ElsIf "#Parameter(18)" = "ReadRight" Or "#Parameter(18)" = "EditRight" #Then
+	AND T.#Parameter(19) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(19))
+		#If Not "#Parameter(18)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(18)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(19) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(19) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(18),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(18)", ",") #Then
+		IncorrectAccessKind: "#Parameter(18)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(18)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(18),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(19), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(18),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(18),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(19) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(18),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(19)
+		#ElsIf "T.#Parameter(19)" = "T.Ref" #Then
+			#If StrContains("#Parameter(18)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(18)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(18),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(19)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(19)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(19))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 9 group.
+#If "#Parameter(20)" = "" And "#Parameter(21)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(20)" = "Condition" Or "#Parameter(20)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(21) )
+#ElsIf "#Parameter(20)" = "ReadRight" Or "#Parameter(20)" = "EditRight" #Then
+	AND T.#Parameter(21) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(21))
+		#If Not "#Parameter(20)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(20)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(21) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(21) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(20),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(20)", ",") #Then
+		IncorrectAccessKind: "#Parameter(20)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(20)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(20),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(21), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(20),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(20),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(21) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(20),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(21)
+		#ElsIf "T.#Parameter(21)" = "T.Ref" #Then
+			#If StrContains("#Parameter(20)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(20)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(20),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(21)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(21)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(21))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 10 group.
+#If "#Parameter(22)" = "" And "#Parameter(23)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(22)" = "Condition" Or "#Parameter(22)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(23) )
+#ElsIf "#Parameter(22)" = "ReadRight" Or "#Parameter(22)" = "EditRight" #Then
+	AND T.#Parameter(23) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(23))
+		#If Not "#Parameter(22)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(22)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(23) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(23) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(22),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(22)", ",") #Then
+		IncorrectAccessKind: "#Parameter(22)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(22)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(22),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(23), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(22),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(22),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(23) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(22),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(23)
+		#ElsIf "T.#Parameter(23)" = "T.Ref" #Then
+			#If StrContains("#Parameter(22)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(22)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(22),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(23)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(23)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(23))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 11 group.
+#If "#Parameter(24)" = "" And "#Parameter(25)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(24)" = "Condition" Or "#Parameter(24)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(25) )
+#ElsIf "#Parameter(24)" = "ReadRight" Or "#Parameter(24)" = "EditRight" #Then
+	AND T.#Parameter(25) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(25))
+		#If Not "#Parameter(24)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(24)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(25) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(25) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(24),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(24)", ",") #Then
+		IncorrectAccessKind: "#Parameter(24)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(24)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(24),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(25), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(24),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(24),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(25) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(24),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(25)
+		#ElsIf "T.#Parameter(25)" = "T.Ref" #Then
+			#If StrContains("#Parameter(24)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(24)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(24),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(25)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(25)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(25))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 12 group.
+#If "#Parameter(26)" = "" And "#Parameter(27)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(26)" = "Condition" Or "#Parameter(26)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(27) )
+#ElsIf "#Parameter(26)" = "ReadRight" Or "#Parameter(26)" = "EditRight" #Then
+	AND T.#Parameter(27) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(27))
+		#If Not "#Parameter(26)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(26)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(27) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(27) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(26),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(26)", ",") #Then
+		IncorrectAccessKind: "#Parameter(26)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(26)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(26),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(27), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(26),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(26),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(27) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(26),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(27)
+		#ElsIf "T.#Parameter(27)" = "T.Ref" #Then
+			#If StrContains("#Parameter(26)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(26)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(26),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(27)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(27)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(27))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 13 group.
+#If "#Parameter(28)" = "" And "#Parameter(29)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(28)" = "Condition" Or "#Parameter(28)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(29) )
+#ElsIf "#Parameter(28)" = "ReadRight" Or "#Parameter(28)" = "EditRight" #Then
+	AND T.#Parameter(29) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(29))
+		#If Not "#Parameter(28)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(28)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(29) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(29) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(28),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(28)", ",") #Then
+		IncorrectAccessKind: "#Parameter(28)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(28)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(28),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(29), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(28),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(28),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(29) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(28),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(29)
+		#ElsIf "T.#Parameter(29)" = "T.Ref" #Then
+			#If StrContains("#Parameter(28)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(28)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(28),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(29)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(29)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(29))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 14 group.
+#If "#Parameter(30)" = "" And "#Parameter(31)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(30)" = "Condition" Or "#Parameter(30)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(31) )
+#ElsIf "#Parameter(30)" = "ReadRight" Or "#Parameter(30)" = "EditRight" #Then
+	AND T.#Parameter(31) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(31))
+		#If Not "#Parameter(30)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(30)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(31) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(31) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(30),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(30)", ",") #Then
+		IncorrectAccessKind: "#Parameter(30)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(30)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(30),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(31), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(30),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(30),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(31) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(30),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(31)
+		#ElsIf "T.#Parameter(31)" = "T.Ref" #Then
+			#If StrContains("#Parameter(30)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(30)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(30),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(31)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(31)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(31))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 15 group.
+#If "#Parameter(32)" = "" And "#Parameter(33)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(32)" = "Condition" Or "#Parameter(32)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(33) )
+#ElsIf "#Parameter(32)" = "ReadRight" Or "#Parameter(32)" = "EditRight" #Then
+	AND T.#Parameter(33) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(33))
+		#If Not "#Parameter(32)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(32)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(33) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(33) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(32),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(32)", ",") #Then
+		IncorrectAccessKind: "#Parameter(32)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(32)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(32),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(33), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(32),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(32),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(33) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(32),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(33)
+		#ElsIf "T.#Parameter(33)" = "T.Ref" #Then
+			#If StrContains("#Parameter(32)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(32)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(32),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(33)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(33)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(33))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+//// Checking field value of the parameter 16 group.
+#If "#Parameter(34)" = "" And "#Parameter(35)" = "" #Then
+	// Parameter group is not used.
+#ElsIf "#Parameter(34)" = "Condition" Or "#Parameter(34)" = "" #Then
+	// When the access kind name is "Condition" (or ""), a condition is set instead of the field name.
+	AND ( #Parameter(35) )
+#ElsIf "#Parameter(34)" = "ReadRight" Or "#Parameter(34)" = "EditRight" #Then
+	AND T.#Parameter(35) &lt;&gt; UNDEFINED
+	AND TRUE IN
+	 (	// Checking the user right for the Values table specified in the field.
+		SELECT TOP 1 TRUE
+		FROM InformationRegister.AccessGroupTables AS AccessGroupTablesRightCheck
+		WHERE
+			 AccessGroupTablesRightCheck.AccessGroup = AccessGroups.Ref And VALUETYPE(AccessGroupTablesRightCheck.TableType) = VALUETYPE(T.#Parameter(35))
+		#If Not "#Parameter(34)" = "ReadRight" #Then And AccessGroupTablesRightCheck.Update
+		#EndIf
+	 )
+#ElsIf "#Parameter(34)" = "RightsSettings" #Then
+	AND
+	 (
+		TRUE IN // Checking whether the right is granted to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 TRUE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(35) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingPermissionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingPermissionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+		 And Not FALSE IN // Checking whether the right is denied to the user or any group where the user belongs.
+			(
+			SELECT TOP 1 FALSE
+			FROM InformationRegister.ObjectRightsSettings AS RightsSettings
+				INNER JOIN InformationRegister.ObjectRightsSettingsInheritance AS SettingsInheritance
+				ON
+					 SettingsInheritance.Object = T.#Parameter(35) And RightsSettings.Object = SettingsInheritance.Parent
+				#If #CurrentAccessRightName = "Read" #Then And SettingsInheritance.UsageLevel &lt; RightsSettings.ReadingProhibitionLevel
+				#Else
+				 #If StrContains(&amp;TablesWithIndividualRightSettings, "|#Parameter(1);") #Then And RightsSettings.Table = CurrentTableProperties.Ref
+				 #Else And RightsSettings.Table = VALUE(Catalog.MetadataObjectIDs.EmptyRef)
+				 #EndIf And SettingsInheritance.UsageLevel &lt; RightsSettings.ChangingProhibitionLevel
+				#EndIf
+				INNER JOIN InformationRegister.UserGroupContent AS UserGroupContent
+				ON
+					 UserGroupContent.User = &amp;AuthorizedUser And UserGroupContent.UserGroup = RightsSettings.User
+			)
+	 )
+#ElsIf Not StrContains(&amp;AllAccessKindsExceptSpecial, ",#Parameter(34),") #Then
+	// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+	#If StrContains("#Parameter(34)", ",") #Then
+		IncorrectAccessKind: "#Parameter(34)" - "The list of access kind names is not found"
+	#Else
+		IncorrectAccessKind: "#Parameter(34)" - "Access kind name is not found"
+	#EndIf
+#ElsIf &amp;DisabledAccessKinds &lt;&gt; "All"
+ And Not StrContains(&amp;DisabledAccessKinds, ",#Parameter(34),") #Then
+	AND
+	 (
+			ISNULL(T.#Parameter(35), UNDEFINED) &lt;&gt; UNDEFINED
+			AND
+		#If (Not StrContains(&amp;DisabledAccessKinds, ",Users,") And StrContains(",#Parameter(34),", ",Users,"))
+		 Or (Not StrContains(&amp;DisabledAccessKinds, ",ExternalUsers,") And StrContains(",#Parameter(34),", ",ExternalUsers,")) #Then
+			Not
+			(
+			Not TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessValueGroups AS AccessValueGroups
+				WHERE
+					 AccessValueGroups.AccessValue = T.#Parameter(35) And AccessValueGroups.AccessValueGroup = &amp;AuthorizedUser
+				) And Not
+		#Else
+			(
+		#EndIf
+			CASE
+			WHEN TRUE IN
+				(
+		#If StrContains(&amp;AccessKindsWithoutGroupsForAccessValues, ",#Parameter(34),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.#Parameter(35)
+		#ElsIf "T.#Parameter(35)" = "T.Ref" #Then
+			#If StrContains("#Parameter(34)", ",") #Then
+				// When the parameter is specified incorrectly, a string is inserted to raise an error of access restriction assembly.
+				IncorrectAccessKind: "#Parameter(34)" - "Only one access kind can be specified when the access value table is checked"
+			#ElsIf StrContains(&amp;AccessKindsWithSingleGroupForAccessValue, ",#Parameter(34),") #Then
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+				WHERE
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = T.AccessGroup
+			#Else // Access values for which you can set multiple access value groups.
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN #Parameter(1).AccessGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessGroup And ValueGroups.Ref = T.#Parameter(35)
+			#EndIf
+		#Else
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.AccessGroupValues AS Values
+					INNER JOIN InformationRegister.AccessValueGroups AS ValueGroups
+				ON
+					 Values.AccessGroup = AccessGroups.Ref And Values.AccessValue = ValueGroups.AccessValueGroup And ValueGroups.AccessValue = T.#Parameter(35)
+		#EndIf
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			=
+			CASE
+			WHEN TRUE IN
+				(
+				SELECT TOP 1 TRUE
+				FROM InformationRegister.DefaultAccessGroupValues AS DefaultValues
+				WHERE
+				 DefaultValues.AccessGroup = AccessGroups.Ref
+				 And VALUETYPE(DefaultValues.AccessValueType) = VALUETYPE(T.#Parameter(35))
+				 And DefaultValues.AllAllowed = FALSE
+				)
+			THEN TRUE
+			ELSE FALSE
+			END
+			)
+	 )
+#EndIf
+
+ )
+)
+#EndIf
+
+</condition>
+	</restrictionTemplate>
+</Rights>

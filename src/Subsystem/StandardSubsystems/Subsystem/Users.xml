@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Subsystem uuid="cc23d903-ccc5-42f4-862f-5e7278c4e346">
+		<Properties>
+			<Name>Users</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserStates</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.CurrentUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.Users</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Users</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersOverridable</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.SelectedUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.UserGroupContents</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.UserGroups</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState06</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState05</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState04</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState03</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState02</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState01</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersInternalCached</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ShowSelectedRolesOnly</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState07</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState08</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState09</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState10</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState11</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.UserState12</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ExternalUserGroups</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.UseExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">EventSubscription.UpdateExternalUserPresentation</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ReadExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.AddEditExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.EditCurrentExternalUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.CurrentExternalUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersInternal</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.EditCurrentUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.AddEditUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.UseUserGroups</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseExternalUsers</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseUserGroups</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.UserTypes</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersInternalClient</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersClientServer</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersInternalClientServer</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.UsersInternalServerCall</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.OtherUserSettings</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ApplicationUserSettings</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">f561be64-9420-46ec-a4f7-9df0bea2e28b</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.UserSessionParameters</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.UserGroups</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.AuthorizedUser</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.UserInfo</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

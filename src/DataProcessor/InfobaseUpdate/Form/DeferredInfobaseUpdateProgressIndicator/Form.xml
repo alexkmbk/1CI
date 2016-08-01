@@ -1,0 +1,793 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Application update results</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<ChildItems>
+			<Button name="FormClose" id="14">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.CloseForm</CommandName>
+				<Parameter xsi:nil="true"/>
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Close</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="FormCloseExtendedTooltip" id="127"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="UpdateCompletedGroup" id="82">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update completed group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update completed group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="UpdateCompletedGroupExtendedTooltip" id="128"/>
+			<ChildItems>
+				<PictureDecoration name="InformationPicture" id="83">
+					<Width>7</Width>
+					<Height>2</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Information picture</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Done32</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="InformationPictureContextMenu" id="84"/>
+					<ExtendedTooltip name="InformationPictureExtendedTooltip" id="129"/>
+				</PictureDecoration>
+				<UsualGroup name="UpdateInformationGroup" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Update information group</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Update information group</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="UpdateInformationGroupExtendedTooltip" id="130"/>
+					<ChildItems>
+						<LabelDecoration name="UpdateCompletedInformation" id="86">
+							<VerticalStretch>false</VerticalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Application was updated to version
+%1 %2 at %3 (in %4).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="UpdateCompletedInformationContextMenu" id="87"/>
+							<ExtendedTooltip name="UpdateCompletedInformationExtendedTooltip" id="131"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="UpdateStatus" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update status</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="UpdateStatusExtendedTooltip" id="133"/>
+			<ChildItems>
+				<Page name="FileInfobaseUpdate" id="30">
+					<ExtendedTooltip name="InfobaseUpdateExtendedTooltip" id="134"/>
+					<ChildItems>
+						<UsualGroup name="RequiredActionsGroup" id="31">
+							<Group>Horizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="RequiredActionsGroupExtendedTooltip" id="135"/>
+							<ChildItems>
+								<PictureDecoration name="FileInfobaseInformationPicture" id="32">
+									<Width>7</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Action in progress picture</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Warning32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="FileInfobaseInformationPictureContextMenu" id="33"/>
+									<ExtendedTooltip name="InformationFileInfobasePictureExtendedTooltip" id="136"/>
+								</PictureDecoration>
+								<UsualGroup name="FileInfobaseInformationGroup" id="34">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Progress information group</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>File infobase information group</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="InformationFileInfobaseGroupExtendedTooltip" id="137"/>
+									<ChildItems>
+										<UsualGroup name="RunDeferredUpdateGroup" id="71">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Run deferred update group</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Run deferred update group</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="RunDeferredUpdateGroupExtendedTooltip" id="138"/>
+											<ChildItems>
+												<LabelDecoration name="FileInfobaseInformationTitle" id="35">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional data processors must be executed.
+Access to this data is temporarily limited.</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="FileInfobaseInformationTitleContextMenu" id="36"/>
+													<ExtendedTooltip name="FileInfobaseInformationTitleExtendedTooltip" id="139"/>
+												</LabelDecoration>
+												<Button name="OpenDeferredHandlerList1" id="81">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.OpenDeferredHandlerList</CommandName>
+													<Parameter xsi:nil="true"/>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Data processing procedure list</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="OpenDeferredHandlerList1ExtendedTooltip" id="140"/>
+												</Button>
+												<Button name="Execute" id="70">
+													<Type>UsualButton</Type>
+													<Representation>PictureAndText</Representation>
+													<CommandName>Form.Command.Update</CommandName>
+													<Parameter xsi:nil="true"/>
+													<ExtendedTooltip name="ExecuteExtendedTooltip" id="141"/>
+												</Button>
+												<LabelDecoration name="FileInfobaseInformationHint" id="39">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Data processors can take
+a long time to complete (from several minutes to hours, depending on data volume).
+While data processors are running the user experience may suffer.
+We recommend that you schedule data processing to the minimum user activity periods.</v8:content>
+														</v8:item>
+													</Title>
+													<TitleHeight>3</TitleHeight>
+													<ContextMenu name="FileInfobaseInformationHintContextMenu" id="40"/>
+													<ExtendedTooltip name="FileInfobaseInformationHintExtendedTooltip" id="142"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="FormPlacementHintGroup" id="72">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="FormPlacementHintGroupExtendedTooltip" id="143"/>
+											<ChildItems>
+												<LabelDecoration name="InformationHint" id="11">
+													<TextColor>style:InformationText</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>The application version update results are also available in the Administration - Support and Maintenance section.</v8:content>
+														</v8:item>
+													</Title>
+													<TitleHeight>2</TitleHeight>
+													<ContextMenu name="InformationHintContextMenu" id="12"/>
+													<ExtendedTooltip name="InformationHintExtendedTooltip" id="144"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="UserUpdateStatus" id="120">
+					<Group>Horizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="UserUpdateStatusExtendedTooltip" id="145"/>
+					<ChildItems>
+						<PictureDecoration name="UserInformationPicture" id="121">
+							<Width>7</Width>
+							<Height>2</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Action in progress picture</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Warning32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="UserInformationPictureContextMenu" id="122"/>
+							<ExtendedTooltip name="UserInformationPictureExtendedTooltip" id="146"/>
+						</PictureDecoration>
+						<UsualGroup name="PageContentGroup" id="123">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="PageContentGroupExtendedTooltip" id="147"/>
+							<ChildItems>
+								<LabelDecoration name="UserInformationTitle" id="124">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Aditional data processors are not completed.
+Access to this data is temporarily limited while data processors are running. Please wait.</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="UserInformationTitleContextMenu" id="125"/>
+									<ExtendedTooltip name="UserInformationTitleExtendedTooltip" id="148"/>
+								</LabelDecoration>
+								<Button name="OpenDeferredHandlerList2" id="126">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.OpenDeferredHandlerList</CommandName>
+									<Parameter xsi:nil="true"/>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Data processing procedure list</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="OpenDeferredHandlerList2ExtendedTooltip" id="149"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="UpdateInProgress" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Update in progress</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="UpdateInProgressExtendedTooltip" id="150"/>
+					<ChildItems>
+						<UsualGroup name="UpdateProgressGroup" id="5">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Update progress group</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="UpdateProgressGroupExtendedTooltip" id="151"/>
+							<ChildItems>
+								<PictureDecoration name="ActionInProgressPicture" id="3">
+									<Width>7</Width>
+									<Height>3</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Action in progress picture</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.LongAction48</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ActionInProgressPictureContextMenu" id="4"/>
+									<ExtendedTooltip name="ActionInProgressPictureExtendedTooltip" id="152"/>
+								</PictureDecoration>
+								<UsualGroup name="ProgressInformationGroup" id="6">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Progress information group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ProgressInformationGroupExtendedTooltip" id="153"/>
+									<ChildItems>
+										<LabelDecoration name="InformationTitle" id="7">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Additional data processors are running for version xx.yy.zz
+Access to this data is temporarily limited.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="InformationTitleContextMenu" id="8"/>
+											<ExtendedTooltip name="InformationTitleExtendedTooltip" id="154"/>
+										</LabelDecoration>
+										<LabelDecoration name="UpdateStatusInformation" id="9">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Completed: %1 out of %2</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="UpdateStatusInformationContextMenu" id="10"/>
+											<ExtendedTooltip name="UpdateStatusInformationExtendedTooltip" id="155"/>
+											<Events>
+												<Event name="Click">UpdateStatusInformationClick</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="FileInfobaseInformationHint2" id="114">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Data processors can take
+a long time to complete (from several minutes to hours, depending on data volume).
+While data processors are running the user experience may suffer.</v8:content>
+												</v8:item>
+											</Title>
+											<TitleHeight>3</TitleHeight>
+											<ContextMenu name="FileInfobaseInformationHint2ContextMenu" id="115"/>
+											<ExtendedTooltip name="FileInfobaseInformationHint2ExtendedTooltip" id="156"/>
+										</LabelDecoration>
+										<UsualGroup name="MinimalUserActivityPeriodHintGroup" id="117">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="MinimalUserActivityPeriodHintGroupExtendedTooltip" id="157"/>
+											<ChildItems>
+												<LabelDecoration name="MinimalUserActivityPeriodHint" id="100">
+													<HorizontalStretch>false</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>We recommend that you schedule data processing to the minimum user activity periods.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="MinimalUserActivityPeriodHintContextMenu" id="101"/>
+													<ExtendedTooltip name="MinimalUserActivityPeriodHintExtendedTooltip" id="158"/>
+												</LabelDecoration>
+												<UsualGroup name="ScheduleSetupGroup" id="173">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Schedule setup group</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Schedule setup group</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Horizontal</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ScheduleSetupGroupExtendedTooltip" id="174"/>
+													<ChildItems>
+														<Button name="ChangeSchedule" id="116">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ChangeSchedule</CommandName>
+															<Parameter xsi:nil="true"/>
+															<Title>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Set schedule</v8:content>
+																</v8:item>
+															</Title>
+															<ExtendedTooltip name="ChangeScheduleExtendedTooltip" id="159"/>
+														</Button>
+														<Button name="EnableScheduledJobs" id="175">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.EnableScheduledJobs</CommandName>
+															<Parameter xsi:nil="true"/>
+															<ExtendedTooltip name="EnableScheduledJobsExtendedTooltip" id="176"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="FormPlacementHintOnUpdateGroup" id="76">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Form placement hint on update group</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Form placement hint on update group</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="FormPlacementHintOnUpdateGroupExtendedTooltip" id="160"/>
+											<ChildItems>
+												<LabelDecoration name="Indent" id="110">
+													<VerticalStretch>true</VerticalStretch>
+													<ContextMenu name="IndentContextMenu" id="111"/>
+													<ExtendedTooltip name="IndentExtendedTooltip" id="161"/>
+												</LabelDecoration>
+												<LabelDecoration name="WhereFindThisFormHint" id="77">
+													<TextColor>style:InformationText</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>The application version update results are also available in the Administration - Support and Maintenance section.</v8:content>
+														</v8:item>
+													</Title>
+													<TitleHeight>2</TitleHeight>
+													<ContextMenu name="WhereFindThisFormHintContextMenu" id="78"/>
+													<ExtendedTooltip name="WhereFindThisFormHintExtendedTooltip" id="162"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="UpdateCompleted" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Update completed</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="UpdateCompletedExtendedTooltip" id="163"/>
+					<ChildItems>
+						<UsualGroup name="DeferredUpdateCompletedGroup" id="42">
+							<Group>Horizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="DeferredUpdateCompletedGroupExtendedTooltip" id="164"/>
+							<ChildItems>
+								<PictureDecoration name="InformationPicture1" id="43">
+									<Width>7</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Information picture</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Error32</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="InformationPicture1ContextMenu" id="44"/>
+									<ExtendedTooltip name="InformationPicture1ExtendedTooltip" id="165"/>
+								</PictureDecoration>
+								<UsualGroup name="UpdateInformationGroup1" id="45">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Update information group</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="UpdateInformationGroup1ExtendedTooltip" id="166"/>
+									<ChildItems>
+										<LabelDecoration name="NoDeferredHandlerInformation" id="118">
+											<Visible>false</Visible>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>No additional data processors are available.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="NoDeferredHandlerInformationContextMenu" id="119"/>
+											<ExtendedTooltip name="NoDeferredHandlerInformationExtendedTooltip" id="167"/>
+										</LabelDecoration>
+										<UsualGroup name="TransitionToDeferredHandlerListGroup" id="56">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Transition to deferred handler list group</v8:content>
+												</v8:item>
+											</Title>
+											<Height>3</Height>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="TransitionToDeferredHandlerListGroupExtendedTooltip" id="168"/>
+											<ChildItems>
+												<LabelDecoration name="DeferredUpdateCompletedInformation1" id="50">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional data processors were not executed</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="DeferredUpdateCompletedInformation1ContextMenu" id="51"/>
+													<ExtendedTooltip name="DeferredUpdateCompletedInformation1ExtendedTooltip" id="169"/>
+												</LabelDecoration>
+												<Button name="OpenDeferredHandlerList" id="57">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.OpenDeferredHandlerList</CommandName>
+													<Parameter xsi:nil="true"/>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>It is necessary to run data processors.</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="OpenDeferredHandlerListExtendedTooltip" id="170"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="MainUpdateHyperlink" id="88">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Details for technical support</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="MainUpdateHyperlinkContextMenu" id="89"/>
+											<ExtendedTooltip name="MainUpdateHyperlinkExtendedTooltip" id="132">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Technical information from the event log to be used in a support request.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="Click">MainUpdateHyperlinkClick</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="IndentUpdateCompleted" id="112">
+											<VerticalStretch>true</VerticalStretch>
+											<ContextMenu name="IndentUpdateCompletedContextMenu" id="113"/>
+											<ExtendedTooltip name="IndentUpdateCompletedExtendedTooltip" id="171"/>
+										</LabelDecoration>
+										<LabelDecoration name="InformationFormPlacementHint" id="74">
+											<TextColor>style:InformationText</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>The application version update results are also available in the Administration - Support and Maintenance section.</v8:content>
+												</v8:item>
+											</Title>
+											<TitleHeight>2</TitleHeight>
+											<ContextMenu name="InformationFormPlacementHintContextMenu" id="75"/>
+											<ExtendedTooltip name="InformationFormPlacementHintExtendedTooltip" id="172"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.InfobaseUpdate</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="FileInfobase" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>FileInfobase</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="DeferredUpdateStartTime" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Deferred update start time</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="DeferredUpdateEndTime" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Deferred update end time</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Schedule" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Schedule</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="HintText" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Hint text</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="CloseForm" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Close</v8:content>
+				</v8:item>
+			</Title>
+			<Action>CloseForm</Action>
+		</Command>
+		<Command name="Update" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Execute</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run additional update procedures</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Update</Action>
+		</Command>
+		<Command name="OpenDeferredHandlerList" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open deferred processor list</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open deferred processor list</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>OpenDeferredHandlerList</Action>
+		</Command>
+		<Command name="ChangeSchedule" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Change schedule</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.ScheduledJob</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ChangeSchedule</Action>
+		</Command>
+		<Command name="EnableScheduledJobs" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Enable scheduled jobs</v8:content>
+				</v8:item>
+			</Title>
+			<Action>EnableScheduledJobs</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="OpeningFromAdministrationPanel">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

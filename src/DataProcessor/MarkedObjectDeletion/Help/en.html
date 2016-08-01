@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>This form is used to permanently delete objects marked for deletion.</p>
+<p>While working with applications, users may need to mark certain objects for deletion (for example, objects created by mistake). Objects marked for deletion can be permanently deleted by a user with administarive rights.</p>
+<p>To delete a marked object, execute the <strong>Deletion of marked objects</strong> command located in the <strong>Administration - Support and maintenance</strong> section. </p>
+<p>During deletion procedure, reference integrity control is performed. If an applied object (document, catalog item, etc) is referenced by other objects, it cannot be deleted. Keep in mind that deletion of the marked objects is irreversible. </p>
+<p>When deleting the marked objects, two methods are available (selectable by radio button):</p>
+<ul><li><a href="#1">Delete all marked objects automatically</a> - in this mode, all objects marked for deletion will be deleted permanently. 
+</li><li><a href="#2">Delete objects selectively</a> - in this mode, the user selects which objects to delete. </li></ul><h3><a name="#1">Delete all</a> marked objects automatically </h3>
+<ul><li>Click <strong>Delete</strong>. 
+</li><li>In this mode, all objects marked for deletion will be identified and deleted. Once the procedure is complete, a notification containing number of deleted objects will be displayed. User intervention is only required when a marked object is referenced by other objects and cannot be deleted.</li></ul><h3><a name="#2">Delete objects selectively</a> </h3>
+<ul><li>Click <strong>Next</strong>. 
+</li><li>In this mode, a list of objects marked for deletion will be generated. 
+<ul><li> Objects in this list are grouped by type. All check boxes are selected by default. 
+</li><li>If you do not want to delete some of the marked objects in the list, clear the corresponding check boxes. 
+</li><li>To view an object and decide whether it should be deleted, double-click an object, or select an object and click <img src="StdPicture.Change"></img> <strong>Change</strong>.</li></ul></li><li>To delete the selected objects permanently, click <strong>Delete</strong>. 
+</li><li>Once the procedure is complete, a notification containing number of deleted objects will be displayed. 
+</li><li>If any of the marked objects were referenced by other objects, the application will generate a warning and display a list of marked objects that were not deleted due to references, as well as a list of objects referencing them. </li></ul><h3>How to proceed when an object cannot be deleted</h3>
+<p>The list of objects that could not be deleted consists of two sections: object list on the left, and the <strong>Usage instances</strong> list on the right. </p>
+<ul><li>To delete these objects permanently, you need to: 
+<ul><li>Double-click an object preventing deletion, or select it and click <img src="StdPicture.Change" width="16" height="16"></img> <strong>Change,</strong> to open the object. 
+</li><li>Delete all references to the marked object manually. 
+</li><li>Or replace the references that prevent deletion. Click <strong>Replace everywhere where found</strong> to proceed to <a href="DataProcessor.ReferenceReplacement.Form.ItemReplacement/Help">item replacement</a>. To replace a reference, select a replacement item from the list. 
+</li><li><img src="StdPicture.MarkToDelete" width="16" height="16"></img> <strong>Mark to delete</strong> all objects associated with the item to be deleted (<strong>Usage instances</strong> on the right). 
+</li><li><img src="StdPicture.MarkToDelete" width="16" height="16"></img> <strong>Clear deletion mark</strong> from the marked object.</li></ul></li><li>Then click <strong>Retry deletion</strong> to retry object deletion. 
+</li><li>Click <strong>Restart</strong> to select a different deletion method. 
+</li><li>Click <strong>Close</strong> to cancel the deletion procedure and go back to the application.</li></ul><h3>See also</h3>
+<ul><li><a href="v8help://frame/form_common">Working with forms</a>.</li></ul></body></html>

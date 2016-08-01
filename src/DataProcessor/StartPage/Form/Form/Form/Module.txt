@@ -1,0 +1,51 @@
+﻿&AtServer 
+Procedure SetTaskFilter()	
+	Tasks.Filter.Items.Clear();
+	Item = Tasks.Filter.Items.Add(Type("DataCompositionFilterItem"));
+	Item.LeftValue = New DataCompositionField("Owner");
+	Item.ComparisonType = DataCompositionComparisonType.Equal;
+	Item.Use = true;
+	Item.RightValue = Repository;	
+EndProcedure
+
+&AtClient
+Procedure RepositoryOnChange(Item)
+	SetTaskFilter();
+EndProcedure
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	Settings = CommonUse.CommonSettingsStorageLoad("StartPage","StartPage");
+	
+	If ValueIsFilled(Settings) Then
+		Value = Undefined;
+		If Settings.Property("Repository", Value) Then
+			Repository = Value;	
+		EndIf; 		
+	EndIf; 	
+	
+	SetTaskFilter();
+
+EndProcedure
+
+&AtClient
+Procedure OnClose()
+	OnCloseAtServer();
+EndProcedure
+
+&AtServer
+Procedure OnCloseAtServer()
+	
+	Settings = New Structure("Repository", Repository); 
+	CommonUse.CommonSettingsStorageSave("StartPage","StartPage", Settings);
+	
+EndProcedure
+
+&AtClient
+Procedure RunTask(Command)
+	CurData = Items.Tasks.CurrentData;
+	If CurData <> Undefined Then
+		RepTasksClient.RunTask(CurData.Ref, ThisForm, Repository);	
+	EndIf; 
+EndProcedure
+

@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="ValueChoice">ValueChoice</Event>
+		<Event name="ChoiceProcessing">ChoiceProcessing</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+		<Event name="FillCheckProcessingAtServer">FillCheckProcessingAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="FormPagesGroup" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form pages group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form pages group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="FormPagesGroupExtendedTooltip" id="37"/>
+			<ChildItems>
+				<Page name="Main" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="MainExtendedTooltip" id="39"/>
+					<ChildItems>
+						<UsualGroup name="CodeNameGroup" id="80">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Code name group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Code name group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="CodeNameGroupExtendedTooltip" id="81"/>
+							<ChildItems>
+								<InputField name="Description" id="4">
+									<DataPath>Object.Description</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DescriptionContextMenu" id="5"/>
+									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+								</InputField>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Parent" id="10">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ParentContextMenu" id="11"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="12"/>
+						</InputField>
+						<UsualGroup name="ScheduleGroup" id="87">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Schedule group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Schedule group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ScheduleGroupExtendedTooltip" id="88"/>
+							<ChildItems>
+								<CheckBoxField name="RunBySchedule" id="82">
+									<DataPath>Object.RunBySchedule</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="RunByScheduleContextMenu" id="83"/>
+									<ExtendedTooltip name="RunByScheduleExtendedTooltip" id="84"/>
+									<Events>
+										<Event name="OnChange">RunByScheduleOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<Button name="SchedulePresentation" id="85">
+									<Type>Hyperlink</Type>
+									<Representation>PictureAndText</Representation>
+									<SkipOnInput>false</SkipOnInput>
+									<CommandName>Form.Command.OpenScheduleSettings</CommandName>
+									<Parameter xsi:nil="true"/>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Schedule</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="SchedulePresentationExtendedTooltip" id="86"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Actions" id="13">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Object.Actions</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ActionsContextMenu" id="14"/>
+							<AutoCommandBar name="ActionsCommandBar" id="15">
+								<ChildItems>
+									<Button name="ActionsRunTask" id="32">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.RunTask</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ActionsRunTaskExtendedTooltip" id="33"/>
+									</Button>
+									<Button name="OpenActionSettingsButton" id="34">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.OpenActionSettings</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="OpenActionSettingsButtonExtendedTooltip" id="35"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ActionsExtendedTooltip" id="16"/>
+							<SearchStringAddition name="ActionsSearchString" id="17">
+								<Source>
+									<lf:elementId>13</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="ActionsSearchStringContextMenu" id="18"/>
+								<ExtendedTooltip name="ActionsSearchStringExtendedTooltip" id="19"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ActionsViewStatus" id="20">
+								<Source>
+									<lf:elementId>13</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="ActionsViewStatusContextMenu" id="21"/>
+								<ExtendedTooltip name="ActionsViewStatusExtendedTooltip" id="22"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ActionsSearchControl" id="23">
+								<Source>
+									<lf:elementId>13</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="ActionsSearchControlContextMenu" id="24"/>
+								<ExtendedTooltip name="ActionsSearchControlExtendedTooltip" id="25"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">ActionsOnEditEnd</Event>
+								<Event name="Selection">ActionsSelection</Event>
+								<Event name="OnActivateRow">ActionsOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ActionsLineNumber" id="26">
+									<DataPath>Object.Actions.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ActionsLineNumberContextMenu" id="27"/>
+									<ExtendedTooltip name="ActionsLineNumberExtendedTooltip" id="28"/>
+								</LabelField>
+								<InputField name="ActionsAction" id="29">
+									<DataPath>Object.Actions.Action</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ActionsActionContextMenu" id="30"/>
+									<ExtendedTooltip name="ActionsActionExtendedTooltip" id="31"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Report" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Report</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Report</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ReportExtendedTooltip" id="41"/>
+					<ChildItems>
+						<Table name="FailureReportRecipients" id="42">
+							<TitleLocation>Top</TitleLocation>
+							<Height>3</Height>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Object.FailureReportRecipients</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="FailureReportRecipientsContextMenu" id="43"/>
+							<AutoCommandBar name="FailureReportRecipientsCommandBar" id="44"/>
+							<ExtendedTooltip name="FailureReportRecipientsExtendedTooltip" id="45"/>
+							<SearchStringAddition name="FailureReportRecipientsSearchString" id="46">
+								<Source>
+									<lf:elementId>42</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="FailureReportRecipientsSearchStringContextMenu" id="47"/>
+								<ExtendedTooltip name="FailureReportRecipientsSearchStringExtendedTooltip" id="48"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="FailureReportRecipientsViewStatus" id="49">
+								<Source>
+									<lf:elementId>42</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="FailureReportRecipientsViewStatusContextMenu" id="50"/>
+								<ExtendedTooltip name="FailureReportRecipientsViewStatusExtendedTooltip" id="51"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="FailureReportRecipientsSearchControl" id="52">
+								<Source>
+									<lf:elementId>42</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="FailureReportRecipientsSearchControlContextMenu" id="53"/>
+								<ExtendedTooltip name="FailureReportRecipientsSearchControlExtendedTooltip" id="54"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">FailureReportRecipientsOnEditEnd</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="FailureReportRecipientsLineNumber" id="55">
+									<DataPath>Object.FailureReportRecipients.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FailureReportRecipientsLineNumberContextMenu" id="56"/>
+									<ExtendedTooltip name="FailureReportRecipientsLineNumberExtendedTooltip" id="57"/>
+								</LabelField>
+								<InputField name="FailureReportRecipientsEmail" id="58">
+									<DataPath>Object.FailureReportRecipients.Email</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="FailureReportRecipientsEmailContextMenu" id="59"/>
+									<ExtendedTooltip name="FailureReportRecipientsEmailExtendedTooltip" id="60"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Table name="SuccessReportRecipients" id="61">
+							<Visible>false</Visible>
+							<TitleLocation>Top</TitleLocation>
+							<Height>4</Height>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Object.SuccessReportRecipients</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="SuccessReportRecipientsContextMenu" id="62"/>
+							<AutoCommandBar name="SuccessReportRecipientsCommandBar" id="63"/>
+							<ExtendedTooltip name="SuccessReportRecipientsExtendedTooltip" id="64"/>
+							<SearchStringAddition name="SuccessReportRecipientsSearchString" id="65">
+								<Source>
+									<lf:elementId>61</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="SuccessReportRecipientsSearchStringContextMenu" id="66"/>
+								<ExtendedTooltip name="SuccessReportRecipientsSearchStringExtendedTooltip" id="67"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="SuccessReportRecipientsViewStatus" id="68">
+								<Source>
+									<lf:elementId>61</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="SuccessReportRecipientsViewStatusContextMenu" id="69"/>
+								<ExtendedTooltip name="SuccessReportRecipientsViewStatusExtendedTooltip" id="70"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="SuccessReportRecipientsSearchControl" id="71">
+								<Source>
+									<lf:elementId>61</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="SuccessReportRecipientsSearchControlContextMenu" id="72"/>
+								<ExtendedTooltip name="SuccessReportRecipientsSearchControlExtendedTooltip" id="73"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnEditEnd">SuccessReportRecipientsOnEditEnd</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="SuccessReportRecipientsLineNumber" id="74">
+									<DataPath>Object.SuccessReportRecipients.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="SuccessReportRecipientsLineNumberContextMenu" id="75"/>
+									<ExtendedTooltip name="SuccessReportRecipientsLineNumberExtendedTooltip" id="76"/>
+								</LabelField>
+								<InputField name="SuccessReportRecipientsEmail" id="77">
+									<DataPath>Object.SuccessReportRecipients.Email</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="SuccessReportRecipientsEmailContextMenu" id="78"/>
+									<ExtendedTooltip name="SuccessReportRecipientsEmailExtendedTooltip" id="79"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<LabelDecoration name="Warnings" id="89">
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Hyperlink>true</Hyperlink>
+			<ContextMenu name="WarningsContextMenu" id="90"/>
+			<ExtendedTooltip name="WarningsExtendedTooltip" id="91"/>
+			<Events>
+				<Event name="Click">WarningsClick</Event>
+			</Events>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Tasks</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="JobSchedule" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Job schedule</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="RunTask" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run task</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run task</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>RunTask</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="OpenActionSettings" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Action settings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open action settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>OpenActionSettings</Action>
+		</Command>
+		<Command name="OpenScheduleSettings" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open schedule settings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open schedule settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ScheduledJob</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenScheduleSettings</Action>
+		</Command>
+	</Commands>
+</Form>

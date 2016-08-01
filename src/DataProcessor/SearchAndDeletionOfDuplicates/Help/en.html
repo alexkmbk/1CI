@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>This form is used to identify and delete duplicate items that may be present in any application lists. It is intended to be used by application administrators. </p>
+<p>Routine <a href="Catalog.Users/Help">user</a> operations may sometimes result in unintended creation of duplicate items (example: user was unable to find a specific item due to incorrect search request, and decided to create the item once again), interfering with accounting procedures. Documents start referring to different copies of the item, which leads to incorrect postings and invalid balance calculations. To avoid this, any duplicate items must be found and deleted. </p>
+<p>The application includes functionality for finding duplicates, marking them for deletion, and replacing references to duplicate items with references to the "original" item.</p>
+<p>The <strong>Search and deletion of duplicates</strong> command is located in the <strong>Administration - Support and maintenance</strong> section. </p>
+<h3>Searching for duplicates</h3>
+<ul><li>In the <strong>Search in </strong>field, <img src="StdPicture.Select"></img> select an application list. 
+</li><li>In the <strong>Filter</strong> field, specify list<strong> </strong>item filter conditions. To do this, follow the <strong>All items</strong> hyperlink (default value) and specify <a href="DataProcessor.SearchAndDeletionOfDuplicates.Form.FilterRules/Help">Filter rules</a>. 
+</li><li>Select<strong> Field</strong> to be used as filter. Specify search value. Select comparison operation<strong> </strong>in the <strong>Comparison type</strong> field and specify <strong>Value</strong> for comparison. Click <strong>OK</strong> to<strong> </strong>go back to the duplicate search form. The hyperlink will change to display the filter conditions you selected. 
+</li><li>To delete a filter, click <img src="CommonPicture.*ContactInformationIrrelevant"></img></li></ul><li>Predefined <strong>Duplicate search rules</strong> will be automatically entered into the <strong>Compare</strong> field, in hyperlink format. To add a new item to the rules list, click the hyperlink, select a check box corresponding to the desired rules item, and<strong> </strong>click <strong>Select</strong>. The hyperlink will change to display the updated information. 
+</li><li>When the duplicate search rules are complete, click<strong> Find. </strong>
+</li><li>If no duplicates were found, you can refine search conditions and click<strong> Retry search.</strong> 
+<ul></ul><h3>Viewing duplicate list</h3>
+<ul><li>The list of found duplicates is divided into two sections: 
+<ul><li>The left section contains the list of found items, displayed as a tree and grouped by name. 
+</li><li>The right section displays information on the currently selected items: 
+<ul><li>for item groups (on per-item basis) - report on the number of duplicates found for the selected item. 
+</li><li>for items - usage report (list of application documents using the item, or message "Not used").</li></ul></li></ul></li><li>One of items used by the application is automatically marked as <img src="StdPicture.MoveRight"></img> <strong>Original. </strong>
+</li><li>To mark a different item as original, select it and click <img src="StdPicture.MoveRight" width="16" height="16"></img> <strong>Set as original. </strong>
+</li><li>Duplicate items in the list are marked with flags.  
+</li><li>To<strong> </strong>view the selected item, click Open. Or double-click the item. 
+</li><li>Using buttons <img src="StdPicture.ExpandAll"></img><strong>Expand duplicate group</strong> or<img src="StdPicture.CollapseAll"></img><strong>Collapse duplicate group</strong>, you can control visibility of item groups in the list. 
+</li><li>Infobar at the bottom of the list displays the number of items and the number of found duplicates. 
+</li><li>If you want to improve the list of found duplicates, you can refine search conditions and click <strong>Retry search.</strong></li></ul><h3>Deleting duplicates</h3>
+<ul><li>If you agree with all conditions displayed on the list infobar, click<strong> Delete duplicates</strong>. All duplicates will be marked for deletion, and replaced with the selected <strong>Original</strong> throughout the documents. 
+</li><li>To exit the form without deleting any duplicates, click <strong>Close</strong>. Search conditions and the list of found duplicated will be lost. 
+</li><li>To delete the duplicates permanently, use the <a href="DataProcessor.MarkedObjectDeletion/Help">Marked object deletion</a> command in the <strong>Administration - Support and maintenance</strong> section.<strong> </strong></li></ul><h3>Viewing references to list items</h3>
+<p>Click the <strong>All usage instances</strong> hyperlink to view the <a href="Report.SearchForReferences/Help">Usage instances</a> report for all list items.</p>
+<h3>See also:</h3>
+<p><a href="v8help://frame/form_common">Working with forms</a></p></li></body></html>

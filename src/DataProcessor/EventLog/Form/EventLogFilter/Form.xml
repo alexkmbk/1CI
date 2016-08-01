@@ -1,0 +1,1156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Width>70</Width>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="DatesGroup" id="192">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dates group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dates group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="DatesGroupExtendedTooltip" id="200"/>
+			<ChildItems>
+				<InputField name="FilterInterval" id="189">
+					<DataPath>FilterInterval</DataPath>
+					<Width>10</Width>
+					<Wrap>false</Wrap>
+					<ContextMenu name="FilterIntervalContextMenu" id="190"/>
+					<ExtendedTooltip name="FilterIntervalExtendedTooltip" id="202"/>
+					<Events>
+						<Event name="OnChange">FilterIntervalOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="StartDate" id="7">
+					<DataPath>FilterIntervalStartDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Start</v8:content>
+						</v8:item>
+					</Title>
+					<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+					<Wrap>false</Wrap>
+					<ClearButton>true</ClearButton>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ContextMenu name="StartDateContextMenu" id="8"/>
+					<ExtendedTooltip name="StartDateExtendedTooltip" id="204"/>
+					<Events>
+						<Event name="OnChange">FilterIntervalDateOnChange</Event>
+					</Events>
+				</InputField>
+				<InputField name="EndDate" id="5">
+					<DataPath>FilterIntervalEndDate</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>End</v8:content>
+						</v8:item>
+					</Title>
+					<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+					<Wrap>false</Wrap>
+					<ClearButton>true</ClearButton>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ContextMenu name="EndDateContextMenu" id="6"/>
+					<ExtendedTooltip name="EndDateExtendedTooltip" id="205"/>
+					<Events>
+						<Event name="OnChange">FilterIntervalDateOnChange</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Group" id="195">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupExtendedTooltip" id="206"/>
+			<ChildItems>
+				<UsualGroup name="ImportanceGroup" id="197">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Importance group</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ImportanceGroupExtendedTooltip" id="211"/>
+					<ChildItems>
+						<UsualGroup name="ImportanceListTitleGroup" id="238">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Importance list title group</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ImportanceListTitleGroupExtendedTooltip" id="239"/>
+							<ChildItems>
+								<LabelDecoration name="Title" id="240">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Importance:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="HeaderContextMenu" id="241"/>
+									<ExtendedTooltip name="TitleExtendedTooltip" id="242"/>
+								</LabelDecoration>
+								<CommandBar name="CheckBoxesGroup" id="247">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check boxes group</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalLocation>Right</HorizontalLocation>
+									<ExtendedTooltip name="CheckBoxesGroupExtendedTooltip" id="248"/>
+									<ChildItems>
+										<Button name="CheckAll" id="243">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.SelectImportanceCheckBoxes</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CheckAllExtendedTooltip" id="244"/>
+										</Button>
+										<Button name="UncheckAll" id="245">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ClearImportanceCheckBoxes</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="UncheckAllExtendedTooltip" id="246"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Importance" id="41">
+							<Representation>List</Representation>
+							<CommandBarLocation>Top</CommandBarLocation>
+							<SkipOnInput>false</SkipOnInput>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>20</Width>
+							<HeightInTableRows>4</HeightInTableRows>
+							<SelectionMode>SingleRow</SelectionMode>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<VerticalStretch>false</VerticalStretch>
+							<DataPath>Importance</DataPath>
+							<BorderColor>style:BorderColor</BorderColor>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ImportanceContextMenu" id="42"/>
+							<AutoCommandBar name="ImportanceCommandBar" id="143">
+								<HorizontalAlign>Right</HorizontalAlign>
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ImportanceExtendedTooltip" id="212"/>
+							<SearchStringAddition name="ImportanceSearchString" id="267">
+								<Source>
+									<lf:elementId>41</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportanceSearchStringContextMenu" id="268"/>
+								<ExtendedTooltip name="ImportanceSearchStringExtendedTooltip" id="269"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ImportanceViewStatus" id="270">
+								<Source>
+									<lf:elementId>41</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportanceViewStatusContextMenu" id="271"/>
+								<ExtendedTooltip name="ImportanceViewStatusExtendedTooltip" id="272"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ImportanceSearchControl" id="273">
+								<Source>
+									<lf:elementId>41</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportanceSearchControlContextMenu" id="274"/>
+								<ExtendedTooltip name="ImportanceSearchControlExtendedTooltip" id="275"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="ImportanceAndValue" id="263">
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ImportanceAndValueExtendedTooltip" id="264"/>
+									<ChildItems>
+										<CheckBoxField name="ImportanceMark" id="108">
+											<DataPath>Importance.Check</DataPath>
+											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ImportanceMarkContextMenu" id="109"/>
+											<ExtendedTooltip name="ImportanceMarkExtendedTooltip" id="213"/>
+										</CheckBoxField>
+										<InputField name="ImportanceValue" id="110">
+											<DataPath>Importance.Value</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+											<Wrap>false</Wrap>
+											<BorderColor>style:BorderColor</BorderColor>
+											<ContextMenu name="ImportanceValueContextMenu" id="111"/>
+											<ExtendedTooltip name="ImportanceValueExtendedTooltip" id="214"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="MainFiltersGroup" id="196">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main filters group</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="MainFiltersGroupExtendedTooltip" id="207"/>
+					<ChildItems>
+						<InputField name="Events" id="171">
+							<DataPath>EventsToDisplay</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="EventsContextMenu" id="172"/>
+							<ExtendedTooltip name="EventsExtendedTooltip" id="222"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+								<Event name="Clearing">EventsClearing</Event>
+							</Events>
+						</InputField>
+						<InputField name="Users" id="150">
+							<DataPath>UserList</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="UsersContextMenu" id="151"/>
+							<ExtendedTooltip name="UsersExtendedTooltip" id="208"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Applications" id="154">
+							<DataPath>Applications</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="ApplicationsContextMenu" id="155"/>
+							<ExtendedTooltip name="ApplicationsExtendedTooltip" id="209"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Computers" id="152">
+							<DataPath>Computers</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="ComputersContextMenu" id="153"/>
+							<ExtendedTooltip name="ComputersExtendedTooltip" id="210"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Sessions" id="78">
+							<DataPath>SessionsString</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Numbers can be separated with semicolons (;)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="SessionsContextMenu" id="79"/>
+							<ExtendedTooltip name="SessionsExtendedTooltip" id="226"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="DataGroup" id="191">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="DataGroupExtendedTooltip" id="215"/>
+			<ChildItems>
+				<UsualGroup name="PropertyDataGroup" id="161">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="PropertyDataGroupExtendedTooltip" id="216"/>
+					<ChildItems>
+						<InputField name="Metadata" id="162">
+							<DataPath>Metadata</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="MetadataContextMenu" id="163"/>
+							<ExtendedTooltip name="MetadataExtendedTooltip" id="217"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Data" id="51">
+							<DataPath>Data</DataPath>
+							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="DataContextMenu" id="52"/>
+							<ExtendedTooltip name="DataExtendedTooltip" id="218"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="DataPresentation" id="53">
+					<DataPath>DataPresentation</DataPath>
+					<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+					<Wrap>false</Wrap>
+					<ClearButton>true</ClearButton>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ContextMenu name="DataPresentationContextMenu" id="54"/>
+					<ExtendedTooltip name="DataPresentationExtendedTooltip" id="219"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="OtherPropertiesGroup" id="164">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="OtherPropertiesGroupExtendedTooltip" id="224"/>
+			<ChildItems>
+				<UsualGroup name="TransactionIDGroup" id="56">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>TransactionID</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="TransactionIDGroupExtendedTooltip" id="230"/>
+					<ChildItems>
+						<UsualGroup name="TransactionStatusListTitleGroup" id="261">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Transaction status list title group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Transaction status list title group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="TransactionStatusListTitleGroupExtendedTooltip" id="262"/>
+							<ChildItems>
+								<LabelDecoration name="TransactionStatus.Label" id="252">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Transaction status:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="TransactionStatusLabelContextMenu" id="253"/>
+									<ExtendedTooltip name="TransactionStatusLabelExtendedTooltip" id="254"/>
+								</LabelDecoration>
+								<CommandBar name="CheckBoxesGroup2" id="255">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Check boxes group 2</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<HorizontalLocation>Right</HorizontalLocation>
+									<ExtendedTooltip name="CheckBoxesGroup2ExtendedTooltip" id="256"/>
+									<ChildItems>
+										<Button name="SetStatuses" id="257">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.SelectTransactionStatusCheckBoxes</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="SetStatusesExtendedTooltip" id="258"/>
+										</Button>
+										<Button name="ClearStatuses" id="259">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ClearTransactionStatusCheckBoxes</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="ClearStatusesExtendedTooltip" id="260"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="TransactionStatus" id="74">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<SkipOnInput>false</SkipOnInput>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>4</HeightInTableRows>
+							<SelectionMode>SingleRow</SelectionMode>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<VerticalStretch>false</VerticalStretch>
+							<DataPath>TransactionStatus</DataPath>
+							<BorderColor>style:BorderColor</BorderColor>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Transaction status</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="TransactionStatusContextMenu" id="75"/>
+							<AutoCommandBar name="TransactionStatusCommandBar" id="145">
+								<HorizontalAlign>Right</HorizontalAlign>
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="TransactionStatusExtendedTooltip" id="232"/>
+							<SearchStringAddition name="TransactionStatus.SearchString" id="276">
+								<Source>
+									<lf:elementId>74</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="TransactionStatusSearchStringContextMenu" id="277"/>
+								<ExtendedTooltip name="TransactionStatusSearchStringExtendedTooltip" id="278"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="TransactionStatusViewStatus" id="279">
+								<Source>
+									<lf:elementId>74</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="TransactionStatusViewStatusContextMenu" id="280"/>
+								<ExtendedTooltip name="TransactionStatusViewStatusExtendedTooltip" id="281"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="TransactionStatusSearchControl" id="282">
+								<Source>
+									<lf:elementId>74</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="TransactionStatusSearchControlContextMenu" id="283"/>
+								<ExtendedTooltip name="TransactionStatusSearchControlExtendedTooltip" id="284"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="CheckAndValueGroup" id="265">
+									<Group>InCell</Group>
+									<ExtendedTooltip name="CheckAndValueGroupExtendedTooltip" id="266"/>
+									<ChildItems>
+										<CheckBoxField name="StatusMark" id="118">
+											<DataPath>TransactionStatus.Check</DataPath>
+											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="StatusMarkContextMenu" id="119"/>
+											<ExtendedTooltip name="StatusMarkExtendedTooltip" id="233"/>
+										</CheckBoxField>
+										<InputField name="StatusValue" id="120">
+											<DataPath>TransactionStatus.Value</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+											<Wrap>false</Wrap>
+											<BorderColor>style:BorderColor</BorderColor>
+											<ContextMenu name="StatusValueContextMenu" id="121"/>
+											<ExtendedTooltip name="StatusValueExtendedTooltip" id="234"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+						<InputField name="TransactionID" id="76">
+							<DataPath>TransactionID</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>ID</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="TransactionIDContextMenu" id="77"/>
+							<ExtendedTooltip name="TransactionIDExtendedTooltip" id="231"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="OthersGroup" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Others</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
+					<ExtendedTooltip name="OthersGroupExtendedTooltip" id="225"/>
+					<ChildItems>
+						<InputField name="ServerNames" id="165">
+							<DataPath>ServerNames</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="ServerNamesContextMenu" id="166"/>
+							<ExtendedTooltip name="ServerNamesExtendedTooltip" id="227"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Ports" id="167">
+							<DataPath>Ports</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="PortsContextMenu" id="168"/>
+							<ExtendedTooltip name="PortsExtendedTooltip" id="228"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="SyncPorts" id="169">
+							<DataPath>SyncPorts</DataPath>
+							<Wrap>false</Wrap>
+							<ClearButton>true</ClearButton>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="SyncPortsContextMenu" id="170"/>
+							<ExtendedTooltip name="SyncPortsExtendedTooltip" id="229"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="SessionDataSeparation" id="249">
+							<DataPath>SessionDataSeparation</DataPath>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="SessionDataSeparationContextMenu" id="250"/>
+							<ExtendedTooltip name="SessionDataSeparationExtendedTooltip" id="251"/>
+							<Events>
+								<Event name="StartChoice">ChoiceCompletion</Event>
+							</Events>
+						</InputField>
+						<InputField name="Comment" id="43">
+							<DataPath>Comment</DataPath>
+							<TitleLocation>Left</TitleLocation>
+							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+							<Wrap>false</Wrap>
+							<MultiLine>true</MultiLine>
+							<BorderColor>style:BorderColor</BorderColor>
+							<ContextMenu name="CommentContextMenu" id="44"/>
+							<ExtendedTooltip name="CommentExtendedTooltip" id="223"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<CommandBar name="FormButtonGroup" id="28">
+			<HorizontalLocation>Right</HorizontalLocation>
+			<ExtendedTooltip name="FormButtonGroupExtendedTooltip" id="235"/>
+			<ChildItems>
+				<Button name="OK" id="27">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.Command.SetFilterAndCloseForm</CommandName>
+					<Parameter xsi:nil="true"/>
+					<TextColor>style:ButtonTextColor</TextColor>
+					<BackColor>style:ButtonBackColor</BackColor>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ExtendedTooltip name="OKExtendedTooltip" id="236"/>
+				</Button>
+				<Button name="Cancel" id="29">
+					<Type>CommandBarButton</Type>
+					<SkipOnInput>false</SkipOnInput>
+					<CommandName>Form.StandardCommand.Cancel</CommandName>
+					<Parameter xsi:nil="true"/>
+					<TextColor>style:ButtonTextColor</TextColor>
+					<BackColor>style:ButtonBackColor</BackColor>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ExtendedTooltip name="CancelExtendedTooltip" id="237"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="UserList" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>UserList.ValueType</Field>
+				<Field>UserList.Presentation</Field>
+				<Field>UserList.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Events" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Events</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Computers" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Computers</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Computers.ValueType</Field>
+				<Field>Computers.Presentation</Field>
+				<Field>Computers.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Applications" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Applications</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Applications.ValueType</Field>
+				<Field>Applications.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Importance" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Importance</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Importance.ValueType</Field>
+				<Field>Importance.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Comment" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Comment</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Metadata" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Metadata</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Metadata.ValueType</Field>
+				<Field>Metadata.Presentation</Field>
+				<Field>Metadata.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Data" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="DataPresentation" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data presentation</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TransactionStatus" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transaction status</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>TransactionStatus.ValueType</Field>
+				<Field>TransactionStatus.Presentation</Field>
+				<Field>TransactionStatus.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="TransactionID" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>TransactionID</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SessionsString" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sessions</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Sessions" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sessions</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="ServerNames" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Server names</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>ServerNames.ValueType</Field>
+				<Field>ServerNames.Presentation</Field>
+				<Field>ServerNames.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="Ports" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Ports</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Ports.ValueType</Field>
+				<Field>Ports.Presentation</Field>
+				<Field>Ports.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="SyncPorts" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sync ports</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>SyncPorts.ValueType</Field>
+				<Field>SyncPorts.Presentation</Field>
+				<Field>SyncPorts.Picture</Field>
+			</UseAlways>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="BlankStringForAlignment" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Blank string for alignment</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="FilterInterval" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Interval</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PropertyContentEditorItemName" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Property content editor item name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="FilterIntervalStartDate" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Filter interval start date</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="FilterIntervalEndDate" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Filter interval end date</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EventsToDisplay" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Events</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="DefaultEvents" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Default events</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Title" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Title</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SessionDataSeparation" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Session data separation</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="SetFilterAndCloseForm" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>OK</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set filter and close window</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SetFilterAndCloseForm</Action>
+		</Command>
+		<Command name="SelectImportanceCheckBoxes" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select all</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SelectImportanceCheckBoxes</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ClearImportanceCheckBoxes" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearImportanceCheckBoxes</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="SelectTransactionStatusCheckBoxes" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select all</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Select all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>SelectTransactionStatusCheckBoxes</Action>
+		</Command>
+		<Command name="ClearTransactionStatusCheckBoxes" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ClearTransactionStatusCheckBoxes</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Filter">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="DefaultEvents">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

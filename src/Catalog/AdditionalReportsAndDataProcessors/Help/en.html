@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>This list is used to store additional reports and data processors in an application.</p>
+<p>You can connect and utilize a variety of additional (external) reports and data processors in 1C:Enterprise mode. This extends the application's functionality without making any changes to the application, which can be useful when you need to custom-fit the application to specific purposes without losing the technical support rights.</p>
+<p>The additional reports and data processors are created in Designer mode. If you want an additional report or data processor created, you need to contact the developers with this request. Alternately, you can download pre-made reports from the Internet.</p>
+<p>To enable additional reports and data processors, use the <strong>Print forms, reports and data processors</strong> command in the <strong>Administration</strong> section and select the corresponding check box. This will enable the <strong>Additional reports and data processors</strong> command. The check box is selected by default. You can also access the list by executing a related command on navigation panel of the <strong>Integrated subsystems</strong> section. </p>
+<p>The list includes:</p>
+<ul><li>
+<div><strong>Description - </strong>full name of a report or data processor.</div>
+</li><li>
+<div><strong>Type - </strong>each <a href="#1">additional report or data processor</a> is described by its type as assigned by developers. Available functionality is governed by the report type.</div>
+</li><li>
+<div><strong>Publication</strong> - visibility of additional reports or data processors, color-marked. Additional reports and data processors in debug mode are marked in red and accessible by administrator only. Disabled additional reports and data processors are marked in grey. Additional reports and data processors marked for deletion are disabled and marked both in grey and with a special icon.</div>
+</li><li>
+<div><strong>Version - </strong>version number of report or data processor (specified by developer).</div>
+</li><li>
+<div><strong>Manager </strong>- application user that was assigned as a manager responsible for this report or data processor. This user (by default, Administrator) is responsible for monitoring the additional report/data processor version changes, updating to latest versions, and more.</div></li></ul><p>You can execute the<strong> All actions - Change form </strong>command to add the following columns to the form:</p>
+<ul><li><strong>Object name</strong> - includes type and other information. This field is filled in by developer and displayed in the appliction by default. 
+</li><li><strong>Permission compatibility mode</strong> - application version used with the report or data processor. 
+</li><li><strong>Comment</strong> - detailed information on the additional report or data processor; 
+</li><li><strong>Use option storage</strong> - additional report property. Takes on the <strong>Yes</strong> value if the additional repost stores data in the application option storage; 
+</li><li><strong>Use for list form - </strong>takes on the <strong>Yes</strong> value if the command calling the additional report or data processor is located in list windows; 
+</li><li><strong>Use for object form </strong>- takes on the <strong>Yes</strong> value if the command calling the additional report or data processor is located in list item windows; 
+</li><li><strong>Information</strong> - description of the additional report or data processor as provided by developer; 
+</li><li><strong>File name - </strong>name and extension of file where the additional report or data processor is stored; 
+</li><li><strong>Safe mode</strong> - takes on the <strong>Yes</strong> value is the additional report or data processor is executed in safe mode. As a rule, data processors should be executed in safe mode. This is a safeguard against untrusted code being executed on server side. However, certain data processors may require execution in unsafe mode. In this case, a warning will be displayed. These data processors should only be obtained from trusted sources (vendors) or manually audited before execution. For more information on safe mode, refer to the 1C:Enterprise platform documentation.</li></ul><h3>Inserting additional reports or data processors</h3>
+<ul><li>You can select an <a href="v8help://1cv8/ExtReports">external report or data processor</a> file on your computer (specify full path to it) and <a href="Catalog.AdditionalReportsAndDataProcessors.Form.ItemForm/Help">configure its parameters</a> by executing the <strong>Create</strong> command. The data list may vary depending on the purpose of the selected report or data processor. If an invalid file was specified, an error message will be displayed (example: the selected additional data processor cannot be used with the current application version). </li></ul><h3>Grouping additional reports and data processors</h3>
+<p>For your convenience, extensive lists of additional reports and data processors can be grouped by a variety of attributes. For this, fill in the required number of groups:</p>
+<ul><li>Click <img src="StdPicture.CreateFolder"></img> and fill in the group name. You can make a new group subordinate to another group. For this, select the group from list in the <strong>Parent</strong> field. 
+</li><li>Drag the required additional reports or data processor to this group.</li></ul><h3>Filters</h3>
+<p>The following filters can be enabled to facilitate your navigation of extensive lists of additional reports and data processors:</p>
+<ul><li>
+<div>the <strong>Type </strong>field - click <strong>Show all</strong>, select an additional report or data processor type to be used in filter (for example, <strong>Reports</strong>).  </div>
+</li><li>
+<div>the <strong>Publication</strong> field - click <strong>Show all</strong>, select a status to be used in filter (for example, <strong>Used</strong>).</div>
+</li><li>
+<div>Both <strong>Type</strong> and <strong>Publication</strong> fields - in extensive lists, both filters can be combined.</div></li></ul><h3>Loading from file</h3>
+<p>To update a data processor in internal application storage, use the <strong>Load from file</strong> command. Specify file path and click <strong>Open</strong>. </p>
+<h3>Saving to file</h3>
+<p>To export a data processor or report from storage to computer file, use the <strong>Save to file</strong> command. Specify folder and click <strong>Save</strong>. File name<strong> </strong>will be generated automatically but can be changed if necessary.</p>
+<h3><a name="#1">Additional report and data processor types</a> </h3>
+<p>Additional reports and data processors are categorized into the following types:</p>
+<ul><li><strong>Global (common) reports and data processors</strong> - these are used independently from the application data. Commands for working with global reports and data processors are located in the application sections. Global reports and data processors can be used to load data into the application, update or clear the full-text search index, etc. They contain commands that can only be called from command interface sections. The commands are independent of any applied objects. The list of sections where commands can be placed is predefined by the developer, included in additional report or data processor file, and cannot be modified. 
+</li><li><strong>Assignable additional reports and data processors</strong> - these are used with specific application lists or documents, single or multiple. The list of objects to which such a report or data processor can be assigned is predefined by developed and embedded into text of the report or data processor. When assigning a report, you can only select targets from this list. This type is further broken down into subtypes: 
+<ul><li><strong>Report</strong> - assignable additional report. It can be used to create a report on a specific applied object. 
+</li><li><strong>Object filling - </strong>assignable additional data processor that can be used to automatically fill in or clear single or multiple list items. 
+</li><li><strong>Print form - </strong>assignable additional data processor that can be used to create new print forms for a document. 
+</li><li><strong>Related object creation</strong> - assignable additional data processor that can be used to fill in lists quickly by copying list items.</li></ul></li></ul><h3>See also:</h3>
+<ul><li><a href="v8help://frame/form_common">Working with forms</a></li></ul><h3></h3></body></html>

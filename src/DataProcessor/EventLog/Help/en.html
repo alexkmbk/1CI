@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>From time to time, application administrator may need to monitor which events occurred in the application during a specific period, or which activities were performed by a specific <a href="Catalog.Users.Form.ItemForm/Help">user</a>. All such information can be obtained from the event log. </p>
+<p>Event log contains the list of user activities related to data modification, scheduled job execution, connecting and disconnecting from the application, and more. Event log settings can be configured in Designer. </p>
+<p>To access event log, use the corresponding command in the <strong>Administration - Support and maintenance</strong> section. </p>
+<p>All application events are grouped into the following types and marked in event log correspondingly: </p>
+<table cellspacing="0" cellpadding="3" width="700" border="0"><tbody><tr valign="middle"><td width="20"><img src="StdPicture.Stop" width="16" height="16"></img></td>
+<td>- Error;</td></tr><tr valign="middle"><td><img src="CommonPicture.Warning" width="16" height="16"></img></td>
+<td>- Warning;</td></tr><tr valign="middle"><td><img src="CommonPicture.Information"></img></td>
+<td>- Information;</td></tr><tr valign="middle"><td><img src="CommonPicture.UnavailableFieldDetails"></img></td>
+<td>- Unavailable field details;</td></tr><tr valign="middle"><td><img src="CommonPicture.EventLogNote"></img></td>
+<td>- Note.</td></tr></tbody></table>Each event is registered on a separate line. 
+<p>The event list includes:</p>
+<ul><li>
+<div><strong>Date, time</strong> - date, time, and event type icon; </div>
+</li><li>
+<div><strong>User</strong> - full user name</div>
+</li><li>
+<div><strong>Computer - </strong>network ID of the computer;</div>
+</li><li>
+<div><strong>Application</strong> - <strong>Thin client, </strong>etc; </div>
+</li><li>
+<div><strong>Session</strong> - session number; </div>
+</li><li>
+<div><strong>Event</strong> - event type; </div>
+</li><li>
+<div><strong>Comment - </strong>brief description of the event; </div>
+</li><li>
+<div><strong>Transaction status</strong> - <strong>Committed</strong>, etc; </div>
+</li><li>
+<div><strong>Transaction ID</strong> - transaction ID (transaction date, time, number); </div>
+</li><li>
+<div><strong>Metadata</strong> - applied object type and description: list, document type, etc;</div>
+</li><li>
+<div><strong>Data</strong> - applied object indication: name of specific list item, document, etc;</div>
+</li><li>
+<p><strong>Data presentation</strong> - applied object indication.</p></li></ul><p>To customize visibility and placement of log columns, click <strong>All actions - Customize</strong> form. </p>
+<h3>Refreshing event list</h3>
+<p>The event list is not refreshed automatically. To display events that occurred in the application after the log was opened, click <img src="StdPicture.Refresh"></img> <strong>Refresh current list</strong> (or<strong> </strong>press <strong>F5</strong>). </p>
+<h3>Event count</h3>
+<p class="Usual">The event log displays a predefined number of records specified in the <strong>Show </strong>field (200 by default). You can select a predefined value from list (200, 500, 1000, 10000 events), or enter a custom value, which will be saved for further use.</p>
+<h3>Filters</h3>
+<p>You can use event log filters to display only those events you need.</p>
+<ul><li>
+<div>In the <strong>Criticality</strong> quick filter field, select <strong>Errors</strong> or <strong>Warnings</strong> to display only events of a specific type. By default, <strong>All events</strong> are displayed in the log. </div>
+</li><li>
+<div>To set event view date interval for the event log, click  <img src="StdPicture.SetDateInterval"></img><strong>Set view date interval</strong>. Or double-click the content of the <strong>Date, Time</strong> column. </div>
+</li><li>
+<div>Select data in a log column and click <strong>Set filter by value in current column</strong>. The filter will only display events containing the selected data. This command is also available via context menu accessed by right-clicking.</div>
+</li><li>
+<div>To filter events by one or several criteria, click <img src="StdPicture.FilterCriterion"></img><strong>Set filter</strong>, or click the hyperlink in the <strong>Filter</strong> field. If any filters (including quick filters) are enabled, the hyperlink text will list the filter criteria. Otherwise, it will display the <strong>Not set</strong> text. The following filters can be set:</div>
+<ul><li>
+<div>The <strong>Interval</strong> field - select period, specify <strong>Beginning of period</strong> and <strong>End of period</strong>; </div>
+</li><li>
+<div>The <strong>Importance</strong> field - use check boxes to select one or several event types (<strong>Error</strong>, <strong>Warning</strong>, <strong>Information</strong>, <strong>Note</strong>) for filtering. All check boxes are selected by default;</div>
+</li><li>
+<div>The <strong>Event</strong> field - use check boxes to select one or several list values. All check boxes are selected by default;</div>
+</li><li>
+<div>The <strong>User</strong> field - use check boxes to select one or several list values. Only users registered in event log are listed. All check boxes are unchecked by default;</div>
+</li><li>
+<div>The <strong>Applications</strong> field - use check boxes to select one or several list values (<strong>Designer</strong>, <strong>Thin client</strong>, <strong>Background job</strong>). All check boxes are unchecked by default;</div>
+</li><li>
+<div>The <strong>Computers</strong> field - use check boxes to select one or several list values. All check boxes are cleared by default;</div>
+</li><li>
+<div>The <strong>Sessions</strong> field - enter session numbers separated by semicolon;</div>
+</li><li>The <strong>Data</strong> field group - select one of the available filters: 
+<ul><li>
+<div><strong>Metadata</strong> field - use check boxes to select one or several list values (the list is sorted by data type). Select list or document name. such as, "Bank classifier catalog"</div>
+</li><li><strong>Data</strong> field - select items from application lists: 
+<ul><li>
+<div>select <strong>Data type</strong>, such as "Bank"; </div>
+</li><li>
+<div>In the corresponding application list (for example, "Bank classifier"), select an applied object (for example, "Bank of America");</div></li></ul></li></ul></li><li>
+<div>The <strong>Data presentation</strong> field - enter search data manually or copy it from a list;</div>
+</li><li>
+<div>The <strong>Transaction</strong> field group - use check boxes to select one or several <strong>Transaction status</strong> values (<strong>Not applicable</strong>, <strong>Committed</strong>, <strong>Unfinished</strong>, <strong>Rolled back</strong>). All check boxes are selected by default. <strong>Transaction ID</strong> field can also be used as a filter.</div>
+</li><li>
+<div>The <strong>Others</strong> field group - use check boxes to select <strong>Working servers</strong>, <strong>Ports</strong>, <strong>Sync ports</strong>. The <strong>Comment</strong> field can also be used as a filter.</div></li></ul></li><li>
+<div>Once all fields to be used as filters are selected, click <strong>OK</strong>. The event filters will be enabled, and the hyperlink will display the selected filter criteria.</div>
+</li><li>
+<div>Only the records conforming to the enabled filter criteria will be displayed. Total number of the displayed records is limited by current value of <strong>Show</strong> field. </div>
+</li><li>
+<div>To clear all filters (including quick filters), click <strong>Clear filter</strong> or execute the <strong>All actions - Clear filter </strong>command. This command is also available via context menu accessed by right-clicking.</div></li></ul><h3>Viewing events</h3>
+<ul><li>
+<div>To view detailed information on an <a href="DataProcessor.EventLog.Form.EventForm/Help">event</a>, select the event from the list and click <img src="StdPicture.Properties"></img> <strong>Open</strong>. This command is also available via context menu accessed by right-clicking.</div>
+</li><li>
+<div>You can also double-click the corresponding record to view the event details. </div></li></ul><h3>Viewing applied objects</h3>
+<p class="Usual">If an applied object is related to an event, you can open this object for detailed viewing. </p>
+<ul><li>
+<div>Select data in the <strong>Data </strong>or the <strong>Data presentation</strong> column for the corresponding event and click <img src="StdPicture.ShowData"></img> <strong>Open data for viewing</strong>. This command is also available via context menu accessed by right-clicking.</div>
+</li><li>
+<div>You can also double-click the <strong>Data</strong> or the <strong>Data presentation</strong> column to view the data.</div></li></ul><h3>See also:</h3>
+<p><a href="v8help://frame/form_common">Working with forms</a>.</p></body></html>

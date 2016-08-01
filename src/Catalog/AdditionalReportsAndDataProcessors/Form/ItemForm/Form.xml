@@ -1,0 +1,1815 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="CommandWriteAndClose" id="240">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.CommandWriteAndClose</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="WriteAndCloseCommandExtendedTooltip" id="241"/>
+			</Button>
+			<Button name="CommandWrite" id="242">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.CommandWrite</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="WriteCommandExtendedTooltip" id="243"/>
+			</Button>
+			<ButtonGroup name="ImportExportCommands" id="333">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Import export commands</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Import export commands</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ImportExportCommandsExtendedTooltip" id="334"/>
+				<ChildItems>
+					<Button name="LoadFromFile" id="10">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Command.LoadFromFile</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="LoadFromFileExtendedTooltip" id="176"/>
+					</Button>
+					<Button name="ExportToFile" id="11">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<SkipOnInput>false</SkipOnInput>
+						<CommandName>Form.Command.ExportToFile</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="ExportToFileExtendedTooltip" id="177"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<ButtonGroup name="FormCommands" id="255">
+				<Title>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form commands</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Form commands</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="FormCommandsExtendedTooltip" id="256"/>
+				<ChildItems>
+					<Button name="FormWriteAndClose" id="244">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="FormWriteAndCloseExtendedTooltip" id="245"/>
+					</Button>
+					<Button name="FormWrite" id="246">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Form.StandardCommand.Write</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="FormWriteExtendedTooltip" id="247"/>
+					</Button>
+					<Button name="FormChangeForm" id="331">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="FormCustomizeFormExtendedTooltip" id="332"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="FormHelp" id="257">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="FormHelpExtendedTooltip" id="258"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ChoiceProcessing</Event>
+		<Event name="AfterWriteAtServer">AfterWriteAtServer</Event>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnReadAtServer">OnReadAtServer</Event>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+		<Event name="BeforeWriteAtServer">BeforeWriteAtServer</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Description" id="1">
+			<DataPath>Object.Description</DataPath>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="DescriptionContextMenu" id="2"/>
+			<ExtendedTooltip name="DescriptionExtendedTooltip" id="178"/>
+		</InputField>
+		<UsualGroup name="PublicationResponsibleGroup" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Publication responsible group</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="PublicationResponsibleGroupExtendedTooltip" id="179"/>
+			<ChildItems>
+				<RadioButtonField name="Publication" id="43">
+					<DataPath>Object.Publication</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.AdditionalReportsAndDataProcessorsPublicationVariants.EnumValue.Used</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.AdditionalReportsAndDataProcessorsPublicationVariants.EnumValue.DebugMode</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.AdditionalReportsAndDataProcessorsPublicationVariants.EnumValue.Disabled</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="PublicationContextMenu" id="44"/>
+					<ExtendedTooltip name="PublicationExtendedTooltip" id="180"/>
+				</RadioButtonField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="CommandPurpose" id="141">
+			<DataPath>PurposePresentation</DataPath>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="CommandPurposeContextMenu" id="142"/>
+			<ExtendedTooltip name="CommandPurposeExtendedTooltip" id="181"/>
+			<Events>
+				<Event name="Click">CommandPurposeFillingFormClick</Event>
+			</Events>
+		</LabelField>
+		<UsualGroup name="FormTypes" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form types</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="FormTypesExtendedTooltip" id="182"/>
+			<ChildItems>
+				<LabelDecoration name="Show" id="143">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show: </v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ShowContextMenu" id="144"/>
+					<ExtendedTooltip name="ShowExtendedTooltip" id="183"/>
+				</LabelDecoration>
+				<CheckBoxField name="UseForListForm" id="71">
+					<DataPath>Object.UseForListForm</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>In lists</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="UseForFormListContextMenu" id="72"/>
+					<ExtendedTooltip name="UseForListFormExtendedTooltip" id="184"/>
+					<Events>
+						<Event name="OnChange">UseForListFormOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="UseForObjectForm" id="69">
+					<DataPath>Object.UseForObjectForm</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>In item forms of catalogs and documents</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="UseForObjectFormContextMenu" id="70"/>
+					<ExtendedTooltip name="UseForObjectFormExtendedTooltip" id="185"/>
+					<Events>
+						<Event name="OnChange">UseForObjectFormOnChange</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Pages" id="314">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pages</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="PagesExtendedTooltip" id="315"/>
+			<ChildItems>
+				<Page name="Parameters" id="316">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ParametersExtendedTooltip" id="317"/>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<Pages name="PagesOptionsPermissionCommands" id="80">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Options, Commands, Permissions</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="PagesOptionsPermissionCommandsExtendedTooltip" id="186"/>
+			<ChildItems>
+				<Page name="PageCommands" id="164">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Commands</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PageCommandsExtendedTooltip" id="209"/>
+					<ChildItems>
+						<LabelField name="CommandArrange" id="167">
+							<DataPath>PurposePresentation</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Location</v8:content>
+								</v8:item>
+							</Title>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="CommandArrangeContextMenu" id="168"/>
+							<ExtendedTooltip name="CommandArrangeExtendedTooltip" id="210"/>
+							<Events>
+								<Event name="Click">CommandPurposeFillingFormClick</Event>
+							</Events>
+						</LabelField>
+						<Table name="ObjectCommands" id="147">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<AutoMarkIncomplete>false</AutoMarkIncomplete>
+							<SearchOnInput>Use</SearchOnInput>
+							<DataPath>Object.Commands</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ObjectCommandsContextMenu" id="148">
+								<ChildItems>
+									<Button name="ObjectCommandsSetUpQuickAccess" id="165">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ObjectCommandsSetUpQuickAccess</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ObjectCommandsSetUpQuickAccessExtendedTooltip" id="211"/>
+									</Button>
+									<Button name="ObjectCommandsSetSchedule" id="166">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ObjectCommandsSetSchedule</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ObjectCommandsSetScheduleExtendedTooltip" id="212"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ObjectCommandsCommandBar" id="149"/>
+							<ExtendedTooltip name="ObjectCommandsExtendedTooltip" id="213"/>
+							<SearchStringAddition name="ObjectCommandsSearchString" id="335">
+								<Source>
+									<lf:elementId>147</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="ObjectCommandsSearchStringContextMenu" id="336"/>
+								<ExtendedTooltip name="ObjectCommandsSearchStringExtendedTooltip" id="337"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ObjectCommandsViewStatus" id="338">
+								<Source>
+									<lf:elementId>147</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="ObjectCommandsViewStatusContextMenu" id="339"/>
+								<ExtendedTooltip name="ObjectCommandsViewStatusExtendedTooltip" id="340"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ObjectCommandsSearchControl" id="341">
+								<Source>
+									<lf:elementId>147</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="ObjectCommandsSearchControlContextMenu" id="342"/>
+								<ExtendedTooltip name="ObjectCommandsSearchExtendedTooltipControl" id="343"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">ObjectCommandsBeforeAddRow</Event>
+								<Event name="BeforeDeleteRow">ObjectCommandsBeforeDelete</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ObjectCommandsPresentation" id="156">
+									<DataPath>Object.Commands.Presentation</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>10</Width>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ObjectCommandsPresentationContextMenu" id="157"/>
+									<ExtendedTooltip name="ObjectCommandsPresentationExtendedTooltip" id="214"/>
+								</InputField>
+								<InputField name="ObjectCommandsQuickAccessPresentation" id="158">
+									<DataPath>Object.Commands.QuickAccessPresentation</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Users that can see the command</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>Directly</EditMode>
+									<Width>1</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ObjectCommandsQuickAccessPresentationContextMenu" id="159"/>
+									<ExtendedTooltip name="ObjectCommandsQuickAccessPresentationExtendedTooltip" id="215"/>
+									<Events>
+										<Event name="StartChoice">ObjectCommandsQuickAccessPresentationStartChoice</Event>
+										<Event name="Clearing">ObjectCommandsQuickAccessPresentationClearing</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ObjectCommandsScheduledJobUse" id="160">
+									<DataPath>Object.Commands.ScheduledJobUse</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Execute command on schedule</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderPicture>
+										<xr:Ref>StdPicture.SetTime</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</HeaderPicture>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ObjectCommandsScheduledJobUseContextMenu" id="161"/>
+									<ExtendedTooltip name="ObjectCommandsScheduledJobUseExtendedTooltip" id="216"/>
+									<Events>
+										<Event name="OnChange">ObjectCommandsScheduledJobUseOnChange</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ObjectCommandsScheduledJobPresentation" id="162">
+									<DataPath>Object.Commands.ScheduledJobPresentation</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Command execution schedule.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>Directly</EditMode>
+									<Width>12</Width>
+									<ChoiceButton>true</ChoiceButton>
+									<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+									<ContextMenu name="ObjectCommandsScheduledJobPresentationContextMenu" id="163"/>
+									<ExtendedTooltip name="ObjectCommandsScheduledJobPresentationExtendedTooltip" id="217"/>
+									<Events>
+										<Event name="StartChoice">ObjectCommandsScheduledJobPresentationStartChoice</Event>
+										<Event name="Clearing">ObjectCommandsScheduledJobPresentationClearing</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageOptions" id="81">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Report options</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PageOptionsExtendedTooltip" id="189"/>
+					<ChildItems>
+						<Pages name="PagesOptions" id="83">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Pages options</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Pages options</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="PagesOptionsExtendedTooltip" id="190"/>
+							<ChildItems>
+								<Page name="OptionsHideToWrite" id="84">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Options hide until write</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Options hide until write</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="HideOptionsToWriteExtendedTooltip" id="191"/>
+									<ChildItems>
+										<LabelDecoration name="OptionsInfoLabel" id="85">
+											<Height>3</Height>
+											<HorizontalStretch>false</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<TextColor>style:InformationText</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>To see and modify options, set Publication to Enable and save the additional report.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="OptionsInfoLabelContextMenu" id="86"/>
+											<ExtendedTooltip name="OptionsInfoLabelExtendedTooltip" id="192"/>
+										</LabelDecoration>
+										<Button name="WriteCommandForReportOptions" id="248">
+											<Type>UsualButton</Type>
+											<Representation>PictureAndText</Representation>
+											<CommandName>Form.Command.CommandWrite</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="WriteCommandForReportOptionsExtendedTooltip" id="249"/>
+										</Button>
+									</ChildItems>
+								</Page>
+								<Page name="OptionsShow" id="88">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Options show</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Options show</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="OptionsShowExtendedTooltip" id="194"/>
+									<ChildItems>
+										<Table name="AdditionalReportOptions" id="89">
+											<Representation>List</Representation>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<DataPath>AdditionalReportOptions</DataPath>
+											<RowPictureDataPath>AdditionalReportOptions.PictureIndex</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ItemIcons</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</RowsPicture>
+											<CommandSet>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>SelectAll</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+											</CommandSet>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="AdditionalReportOptionsContextMenu" id="90">
+												<ChildItems>
+													<Button name="AdditionalReportOptionsOpen1" id="114">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.AdditionalReportOptionsOpen</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="AdditionalReportOptionsOpen1ExtendedTooltip" id="195"/>
+													</Button>
+													<Button name="AdditionalReportOptionsChange1" id="115">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.Change</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Change...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="AdditionalReportOptionsChange1ExtendedTooltip" id="196"/>
+													</Button>
+													<Button name="AdditionalReportOptionsPlaceInSections1" id="116">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.PlaceInSections</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="AdditionalReportOptionsPlaceInSections1ExtendedTooltip" id="197"/>
+													</Button>
+													<Button name="AdditionalReportOptionsDelete1" id="117">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.Delete</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Picture>
+															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="AdditionalReportOptionsDelete1ExtendedTooltip" id="198"/>
+													</Button>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="AdditionalReportOptionsCommandBar" id="91">
+												<ChildItems>
+													<ButtonGroup name="AdditionalReportOptionsSearchAndOutputList" id="113">
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Search and display list group</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="AdditionalReportOptionsSearchAndOutputListExtendedTooltip" id="199"/>
+														<ChildItems>
+															<Button name="AdditionalReportOptionsFind" id="101">
+																<Type>CommandBarButton</Type>
+																<OnlyInAllActions>false</OnlyInAllActions>
+																<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.Find</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AdditionalReportOptionsFindExtendedTooltip" id="200"/>
+															</Button>
+															<Button name="AdditionalReportOptionsCancelSearch" id="102">
+																<Type>CommandBarButton</Type>
+																<OnlyInAllActions>false</OnlyInAllActions>
+																<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.CancelSearch</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AdditionalReportOptionsCancelSearchExtendedTooltip" id="201"/>
+															</Button>
+															<Button name="AdditionalReportOptionsOutputList" id="112">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.OutputList</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AdditionalReportOptionsOutputListExtendedTooltip" id="202"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+													<Button name="AdditionalReportOptionsOpen" id="94">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.AdditionalReportOptionsOpen</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="AdditionalReportOptionsOpenExtendedTooltip" id="203"/>
+													</Button>
+													<Button name="AdditionalReportOptionsChange" id="111">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.Change</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Change...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="AdditionalReportOptionsChangeExtendedTooltip" id="204"/>
+													</Button>
+													<Button name="AdditionalReportOptionsPlaceInSections" id="103">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.PlaceInSections</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="AdditionalReportOptionsPlaceInSectionsExtendedTooltip" id="205"/>
+													</Button>
+													<Button name="AdditionalReportOptionsDelete" id="104">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.AdditionalReportOptions.StandardCommand.Delete</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Picture>
+															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="AdditionalReportOptionsDeleteExtendedTooltip" id="206"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="AdditionalReportOptionsExtendedTooltip" id="207"/>
+											<SearchStringAddition name="AdditionalReportOptionsSearchString" id="344">
+												<Source>
+													<lf:elementId>89</lf:elementId>
+													<lf:additionId>0</lf:additionId>
+												</Source>
+												<ContextMenu name="AdditionalReportOptionsSearchStringContextMenu" id="345"/>
+												<ExtendedTooltip name="AdditionalReportOptionsSearchStringExtendedTooltip" id="346"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="AdditionalReportOptionsViewStatus" id="347">
+												<Source>
+													<lf:elementId>89</lf:elementId>
+													<lf:additionId>1</lf:additionId>
+												</Source>
+												<ContextMenu name="AdditionalReportOptionsViewStatusContextMenu" id="348"/>
+												<ExtendedTooltip name="AdditionalReportOptionsViewStatusExtendedTooltip" id="349"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="AdditionalReportOptionsSearchControl" id="350">
+												<Source>
+													<lf:elementId>89</lf:elementId>
+													<lf:additionId>2</lf:additionId>
+												</Source>
+												<ContextMenu name="AdditionalReportOptionsSearchControlContextMenu" id="351"/>
+												<ExtendedTooltip name="AdditionalReportOptionsSearchControlExtendedTooltip" id="352"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="BeforeAddRow">AdditionalReportOptionBeforeAddRow</Event>
+												<Event name="BeforeDeleteRow">AdditionalReportOptionsBeforeDelete</Event>
+												<Event name="BeforeRowChange">AdditionalReportOptionBeforeRowChange</Event>
+											</Events>
+											<ChildItems>
+												<LabelField name="AdditionalReportOptionsDescription" id="98">
+													<DataPath>AdditionalReportOptions.Description</DataPath>
+													<ContextMenu name="AdditionalReportOptionsDescriptionContextMenu" id="99"/>
+													<ExtendedTooltip name="AdditionalReportOptionsDescriptionExtendedTooltip" id="208"/>
+												</LabelField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="PermissionsPage" id="259">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Permissions</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="PermissionsPageExtendedTooltip" id="260"/>
+					<ChildItems>
+						<UsualGroup name="SafeModeWithPermissionsGroup" id="287">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Safe mode with permissions group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Safe mode with permissions group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupSafeModeWithPermissionsExtendedTooltip" id="288"/>
+							<ChildItems>
+								<PictureDecoration name="DecorationSafeModeWithPermissionsIcon" id="267">
+									<Width>2</Width>
+									<Height>2</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Decoration safe mode with permissions icon</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.UnavailableFieldDetails</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="DecorationSafeModeWithPermissionsIconContextMenu" id="268"/>
+									<ExtendedTooltip name="DecorationSafeModeWithPermissionsIconExtendedTooltip" id="269"/>
+								</PictureDecoration>
+								<Pages name="PagesSafeModeWithPermissions" id="263">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Pages safe mode with permissions</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Pages safe mode with permissions</v8:content>
+										</v8:item>
+									</ToolTip>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="PagesSafeModeWithPermissionsExtendedTooltip" id="264"/>
+									<ChildItems>
+										<Page name="PagePersonalSecurityProfile" id="289">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page personal security profile</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page personal security profile</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="PagePersonalSecurityProfileExtendedTooltip" id="290"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationPersonalSecurityProfileLabel" id="295">
+													<TextColor>style:FieldSelectionBackColor</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional report or data processor is
+executed with %1 security profile, which allows only the following operations:</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="DecorationPersonalSecurityProfileLabelContextMenu" id="296"/>
+													<ExtendedTooltip name="DecorationPersonalSecurityProfileLabelExtendedTooltip" id="297"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="PageUnsafeModeWithPermissions" id="293">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page unsafe mode with permissions</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page unsafe mode with permissions</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="PageUnsafeModeWithPermissionsExtendedTooltip" id="294"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationUnsafeModeLabel" id="298">
+													<TextColor>style:SpecialTextColor</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional report or data processor is executed in
+the unsafe mode because additional report or data processor execution requires the following operations
+with external resources to be performed:</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="DecorationUnsafeModeLabelContextMenu" id="299"/>
+													<ExtendedTooltip name="DecorationUnsafeModeLabelExtendedTooltip" id="300"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="PageSafeModeWithPermissions" id="291">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page safe mode with permissions</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page safe mode with permissions</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="PageSafeModeWithPermissionsExtendedTooltip" id="292"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationSafeModeWithPermissionsLabel" id="301">
+													<TextColor>style:FieldSelectionBackColor</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional report or data processor is executed in
+the safe mode with extra permissions:</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="DecorationSafeModeWithPermissionsLabelContextMenu" id="302"/>
+													<ExtendedTooltip name="DecorationSafeModeWithPermissionsLabelExtendedTooltip" id="303"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+						<Pages name="GroupPagesPermissionCompatibilityModes" id="261">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group pages permission compatibility modes</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group pages permission compatibility modes</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="GroupPermissionCompatibilityModesPagesExtendedTooltip" id="262"/>
+							<ChildItems>
+								<Page name="PagePermissionsVersion_2_1_3" id="169">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Permissions ("Version 2.1.3" permissions compatibility mode)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Page permissions version 2 1 3</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="PagePermissionsVersion_2_1_3ExtendedTooltip" id="187"/>
+									<ChildItems>
+										<HTMLDocumentField name="Permissions" id="170">
+											<DataPath>PermissionPresentation_2_1_3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Height>3</Height>
+											<ContextMenu name="PermissionsContextMenu" id="171"/>
+											<ExtendedTooltip name="PermissionsExtendedTooltip" id="188"/>
+											<Events>
+												<Event name="OnClick">PermissionsOnClick</Event>
+											</Events>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="PagePermissionsVersion_2_2_2" id="250">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Permissions ("Version 2.2.3" permission compatibility mode)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Page permissions version 2 2 2</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="PagePermissionsVersion_2_2_2ExtendedTooltip" id="251"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="PermissionPresentation_2_2_2" id="252">
+											<DataPath>PermissionPresentation_2_2_2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Width>80</Width>
+											<Height>1</Height>
+											<ContextMenu name="PermissionPresentation_2_2_2ContextMenu" id="253"/>
+											<ExtendedTooltip name="PermissionPresentation_2_2_2ExtendedTooltip" id="254"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<UsualGroup name="GroupSecurityProfileEnabling" id="304">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group security profile enabling</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group security profile enabling</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupSecurityProfileEnablingExtendedTooltip" id="305"/>
+							<ChildItems>
+								<LabelDecoration name="DecorationSecurityProfileEnablingLabel" id="306">
+									<HorizontalStretch>true</HorizontalStretch>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>To prevent accessing external resources from the additional report
+or data processor script for the above operations only, &lt;link int:sp-on&gt;enable security profiles&lt;/&gt;&lt;link int:sp-on&gt;.
+This will create a "personal" security profile for the additional report
+or data processor, which will contain permissions to use explicitly approved operations. Execution of
+the additional report or data processor will not require the save mode any longer.</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="DecorationSecurityProfileEnablingLabelContextMenu" id="307"/>
+									<ExtendedTooltip name="DecorationSecurityProfileEnablingLabelExtendedTooltip" id="308"/>
+									<Events>
+										<Event name="URLProcessing">DecorationSecurityProfileEnablingLabelURLProcessing</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="PermissionsDecorationSeeAlso" id="311">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>For more information about additional report and data processor execution modes, see the form help.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="PermissionsDecorationSeeAlsoContextMenu" id="312"/>
+							<ExtendedTooltip name="PermissionsDecorationSeeAlsoExtendedTooltip" id="313"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="DataImportFromFilePage" id="322">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Import data from file</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="DataImportFromFilePageExtendedTooltip" id="323"/>
+					<ChildItems>
+						<Table name="ImportCommands" id="324">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoAddIncomplete>false</AutoAddIncomplete>
+							<DataPath>ImportCommandList</DataPath>
+							<RowPictureDataPath>ImportCommandList.Picture</RowPictureDataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ImportCommandsContextMenu" id="325"/>
+							<AutoCommandBar name="ImportCommandsCommandBar" id="326">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ImportCommandsExtendedTooltip" id="327"/>
+							<SearchStringAddition name="ImportCommandsSearchString" id="353">
+								<Source>
+									<lf:elementId>324</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportCommandsSearchStringContextMenu" id="354"/>
+								<ExtendedTooltip name="ImportCommandsSearchStringExtendedTooltip" id="355"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ImportCommandsViewStatus" id="356">
+								<Source>
+									<lf:elementId>324</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportCommandsViewStatusContextMenu" id="357"/>
+								<ExtendedTooltip name="ImportCommandsViewStatusExtendedTooltip" id="358"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ImportCommandsSearchControl" id="359">
+								<Source>
+									<lf:elementId>324</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="ImportCommandsSearchControlContextMenu" id="360"/>
+								<ExtendedTooltip name="ImportCommandsSearchExtendedTooltipControl" id="361"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ImportCommandsValue" id="328">
+									<DataPath>ImportCommandList.Value</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Import commands</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ImportCommandsValueContextMenu" id="329"/>
+									<ExtendedTooltip name="ImportCommandsValueExtendedTooltip" id="330"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="PageAdditionalInfo" id="318">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Additional information</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Additional data processor information</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="PageAdditionalInfoExtendedTooltip" id="319"/>
+					<ChildItems>
+						<UsualGroup name="GroupSafeModeGlobal" id="273">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Safe mode global group</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupSafeModeGlobalExtendedTooltip" id="274"/>
+							<ChildItems>
+								<PictureDecoration name="DecorationSafeModeGlobalIcon" id="275">
+									<Visible>false</Visible>
+									<Width>2</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Decoration safe mode false icon</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.UnavailableFieldDetails</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="DecorationSafeModeGlobalIconContextMenu" id="276"/>
+									<ExtendedTooltip name="DecorationSafeModeGlobalIconExtendedTooltip" id="277"/>
+								</PictureDecoration>
+								<Pages name="PagesSafeModeGlobal" id="278">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Pages safe mode global</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="PagesSafeModeGlobalExtendedTooltip" id="279"/>
+									<ChildItems>
+										<Page name="PageSafeModeFalse" id="280">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page safe mode false</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="SafeModePageFalseExtendedTooltip" id="281"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationSafeModeFalseLabel" id="270">
+													<TextColor>style:SpecialTextColor</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional report or data processor is executed in the unsafe mode!
+For more information about additional report and data processor execution modes, see the form help.</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="DecorationSafeModeFalseLabelContextMenu" id="271"/>
+													<ExtendedTooltip name="DecorationSafeModeFalseLabelExtendedTooltip" id="272"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="PageSafeModeTrue" id="282">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Page safe mode true</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="PageSafeModeTrueExtendedTooltip" id="283"/>
+											<ChildItems>
+												<LabelDecoration name="DecorationSafeModeTrueLabel" id="284">
+													<TextColor>style:FieldSelectionBackColor</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Additional report or data processor is executed in the safe mode.
+For more information about additional report and data processor execution modes, see the form help.</v8:content>
+														</v8:item>
+													</Title>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="DecorationSafeModeTrueLabelContextMenu" id="285"/>
+													<ExtendedTooltip name="DecorationSafeModeTrueLabelExtendedTooltip" id="286"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+						<LabelField name="Kind" id="12">
+							<DataPath>Object.Kind</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<Width>50</Width>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ContextMenu name="KindContextMenu" id="13"/>
+							<ExtendedTooltip name="KindExtendedTooltip" id="232"/>
+						</LabelField>
+						<LabelField name="FileName" id="4">
+							<DataPath>Object.FileName</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>File name</v8:content>
+								</v8:item>
+							</Title>
+							<Width>50</Width>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ContextMenu name="FileNameContextMenu" id="5"/>
+							<ExtendedTooltip name="FileNameExtendedTooltip" id="233"/>
+						</LabelField>
+						<LabelField name="Version" id="7">
+							<DataPath>Object.Version</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Version</v8:content>
+								</v8:item>
+							</Title>
+							<Width>10</Width>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ContextMenu name="VersionContextMenu" id="8"/>
+							<ExtendedTooltip name="VersionExtendedTooltip" id="234"/>
+						</LabelField>
+						<LabelField name="ObjectName" id="78">
+							<DataPath>Object.ObjectName</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<Width>1</Width>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ContextMenu name="ObjectNameContextMenu" id="79"/>
+							<ExtendedTooltip name="ObjectNameExtendedTooltip" id="235"/>
+						</LabelField>
+						<InputField name="Information" id="26">
+							<DataPath>Object.Information</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Details</v8:content>
+								</v8:item>
+							</Title>
+							<Height>3</Height>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="InformationContextMenu" id="27"/>
+							<ExtendedTooltip name="InformationExtendedTooltip" id="236"/>
+						</InputField>
+						<InputField name="Group" id="45">
+							<DataPath>Object.Parent</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group</v8:content>
+								</v8:item>
+							</Title>
+							<Width>33</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="GroupContextMenu" id="46"/>
+							<ExtendedTooltip name="GroupExtendedTooltip" id="237"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ResponsibleAndComment" id="320">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Responsible and comment</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ResponsibleAndCommentExtendedTooltip" id="321"/>
+			<ChildItems>
+				<InputField name="Comment" id="29">
+					<DataPath>Object.Comment</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Comment</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<ChoiceListButton>false</ChoiceListButton>
+					<ContextMenu name="CommentContextMenu" id="30"/>
+					<ExtendedTooltip name="CommentExtendedTooltip" id="239"/>
+					<Events>
+						<Event name="StartChoice">CommentStartChoice</Event>
+					</Events>
+				</InputField>
+				<InputField name="Responsible" id="31">
+					<DataPath>Object.Responsible</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<Width>35</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ResponsibleContextMenu" id="32"/>
+					<ExtendedTooltip name="ResponsibleExtendedTooltip" id="238"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.AdditionalReportsAndDataProcessors</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Object.Commands">
+					<Column name="ScheduledJobUse" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Use schedule</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ScheduledJobPresentation" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Schedule</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ScheduledJobSchedule" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Scheduled job schedule</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8:ValueListType</v8:Type>
+						</Type>
+					</Column>
+					<Column name="QuickAccessPresentation" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quick access</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ScheduledJobAllowed" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Scheduled job allowed</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="DataProcessorRegistration" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data processor registration</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="IsNew" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is new</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Edit>
+				<xr:Common>false</xr:Common>
+			</Edit>
+		</Attribute>
+		<Attribute name="KindAdditionalReport" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Additional report kind</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.AdditionalReportAndDataProcessorKinds</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="KindAdditionalDataProcessor" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Kind additional data processor</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.AdditionalReportAndDataProcessorKinds</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="DataProcessorDataAddress" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data processor data address</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ReportKind" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report kind</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.AdditionalReportAndDataProcessorKinds</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="AdditionalReportOptions" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report options</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="VariantKey" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Variant key</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Description" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Description</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="PictureIndex" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture index</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="DeletionMark" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Deletion mark</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Custom" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Custom</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ref" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Ref</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="PurposePresentation" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Purpose</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="QuickAccess" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quick access</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="CommandID" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Command ID</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="User" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>User</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Users</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="PermissionAddress" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Permission address</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="PermissionPresentation_2_1_3" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Permission presentation 2 1 3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Transition" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transition</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ShowImportFromFileDialogOnOpen" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show the "Import from file" dialog when opening</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="PermissionPresentation_2_2_2" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Permission presentation 2 2 2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ImportCommandList" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Import command list</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ImportDataFromFileKind" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Import data from file kind</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.AdditionalReportAndDataProcessorKinds</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="LoadFromFile" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Import from file...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Import the data processor (report) from a file</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>LoadFromFile</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ExportToFile" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Export to file...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Export the data processor (report) to a file</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ExportToFile</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ObjectCommandsSetUpQuickAccess" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Configure quick access...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content> </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ObjectCommandsSetUpQuickAccess</Action>
+		</Command>
+		<Command name="ObjectCommandsSetSchedule" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set schedule...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content> </v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ObjectCommandsSetSchedule</Action>
+		</Command>
+		<Command name="AdditionalReportOptionsOpen" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open additional report option</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Report</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>AdditionalReportOptionsOpen</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="PlaceInSections" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Locate in sections...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Locate in sections</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>PlaceInSections</Action>
+		</Command>
+		<Command name="CommandWriteAndClose" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save and close</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save the object and close the form</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CommandWriteAndClose</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="CommandWrite" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Write</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save object</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CommandWrite</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>0:4ef362ee-0350-49fe-b40a-3ffa1576aa36</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>0:1ea304f6-8e8f-4479-aceb-086cf9709ce7</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>0:4769b1a9-c88a-4d5e-9520-ea46da1ac861</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

@@ -1,0 +1,32 @@
+﻿&AtServer
+Function GetSystemEmailAccount()
+	Return EmailOperations.SystemAccount(); 
+EndFunction
+
+&AtClient
+Procedure EndShowValue(Params) Export
+	
+EndProcedure						   
+
+&AtClient
+Procedure OpenSystemEmailAccountSettings(Command)
+	ShowValue(New NotifyDescription("EndShowValue",ThisObject), GetSystemEmailAccount());
+EndProcedure
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	UseAdditionalReportsAndDataProcessors = Constants.UseAdditionalReportsAndDataProcessors.Get();
+EndProcedure
+
+
+&AtClient
+Procedure OnClose()
+	OnCloseAtServer();
+EndProcedure
+
+
+&AtServer
+Procedure OnCloseAtServer()
+	Constants.UseAdditionalReportsAndDataProcessors.Set(UseAdditionalReportsAndDataProcessors); 
+EndProcedure
+

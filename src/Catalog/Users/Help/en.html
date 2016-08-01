@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>This list is used to manage users of the application. </p>
+<p>You can access the user list via the <strong>Users</strong> command in <strong>Administration - User and rights settings</strong> or <strong>Access management </strong>section. </p>
+<p>Only administrator and user list manager can edit the user list. </p>
+<p>Application logon cannot be performed without administrator's approval.</p>
+<p>User list manager can edit user list (to a limited degree), and configure users prior to their logon approval by administrator. User list manager also can edit <strong>Users</strong> and <strong>User groups</strong> lists. </p>
+<p>All other users are only allowed to view their own personal data, edit their contact information, change their password, or select application interface language. </p>
+<p>Users created by the user list manager are assigned<strong> Prepared</strong> status. Application adiminstrator can easily identify external users by this parameter, verify accuracy of the entered data, and permit application logon.</p>
+<p>Once the administrator approves logon for an external user, the user list manager will be unable to change their logon settings in any way, with the exception of revoking the logon approval.</p>
+<p>In a distributed Infobase, application logon is configured for each infobase separately.</p>
+<p>Lists containing large numbers of users can be grouped for convenience. For example, users can be divided into <a href="Catalog.UserGroups/Help">groups</a> in accordance with corporate organizational structure.</p>
+<h3>Creating users</h3>
+<ul><li> Click <strong>Create</strong> and <a href="Catalog.Users.Form.ItemForm/Help">fill in</a> the required fields.</li></ul><h3>Available commands</h3>
+<ul><li>User list management commands are available via context menu accessed by right-clicking. 
+</li><li>Any user can be marked as "not valid". To view the list of these users, click <strong>All actions - Show not valid users. </strong>
+</li><li>If you need to check user data accuracy or modify incorrect user data, use the <strong>All actions - Infobase users</strong> command to check records or synchronize user list and <a href="Catalog.Users.Form.InfobaseUsers/Help">Infobase user list</a>.</li></ul><h3>Grouping users</h3>
+<p>If the application supports user groups, the list will consist of two sections: groups listed on the left, and users belonging to the selected group - on the right. The <strong>All users</strong> group is specified as current group by default (all application users are displayed).</p>
+<p>A user can belong to multiple groups. To add a user to a group, you can use any of the following methods:</p>
+<ul><li>When creating a user, select a group from the list and click<strong> Create. </strong>
+</li><li>To quickly add multiple users to a group, open the group window and click<strong> Pick</strong>. The users will be picked from the <strong>Users</strong> <a href="#S">list</a> containing three sections. 
+</li><li>Select a user in the user list, execute the<strong> All actions - Assign groups</strong> command, and check the corresponding check boxes to include the user into one or more groups. This command is also available via context menu accessed by right-clicking. 
+</li><li>Drag the users to the corresponding group. Click <strong>Yes</strong> to confirm. Before using this feature, you need to clear the <strong>Show users of subordinate groups </strong>check box.</li></ul><h3>Creating user groups</h3>
+<ul><li>To create a <a href="Catalog.UserGroups.Form.ItemForm/Help">group</a>, click <img src="StdPicture.CreateFolder"></img> <strong>Create group. </strong>
+</li><li>You can also use the <strong>Create </strong>command available via context menu accessed by right-clicking the left section of the list.</li></ul><h3>Moving user groups to other groups</h3>
+<ul><li>
+<div>Select a group in the left section of the list, and use the <strong>Move to group</strong> command available via context menu accessed by right-clicking. </div>
+</li><li>
+<div>Select a group into which you want to move the current group.</div></li></ul><h3>Viewing users in subordinate groups</h3>
+<p>To display all users in the nested hierarchical groups, select the <strong>Show nested group users</strong> check box at the bottom of the list. The check box is selected by default.</p>
+<h3><a name="#S">Picking user group</a> members</h3>
+<p>When selecting users from the list, the list consists of three sections.  Groups are displayed on the top left, users belonging to the selected group - on the bottom left, and selected users - on the right.</p>
+<ul><li>
+<div>For your convenience, available user groups are listed in the top left section. Once you select a group (or the <strong>All users</strong> group) from this section, all members of this group will be listed in the bottom left section.</div>
+</li><li>
+<div>Select one or more external users from the bottom left section and click the arrow button to move them to the<strong> Selected users</strong> list on the right.  You can also double-click any user to move them to the <strong>Selected users</strong> list.</div>
+</li><li>
+<div>To remove external users from the <strong>Selected users</strong> list, also select the users and click the arrow button, or double-click each external user. </div>
+</li><li>
+<div>Click double arrow button <strong>&lt;&lt;</strong> to remove all users from the <strong>Selected users</strong> list. </div>
+</li><li>
+<div>The number of users currently in the <strong>Selected users</strong> list is displayed.</div>
+</li><li>
+<div>Once you have finished picking group members, click <strong>End and close.</strong></div></li></ul><h3>Viewing User information report</h3>
+<p>This report is used to analyze logon settings (Infobase user properties) together with other user properties from catalog. 3 report options are available - information on users, external users, or all application users.</p>
+<ul><li>Click<strong> All actions - User information</strong>, and generate the <a href="Report.UserInfo/Help">report</a>.</li></ul><h3>See also   </h3>
+<ul><li><a href="v8help://frame/form_common">Working with forms</a></li></ul></body></html>

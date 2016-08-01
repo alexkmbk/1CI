@@ -1,0 +1,1627 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Title>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Application user settings</v8:content>
+		</v8:item>
+	</Title>
+	<Height>20</Height>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">OnSaveDataInSettingsAtServer</Event>
+		<Event name="NotificationProcessing">NotificationProcessing</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">OnLoadDataFromSettingsAtServer</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ReportOrWarning" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report or warning</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report or warning</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ReportOrWarningExtendedTooltip" id="118"/>
+			<ChildItems>
+				<Page name="ShowReport" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show report</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show report</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ShowReportExtendedTooltip" id="119"/>
+					<ChildItems>
+						<UsualGroup name="QuickSearch" id="50">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Quick search</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Quick search</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="QuickSearchExtendedTooltip" id="120"/>
+							<ChildItems>
+								<InputField name="UserRef" id="59">
+									<DataPath>UserRef</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>User whose settings should be copied or cleared</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>35</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>false</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<ChoiceListButton>false</ChoiceListButton>
+									<ContextMenu name="UserRefContextMenu" id="60"/>
+									<ExtendedTooltip name="UserRefExtendedTooltip" id="121"/>
+									<Events>
+										<Event name="OnChange">UserRefOnChange</Event>
+										<Event name="StartChoice">UserRefStartChoice</Event>
+									</Events>
+								</InputField>
+								<InputField name="Search" id="48">
+									<DataPath>Search</DataPath>
+									<TitleLocation>Left</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Enter a word or a phrase part to start searching for settings. For example: report</v8:content>
+										</v8:item>
+									</ToolTip>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ClearButton>true</ClearButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>word or phrase part</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="SearchContextMenu" id="49"/>
+									<ExtendedTooltip name="SearchExtendedTooltip" id="122"/>
+									<Events>
+										<Event name="OnChange">SearchOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<CommandBar name="CommandBar" id="51">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Command bar</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Command bar</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CommandSource>Form</CommandSource>
+							<ExtendedTooltip name="CommandBarExtendedTooltip" id="123"/>
+							<ChildItems>
+								<Button name="Open" id="61">
+									<Type>CommandBarButton</Type>
+									<OnlyInAllActions>false</OnlyInAllActions>
+									<CommandName>Form.Command.Open</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="OpenExtendedTooltip" id="124"/>
+								</Button>
+								<Button name="Copy" id="41">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.CopyToOthers</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="CopyExtendedTooltip" id="125"/>
+								</Button>
+								<Popup name="CopyToOthers" id="94">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Copy settings group to others</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Copy all settings</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="CopyToOthersExtendedTooltip" id="126"/>
+									<ChildItems>
+										<Button name="CopyReportSettings" id="95">
+											<Type>CommandBarButton</Type>
+											<OnlyInAllActions>false</OnlyInAllActions>
+											<CommandName>Form.Command.CopyReportSettings</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CopyReportSettingsExtendedTooltip" id="127"/>
+										</Button>
+										<Button name="CopyAppearanceSettings" id="96">
+											<Type>CommandBarButton</Type>
+											<OnlyInAllActions>false</OnlyInAllActions>
+											<CommandName>Form.Command.CopyAppearanceSettings</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CopyAppearanceSettingsExtendedTooltip" id="128"/>
+										</Button>
+										<Button name="CopyReportSettingsAndAppearance" id="97">
+											<Type>CommandBarButton</Type>
+											<OnlyInAllActions>false</OnlyInAllActions>
+											<CommandName>Form.Command.CopyReportSettingsAndAppearance</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CopyReportAndAppearanceSettingsExtendedTooltip" id="129"/>
+										</Button>
+										<Button name="CopyAllSettings" id="75">
+											<Type>CommandBarButton</Type>
+											<OnlyInAllActions>false</OnlyInAllActions>
+											<CommandName>Form.Command.CopyAllSettings</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="CopyAllSettingsExtendedTooltip" id="130"/>
+										</Button>
+										<ButtonGroup name="CopyToOthersSelectedItems" id="111">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Copy selected items to others</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Copy selected items to others</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="CopyToOthersSelectedItemsExtendedTooltip" id="131"/>
+										</ButtonGroup>
+									</ChildItems>
+								</Popup>
+								<Button name="ClearSettings" id="44">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Clear</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ClearSettingsExtendedTooltip" id="132"/>
+								</Button>
+								<Popup name="Clear" id="98">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Clear all</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Clear settings</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ClearExtendedTooltip" id="133"/>
+									<ChildItems>
+										<Button name="ClearAllSettings" id="99">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ClearAllSettings</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="ClearAllSettingsExtendedTooltip" id="134"/>
+										</Button>
+										<Button name="ClearReportAndAppearenceSettings" id="100">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ClearReportAndAppearenceSettings</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="ClearReportAndAppearenceSettingsExtendedTooltip" id="135"/>
+										</Button>
+										<ButtonGroup name="ClearSelected" id="110">
+											<Title>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Clear selected items</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Clear selected items</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ClearSelectedItemsExtendedTooltip" id="136"/>
+											<ChildItems>
+												<Button name="ClearSettingsForSelectedUser" id="108">
+													<Type>CommandBarButton</Type>
+													<OnlyInAllActions>false</OnlyInAllActions>
+													<CommandName>Form.Command.ClearUserSettings</CommandName>
+													<Parameter xsi:nil="true"/>
+													<ExtendedTooltip name="ClearSettingsForSelectedUserExtendedTooltip" id="137"/>
+												</Button>
+												<Button name="ClearAllUserSettings" id="74">
+													<Type>CommandBarButton</Type>
+													<OnlyInAllActions>false</OnlyInAllActions>
+													<CommandName>Form.Command.ClearAllUserSettings</CommandName>
+													<Parameter xsi:nil="true"/>
+													<ExtendedTooltip name="ClearAllUserSettingsExtendedTooltip" id="138"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+									</ChildItems>
+								</Popup>
+								<Button name="CopyFrom" id="102">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.CopyFrom</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="CopyFromExtendedTooltip" id="139"/>
+								</Button>
+								<Button name="Refresh" id="1">
+									<Type>CommandBarButton</Type>
+									<OnlyInAllActions>false</OnlyInAllActions>
+									<CommandName>Form.Command.Refresh</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="RefreshExtendedTooltip" id="140"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<Pages name="SettingsKinds" id="13">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Settings kinds</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Settings kinds</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="SettingsKindsExtendedTooltip" id="141"/>
+							<Events>
+								<Event name="OnCurrentPageChange">OnCurrentPageChange</Event>
+							</Events>
+							<ChildItems>
+								<Page name="AppearancePage" id="15">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Appearance</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Appearance page</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="AppearancePageExtendedTooltip" id="142"/>
+									<ChildItems>
+										<Table name="Appearance" id="29">
+											<Representation>Tree</Representation>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<RowSelectionMode>Row</RowSelectionMode>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<SearchOnInput>Use</SearchOnInput>
+											<InitialTreeView>ExpandAllLevels</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Appearance</DataPath>
+											<CommandSet>
+												<ExcludedCommand>HierarchicalList</ExcludedCommand>
+												<ExcludedCommand>Tree</ExcludedCommand>
+												<ExcludedCommand>List</ExcludedCommand>
+												<ExcludedCommand>SortListAsc</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>SortListDesc</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+											</CommandSet>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="AppearanceContextMenu" id="30">
+												<ChildItems>
+													<Button name="AppearanceContextMenuOpen" id="76">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Open</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="AppearanceContextMenuOpenExtendedTooltip" id="143"/>
+													</Button>
+													<Button name="AppearanceContextMenuCopy" id="106">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Appearance.StandardCommand.Copy</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Copy to others...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="AppearanceContextMenuCopyExtendedTooltip" id="144"/>
+													</Button>
+													<Button name="AppearanceContextMenuDelete" id="55">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.Appearance.StandardCommand.Delete</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Clear</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="AppearanceContextMenuDeleteExtendedTooltip" id="145"/>
+													</Button>
+													<ButtonGroup name="AppearanceContextMenuOther" id="114">
+														<ExtendedTooltip name="AppearanceContextMenuOtherExtendedTooltip" id="146"/>
+														<ChildItems>
+															<Button name="AppearanceContextMenuCopyToClipboard" id="56">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.Appearance.StandardCommand.CopyToClipboard</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AppearanceContextMenuCopyToClipboardExtendedTooltip" id="147"/>
+															</Button>
+															<Button name="AppearanceContextMenuSelectAll" id="57">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.Appearance.StandardCommand.SelectAll</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AppearanceContextMenuSelectAllExtendedTooltip" id="148"/>
+															</Button>
+															<Button name="AppearanceContextMenuOutputList" id="115">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.Appearance.StandardCommand.OutputList</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="AppearanceContextMenuOutputListExtendedTooltip" id="149"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="AppearanceCommandBar" id="31">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="AppearanceExtendedTooltip" id="150"/>
+											<SearchStringAddition name="AppearanceSearchString" id="184">
+												<Source>
+													<lf:elementId>29</lf:elementId>
+													<lf:additionId>0</lf:additionId>
+												</Source>
+												<ContextMenu name="AppearanceSearchStringContextMenu" id="185"/>
+												<ExtendedTooltip name="AppearanceSearchStringExtendedTooltip" id="186"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="AppearanceViewStatus" id="187">
+												<Source>
+													<lf:elementId>29</lf:elementId>
+													<lf:additionId>1</lf:additionId>
+												</Source>
+												<ContextMenu name="AppearanceViewStatusContextMenu" id="188"/>
+												<ExtendedTooltip name="AppearanceViewStatusExtendedTooltip" id="189"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="AppearanceSearchControl" id="190">
+												<Source>
+													<lf:elementId>29</lf:elementId>
+													<lf:additionId>2</lf:additionId>
+												</Source>
+												<ContextMenu name="AppearanceSearchControlContextMenu" id="191"/>
+												<ExtendedTooltip name="AppearanceSearchControlExtendedTooltip" id="192"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">SettingsTreeChoice</Event>
+												<Event name="BeforeAddRow">ReportAndAppearanceSettingsBeforeAddRow</Event>
+												<Event name="BeforeDeleteRow">SettingsBeforeDelete</Event>
+											</Events>
+											<ChildItems>
+												<ColumnGroup name="AppearancePictureSettingsCheck" id="38">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Picture and settings item</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Appearance picture settings item check</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>InCell</Group>
+													<ExtendedTooltip name="AppearancePictureSettingsItemCheckExtendedTooltip" id="151"/>
+													<ChildItems>
+														<PictureField name="AppearancePicture" id="36">
+															<DataPath>Appearance.Picture</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="AppearancePictureContextMenu" id="37"/>
+															<ExtendedTooltip name="AppearancePictureExtendedTooltip" id="152"/>
+														</PictureField>
+														<LabelField name="AppearanceSettings" id="32">
+															<DataPath>Appearance.Settings</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="AppearanceSettingsContextMenu" id="33"/>
+															<ExtendedTooltip name="AppearanceSettingsExtendedTooltip" id="153"/>
+														</LabelField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="ReportSettingsPage" id="14">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Report settings</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Report settings page</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ReportSettingsPageExtendedTooltip" id="154"/>
+									<ChildItems>
+										<Table name="ReportSettingsTree" id="19">
+											<Representation>Tree</Representation>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<RowSelectionMode>Row</RowSelectionMode>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<SearchOnInput>Use</SearchOnInput>
+											<InitialTreeView>ExpandAllLevels</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>ReportSettings</DataPath>
+											<CommandSet>
+												<ExcludedCommand>HierarchicalList</ExcludedCommand>
+												<ExcludedCommand>Tree</ExcludedCommand>
+												<ExcludedCommand>List</ExcludedCommand>
+												<ExcludedCommand>SortListAsc</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>SortListDesc</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+											</CommandSet>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="ReportSettingsTreeContextMenu" id="20">
+												<ChildItems>
+													<Button name="ReportSettingsTreeContextMenuOpen" id="65">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Open</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="ReportSettingsTreeContextMenuOpenExtendedTooltip" id="155"/>
+													</Button>
+													<Button name="ReportSettingsTreeContextMenuCopy" id="105">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ReportSettingsTree.StandardCommand.Copy</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Copy to others...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ReportSettingsTreeContextMenuCopyExtendedTooltip" id="156"/>
+													</Button>
+													<Button name="ReportSettingsTreeContextMenuClear" id="54">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ReportSettingsTree.StandardCommand.Delete</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Clear</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ReportSettingsTreeContextMenuClearExtendedTooltip" id="157"/>
+													</Button>
+													<ButtonGroup name="ReportSettingsTreeContextMenuOthers" id="113">
+														<ExtendedTooltip name="ReportSettingsTreeContextMenuOthersExtendedTooltip" id="158"/>
+														<ChildItems>
+															<Button name="ReportSettingsTreeContextMenuSelectAll" id="53">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ReportSettingsTree.StandardCommand.SelectAll</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="ReportSettingsTreeContextMenuSelectAllExtendedTooltip" id="159"/>
+															</Button>
+															<Button name="ReportSettingsTreeContextMenuCopyToClipboard" id="52">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ReportSettingsTree.StandardCommand.CopyToClipboard</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="ReportSettingsTreeContextMenuCopyToClipboardExtendedTooltip" id="160"/>
+															</Button>
+															<Button name="ReportSettingsTreeContextMenuOutputList" id="112">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ReportSettingsTree.StandardCommand.OutputList</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="ReportSettingsTreeContextMenuOutputListExtendedTooltip" id="161"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="ReportSettingsTreeCommandBar" id="21">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ReportSettingsTreeExtendedTooltip" id="162"/>
+											<SearchStringAddition name="ReportSettingsTreeSearchString" id="193">
+												<Source>
+													<lf:elementId>19</lf:elementId>
+													<lf:additionId>0</lf:additionId>
+												</Source>
+												<ContextMenu name="ReportSettingsTreeSearchStringContextMenu" id="194"/>
+												<ExtendedTooltip name="ReportSettingsTreeSearchStringExtendedTooltip" id="195"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ReportSettingsTreeViewStatus" id="196">
+												<Source>
+													<lf:elementId>19</lf:elementId>
+													<lf:additionId>1</lf:additionId>
+												</Source>
+												<ContextMenu name="ReportSettingsTreeViewStatusContextMenu" id="197"/>
+												<ExtendedTooltip name="ReportSettingsTreeViewStatusExtendedTooltip" id="198"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ReportSettingsTreeSearchControl" id="199">
+												<Source>
+													<lf:elementId>19</lf:elementId>
+													<lf:additionId>2</lf:additionId>
+												</Source>
+												<ContextMenu name="ReportSettingsTreeSearchControlContextMenu" id="200"/>
+												<ExtendedTooltip name="ReportSettingsTreeSearchControlExtendedTooltip" id="201"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">SettingsTreeChoice</Event>
+												<Event name="BeforeAddRow">ReportAndAppearanceSettingsBeforeAddRow</Event>
+												<Event name="BeforeDeleteRow">SettingsBeforeDelete</Event>
+											</Events>
+											<ChildItems>
+												<ColumnGroup name="ReportSettingsPictureSettingsItemCheck" id="28">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Picture and settings item</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Report settings picture settings item check</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>InCell</Group>
+													<ExtendedTooltip name="ReportSettingsPictureSettingsCheckExtendedTooltip" id="163"/>
+													<ChildItems>
+														<PictureField name="Picture" id="26">
+															<DataPath>ReportSettings.Picture</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>Directly</EditMode>
+															<ContextMenu name="PictureContextMenu" id="27"/>
+															<ExtendedTooltip name="PictureExtendedTooltip" id="164"/>
+														</PictureField>
+														<LabelField name="Settings" id="22">
+															<DataPath>ReportSettings.Settings</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="SettingsContextMenu" id="23"/>
+															<ExtendedTooltip name="SettingsExtendedTooltip" id="165"/>
+														</LabelField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="OtherSettingsPage" id="77">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Other settings</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Other settings page</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="OtherSettingsPageExtendedTooltip" id="166"/>
+									<ChildItems>
+										<Table name="OtherSettings" id="78">
+											<Representation>List</Representation>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<Header>false</Header>
+											<HorizontalScrollBar>DontUse</HorizontalScrollBar>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<SearchOnInput>Use</SearchOnInput>
+											<InitialTreeView>ExpandAllLevels</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>OtherSettings</DataPath>
+											<CommandSet>
+												<ExcludedCommand>HierarchicalList</ExcludedCommand>
+												<ExcludedCommand>Tree</ExcludedCommand>
+												<ExcludedCommand>List</ExcludedCommand>
+												<ExcludedCommand>SortListAsc</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>SortListDesc</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+											</CommandSet>
+											<SearchStringLocation>None</SearchStringLocation>
+											<ViewStatusLocation>None</ViewStatusLocation>
+											<SearchControlLocation>None</SearchControlLocation>
+											<ContextMenu name="OtherSettingsContextMenu" id="79">
+												<ChildItems>
+													<Button name="OtherSettingsContextMenuOpen" id="109">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Open</CommandName>
+														<Parameter xsi:nil="true"/>
+														<ExtendedTooltip name="OtherSettingsContextMenuOpenExtendedTooltip" id="167"/>
+													</Button>
+													<Button name="OtherSettingsContextMenuCopy" id="107">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.OtherSettings.StandardCommand.Copy</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Copy to others...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="OtherSettingsContextMenuCopyExtendedTooltip" id="168"/>
+													</Button>
+													<Button name="OtherSettingsContextMenuDelete" id="104">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.OtherSettings.StandardCommand.Delete</CommandName>
+														<Parameter xsi:nil="true"/>
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Clear</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="OtherSettingsContextMenuDeleteExtendedTooltip" id="169"/>
+													</Button>
+													<ButtonGroup name="OtherSettingsContextMenuOthers" id="116">
+														<ExtendedTooltip name="OtherSettingsContextMenuOthersExtendedTooltip" id="170"/>
+														<ChildItems>
+															<Button name="OtherSettingsContextMenuSelectAll" id="89">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.OtherSettings.StandardCommand.SelectAll</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="OtherSettingsContextMenuSelectAllExtendedTooltip" id="171"/>
+															</Button>
+															<Button name="OtherSettingsContextMenuCopyToClipboard" id="88">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.OtherSettings.StandardCommand.CopyToClipboard</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="OtherSettingsContextMenuCopyToClipboardExtendedTooltip" id="172"/>
+															</Button>
+															<Button name="OtherSettingsContextMenuOutputList" id="117">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.OtherSettings.StandardCommand.OutputList</CommandName>
+																<Parameter xsi:nil="true"/>
+																<ExtendedTooltip name="OtherSettingsContextMenuOutputListExtendedTooltip" id="173"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="OtherSettingsCommandBar" id="80">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="OtherSettingsExtendedTooltip" id="174"/>
+											<SearchStringAddition name="OtherSettingsSearchString" id="202">
+												<Source>
+													<lf:elementId>78</lf:elementId>
+													<lf:additionId>0</lf:additionId>
+												</Source>
+												<ContextMenu name="OtherSettingsSearchStringContextMenu" id="203"/>
+												<ExtendedTooltip name="OtherSettingsSearchStringExtendedTooltip" id="204"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="OtherSettingsViewStatus" id="205">
+												<Source>
+													<lf:elementId>78</lf:elementId>
+													<lf:additionId>1</lf:additionId>
+												</Source>
+												<ContextMenu name="OtherSettingsViewStatusContextMenu" id="206"/>
+												<ExtendedTooltip name="OtherSettingsViewStatusExtendedTooltip" id="207"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="OtherSettingsSearchControl" id="208">
+												<Source>
+													<lf:elementId>78</lf:elementId>
+													<lf:additionId>2</lf:additionId>
+												</Source>
+												<ContextMenu name="OtherSettingsSearchControlContextMenu" id="209"/>
+												<ExtendedTooltip name="OtherSettingsSearchControlExtendedTooltip" id="210"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">SettingsTreeChoice</Event>
+												<Event name="BeforeAddRow">ReportAndAppearanceSettingsBeforeAddRow</Event>
+												<Event name="BeforeDeleteRow">SettingsBeforeDelete</Event>
+											</Events>
+											<ChildItems>
+												<ColumnGroup name="OtherSettingsPictureSettingsItemCheck" id="81">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Other settings picture settings item check</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Other settings picture settings item check</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>InCell</Group>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="OtherSettingsPictureSettingsCheckExtendedTooltip" id="175"/>
+													<ChildItems>
+														<PictureField name="OtherSettingsPicture" id="92">
+															<DataPath>OtherSettings.Picture</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="OtherSettingsPictureContextMenu" id="93"/>
+															<ExtendedTooltip name="OtherSettingsPictureExtendedTooltip" id="176"/>
+														</PictureField>
+														<LabelField name="OtherSettingsSettingsItem" id="90">
+															<DataPath>OtherSettings.Settings</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="OtherSettingsSettingsItemContextMenu" id="91"/>
+															<ExtendedTooltip name="OtherSettingsSettingsExtendedTooltip" id="177"/>
+														</LabelField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="ShowWarning" id="68">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show warning</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show warning</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ShowWarningExtendedTooltip" id="180"/>
+					<ChildItems>
+						<UsualGroup name="WarningAndPictureGroup" id="73">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Warning and picture group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="WarningAndPictureGroupExtendedTooltip" id="181"/>
+							<ChildItems>
+								<PictureDecoration name="InformationPicture" id="69">
+									<Width>5</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Information picture</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Information32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="InformationPictureContextMenu" id="70"/>
+									<ExtendedTooltip name="InformationPictureExtendedTooltip" id="182"/>
+								</PictureDecoration>
+								<LabelDecoration name="InformationText" id="71">
+									<Width>49</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Viewing user settings is only allowed for users that have access to the infobase.</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="InformationTextContextMenu" id="72"/>
+									<ExtendedTooltip name="InformationTextExtendedTooltip" id="183"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ApplicationUserSettings</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ReportSettings" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report settings</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Settings" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Picture" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Keys" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Keys</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Type" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="RowType" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Appearance" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Appearance</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Settings" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Picture" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Keys" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Keys</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Type" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="RowType" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<AdditionalColumns table="Appearance.Keys">
+					<Column name="ObjectKey" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Object key</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="SettingsKey" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Settings key</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Appearance.Keys"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="UserRef" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ExternalUsers</v8:Type>
+				<v8:Type>cfg:CatalogRef.Users</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="SelectedSettingsPage" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Selected settings page</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Search" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Find</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Search</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="InfobaseUser" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Infobase user</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="SettingsTotal" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings total</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="UseExternalUsers" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Use external users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OtherSettings" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Other settings</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Settings" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Picture" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Keys" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Keys</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Type" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="RowType" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Row type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="SettingsToCopy" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings to be copied</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="CurrentUser" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current user</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="PersonalSettingsFormName" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Personal settings form name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="UserReportOptionTable" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User report option table</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ObjectKey" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Object key</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="VariantKey" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Variant key</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Presentation" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Presentation</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="StandardProcessing" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Standard processing</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="CurrentInfobaseUser" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current infobase user</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="NotificationProcessingParameters" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Notification processing parameters</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Refresh" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh settings list</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Refresh</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="CopyToOthers" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy to others...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy selected settings to other users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F9</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyToOthers</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Clear" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear selected settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Clear</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Open" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Go to form with selected setting</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Magnifier</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenSettingsItem</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ClearAllUserSettings" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All settings of all users</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all settings of all users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearAllUserSettings</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="CopyAllSettings" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report, appearance, and other settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy all settings of selected user</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CopyAllSettings</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="CopyReportSettings" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report settings ...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy report settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CopyReportSettings</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="CopyAppearanceSettings" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Appearance settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy appearance settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CopyAppearanceSettings</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="CopyReportSettingsAndAppearance" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report and appearance settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy report and appearance settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CopyReportSettingsAndAppearance</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="ClearAllSettings" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>All settings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear all settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearAllSettings</Action>
+		</Command>
+		<Command name="ClearReportAndAppearenceSettings" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report and appearance settings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear report and appearance settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearReportAndAppearenceSettings</Action>
+		</Command>
+		<Command name="CopyFrom" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy from...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy other user settings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.FillForm</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>CopyFrom</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ClearUserSettings" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Selected user settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear selected settings for several users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ClearSettingsForSelectedUser</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="User">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ExternalUsers</v8:Type>
+				<v8:Type>cfg:CatalogRef.Users</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

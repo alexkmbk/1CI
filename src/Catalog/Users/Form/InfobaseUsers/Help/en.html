@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10240.16566"></meta></head><body>
+<p>This list is used to quickly and easily reconcile the list of infobase users in Designer mode with <strong>Users</strong> and <strong>External users</strong> lists. </p>
+<p>To access the list, use the<strong> All actions - Infobase users </strong>command in <a href="Catalog.Users/Help">user list</a> (or <a href="Catalog.ExternalUsers/Help">external user list</a>) menu. </p>
+<p>When you create or modify a <a href="Catalog.Users.Form.ItemForm/Help">user</a> (<a href="Catalog.ExternalUsers.Form.ItemForm/Help">external user</a>), a corresponding infobase user will be created or modified automatically. However, in certain cases, discrepancies may occur between the infobase user list and the application user list. This list can be useful when you need to:</p>
+<ul><li>Identify invalid infobase users.  
+<ul><li>The application compares infobase users against the application user lists automatically. 
+</li><li>If an application user was added, modified, or deleted in Designer mode, the corresponding infobase user will be disabled. 
+</li><li>Infobase users that cannot be mapped to any member of application user lists are marked in red.</li></ul></li><li>Find discrepancies between infobase user list and the application user lists: 
+<ul><li>If an infobase user was added via Designer (or any other inappropriate method), you will be asked to <a href="#2">map</a> this user with an application user list member manually, or <img src="StdPicture.Delete"></img><strong>Delete</strong> them; 
+</li><li>If an infobase user was deleted in Designer mode (or any other inappropriate method) but they are still referenced by a user list member, you will be asked to modify the user list member manually in order to clear the reference, or to create a new infobase user to be referenced by the user list member; 
+</li><li>If an infobase user name was modified via Designer (or any other inappropriate method), you will be asked to <a href="#3">modify</a> the user list member manually in order to restore the correct infobase user name.</li></ul></li><li><a href="#1">View</a> the infobase user list (also available in Designer mode).</li></ul><p>The list displays the following information:</p>
+<ul><li>
+<div><strong>Full name - </strong>full name of infobase user. In case of discrepancies, can differ from the full name of the <strong>Users (External users</strong>) list member; </div>
+</li><li>
+<div><strong>Name (for logon</strong>) - in case of discrepancies, can differ from the logon name of the <strong>Users</strong> (<strong>External users</strong>) list member; </div>
+</li><li>
+<div><strong>1C authentication</strong> - takes on "Yes" value if check box is selected, or remains blank otherwise;</div>
+</li><li>
+<div><strong>OpenID authentication - </strong>takes on "Yes" value if check box is selected;</div>
+</li><li>
+<div><strong>OS authentication - </strong>takes on "Yes" value if check box is selected.</div></li></ul><p>Additional data can be displayed via the <strong>All actions - Customize form</strong> command: </p>
+<ul><li>
+<div><strong>OS user</strong> - OS logon name, also used for application logon.</div>
+</li><li>
+<div><strong>Mapped to external user - </strong>takes on "Yes" value if this is an external application user;</div>
+</li><li>
+<div><strong>Added in Designer</strong> - takes on "Yes" value or remains blank if <strong>False;</strong> </div>
+</li><li>
+<div><strong>Modified in Designer</strong> - takes on "Yes" value or remains blank if <strong>False;</strong> </div>
+</li><li>
+<div><strong>Deleted in Designer</strong> - takes on "Yes" value or remains blank if <strong>False.</strong></div></li></ul><h3><a name="#1">Viewing invalid records only or whole list</a>  </h3>
+<ul><li>
+<div>To view only unmapped records that require manual processing, select the <strong>Show only users added, modified, or deleted in Designer mode</strong> check box. To view the whole infobase user list, clear this check box.</div></li></ul><h3><a name="#2">Mapping users</a> </h3>
+<p>To reconcile the user lists, the following options are available:</p>
+<ul><li>
+<div><strong>Map</strong> - manually map an infobase user to an existing application user, as follows:</div>
+<ul><li>
+<div>select a <strong>User</strong> or <strong>External user</strong> value for mapping and click <strong>OK</strong>. </div>
+</li><li>
+<div>select a user from the corresponding list and click <strong>Select</strong>, or double-click the user. </div>
+</li><li>
+<div>The <strong>User</strong> (<strong>External user</strong>) window<strong> </strong>will open; make the required edits in this<strong> </strong>window, then click <strong>Save and close</strong>. This will restore the correct mapping between the lists.</div></li></ul></li><li>
+<div><strong>Map with new user</strong> - manually map an infobase user with a new application user, as follows:</div>
+<ul><li>
+<div>select a <strong>User</strong> or <strong>External user</strong> value for mapping and click <strong>OK</strong>. </div>
+</li><li>
+<div>Create a new application user (external user). This will restore the correct mapping between the lists.</div></li></ul></li><li>
+<div><strong>Clear mapping</strong> - clear the automatically generated mapping between infobase users and application users prior to creating a manual mapping. This function is only demanded in rare cases of mapping performed incorrectly (for example, during infobase update). We do not recommend to clear user mapping for any other reason. </div></li></ul><h3><a name="#3">Viewing mapped users</a> </h3>
+<ul><li>
+<div>Select an infobase user<strong>. </strong>Click <strong>Go to user </strong>to view the application user (external user) mapped to the selected infobase user.</div></li></ul><h3>See also:</h3>
+<ul><li><a href="v8help://frame/form_common">Working with forms</a>.</li></ul><h3></h3>
+<h3></h3></body></html>

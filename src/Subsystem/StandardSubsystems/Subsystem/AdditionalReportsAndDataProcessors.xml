@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<Subsystem uuid="a4ac0a50-ee39-4dc1-b84f-eec8fe485f03">
+		<Properties>
+			<Name>AdditionalReportsAndDataProcessors</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Additional reports and data processors</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.AdditionalObjectPrintForms</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.AdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.AdditionalReportAndDataProcessorKinds</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ObjectReports</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ObjectFilling</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.RelatedObjectCreation</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.AdditionalDataProcessorPurposes</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.AdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.UseAdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsClient</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.AdditionalDataProcessorCallMethods</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.AddEditAdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsClientServer</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.AdditionalReportsAndDataProcessorsPublicationVariants</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.StartingAdditionalDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.DataProcessorAccessUserSettings</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsOverridable</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.MyReportsAndDataProcessorsSetup</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseFillObjectAdditionalDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseAdditionalReports</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseAdditionalPrintForms</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseRelatedObjectCreationAdditionalDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOptionsParameter.AdditionalReportsAndDataProcessorsFormType</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOptionsParameter.AdditionalReportsAndDataProcessorsTargetObject</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsServerCall</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.LongAdditionalReportAndDataProcessorAction</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.UseAdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.UseAdditionalReportsAndDataProcessors</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsCached</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsSafeModeInternal</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsSafeModeCached</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsSafeModeServerCall</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsSafeModeInterface</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsScheduledJobs</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsSafeMode</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.AdditionalReportsAndDataProcessorsClientOverridable</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">XDTOPackage.ApplicationExtensionsPermissions_1_0_0_1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">XDTOPackage.ApplicationExtensionsManifest_1_0_0_1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.AdditionalReportsAndDataProcessorsPermissionCompatibilityModes</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.AdditionalReportsAdministration</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.AdditionalDataProcessorsAdministration</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>
