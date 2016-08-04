@@ -14,6 +14,7 @@ Var FormClosingConfirmationParameters Export;
 // External resource request confirmation notification.
 Var NotificationOnExternalResourceRequestApply Export;
 
+
 // End StandardSubsystems.BaseFunctionality
 
 Procedure BeforeStart()
