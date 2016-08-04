@@ -16,7 +16,6 @@ Var NotificationOnExternalResourceRequestApply Export;
 
 // End StandardSubsystems.BaseFunctionality
 
-
 Procedure BeforeStart()
 	
 	// StandardSubsystems
