@@ -1,6 +1,7 @@
 # 1CI
 Repository manager for 1C: Enterprise platform. The main idea of the project - continuous integration.
 
+
 # The main idea
 
 When you develop configuration in a team, you often need to do some
