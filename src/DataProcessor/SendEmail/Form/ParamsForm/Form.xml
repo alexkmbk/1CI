@@ -7,30 +7,28 @@
 		</v8:item>
 	</Title>
 	<AutoTitle>false</AutoTitle>
-	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<ChildItems>
+			<Button name="SaveAndClose" id="4">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.SaveAndClose</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="SaveAndCloseExtendedTooltip" id="5"/>
+			</Button>
+			<Button name="Close" id="6">
+				<Type>CommandBarButton</Type>
+				<Width>6</Width>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="CloseExtendedTooltip" id="7"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="Group1" id="8">
-			<ExtendedTooltip name="Group1ExtendedTooltip" id="9"/>
-			<ChildItems>
-				<Button name="SaveAndClose" id="4">
-					<Type>UsualButton</Type>
-					<DefaultButton>true</DefaultButton>
-					<CommandName>Form.Command.SaveAndClose</CommandName>
-					<Parameter xsi:nil="true"/>
-					<ExtendedTooltip name="SaveAndCloseExtendedTooltip" id="5"/>
-				</Button>
-				<Button name="Close" id="6">
-					<Type>UsualButton</Type>
-					<Width>6</Width>
-					<CommandName>Form.StandardCommand.Close</CommandName>
-					<Parameter xsi:nil="true"/>
-					<ExtendedTooltip name="CloseExtendedTooltip" id="7"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
 		<TextDocumentField name="MessgaeTemplate" id="26">
 			<DataPath>MessageTemplate</DataPath>
 			<Height>6</Height>

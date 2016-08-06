@@ -467,6 +467,7 @@
 			<DataProcessor>CheckModules</DataProcessor>
 			<DataProcessor>UpdateDB</DataProcessor>
 			<DataProcessor>ProgramSettings</DataProcessor>
+			<DataProcessor>ExecCommand</DataProcessor>
 			<InformationRegister>AdditionalDataProcessorPurposes</InformationRegister>
 			<InformationRegister>AllowedInternetResources</InformationRegister>
 			<InformationRegister>AllowedOperatingSystemApplications</InformationRegister>

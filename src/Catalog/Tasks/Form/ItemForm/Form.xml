@@ -138,6 +138,7 @@
 									</Button>
 									<Button name="OpenActionSettingsButton" id="34">
 										<Type>CommandBarButton</Type>
+										<Enabled>false</Enabled>
 										<CommandName>Form.Command.OpenActionSettings</CommandName>
 										<Parameter xsi:nil="true"/>
 										<ExtendedTooltip name="OpenActionSettingsButtonExtendedTooltip" id="35"/>

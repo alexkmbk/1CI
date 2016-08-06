@@ -742,6 +742,11 @@ DataProcessor.EventLog.Help.xml-->DataProcessor\EventLog\Help.xml
 DataProcessor.EventLog.ManagerModule.txt-->DataProcessor\EventLog\ManagerModule.txt
 DataProcessor.EventLog.ObjectModule.txt-->DataProcessor\EventLog\ObjectModule.txt
 DataProcessor.EventLog.xml-->DataProcessor\EventLog\EventLog.xml
+DataProcessor.ExecCommand.Form.ParamsForm.Form.Module.txt-->DataProcessor\ExecCommand\Form\ParamsForm\Form\Module.txt
+DataProcessor.ExecCommand.Form.ParamsForm.Form.xml-->DataProcessor\ExecCommand\Form\ParamsForm\Form.xml
+DataProcessor.ExecCommand.Form.ParamsForm.xml-->DataProcessor\ExecCommand\Form\ParamsForm.xml
+DataProcessor.ExecCommand.ObjectModule.txt-->DataProcessor\ExecCommand\ObjectModule.txt
+DataProcessor.ExecCommand.xml-->DataProcessor\ExecCommand\ExecCommand.xml
 DataProcessor.ExternalResourcePermissionSetup.Command.SecurityProfileSetup.CommandModule.txt-->DataProcessor\ExternalResourcePermissionSetup\Command\SecurityProfileSetup\CommandModule.txt
 DataProcessor.ExternalResourcePermissionSetup.Form.ExternalResourcePermissionSetup.Form.Module.txt-->DataProcessor\ExternalResourcePermissionSetup\Form\ExternalResourcePermissionSetup\Form\Module.txt
 DataProcessor.ExternalResourcePermissionSetup.Form.ExternalResourcePermissionSetup.Form.xml-->DataProcessor\ExternalResourcePermissionSetup\Form\ExternalResourcePermissionSetup\Form.xml
