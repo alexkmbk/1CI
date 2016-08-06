@@ -4,9 +4,10 @@
 Function GetParams()
 	DataProcessorParams = new Structure;
 	DataProcessorParams.Insert("Command", Command);
-return DataProcessorParams;		
+	DataProcessorParams.Insert("CurrentDirectory", CurrentDirectory);
+	return DataProcessorParams;		
 EndFunction
- 
+
  
 &AtClient
 Procedure SaveAndClose(Command)
@@ -29,6 +30,9 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 		EndIf; 
 		If Params.Property("Command", Value) Then
 			Command = Value;
+		EndIf; 
+		If Params.Property("CurrentDirectory", Value) Then
+			CurrentDirectory = Value;
 		EndIf; 
 	EndIf; 
 	

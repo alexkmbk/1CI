@@ -12,7 +12,7 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 		
 	Try
-		RunApp(ActionParams.Command);	
+		RunApp(ActionParams.Command,ActionParams.CurrentDirectory,true,ReturnCode);	
 	Except
 		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Executing command error:" + ErrorDescription(), ShowMessages);
 		Return False; 
