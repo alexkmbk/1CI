@@ -316,6 +316,8 @@ UpdateDB — updating the database in DBDir directory from repository.
 CheckModules – Checking modules of the dump by standard platform
 command.
 
+ExecCommand - Starts an external application by given command and current directory
+
 Role «RepositoryUser»
 ======================
 
