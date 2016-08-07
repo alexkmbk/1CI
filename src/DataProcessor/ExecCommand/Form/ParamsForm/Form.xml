@@ -40,6 +40,7 @@
 			<DataPath>Command</DataPath>
 			<Width>26</Width>
 			<Height>3</Height>
+			<MultiLine>true</MultiLine>
 			<ContextMenu name="CommandContextMenu" id="11"/>
 			<ExtendedTooltip name="CommandExtendedTooltip" id="12"/>
 		</InputField>

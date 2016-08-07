@@ -18,8 +18,12 @@ EndProcedure
 
 
 &AtClient
-Procedure RunTask(Command)
-	RepTasksClient.RunTask(Object.Ref, ThisForm);	
+Procedure RunTask(Command)	
+	Actions = New Map();
+	For Each Item In Object.Actions  Do
+		Actions.Insert(Item.LineNumber,New Structure("Action,ActionParams",Item.Action, Item.ActionParams));
+	EndDo; 
+	RepTasksClient.RunTask(Object.Ref, ThisForm, Object.Owner, Actions, Object.Description );	
 EndProcedure
 
 &AtClient
@@ -31,8 +35,7 @@ Procedure OpenActionSettings(Command)
 	If Not ValueIsFilled(FormPath) Then
 		Return; 
 	EndIf; 
-	
-	
+		
 	OpenForm(FormPath,New Structure("Task,ActionParamsUUID", Object.Ref, CurData.UUID), ThisForm);
 	
 EndProcedure
@@ -214,6 +217,18 @@ EndProcedure
 Procedure SuccessReportRecipientsOnEditEnd(Item, NewRow, CancelEdit)
 	If Not CancelEdit Then
 		UpdateWarnings();
+	EndIf; 
+EndProcedure
+
+
+&AtClient
+Procedure ActionsBeforeEditEnd(Item, NewRow, CancelEdit, Cancel)
+	If Not CancelEdit Then		
+		If Item.CurrentData <> Undefined Then
+			Items.OpenActionSettingsButton.Enabled = RepTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
+		Else
+			Items.OpenActionSettingsButton.Enabled = False;	
+		EndIf; 		
 	EndIf; 
 EndProcedure
 

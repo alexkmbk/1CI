@@ -1,7 +1,7 @@
 ﻿ 
 //
 //
-Function RunTask(Task, Form, Val Repository = Undefined) Export
+Function RunTask(Task, Form, Val Repository = Undefined, Actions = Undefined, TaskDescription = Undefined) Export
 		
 	RepUserName = Undefined;
 	RepPassword = Undefined;
@@ -11,7 +11,7 @@ Function RunTask(Task, Form, Val Repository = Undefined) Export
 		
 	RepTasks.GetRepPasswordAndUserName(Repository, RepUserName, RepPassword);	
 	If ValueIsFilled(RepUserName) Then
-		RepTasks.RunTask(Task, True, Repository, RepUserName, RepPassword);
+		RepTasks.RunTask(Task, True, Repository, RepUserName, RepPassword, Actions, TaskDescription);
 	Else
 		Params = New Structure("Repository, Task", Repository, Task);
 		OpenForm("CommonForm.RepositoryUserNameAndPasswordInput", Params);

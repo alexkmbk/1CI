@@ -122,7 +122,6 @@
 						</UsualGroup>
 						<Table name="Actions" id="13">
 							<Representation>List</Representation>
-							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
 							<DataPath>Object.Actions</DataPath>
@@ -130,18 +129,18 @@
 							<ContextMenu name="ActionsContextMenu" id="14"/>
 							<AutoCommandBar name="ActionsCommandBar" id="15">
 								<ChildItems>
-									<Button name="ActionsRunTask" id="32">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.RunTask</CommandName>
-										<Parameter xsi:nil="true"/>
-										<ExtendedTooltip name="ActionsRunTaskExtendedTooltip" id="33"/>
-									</Button>
 									<Button name="OpenActionSettingsButton" id="34">
 										<Type>CommandBarButton</Type>
 										<Enabled>false</Enabled>
 										<CommandName>Form.Command.OpenActionSettings</CommandName>
 										<Parameter xsi:nil="true"/>
 										<ExtendedTooltip name="OpenActionSettingsButtonExtendedTooltip" id="35"/>
+									</Button>
+									<Button name="ActionsRunTask" id="32">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.RunTask</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ActionsRunTaskExtendedTooltip" id="33"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -173,6 +172,7 @@
 							<Events>
 								<Event name="OnEditEnd">ActionsOnEditEnd</Event>
 								<Event name="Selection">ActionsSelection</Event>
+								<Event name="BeforeEditEnd">ActionsBeforeEditEnd</Event>
 								<Event name="OnActivateRow">ActionsOnActivateRow</Event>
 							</Events>
 							<ChildItems>

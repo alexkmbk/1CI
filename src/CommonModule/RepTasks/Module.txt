@@ -8,8 +8,70 @@
 
 //
 //
-Function RunActions(LogLineNumber, Task, CommonParams, ActionsSelection, ShowMessages = False)
+Function RunActions(LogLineNumber, Task, CommonParams, ShowMessages = False, Actions = Undefined)
+	
+	Query = New Query;
+	If Actions = Undefined  Then
+		Query.Text = "SELECT
+		|	TasksActions.LineNumber AS ActionNumber,
+		|	TasksActions.Action,
+		|	TasksActions.ActionParams,
+		|	TasksActions.Action.IsInternal AS IsInternal,
+		|	TasksActions.Action.InternalDataProcessor AS InternaldataProcessor,
+		|	TasksActions.Action.DataProcessor AS DataProcessor
+		|FROM
+		|	Catalog.Tasks.Actions AS TasksActions
+		|WHERE
+		|	TasksActions.Ref = &Task
+		|
+		|ORDER BY
+		|	TasksActions.LineNumber";
+		Query.SetParameter("Task", Task);
 		
+	Else
+		ActionsTable = New ValueTable();
+		ActionsTable.Columns.Add("Action",New TypeDescription("CatalogRef.Actions"));
+		ActionsTable.Columns.Add("ActionParams",New TypeDescription("String", ,
+		New StringQualifiers(0, AllowedLength.Variable)));
+		ActionsTable.Columns.Add("LineNumber",New TypeDescription("Number",
+		New NumberQualifiers(6, 0, AllowedSign.Nonnegative)));
+		
+		For Each Item In Actions Do
+			NewLine = ActionsTable.Add();
+			NewLine.Action = Item.Value.Action;
+			NewLine.ActionParams = Item.Value.ActionParams;
+			
+			NewLine.LineNumber =Item.Key;								 
+		EndDo; 										
+		Query = New Query;
+		Query.Text = "SELECT
+		|	ActionsTable.Action,
+		|	ActionsTable.ActionParams,
+		|	ActionsTable.LineNumber
+		|INTO TT_Actions
+		|FROM
+		|	&ActionsTable AS ActionsTable
+		|;
+		|
+		|////////////////////////////////////////////////////////////////////////////////
+		|SELECT
+		|	Actions.IsInternal,
+		|	Actions.InternalDataProcessor,
+		|	Actions.DataProcessor,
+		|	TT_Actions.Action,
+		|	TT_Actions.ActionParams,
+		|	TT_Actions.LineNumber AS ActionNumber
+		|FROM
+		|	TT_Actions AS TT_Actions
+		|		INNER JOIN Catalog.Actions AS Actions
+		|		ON TT_Actions.Action = Actions.Ref
+		|
+		|ORDER BY
+		|	ActionNumber";
+		Query.SetParameter("ActionsTable", ActionsTable);
+	EndIf; 
+	
+	ActionsSelection = Query.Execute().Select();			 
 	While ActionsSelection.Next() Do
 		
 		If ActionsSelection.IsInternal Then
@@ -42,14 +104,14 @@ Function RunActions(LogLineNumber, Task, CommonParams, ActionsSelection, ShowMes
 		EndIf; 
 		ActionParams = Undefined;
 		If ValueIsFilled(ActionsSelection.ActionParams) Then
-			ActionParams = ValueFromStringInternal(ActionsSelection.ActionParams);
+			ActionParams = ValueFromStringInternal(ActionsSelection.ActionParams);			
 		EndIf; 
 		If Not DataProcessor.Run(LogLineNumber, CommonParams, ActionsSelection.Action, ActionParams, ShowMessages) Then
 			return False;	
 		EndIf; 
 		
 	EndDo; 
-		
+	
 	Return True;	
 	
 EndFunction
@@ -62,16 +124,15 @@ Function RunScheduledTask(TaskCode) Export
 		RunTask(Task, False);
 	EndIf; 
 	
-
+	
 EndFunction
 
 // Runs all actions in the given Task
 //
-Function RunTask(Task, ShowMessages = False, Repository = Undefined, RepUserName = Undefined, RepPassword = Undefined) Export  
+Function RunTask(Task, ShowMessages = False, Repository = Undefined, RepUserName = Undefined, RepPassword = Undefined, Actions = Undefined, TaskName = Undefined) Export  
 	
 	LogLineNumber = 0;
-	ActionsSelection = Undefined;
-		
+	
 	TaskRunningEventRef = CreateNewTaskRunningEvent(Task, Repository);
 	
 	CommonParams = New Structure("Rep, RepName, Task, TaskName, FilesystemPath, PlatformPath, DBDir, RepPath, UserName, Password, DumpConfFileFullPath, WorkingDir, ConfBackupDir,TaskRunningEventRef"); 
@@ -80,13 +141,13 @@ Function RunTask(Task, ShowMessages = False, Repository = Undefined, RepUserName
 	CommonParams.UserName = RepUserName;
 	CommonParams.Password = RepPassword;
 	
-	If Not TaskPreparation(LogLineNumber, Task, CommonParams, ActionsSelection, ShowMessages) Then
+	If Not PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages, Actions, Repository, TaskName) Then
 		SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Error);
 		SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Error, ShowMessages = False);
 		return false;
 	EndIf; 
 	
-	If Not RunActions(LogLineNumber, Task, CommonParams, ActionsSelection, ShowMessages) Then
+	If Not RunActions(LogLineNumber, Task, CommonParams, ShowMessages, Actions) Then
 		SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Error);
 		SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Error, ShowMessages = False);
 		return false;		
@@ -102,7 +163,7 @@ EndFunction
 // Run all actions of the task by given codes of repository and task
 //
 Function RunTaskByCode(RepositoryCode, TaskCode) Export
-		
+	
 	Query = New Query;
 	Query.Text = "SELECT
 	|	Tasks.Ref AS Task
@@ -128,60 +189,70 @@ EndFunction
 
 //
 //
-Function TaskPreparation(LogLineNumber, Task, CommonParams, ActionsSelection, ShowMessages = False)
+Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Actions = Undefined, Repository = Undefined, TaskName = Undefined)
 	
 	// Get predefined action to log task operations
 	TaskPrepareAction = Catalogs.Actions.PrepareTask;	
 	
 	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Start);	
 	
-	if Not ValueIsFilled(Task) Then
+	if Not ValueIsFilled(Task) And Actions = Undefined Then
 		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Task is undefined", ShowMessages);	
 		return false;
 	EndIf;
-		
+	
 	Query = New Query;
-	Query.Text = "SELECT
-	|	Tasks.Owner.DBDir AS DBDir,
-	|	Tasks.Owner.PlatformPath AS PlatformPath,
-	|	Tasks.Owner.WorkingDir AS WorkingDir,
-	|	Tasks.Owner.Path AS RepPath,
-	|	Tasks.Description,
-	|	Tasks.Owner.Description AS RepName,
-	|	Tasks.Owner.ConfBackupDir AS ConfBackupDir,
-	|	Tasks.Owner AS Rep
-	|FROM
-	|	Catalog.Tasks AS Tasks
-	|WHERE
-	|	Tasks.Ref = &Task
-	|;
-	|
-	|////////////////////////////////////////////////////////////////////////////////
-	|SELECT
-	|	TasksActions.LineNumber AS ActionNumber,
-	|	TasksActions.Action,
-	|	TasksActions.ActionParams,
-	|	TasksActions.Action.IsInternal AS IsInternal,
-	|	TasksActions.Action.InternaldataProcessor AS InternaldataProcessor,
-	|	TasksActions.Action.DataProcessor AS DataProcessor
-	|FROM
-	|	Catalog.Tasks.Actions AS TasksActions
-	|WHERE
-	|	TasksActions.Ref = &Task
-	|
-	|ORDER BY
-	|	LineNumber";
-	Query.SetParameter("Task", Task);
 	
-	QueryResultsArray = Query.ExecuteBatch();
+	If ValueIsFilled(Task)  Then
+		Query.Text = "SELECT
+		|	Tasks.Owner.DBDir AS DBDir,
+		|	Tasks.Owner.PlatformPath AS PlatformPath,
+		|	Tasks.Owner.WorkingDir AS WorkingDir,
+		|	Tasks.Owner.Path AS RepPath,
+		|	Tasks.Description,
+		|	Tasks.Owner.Description AS RepName,
+		|	Tasks.Owner.ConfBackupDir AS ConfBackupDir,
+		|	Tasks.Owner AS Rep
+		|FROM
+		|	Catalog.Tasks AS Tasks
+		|WHERE
+		|	Tasks.Ref = &Task";
+		Query.SetParameter("Task", Task);
+	Else	
+		Query = New Query;
+		Query.Text = "SELECT
+		|	Repositories.WorkingDir,
+		|	Repositories.PlatformPath,
+		|	Repositories.DBDir,
+		|	Repositories.ConfBackupDir,
+		|	Repositories.Path AS RepPath,
+		|	Repositories.Ref AS Rep,
+		|	Repositories.Description AS RepName
+		|FROM
+		|	Catalog.Repositories AS Repositories
+		|WHERE
+		|	Repositories.Ref = &Repository";
+		Query.SetParameter("Repository", Repository);
+		
+		QueryResult = Query.Execute();
+		
+	EndIf; 
 	
-	TaskSelection = QueryResultsArray[0].Select();
+	
+	QueryResult = Query.Execute();
+	
+	TaskSelection = QueryResult.Select();
 	TaskSelection.Next();
 	
 	CommonParams.RepPath = TaskSelection.RepPath;	
 	
 	CommonParams.Task = Task;
-	CommonParams.TaskName = TaskSelection.Description;
+	If ValueIsFilled(TaskName) Then
+		CommonParams.TaskName = TaskName;
+	Else
+		CommonParams.TaskName = TaskSelection.Description;	
+	EndIf; 
+	
 	CommonParams.RepName = TaskSelection.RepName;
 	CommonParams.Rep = TaskSelection.Rep;
 	
@@ -255,8 +326,6 @@ Function TaskPreparation(LogLineNumber, Task, CommonParams, ActionsSelection, Sh
 	
 	CommonParams.DumpConfFileFullPath =  CommonParams.ConfBackupDir + Format(CurrentDate(), "DF=dd.MM.yyyy") + ".cf";
 	
-	ActionsSelection = QueryResultsArray[1].Select();
-	
 	// The preparation of the task was successfully done
 	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Success);
 	
@@ -278,15 +347,15 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, ShowMessag
 	|	TasksFailureReportRecipients.Ref = &Task";
 	
 	If TaskState = Enums.TaskState.Success Then
-	Query.Text = Query.Text + " 
-	|UNION
-	|
-	|SELECT
-	|	TasksSuccessReportRecipients.Email
-	|FROM
-	|	Catalog.Tasks.SuccessReportRecipients AS TasksSuccessReportRecipients
-	|WHERE
-	|	TasksSuccessReportRecipients.Ref = &Task";	
+		Query.Text = Query.Text + " 
+		|UNION
+		|
+		|SELECT
+		|	TasksSuccessReportRecipients.Email
+		|FROM
+		|	Catalog.Tasks.SuccessReportRecipients AS TasksSuccessReportRecipients
+		|WHERE
+		|	TasksSuccessReportRecipients.Ref = &Task";	
 	EndIf; 
 	
 	Query.SetParameter("Task", Task);
@@ -295,29 +364,29 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, ShowMessag
 	If Emails.Count() = 0 Then
 		return True;
 	EndIf; 
-	 
+	
 	Query = New Query;
 	Query.Text = "SELECT
-	             |	TaskRunningEvent.Number,
-	             |	TaskRunningEvent.Date,
-	             |	PRESENTATION(TaskRunningEvent.State) AS TaskStatePresentation
-	             |FROM
-	             |	Document.TaskRunningEvent AS TaskRunningEvent
-	             |WHERE
-	             |	TaskRunningEvent.Ref = &TaskRunningEvent
-	             |;
-	             |
-	             |////////////////////////////////////////////////////////////////////////////////
-	             |SELECT
-	             |	ActionEventsLog.LineNum,
-	             |	ActionEventsLog.Action.Description,
-	             |	ActionEventsLog.Description,
-	             |	ActionEventsLog.Date,
-	             |	PRESENTATION(ActionEventsLog.State) AS ActionStatePresentation
-	             |FROM
-	             |	InformationRegister.ActionEventsLog AS ActionEventsLog
-	             |WHERE
-	             |	ActionEventsLog.TaskRunningEvent = &TaskRunningEvent";
+	|	TaskRunningEvent.Number,
+	|	TaskRunningEvent.Date,
+	|	PRESENTATION(TaskRunningEvent.State) AS TaskStatePresentation
+	|FROM
+	|	Document.TaskRunningEvent AS TaskRunningEvent
+	|WHERE
+	|	TaskRunningEvent.Ref = &TaskRunningEvent
+	|;
+	|
+	|////////////////////////////////////////////////////////////////////////////////
+	|SELECT
+	|	ActionEventsLog.LineNum,
+	|	ActionEventsLog.Action.Description,
+	|	ActionEventsLog.Description,
+	|	ActionEventsLog.Date,
+	|	PRESENTATION(ActionEventsLog.State) AS ActionStatePresentation
+	|FROM
+	|	InformationRegister.ActionEventsLog AS ActionEventsLog
+	|WHERE
+	|	ActionEventsLog.TaskRunningEvent = &TaskRunningEvent";
 	Query.SetParameter("TaskRunningEvent", CommonParams.TaskRunningEventRef);
 	
 	QueryResultArray = Query.ExecuteBatch();
@@ -333,24 +402,24 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, ShowMessag
 	Message.AddLine("<p><b style='font-size:large'>Result: " + ?(TaskState = Enums.TaskState.Error, "</b><b style = 'color:red'>" + ReportInfo.TaskStatePresentation + "</b>", "<b style = 'color:green'>" + ReportInfo.TaskStatePresentation + "</b></p>"));	
 	
 	If ReportEvents.Count() > 0 Then
-	Message.AddLine("<table border = '1' cellspacing='0' width='100%' bordercolor='#000000'><tr>");
-	Message.AddLine("<th>Number</th>");
-	Message.AddLine("<th>State</th>");
-	Message.AddLine("<th>Name</th>");
-	Message.AddLine("<th>Description</th>");
-	Message.AddLine("</tr>");
-	
-	While ReportEvents.Next() Do
-		Message.AddLine("<tr>");
-		Message.AddLine("<td>" + ReportEvents.LineNum + "</td>");
-		Message.AddLine("<td>" + ReportEvents.ActionStatePresentation + "</td>");
-		Message.AddLine("<td>" + ReportEvents.ActionDescription + "</td>");
-		Message.AddLine("<td>" + ReportEvents.Description + "</td>");
+		Message.AddLine("<table border = '1' cellspacing='0' width='100%' bordercolor='#000000'><tr>");
+		Message.AddLine("<th>Number</th>");
+		Message.AddLine("<th>State</th>");
+		Message.AddLine("<th>Name</th>");
+		Message.AddLine("<th>Description</th>");
 		Message.AddLine("</tr>");
-	EndDo; 
-	Message.AddLine("</table>");
+		
+		While ReportEvents.Next() Do
+			Message.AddLine("<tr>");
+			Message.AddLine("<td>" + ReportEvents.LineNum + "</td>");
+			Message.AddLine("<td>" + ReportEvents.ActionStatePresentation + "</td>");
+			Message.AddLine("<td>" + ReportEvents.ActionDescription + "</td>");
+			Message.AddLine("<td>" + ReportEvents.Description + "</td>");
+			Message.AddLine("</tr>");
+		EndDo; 
+		Message.AddLine("</table>");
 	EndIf; 
-
+	
 	WasError = False;
 	Action = Catalogs.Actions.SendTaskReport;
 	For Each Recipient In Emails Do
@@ -504,7 +573,7 @@ EndFunction
 Function GetSystemEmailAccount() Export
 	Return  Catalogs.EmailAccounts.SystemEmailAccount;		
 EndFunction
- 
+
 //
 //
 Function SystemEmailAccountIsSet() Export
@@ -521,7 +590,7 @@ Function SystemEmailAccountIsSet() Export
 	If Selection.Next() Then
 		
 		If  ValueIsFilled(Selection.EmailAddress) Then
-				Return True;  			
+			Return True;  			
 		EndIf; 
 		
 	EndIf; 
@@ -529,13 +598,13 @@ Function SystemEmailAccountIsSet() Export
 	Return False;
 	
 EndFunction
- 
+
 //
 //
 Function GetRepository(Task) Export
 	Return Task.Owner;	
 EndFunction
- 
+
 //
 //
 Function GetCurrentUser(Repository) Export
@@ -549,7 +618,7 @@ Function GetCurrentUser(Repository) Export
 	
 	Return User; 
 EndFunction
- 
+
 
 // Fills given params RepUserName and RepPassword
 //
@@ -581,7 +650,7 @@ Function GetRepPasswordAndUserName(Repository, RepUserName, RepPassword) Export
 	
 EndFunction
 
-  
+
 // Gets saved action params (as value storage) 
 // Params:
 // Task = Task catalog ref
@@ -590,12 +659,12 @@ EndFunction
 Function LoadActionParams(Task, ActionParamsUUID) Export 
 	Query = New Query;
 	Query.Text = "SELECT
-	             |	TasksActions.ActionParams
-	             |FROM
-	             |	Catalog.Tasks.Actions AS TasksActions
-	             |WHERE
-	             |	TasksActions.Ref = &Task
-	             |	AND TasksActions.UUID = &ActionParamsUUID";
+	|	TasksActions.ActionParams
+	|FROM
+	|	Catalog.Tasks.Actions AS TasksActions
+	|WHERE
+	|	TasksActions.Ref = &Task
+	|	AND TasksActions.UUID = &ActionParamsUUID";
 	Query.SetParameter("Task", Task);
 	Query.SetParameter("ActionParamsUUID", ActionParamsUUID);
 	
@@ -657,9 +726,9 @@ Function GetActionsParamsFormPath(Action) Export
 				Return Undefined;				
 			EndIf; 
 			Return "ExternalDataProcessor." + DataProcessor.Metadata().Name + ".Form.ParamsForm";
-
-		EndIf; 
 			
+		EndIf; 
+		
 	EndIf; 
 	
 	Return Undefined;
