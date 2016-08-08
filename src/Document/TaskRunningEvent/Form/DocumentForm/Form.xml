@@ -21,8 +21,10 @@
 					<v8:content>Head left group</v8:content>
 				</v8:item>
 			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Vertical</Group>
 			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
 			<ExtendedTooltip name="HeadLeftGroupExtendedTooltip" id="44"/>
 			<ChildItems>
 				<UsualGroup name="DocDateNumberGroup" id="13">
@@ -38,13 +40,17 @@
 							<v8:content>Doc date number group</v8:content>
 						</v8:item>
 					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="DocDateNumberGroupExtendedTooltip" id="14"/>
 					<ChildItems>
 						<InputField name="Number" id="1">
 							<DataPath>Object.Number</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<HorizontalStretch>false</HorizontalStretch>
+							<Width>20</Width>
 							<ContextMenu name="NumberContextMenu" id="2"/>
 							<ExtendedTooltip name="NumberExtendedTooltip" id="3"/>
 						</InputField>
@@ -66,11 +72,13 @@
 				<InputField name="State" id="7">
 					<DataPath>Object.State</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<ContextMenu name="StateContextMenu" id="8"/>
 					<ExtendedTooltip name="StateExtendedTooltip" id="9"/>
 				</InputField>
 				<InputField name="Repository" id="79">
 					<DataPath>Object.Repository</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<ContextMenu name="RepositoryContextMenu" id="80"/>
 					<ExtendedTooltip name="RepositoryExtendedTooltip" id="81"/>
 				</InputField>
@@ -78,6 +86,7 @@
 					<DataPath>Object.Task</DataPath>
 					<TitleHeight>8</TitleHeight>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<ContextMenu name="TaskContextMenu" id="11"/>
 					<ExtendedTooltip name="TaskExtendedTooltip" id="12"/>
 				</InputField>

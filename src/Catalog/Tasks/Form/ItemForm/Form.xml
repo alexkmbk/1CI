@@ -42,6 +42,13 @@
 					</ToolTip>
 					<ExtendedTooltip name="MainExtendedTooltip" id="39"/>
 					<ChildItems>
+						<InputField name="Parent" id="10">
+							<DataPath>Object.Parent</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ParentContextMenu" id="11"/>
+							<ExtendedTooltip name="ParentExtendedTooltip" id="12"/>
+						</InputField>
 						<UsualGroup name="CodeNameGroup" id="80">
 							<Title>
 								<v8:item>
@@ -55,12 +62,14 @@
 									<v8:content>Code name group</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="CodeNameGroupExtendedTooltip" id="81"/>
 							<ChildItems>
 								<InputField name="Description" id="4">
 									<DataPath>Object.Description</DataPath>
 									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<ContextMenu name="DescriptionContextMenu" id="5"/>
 									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
 								</InputField>
@@ -72,12 +81,6 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
-						<InputField name="Parent" id="10">
-							<DataPath>Object.Parent</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ParentContextMenu" id="11"/>
-							<ExtendedTooltip name="ParentExtendedTooltip" id="12"/>
-						</InputField>
 						<UsualGroup name="ScheduleGroup" id="87">
 							<Title>
 								<v8:item>
@@ -108,6 +111,7 @@
 									<Type>Hyperlink</Type>
 									<Representation>PictureAndText</Representation>
 									<SkipOnInput>false</SkipOnInput>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<CommandName>Form.Command.OpenScheduleSettings</CommandName>
 									<Parameter xsi:nil="true"/>
 									<Title>

@@ -7,18 +7,37 @@
 		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
 	</Events>
 	<ChildItems>
-		<InputField name="Code" id="1">
-			<DataPath>Object.Code</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="CodeContextMenu" id="2"/>
-			<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
-		</InputField>
-		<InputField name="Description" id="4">
-			<DataPath>Object.Description</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="DescriptionContextMenu" id="5"/>
-			<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
-		</InputField>
+		<UsualGroup name="DescriptionCodeGroup" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description code group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description code group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="DescriptionCodeGroupExtendedTooltip" id="17"/>
+			<ChildItems>
+				<InputField name="Description" id="4">
+					<DataPath>Object.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DescriptionContextMenu" id="5"/>
+					<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+				</InputField>
+				<InputField name="Code" id="1">
+					<DataPath>Object.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="CodeContextMenu" id="2"/>
+					<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<CheckBoxField name="IsInternal" id="7">
 			<DataPath>Object.IsInternal</DataPath>
 			<EditMode>EnterOnInput</EditMode>
@@ -38,6 +57,7 @@
 				</v8:item>
 			</Title>
 			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
 			<ChoiceButton>true</ChoiceButton>
 			<ContextMenu name="PathToInternaldataProcessorContextMenu" id="11"/>
 			<ExtendedTooltip name="PathToInternaldataProcessorExtendedTooltip" id="12"/>
@@ -48,6 +68,7 @@
 		<InputField name="DataProcessor" id="13">
 			<DataPath>Object.DataProcessor</DataPath>
 			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
 			<ContextMenu name="DataProcessorContextMenu" id="14"/>
 			<ExtendedTooltip name="DataProcessorExtendedTooltip" id="15"/>
 		</InputField>

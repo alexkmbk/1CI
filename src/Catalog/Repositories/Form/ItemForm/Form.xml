@@ -24,23 +24,48 @@
 							<v8:content>Main</v8:content>
 						</v8:item>
 					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<HorizontalAlign>Left</HorizontalAlign>
 					<ExtendedTooltip name="MainExtendedTooltip" id="13"/>
 					<ChildItems>
-						<InputField name="Code" id="1">
-							<DataPath>Object.Code</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="CodeContextMenu" id="2"/>
-							<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
-						</InputField>
-						<InputField name="Description" id="4">
-							<DataPath>Object.Description</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="DescriptionContextMenu" id="5"/>
-							<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
-						</InputField>
+						<UsualGroup name="DescriptionCodeGroup" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description code group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description code group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="DescriptionCodeGroupExtendedTooltip" id="59"/>
+							<ChildItems>
+								<InputField name="Description" id="4">
+									<DataPath>Object.Description</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DescriptionContextMenu" id="5"/>
+									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+								</InputField>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="Path" id="7">
 							<DataPath>Object.Path</DataPath>
 							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
 							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="PathContextMenu" id="8"/>
 							<ExtendedTooltip name="PathExtendedTooltip" id="9"/>
@@ -50,6 +75,7 @@
 						</InputField>
 						<InputField name="ScheduledJobUser" id="55">
 							<DataPath>Object.ScheduledJobUser</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="ScheduledJobUserContextMenu" id="56"/>
 							<ExtendedTooltip name="ScheduledJobUserExtendedTooltip" id="57"/>
 						</InputField>
