@@ -7,7 +7,6 @@ Procedure SessionParametersSetting(SessionParameterNames)
 	StandardSubsystemsServer.SessionParametersSetting(SessionParameterNames);
 	// End StandardSubsystems
 	
-	
 EndProcedure
 
 #EndIf

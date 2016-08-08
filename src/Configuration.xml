@@ -342,6 +342,7 @@
 			<CommonModule>InfobaseUpdateServerCall</CommonModule>
 			<CommonModule>RepTasks</CommonModule>
 			<CommonModule>RepTasksClient</CommonModule>
+			<CommonModule>InfobaseUpdateOneCI</CommonModule>
 			<XDTOPackage>ApplicationExtensionsManifest_1_0_0_1</XDTOPackage>
 			<XDTOPackage>ApplicationExtensionsPermissions_1_0_0_1</XDTOPackage>
 			<XDTOPackage>ApplicationPermissions_1_0_0_1</XDTOPackage>

@@ -800,3 +800,21 @@ Function ActionDataProcessorHasSettings(Action) Export
 	Return False;
 	
 EndFunction
+ 
+//
+//
+Function GetInternalDataProcessors() Export 
+	DataProcessorsList = New ValueList;
+	For Each Item In Metadata.DataProcessors Do
+		obj = DataProcessors[Item.Name].Create();
+		IsRepositoryDataProcessor = False;
+		Try
+			IsRepositoryDataProcessor = obj.IsRepositoryDataProcessor();	
+		Except
+		EndTry; 
+		If IsRepositoryDataProcessor Then
+			DataProcessorsList.Add(Item.Name, Item.Synonym);	
+		EndIf; 
+	EndDo; 		
+	Return DataProcessorsList;
+EndFunction

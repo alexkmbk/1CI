@@ -16,7 +16,7 @@
 		<Event name="OnClose">OnClose</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="HeadGroup" id="33">
+		<UsualGroup name="HeadGroup" id="37">
 			<Title>
 				<v8:item>
 					<v8:lang>en</v8:lang>
@@ -29,30 +29,67 @@
 					<v8:content>Head group</v8:content>
 				</v8:item>
 			</ToolTip>
-			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Horizontal</Group>
-			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="HeadGroupExtendedTooltip" id="34"/>
+			<ExtendedTooltip name="HeadGroupExtendedTooltip" id="38"/>
 			<ChildItems>
-				<InputField name="Repository" id="1">
-					<DataPath>Repository</DataPath>
+				<UsualGroup name="HeadGroupLeft" id="33">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Head group left</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Head group left</v8:content>
+						</v8:item>
+					</ToolTip>
 					<HorizontalStretch>true</HorizontalStretch>
-					<ChoiceListHeight>3</ChoiceListHeight>
-					<ContextMenu name="RepositoryContextMenu" id="2"/>
-					<ExtendedTooltip name="RepositoryExtendedTooltip" id="3"/>
-					<Events>
-						<Event name="OnChange">RepositoryOnChange</Event>
-					</Events>
-				</InputField>
-				<Button name="DataProcessorProgramSettingsOpen" id="31">
-					<Type>UsualButton</Type>
-					<TitleHeight>1</TitleHeight>
-					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-					<CommandName>DataProcessor.ProgramSettings.StandardCommand.Open</CommandName>
-					<Parameter xsi:nil="true"/>
-					<ExtendedTooltip name="DataProcessorProgramSettingsOpenExtendedTooltip" id="32"/>
-				</Button>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="HeadGroupLeftExtendedTooltip" id="34"/>
+					<ChildItems>
+						<InputField name="Repository" id="1">
+							<DataPath>Repository</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceListHeight>3</ChoiceListHeight>
+							<ContextMenu name="RepositoryContextMenu" id="2"/>
+							<ExtendedTooltip name="RepositoryExtendedTooltip" id="3"/>
+							<Events>
+								<Event name="OnChange">RepositoryOnChange</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="HeadGroupRight" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Head group right</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Head group right</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="HeadGroupRightExtendedTooltip" id="36"/>
+					<ChildItems>
+						<Button name="DataProcessorProgramSettingsOpen" id="31">
+							<Type>UsualButton</Type>
+							<TitleHeight>1</TitleHeight>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<CommandName>DataProcessor.ProgramSettings.StandardCommand.Open</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="DataProcessorProgramSettingsOpenExtendedTooltip" id="32"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<Table name="Tasks" id="7">

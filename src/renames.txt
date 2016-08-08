@@ -314,6 +314,8 @@ CommonModule.InfobaseUpdateInternal.Module.txt-->CommonModule\InfobaseUpdateInte
 CommonModule.InfobaseUpdateInternal.xml-->CommonModule\InfobaseUpdateInternal\InfobaseUpdateInternal.xml
 CommonModule.InfobaseUpdateInternalCached.Module.txt-->CommonModule\InfobaseUpdateInternalCached\Module.txt
 CommonModule.InfobaseUpdateInternalCached.xml-->CommonModule\InfobaseUpdateInternalCached\InfobaseUpdateInternalCached.xml
+CommonModule.InfobaseUpdateOneCI.Module.txt-->CommonModule\InfobaseUpdateOneCI\Module.txt
+CommonModule.InfobaseUpdateOneCI.xml-->CommonModule\InfobaseUpdateOneCI\InfobaseUpdateOneCI.xml
 CommonModule.InfobaseUpdateOverridable.Module.txt-->CommonModule\InfobaseUpdateOverridable\Module.txt
 CommonModule.InfobaseUpdateOverridable.xml-->CommonModule\InfobaseUpdateOverridable\InfobaseUpdateOverridable.xml
 CommonModule.InfobaseUpdateServerCall.Module.txt-->CommonModule\InfobaseUpdateServerCall\Module.txt
