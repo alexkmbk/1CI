@@ -114,6 +114,7 @@
 				<ChildItems>
 					<Button name="RunTaskButton" id="26">
 						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
 						<CommandName>Form.Command.RunTask</CommandName>
 						<Parameter xsi:nil="true"/>
 						<ExtendedTooltip name="RunTaskButtonExtendedTooltip" id="27"/>
