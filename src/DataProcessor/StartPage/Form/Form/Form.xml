@@ -82,7 +82,6 @@
 					<ChildItems>
 						<Button name="DataProcessorProgramSettingsOpen" id="31">
 							<Type>UsualButton</Type>
-							<TitleHeight>1</TitleHeight>
 							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 							<CommandName>DataProcessor.ProgramSettings.StandardCommand.Open</CommandName>
 							<Parameter xsi:nil="true"/>
@@ -113,11 +112,11 @@
 			<ContextMenu name="TasksContextMenu" id="8"/>
 			<AutoCommandBar name="TasksCommandBar" id="9">
 				<ChildItems>
-					<Button name="TasksRunTask" id="26">
+					<Button name="RunTaskButton" id="26">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.RunTask</CommandName>
 						<Parameter xsi:nil="true"/>
-						<ExtendedTooltip name="TasksRunTaskExtendedTooltip" id="27"/>
+						<ExtendedTooltip name="RunTaskButtonExtendedTooltip" id="27"/>
 					</Button>
 				</ChildItems>
 			</AutoCommandBar>
@@ -146,6 +145,9 @@
 				<ContextMenu name="TasksSearchControlContextMenu" id="18"/>
 				<ExtendedTooltip name="TasksSearchControlExtendedTooltip" id="19"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">TasksOnActivateRow</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="TasksDescription" id="20">
 					<DataPath>Tasks.Description</DataPath>

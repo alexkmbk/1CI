@@ -1,4 +1,15 @@
-﻿&AtServer 
+﻿&AtServer
+Procedure SetAvailability()
+	
+	// Set editing availability
+	Items.Tasks.ChangeRowSet = Not Repository.IsEmpty();
+	Items.RunTaskButton.Enabled = (Items.Tasks.CurrentRow <> Undefined);
+	
+EndProcedure
+ 
+ 
+
+&AtServer 
 Procedure SetTaskFilter()	
 	Tasks.Filter.Items.Clear();
 	Item = Tasks.Filter.Items.Add(Type("DataCompositionFilterItem"));
@@ -6,6 +17,7 @@ Procedure SetTaskFilter()
 	Item.ComparisonType = DataCompositionComparisonType.Equal;
 	Item.Use = true;
 	Item.RightValue = Repository;	
+	SetAvailability();		
 EndProcedure
 
 &AtClient
@@ -47,5 +59,11 @@ Procedure RunTask(Command)
 	If CurData <> Undefined Then
 		RepTasksClient.RunTask(CurData.Ref, ThisForm, Repository);	
 	EndIf; 
+EndProcedure
+
+
+&AtClient
+Procedure TasksOnActivateRow(Item)
+	Items.RunTaskButton.Enabled = (Items.Tasks.CurrentData <> Undefined);	
 EndProcedure
 

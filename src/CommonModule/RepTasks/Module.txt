@@ -289,7 +289,6 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Ac
 	CommonParams.DBDir = TaskSelection.DBDir;
 	
 	If Not ValueIsFilled(CommonParams.DBDir) Then
-		CreateDirectory( CommonParams.WorkingDir + "db\");
 		CommonParams.DBDir = CommonParams.WorkingDir + "db\";
 	ElsIf Right(TrimAll(CommonParams.DBDir), 1) <> "\" Then
 		CommonParams.DBDir = CommonParams.DBDir + "\";	
