@@ -1,6 +1,7 @@
 ﻿Catalog.Actions.Form.ItemForm.Form.Module.txt-->Catalog\Actions\Form\ItemForm\Form\Module.txt
 Catalog.Actions.Form.ItemForm.Form.xml-->Catalog\Actions\Form\ItemForm\Form.xml
 Catalog.Actions.Form.ItemForm.xml-->Catalog\Actions\Form\ItemForm.xml
+Catalog.Actions.ObjectModule.txt-->Catalog\Actions\ObjectModule.txt
 Catalog.Actions.Predefined.xml-->Catalog\Actions\Predefined.xml
 Catalog.Actions.xml-->Catalog\Actions\Actions.xml
 Catalog.AdditionalReportsAndDataProcessors.Form.AdditionalReportsAndDataProcessorsCheck.Form.Module.txt-->Catalog\AdditionalReportsAndDataProcessors\Form\AdditionalReportsAndDataProcessorsCheck\Form\Module.txt

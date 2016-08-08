@@ -18,7 +18,9 @@ EndProcedure
 //
 //
 Procedure ItemChoose(Item, Params) Export 
-	Object.InternaldataProcessor = Item.Value;	
+	If Item <> Undefined Then
+		Object.InternaldataProcessor = Item.Value;	
+	EndIf; 	
 EndProcedure
  
 &AtClient
