@@ -7,8 +7,9 @@
 		</v8:item>
 	</Title>
 	<Width>41</Width>
-	<Height>10</Height>
+	<Height>13</Height>
 	<AutoTitle>false</AutoTitle>
+	<ScalingMode>Normal</ScalingMode>
 	<AutoCommandBar name="FormCommandBar" id="-1">
 		<ChildItems>
 			<Button name="SaveAndClose" id="4">
@@ -33,12 +34,18 @@
 	<ChildItems>
 		<InputField name="CurrentDirectory" id="13">
 			<DataPath>CurrentDirectory</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ChoiceButton>true</ChoiceButton>
 			<ContextMenu name="CurrentDirectoryContextMenu" id="14"/>
 			<ExtendedTooltip name="CurrentDirectoryExtendedTooltip" id="15"/>
+			<Events>
+				<Event name="StartChoice">CurrentDirectoryStartChoice</Event>
+			</Events>
 		</InputField>
 		<InputField name="Command" id="10">
 			<DataPath>Command</DataPath>
 			<Width>26</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
 			<Height>3</Height>
 			<MultiLine>true</MultiLine>
 			<ContextMenu name="CommandContextMenu" id="11"/>

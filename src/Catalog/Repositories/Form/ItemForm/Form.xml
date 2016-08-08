@@ -179,8 +179,12 @@
 						</InputField>
 						<InputField name="DumpDir" id="52">
 							<DataPath>Object.ConfBackupDir</DataPath>
+							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="DumpDirContextMenu" id="53"/>
 							<ExtendedTooltip name="DumpDirExtendedTooltip" id="54"/>
+							<Events>
+								<Event name="StartChoice">DumpDirStartChoice</Event>
+							</Events>
 						</InputField>
 						<InputField name="PlatformPath" id="46">
 							<DataPath>Object.PlatformPath</DataPath>
@@ -189,8 +193,12 @@
 						</InputField>
 						<InputField name="ConfigurationPath" id="49">
 							<DataPath>Object.DBDir</DataPath>
+							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ConfigurationPathContextMenu" id="50"/>
 							<ExtendedTooltip name="ConfigurationPathExtendedTooltip" id="51"/>
+							<Events>
+								<Event name="StartChoice">ConfigurationPathStartChoice</Event>
+							</Events>
 						</InputField>
 					</ChildItems>
 				</Page>

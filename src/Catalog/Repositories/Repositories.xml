@@ -452,7 +452,7 @@
 					<Synonym>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>DBDir</v8:content>
+							<v8:content>Bound database directory</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment>Path to configuration folder</Comment>

@@ -1,21 +1,6 @@
-﻿
-&AtClient
-Procedure ChoiceDlgChoose(SelectedFiles, Params) Export 
-	
-	For Each File in SelectedFiles Do
-		Object.Path = File;		
-	EndDo 
-	
-EndProcedure
-
-&AtClient
-Procedure PathStartChoice(Item, ChoiceData, StandardProcessing)
-	
-	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
-	DirChoiceDlg.Title = "Repository path"; 
-	Notify = New NotifyDescription("ChoiceDlgChoose",ThisObject);
-	DirChoiceDlg.Show(Notify);
-	
+﻿&AtClient
+Procedure PathStartChoice(Item, ChoiceData, StandardProcessing)	
+	RepTasksClient.DirChoice(Object, "Path", "Repository path"); 
 EndProcedure
 
 &AtServer
@@ -71,20 +56,16 @@ Procedure OnWriteAtServer(Cancel, CurrentObject, WriteParameters)
 EndProcedure
 
 &AtClient
-Procedure WorkingDirChoose(SelectedFiles, Params) Export
-	
-	For Each File in SelectedFiles Do
-		Object.WorkingDir = File;		
-	EndDo 
-	
+Procedure WorkingDirStartChoice(Item, ChoiceData, StandardProcessing)		
+	RepTasksClient.DirChoice(Object, "WorkingDir", "Repository path"); 
 EndProcedure
 
 &AtClient
-Procedure WorkingDirStartChoice(Item, ChoiceData, StandardProcessing)
-	
-	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
-	DirChoiceDlg.Title = "Repository path"; 
-	Notify = New NotifyDescription("WorkingDirChoose",ThisObject);
-	DirChoiceDlg.Show(Notify);
-	
+Procedure DumpDirStartChoice(Item, ChoiceData, StandardProcessing)
+	RepTasksClient.DirChoice(Object, "ConfBackupDir", "Configuration backup directory"); 
+EndProcedure
+
+&AtClient
+Procedure ConfigurationPathStartChoice(Item, ChoiceData, StandardProcessing)
+	RepTasksClient.DirChoice(Object, "DBDir", "Bound database directory"); 
 EndProcedure

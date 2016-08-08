@@ -24,4 +24,24 @@ EndFunction
 Function GetSystemEmailAccount() Export
 		Return RepTasks.GetSystemEmailAccount();
 EndFunction
+
+Procedure DirChoiceResult(SelectedFiles, Params) Export 
+	
+	If SelectedFiles <> Undefined  Then
+		For Each File in SelectedFiles Do
+			Params.Object[Params.AttributeName] = File;		
+		EndDo 		
+	EndIf; 	
+	
+EndProcedure
+ 
+Procedure DirChoice(Object, AttributeName, Title = Undefined) Export 
+	
+	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
+	DirChoiceDlg.Title = Title; 
+	DirChoiceDlg.Directory = Object[AttributeName];
+	Notify = New NotifyDescription("DirChoiceResult",ThisObject, New Structure("Object,AttributeName", Object, AttributeName));
+	DirChoiceDlg.Show(Notify);
+	
+EndProcedure
  

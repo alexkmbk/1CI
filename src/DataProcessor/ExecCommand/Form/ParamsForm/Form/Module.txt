@@ -7,7 +7,6 @@ Function GetParams()
 	DataProcessorParams.Insert("CurrentDirectory", CurrentDirectory);
 	return DataProcessorParams;		
 EndFunction
-
  
 &AtClient
 Procedure SaveAndClose(Command)
@@ -36,4 +35,9 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 		EndIf; 
 	EndIf; 
 	
+EndProcedure
+
+&AtClient
+Procedure CurrentDirectoryStartChoice(Item, ChoiceData, StandardProcessing)
+	RepTasksClient.DirChoice(ThisObject, "CurrentDirectory", "Choose current directory of the command"); 
 EndProcedure
