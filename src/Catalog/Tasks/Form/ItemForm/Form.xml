@@ -133,6 +133,20 @@
 							<ContextMenu name="ActionsContextMenu" id="14"/>
 							<AutoCommandBar name="ActionsCommandBar" id="15">
 								<ChildItems>
+									<Button name="ActionsMoveUp" id="92">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Actions.StandardCommand.MoveUp</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ActionsMoveUpExtendedTooltip" id="93"/>
+									</Button>
+									<Button name="ActionsMoveDown" id="94">
+										<Type>CommandBarButton</Type>
+										<OnlyInAllActions>true</OnlyInAllActions>
+										<CommandName>Form.Item.Actions.StandardCommand.MoveDown</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ActionsMoveDownExtendedTooltip" id="95"/>
+									</Button>
 									<Button name="OpenActionSettingsButton" id="34">
 										<Type>CommandBarButton</Type>
 										<Enabled>false</Enabled>
