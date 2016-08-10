@@ -14,7 +14,7 @@ Function RunTask(Task, Form, Val Repository = Undefined, Actions = Undefined, Ta
 		RepTasks.RunTask(Task, True, Repository, RepUserName, RepPassword, Actions, TaskDescription);
 	Else
 		Params = New Structure("Repository, Task", Repository, Task);
-		OpenForm("CommonForm.RepositoryUserNameAndPasswordInput", Params);
+		OpenForm("CommonForm.RepositoryUserNameAndPasswordInput", Params, Form, , WindowOpenVariant.SingleWindow);
 	EndIf; 
 	
 EndFunction

@@ -52,7 +52,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Email group</v8:content>
+					<v8:content>Email settings</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -69,6 +69,37 @@
 					<Parameter xsi:nil="true"/>
 					<ExtendedTooltip name="OpenSystemEmailAccountSettingsExtendedTooltip" id="12"/>
 				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Users" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="UsersExtendedTooltip" id="16"/>
+			<ChildItems>
+				<LabelDecoration name="OpenUsersCatalog" id="17">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Open users catalog</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="OpenUsersCatalogContextMenu" id="18"/>
+					<ExtendedTooltip name="OpenUsersCatalogExtendedTooltip" id="19"/>
+					<Events>
+						<Event name="Click">OpenUsersCatalogClick</Event>
+					</Events>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>

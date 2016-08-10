@@ -4,13 +4,8 @@ Function GetSystemEmailAccount()
 EndFunction
 
 &AtClient
-Procedure EndShowValue(Params) Export
-	
-EndProcedure						   
-
-&AtClient
 Procedure OpenSystemEmailAccountSettings(Command)
-	ShowValue(New NotifyDescription("EndShowValue",ThisObject), GetSystemEmailAccount());
+	ShowValue(, GetSystemEmailAccount());
 EndProcedure
 
 &AtServer
@@ -28,5 +23,11 @@ EndProcedure
 &AtServer
 Procedure OnCloseAtServer()
 	Constants.UseAdditionalReportsAndDataProcessors.Set(UseAdditionalReportsAndDataProcessors); 
+EndProcedure
+
+
+&AtClient
+Procedure OpenUsersCatalogClick(Item)
+	OpenForm("Catalog.Users.ListForm",,ThisForm);
 EndProcedure
 
