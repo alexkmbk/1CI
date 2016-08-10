@@ -100,6 +100,7 @@ EndProcedure
 &AtServer
 Procedure SetScheduleJob(Cancel, CurrentObject)
 	
+	SetPrivilegedMode(True);
 	If Object.RunBySchedule Then
 		
 		If ValueIsFilled(Object.ScheduledJobGUID) Then
@@ -127,7 +128,7 @@ Procedure SetScheduleJob(Cancel, CurrentObject)
 		EndIf;
 		
 	EndIf; 
-	
+	SetPrivilegedMode(False);
 EndProcedure
 
 &AtServer
@@ -154,6 +155,8 @@ EndProcedure
 &AtServer
 Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	
+	SetPrivilegedMode(True);
+	
 	If ValueIsFilled(Object.ScheduledJobGUID) Then
 		ScheduledJobObj = ScheduledJobs.FindByUUID(Object.ScheduledJobGUID);
 		If ScheduledJobObj <> Undefined Then
@@ -162,6 +165,8 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	EndIf; 
 	UpdateSchedulePresentation();		
 	UpdateWarnings();
+	SetPrivilegedMode(False);
+	
 EndProcedure
 
 &AtClient

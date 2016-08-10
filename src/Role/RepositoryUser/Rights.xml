@@ -15,6 +15,52 @@
 		</right>
 	</object>
 	<object>
+		<name>Catalog.EmailAccounts.Attribute.Password</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPAuthenticationMode</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonCommand.ProgramSettings</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.LogonBeforeSending</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPPassword</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.Country</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>DataProcessor.DumpConfFromRepository</name>
 		<right>
 			<name>Use</name>
@@ -23,6 +69,105 @@
 		<right>
 			<name>View</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.PredefinedDataName</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Predefined</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Ref</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.IsFolder</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Owner</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Parent</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Description</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.StandardAttribute.Code</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -38,26 +183,6 @@
 			<name>Read</name>
 			<value>true</value>
 			<restrictionByCondition>
-				<field>Ref</field>
-				<field>DataVersion</field>
-				<field>Code</field>
-				<field>Description</field>
-				<field>Owner</field>
-				<field>Parent</field>
-				<field>IsFolder</field>
-				<field>DeletionMark</field>
-				<field>Predefined</field>
-				<field>PredefinedDataName</field>
-				<field>Actions</field>
-				<field>Actions.LineNumber</field>
-				<field>Actions.Action</field>
-				<field>Actions.ActionParams</field>
-				<field>FailureReportRecipients</field>
-				<field>FailureReportRecipients.LineNumber</field>
-				<field>FailureReportRecipients.Email</field>
-				<field>SuccessReportRecipients</field>
-				<field>SuccessReportRecipients.LineNumber</field>
-				<field>SuccessReportRecipients.Email</field>
 				<condition>CurrentTable
 ИЗ
     #CurrentTable КАК CurrentTable
@@ -113,6 +238,70 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseSecureConnectionForOutgoingMail</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseSecureConnectionForIncomingMail</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseForSending</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.UpdateDB</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.FieldValues</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPAuthentication</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.KeepMessageCopiesAtServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>HTTPService.RunTask.URLTemplate.RepositoryCodeTaskCode.Method.RunTask</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Document.TaskRunningEvent</name>
 		<right>
 			<name>Read</name>
@@ -126,6 +315,7 @@ WHERE RepUsers.User = &amp;CurrentUser)
 				<field>DeletionMark</field>
 				<field>State</field>
 				<field>Task</field>
+				<field>Repository</field>
 				<condition>CurrentTable
 ИЗ
     #CurrentTable КАК CurrentTable
@@ -197,6 +387,49 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.Users.Attribute.Prepared</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Command.CheckAccount</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.DeleteResponsibleForEmailProcessing</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.EmailAddress</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.OutgoingMailServerPort</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.Repositories</name>
 		<right>
 			<name>Read</name>
@@ -214,6 +447,7 @@ WHERE RepUsers.User = &amp;CurrentUser)
 				<field>PlatformPath</field>
 				<field>DBDir</field>
 				<field>ConfBackupDir</field>
+				<field>ScheduledJobUser</field>
 				<condition>CurrentTable
 ИЗ
     #CurrentTable КАК CurrentTable
@@ -265,6 +499,145 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.PhoneNumberWithoutCodes</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.PredefinedDataName</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Predefined</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Ref</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.IsFolder</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Owner</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Parent</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Description</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.StandardAttribute.Code</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ExecCommand</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.IncomingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseSafeLogonToOutgoingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.Comment</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.SMTPUser</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseForReceiving</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Configuration.OneCI</name>
 		<right>
 			<name>ThinClient</name>
@@ -281,6 +654,24 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		<right>
 			<name>Output</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.InfobaseUserID</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.Timeout</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -331,6 +722,13 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.EmailAccounts.Attribute.EmailAddress</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.RepUsers</name>
 		<right>
 			<name>Read</name>
@@ -351,6 +749,35 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		<right>
 			<name>TotalsControl</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.ProgramSettings</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.State</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.DeleteIncludeUserNameInView</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -390,6 +817,100 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.Kind</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.NotValid</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UseSafeLogonToIncomingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.IncomingMailServerPort</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.Presentation</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.KeepMessagesOnServerPeriod</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.PhoneNumber</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.Internal</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.UserName</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.Type</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>DataProcessor.SendEmail</name>
 		<right>
 			<name>Use</name>
@@ -401,10 +922,118 @@ WHERE RepUsers.User = &amp;CurrentUser)
 		</right>
 	</object>
 	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.InfobaseUserProperties</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.RepositoryUserNameAndPasswordInput</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.Attribute.ServiceUserID</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Command.SystemAccountSettings</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.User</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.OutgoingMailServer</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.ServerDomainName</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Subsystem.Repositories.Subsystem.InternalActionDataProcessors</name>
 		<right>
 			<name>View</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.CheckModules</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.ProtocolForIncomingMail</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Users.TabularSection.ContactInformation.Attribute.City</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.EmailAccounts.Attribute.POP3AuthenticationMode</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<restrictionTemplate>

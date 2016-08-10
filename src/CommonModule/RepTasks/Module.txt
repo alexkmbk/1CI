@@ -576,16 +576,17 @@ EndFunction
 //
 //
 Function SystemEmailAccountIsSet() Export
-	
+		
 	Query = New Query;
-	Query.Text = "SELECT
-	|	EmailAccounts.EmailAddress
-	|FROM
-	|	Catalog.EmailAccounts AS EmailAccounts
-	|WHERE
-	|	EmailAccounts.Ref = VALUE(Catalog.EmailAccounts.SystemEmailAccount)";
+	Query.Text = "SELECT ALLOWED
+	             |	EmailAccounts.EmailAddress
+	             |FROM
+	             |	Catalog.EmailAccounts AS EmailAccounts
+	             |WHERE
+	             |	EmailAccounts.Ref = VALUE(Catalog.EmailAccounts.SystemEmailAccount)";
 	
 	Selection = Query.Execute().Select();
+		
 	If Selection.Next() Then
 		
 		If  ValueIsFilled(Selection.EmailAddress) Then
