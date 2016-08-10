@@ -154,9 +154,13 @@ Function RunTask(Task, ShowMessages = False, Repository = Undefined, RepUserName
 	EndIf; 
 	
 	SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Success);
-	SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Success, ShowMessages = False);
-	
-	Return True;
+	If SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Success, ShowMessages = False) Then
+		If ShowMessages Then
+			Message("The task """ + CommonParams.TaskName + """ is successfully done!", MessageStatus.Ordinary); 
+		EndIf; 
+		Return True;
+	EndIf; 
+	Return False;
 	
 EndFunction
 

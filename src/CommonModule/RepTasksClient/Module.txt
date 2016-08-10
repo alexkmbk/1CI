@@ -19,7 +19,7 @@ Function RunTask(Task, Form, Val Repository = Undefined, Actions = Undefined, Ta
 	
 EndFunction
 
-//
+// Return reference to predefined element "GetSystemEmailAccount" of "EmailAccounts" catalog
 //
 Function GetSystemEmailAccount() Export
 		Return RepTasks.GetSystemEmailAccount();
@@ -34,7 +34,9 @@ Procedure DirChoiceResult(SelectedFiles, Params) Export
 	EndIf; 	
 	
 EndProcedure
- 
+
+// Open directory choice dialog and fill given attribute of the object 
+//
 Procedure DirChoice(Object, AttributeName, Title = Undefined) Export 
 	
 	DirChoiceDlg = new FileDialog(FileDialogMode.ChooseDirectory);	
