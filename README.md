@@ -360,7 +360,7 @@ Example:
 In this example, a task with code 2 of a repository with code 1 will be
 run.
 
-Run tasks by HTTP-service
+Run tasks by HTTP-request
 =========================
 
 There is an HTTP-service in the configuration. The base URL of the
