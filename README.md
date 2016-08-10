@@ -395,11 +395,11 @@ authKey = base64.b64encode("Administrator:password")
 headers = {"Content-Type":"application/json", "Authorization":"Basic " +
 authKey}
 
-request = urllib2.Request(url)\\
+request = urllib2.Request(url)
 
 for key,value in headers.items():
 
-request.add\_header(key,value)
+request.add_header(key,value)
 
 response = urllib2.urlopen(request)
 
