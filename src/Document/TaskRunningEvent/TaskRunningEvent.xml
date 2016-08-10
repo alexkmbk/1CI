@@ -177,7 +177,7 @@
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
 			<DefaultObjectForm>Document.TaskRunningEvent.Form.DocumentForm</DefaultObjectForm>
-			<DefaultListForm/>
+			<DefaultListForm>Document.TaskRunningEvent.Form.ListForm</DefaultListForm>
 			<DefaultChoiceForm/>
 			<AuxiliaryObjectForm/>
 			<AuxiliaryListForm/>
@@ -323,6 +323,7 @@
 				</Properties>
 			</Attribute>
 			<Form>DocumentForm</Form>
+			<Form>ListForm</Form>
 		</ChildObjects>
 	</Document>
 </MetaDataObject>

@@ -231,6 +231,7 @@
 			<CommonPicture>UserStates</CommonPicture>
 			<CommonPicture>Warning</CommonPicture>
 			<CommonPicture>Warning32</CommonPicture>
+			<CommonPicture>EventsStatusRow</CommonPicture>
 			<SessionParameter>AuthorizedUser</SessionParameter>
 			<SessionParameter>ClientParametersOnServer</SessionParameter>
 			<SessionParameter>CurrentUser</SessionParameter>

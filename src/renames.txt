@@ -449,6 +449,9 @@ CommonPicture.EventLogEventKindCollection.xml-->CommonPicture\EventLogEventKindC
 CommonPicture.EventLogNote.Picture.Picture.png-->CommonPicture\EventLogNote\Picture\Picture.png
 CommonPicture.EventLogNote.Picture.xml-->CommonPicture\EventLogNote\Picture.xml
 CommonPicture.EventLogNote.xml-->CommonPicture\EventLogNote\EventLogNote.xml
+CommonPicture.EventsStatusRow.Picture.Picture.bmp-->CommonPicture\EventsStatusRow\Picture\Picture.bmp
+CommonPicture.EventsStatusRow.Picture.xml-->CommonPicture\EventsStatusRow\Picture.xml
+CommonPicture.EventsStatusRow.xml-->CommonPicture\EventsStatusRow\EventsStatusRow.xml
 CommonPicture.ExclamationMarkGray.Picture.Picture.png-->CommonPicture\ExclamationMarkGray\Picture\Picture.png
 CommonPicture.ExclamationMarkGray.Picture.xml-->CommonPicture\ExclamationMarkGray\Picture.xml
 CommonPicture.ExclamationMarkGray.xml-->CommonPicture\ExclamationMarkGray\ExclamationMarkGray.xml
@@ -878,6 +881,9 @@ DefinedType.SafeMode.xml-->DefinedType\SafeMode\SafeMode.xml
 Document.TaskRunningEvent.Form.DocumentForm.Form.Module.txt-->Document\TaskRunningEvent\Form\DocumentForm\Form\Module.txt
 Document.TaskRunningEvent.Form.DocumentForm.Form.xml-->Document\TaskRunningEvent\Form\DocumentForm\Form.xml
 Document.TaskRunningEvent.Form.DocumentForm.xml-->Document\TaskRunningEvent\Form\DocumentForm.xml
+Document.TaskRunningEvent.Form.ListForm.Form.Module.txt-->Document\TaskRunningEvent\Form\ListForm\Form\Module.txt
+Document.TaskRunningEvent.Form.ListForm.Form.xml-->Document\TaskRunningEvent\Form\ListForm\Form.xml
+Document.TaskRunningEvent.Form.ListForm.xml-->Document\TaskRunningEvent\Form\ListForm.xml
 Document.TaskRunningEvent.xml-->Document\TaskRunningEvent\TaskRunningEvent.xml
 Enum.ActionEventTypes.xml-->Enum\ActionEventTypes\ActionEventTypes.xml
 Enum.AdditionalDataProcessorCallMethods.xml-->Enum\AdditionalDataProcessorCallMethods\AdditionalDataProcessorCallMethods.xml

@@ -237,3 +237,10 @@ Procedure ActionsBeforeEditEnd(Item, NewRow, CancelEdit, Cancel)
 	EndIf; 
 EndProcedure
 
+
+&AtClient
+Procedure OpenTaskEvents(Command)
+	TaskEventsListForm = GetForm("Document.TaskRunningEvent.ListForm");
+	TaskEventsListForm.SetFilter(Object.Ref);
+	TaskEventsListForm.Open();
+EndProcedure
