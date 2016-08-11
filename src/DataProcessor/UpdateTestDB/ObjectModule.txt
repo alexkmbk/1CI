@@ -14,6 +14,18 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	Try
 		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.TestDBDir + """ /N " + CommonParams.TestDBAdminName + ?(ValueIsFilled(CommonParams.TestDBAdminPassword), " /P " + CommonParams.TestDBAdminPassword, "")  + " /LoadCfg """ + CommonParams.DumpConfFileFullPath + """ ",,True, ReturnCode);	
 	Except
+		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Load cf-file in test database error:" + ErrorDescription(), ShowMessages);
+		Return False; 
+	EndTry; 
+	
+	If (ReturnCode <> 0) Then		
+		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Load cf-file in test database error: the program return " + ReturnCode, ShowMessages);	
+		Return False;	
+	EndIf; 
+
+	Try
+		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.TestDBDir + """ /N " + CommonParams.TestDBAdminName + ?(ValueIsFilled(CommonParams.TestDBAdminPassword), " /P " + CommonParams.TestDBAdminPassword, "")  + " /UpdateDBCfg",,True, ReturnCode);	
+	Except
 		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Update test database error:" + ErrorDescription(), ShowMessages);
 		Return False; 
 	EndTry; 
@@ -22,7 +34,7 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Update test database error: the program return " + ReturnCode, ShowMessages);	
 		Return False;	
 	EndIf;
-	
+
 	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
 	
 	Return true;
