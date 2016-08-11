@@ -8,7 +8,7 @@
 
 //
 //
-Function RunActions(LogLineNumber, Task, CommonParams, ShowMessages = False, Actions = Undefined)
+Function RunActions(LogLineNumber, Task, CommonParams, StorageAddress = Undefined, Actions = Undefined)
 	
 	Query = New Query;
 	If Actions = Undefined  Then
@@ -77,28 +77,28 @@ Function RunActions(LogLineNumber, Task, CommonParams, ShowMessages = False, Act
 		If ActionsSelection.IsInternal Then
 			DataProcessorName = ActionsSelection.InternaldataProcessor;
 			If Not ValueIsFilled(DataProcessorName) Then
-				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Internal data processor name is undefined", ShowMessages);
+				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Internal data processor name is undefined", StorageAddress);
 				return false;
 			EndIf; 
 			Try
 				DataProcessor = DataProcessors[DataProcessorName].Create();
 			Except
-				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Error of getting internal data processor""" + DataProcessorName + """:" + ErrorDescription(), ShowMessages);
+				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Error of getting internal data processor""" + DataProcessorName + """:" + ErrorDescription(), StorageAddress);
 				return False;
 			EndTry; 
 			
 		ElsIf Not ValueIsFilled(ActionsSelection.DataProcessor) Then
-			WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "External data processor name is not specified", ShowMessages);
+			WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "External data processor name is not specified", StorageAddress);
 			return False;			
 		Else   
 			Try
 				DataProcessor = AdditionalReportsAndDataProcessors.GetExternalDataProcessorsObject(ActionsSelection.DataProcessor);
 			Except
-				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "External data processor getting error: " + ErrorDescription(), ShowMessages);			
+				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "External data processor getting error: " + ErrorDescription(), StorageAddress);			
 				Return False;
 			EndTry; 
 			If DataProcessor = Undefined  Then
-				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Failure of getting external data processor", ShowMessages);			
+				WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, ActionsSelection.Action, Enums.ActionEventTypes.Error, "Failure of getting external data processor", StorageAddress);			
 				Return False;				
 			EndIf; 		
 		EndIf; 
@@ -106,7 +106,7 @@ Function RunActions(LogLineNumber, Task, CommonParams, ShowMessages = False, Act
 		If ValueIsFilled(ActionsSelection.ActionParams) Then
 			ActionParams = ValueFromStringInternal(ActionsSelection.ActionParams);			
 		EndIf; 
-		If Not DataProcessor.Run(LogLineNumber, CommonParams, ActionsSelection.Action, ActionParams, ShowMessages) Then
+		If Not DataProcessor.Run(LogLineNumber, CommonParams, ActionsSelection.Action, ActionParams, StorageAddress) Then
 			return False;	
 		EndIf; 
 		
@@ -121,42 +121,51 @@ Function RunScheduledTask(TaskCode) Export
 	Task = Catalogs.Tasks.FindByCode(TaskCode,True);
 	
 	If ValueIsFilled(Task) Then
-		RunTask(Task, False);
+		Params = New Structure("Task, ShowMessages, Repository, RepUserName, RepPassword, Actions, TaskName",Task, False); 
+		RunTask(Params);
 	EndIf; 
 	
 	
 EndFunction
 
+Function RunTaskInBackground(FormID, Task, ShowMessages = False, Repository = Undefined, RepUserName = Undefined, RepPassword = Undefined, Actions = Undefined, TaskName = Undefined) Export  
+	
+	Params = New Structure("Task, ShowMessages, Repository, RepUserName, RepPassword, Actions, TaskName",Task, ShowMessages, Repository, RepUserName, RepPassword, Actions, TaskName); 
+	Return LongActions.ExecuteInBackground(FormID, "RepTasks.RunTask", Params, "Task running");
+	
+EndFunction
+		
 // Runs all actions in the given Task
 //
-Function RunTask(Task, ShowMessages = False, Repository = Undefined, RepUserName = Undefined, RepPassword = Undefined, Actions = Undefined, TaskName = Undefined) Export  
+Function RunTask(Params, StorageAddress = Undefined) Export  
 	
 	LogLineNumber = 0;
 	
-	TaskRunningEventRef = CreateNewTaskRunningEvent(Task, Repository);
+	TaskRunningEventRef = CreateNewTaskRunningEvent(Params.Task, Params.Repository);
 	
 	CommonParams = New Structure("Rep, RepName, Task, TaskName, FilesystemPath, PlatformPath, DBDir, RepPath, UserName, Password, DumpConfFileFullPath, WorkingDir, ConfBackupDir,TaskRunningEventRef"); 
 	CommonParams.TaskRunningEventRef = TaskRunningEventRef;
-	CommonParams.Rep = Repository;
-	CommonParams.UserName = RepUserName;
-	CommonParams.Password = RepPassword;
-	
-	If Not PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages, Actions, Repository, TaskName) Then
+	CommonParams.Rep = Params.Repository;
+	CommonParams.UserName = Params.RepUserName;
+	CommonParams.Password = Params.RepPassword;
+		
+	If Not PrepareTask(LogLineNumber, Params.Task, CommonParams, Params.Actions, Params.Repository, Params.TaskName, StorageAddress) Then
 		SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Error);
-		SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Error, ShowMessages = False);
+		SendTaskReport(LogLineNumber, Params.Task, CommonParams, Enums.TaskState.Error, StorageAddress);
 		return false;
 	EndIf; 
 	
-	If Not RunActions(LogLineNumber, Task, CommonParams, ShowMessages, Actions) Then
+	If Not RunActions(LogLineNumber, Params.Task, CommonParams, StorageAddress, Params.Actions) Then
 		SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Error);
-		SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Error, ShowMessages = False);
+		SendTaskReport(LogLineNumber, Params.Task, CommonParams, Enums.TaskState.Error, StorageAddress);
 		return false;		
 	EndIf; 
 	
 	SetTaskRunningEventState(CommonParams.TaskRunningEventRef, Enums.TaskState.Success);
-	If SendTaskReport(LogLineNumber, Task, CommonParams, Enums.TaskState.Success, ShowMessages = False) Then
-		If ShowMessages Then
-			Message("The task """ + CommonParams.TaskName + """ is successfully done!", MessageStatus.Ordinary); 
+	If SendTaskReport(LogLineNumber, Params.Task, CommonParams, Enums.TaskState.Success, StorageAddress) Then
+		If Params.ShowMessages Then
+			Message = "The task """ + CommonParams.TaskName + """ has been successfully done!";
+			PutToTempStorage(Message, StorageAddress);
 		EndIf; 
 		Return True;
 	EndIf; 
@@ -187,13 +196,14 @@ Function RunTaskByCode(RepositoryCode, TaskCode) Export
 	
 	Selection = QueryResult.Select();
 	Selection.Next();
-	Return RunTask(Selection.Task);
+	Params = New Structure("Task, ShowMessages, Repository, RepUserName, RepPassword, Actions, TaskName",Selection.Task, False); 
+	Return RunTask(Params);
 	
 EndFunction
 
 //
 //
-Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Actions = Undefined, Repository = Undefined, TaskName = Undefined)
+Function PrepareTask(LogLineNumber, Task, CommonParams, Actions = Undefined, Repository = Undefined, TaskName = Undefined, StorageAddress = Undefined)
 	
 	// Get predefined action to log task operations
 	TaskPrepareAction = Catalogs.Actions.PrepareTask;	
@@ -201,7 +211,7 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Ac
 	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Start);	
 	
 	if Not ValueIsFilled(Task) And Actions = Undefined Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Task is undefined", ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Task is undefined", StorageAddress);	
 		return false;
 	EndIf;
 	
@@ -265,12 +275,12 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Ac
 	EndIf; 
 	
 	If  Not ValueIsFilled(CommonParams.UserName) Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Repository user name is undefined", ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Repository user name is undefined", StorageAddress);	
 		Return False; 
 	EndIf; 
 	
 	If Not ValueIsFilled(CommonParams.RepPath) Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Path to repository is undefined", ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.Error, "Path to repository is undefined", StorageAddress);	
 		Return false;
 	EndIf; 
 	
@@ -305,13 +315,13 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, ShowMessages = False, Ac
 	
 	// If database folder is empty - crerate new empty db and bind it to repository
 	If DirIsEmpty(CommonParams.DBDir) Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "Configuration directory is empty (" + CommonParams.DBDir + ")", ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "Configuration directory is empty (" + CommonParams.DBDir + ")", StorageAddress);	
 		CreateEmptyDb(CommonParams.DBDir);
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "The new database was created in configuration directory (" + CommonParams.DBDir + ")", ShowMessages);
-		If Not BindDbToRepository(LogLineNumber, TaskPrepareAction, CommonParams, ShowMessages) Then
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "The new database was created in configuration directory (" + CommonParams.DBDir + ")", StorageAddress);
+		If Not BindDbToRepository(LogLineNumber, TaskPrepareAction, CommonParams, StorageAddress) Then
 			Return False;
 		EndIf; 
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "The new database was binded to the repository and updated (" + CommonParams.DBDir + ")", ShowMessages);
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, TaskPrepareAction, Enums.ActionEventTypes.DetailedInfo, "The new database was binded to the repository and updated (" + CommonParams.DBDir + ")", StorageAddress);
 	EndIf; 
 	
 	CommonParams.ConfBackupDir = TaskSelection.ConfBackupDir;
@@ -339,7 +349,7 @@ EndFunction
 
 //
 //
-Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, ShowMessages = False)
+Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAddress)
 	
 	Query = New Query;
 	Query.Text = "SELECT
@@ -430,7 +440,7 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, ShowMessag
 		Try
 			EmailOperations.SendEmailMessage(EmailOperations.SystemAccount(),EmailParams);			
 		Except
-			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending email error:" + ErrorDescription(), ShowMessages);
+			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending email error:" + ErrorDescription(), StorageAddress);
 			WasError = true;
 		EndTry; 	
 	EndDo; 	
@@ -473,34 +483,34 @@ EndFunction
 // 		CommonParams - structore with common params that exist while task running
 // 		ShowMessages (bool) - determine if it needed to show interactive messages  
 //
-Function BindDbToRepository(LogLineNumber, Action, CommonParams, ShowMessages) Export
+Function BindDbToRepository(LogLineNumber, Action, CommonParams, StorageAddress) Export
 	
 	ReturnCode = Undefined;
 	
-	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo, "Try to bind database to configuration.", ShowMessages);	
+	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo, "Try to bind database to configuration.", StorageAddress);	
 	Try
 		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.DBDir + """ /ConfigurationRepositoryF """ + CommonParams.RepPath + """ /ConfigurationRepositoryN """ + CommonParams.UserName + """ /ConfigurationRepositoryP """ + CommonParams.Password + """ /ConfigurationRepositoryBindCfg ", ,true, ReturnCode);	
 	Except
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The error of binding database to the repository:" + ErrorDescription(), ShowMessages);
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The error of binding database to the repository:" + ErrorDescription(), StorageAddress);
 		Return False; 
 	EndTry; 
 	
 	If ReturnCode <> 0 Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of binding database to configuration: the program return " + ReturnCode, ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of binding database to configuration: the program return " + ReturnCode, StorageAddress);	
 		Return False; 
 	EndIf; 
 	
-	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo, "Try to update database from the repository.", ShowMessages);	
+	WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo, "Try to update database from the repository.", StorageAddress);	
 	
 	Try
 		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.DBDir + """ /ConfigurationRepositoryF """ + CommonParams.RepPath + """ /ConfigurationRepositoryN """ + CommonParams.UserName + """ /ConfigurationRepositoryP """ + CommonParams.Password + """ /ConfigurationRepositoryUpdateCfg ", ,true, ReturnCode);	
 	Except
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The error of binding database to the repository:" + ErrorDescription(), ShowMessages);
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The error of binding database to the repository:" + ErrorDescription(), StorageAddress);
 		Return False; 
 	EndTry; 
 	
 	If ReturnCode <> 0 Then
-		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of updating database from the repository: the program return " + ReturnCode, ShowMessages);	
+		WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of updating database from the repository: the program return " + ReturnCode, StorageAddress);	
 		Return False; 
 	EndIf; 
 	
@@ -549,7 +559,7 @@ EndFunction
 //  Description (string type) - text description of the event
 //  ShowMessages (bool) - determine if it needed to show interactive messages  
 //
-Function WriteLog(LogLineNumber, TaskRunningEvent, Action, State, Description = "", ShowMessages = False) Export																					   
+Function WriteLog(LogLineNumber, TaskRunningEvent, Action, State, Description = "", StorageAddress = Undefined) Export																					   
 	
 	RManager = InformationRegisters.ActionEventsLog.CreateRecordManager();
 	Rmanager.Date = CurrentDate();
@@ -561,8 +571,8 @@ Function WriteLog(LogLineNumber, TaskRunningEvent, Action, State, Description = 
 	RManager.Write(True);
 	LogLineNumber = LogLineNumber + 1;
 	
-	If ShowMessages Then
-		Message(Description, ?(State = Enums.ActionEventTypes.Error, MessageStatus.Important, MessageStatus.Ordinary)); 
+	If StorageAddress <> Undefined Then
+		PutToTempStorage(Description, StorageAddress);
 	EndIf; 
 	
 EndFunction

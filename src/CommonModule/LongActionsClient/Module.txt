@@ -58,7 +58,9 @@ Function OpenLongActionForm(Val FormOwner, Val TaskID) Export
 			FormOwner);
 	Else
 		LongActionForm.FormOwner = FormOwner;
-		LongActionForm.TaskID    = TaskID;
+		// 1CI >
+		LongActionForm.JobID    = TaskID;
+		// 1CI <
 		LongActionForm.Open();
 	EndIf;
 	

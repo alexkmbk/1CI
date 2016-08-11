@@ -21,8 +21,8 @@ Procedure Save(Command)
 	EndIf; 
 	
 	SaveAtServer(Repository, UserName, Password);
-	RepTasks.RunTask(Task, True);
-	Close();
+	Params = New Structure("Task,UserName,Password",Task, UserName, Password); 
+	NotifyChoice(Params);
 	
 EndProcedure
 

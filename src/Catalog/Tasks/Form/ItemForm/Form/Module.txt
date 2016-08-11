@@ -1,4 +1,10 @@
-﻿&AtServer
+﻿&AtClient 
+Var LongActioinForm;
+
+&AtClient
+Var IdleHandlerParams;
+
+&AtServer
 Procedure UpdateWarnings()
 	
 	If (Object.SuccessReportRecipients.Count() <> 0 or Object.FailureReportRecipients.Count() <> 0) and Not RepTasks.SystemEmailAccountIsSet()Then
@@ -17,13 +23,68 @@ Procedure SetAvailabilityForSchedulePresentation()
 EndProcedure
 
 
+&AtServerNoContext
+Function JobCompleted(JobID)
+	Return LongActions.JobCompleted(JobID);	
+EndFunction
+ 
+&AtServer
+Procedure LoadResult()	
+	Result = GetFromTempStorage(StorageAddress);
+	If TypeOf(Result) = Type("String") And ValueIsFilled(Result) Then
+		CommonUseClientServer.MessageToUser(Result);	
+	EndIf; 			
+EndProcedure
+  
+&AtClient
+Procedure CheckJobFinishing() Export 
+	
+	Try
+		If LongActioinForm.IsOpen() 
+			And LongActioinForm.JobID = JobID Then
+			If JobCompleted(JobID) Then 
+				LongActionsClient.CloseLongActionForm(LongActioinForm);				
+				LoadResult();
+			Else
+				LongActionsClient.UpdateIdleHandlerParameters(IdleHandlerParams);
+				AttachIdleHandler("CheckJobFinishing", IdleHandlerParams.CurrentInterval, True);
+			EndIf;
+		EndIf;
+	Except
+		LongActionsClient.CloseLongActionForm(LongActioinForm);
+		Raise;
+	EndTry;	
+	
+EndProcedure
+
+&AtClient
+Procedure RunTaskInBackground(Task, RepUserName, RepPassword, Actions)
+	JobStruct = RepTasks.RunTaskInBackground(ThisForm.UUID, Task, True, Object.Owner, RepUserName, RepPassword, Actions, Object.Description);
+	JobID = JobStruct.JobID;
+	StorageAddress = JobStruct.StorageAddress;
+	LongActioinForm = LongActionsClient.OpenLongActionForm(ThisForm, JobStruct.JobID);
+	LongActionsClient.InitIdleHandlerParameters(IdleHandlerParams);
+	AttachIdleHandler("CheckJobFinishing", IdleHandlerParams.CurrentInterval, True);
+EndProcedure
+
 &AtClient
 Procedure RunTask(Command)	
 	Actions = New Map();
 	For Each Item In Object.Actions  Do
 		Actions.Insert(Item.LineNumber,New Structure("Action,ActionParams",Item.Action, Item.ActionParams));
 	EndDo; 
-	RepTasksClient.RunTask(Object.Ref, ThisForm, Object.Owner, Actions, Object.Description );	
+	
+	RepUserName = Undefined;
+	RepPassword = Undefined;
+	
+	RepTasks.GetRepPasswordAndUserName(Object.Owner, RepUserName, RepPassword);	
+	If ValueIsFilled(RepUserName) Then
+		RunTaskInBackground(Object.Ref, RepUserName, RepPassword, Actions);
+	Else
+		Params = New Structure("Repository, Task",  Object.Owner, Object.Ref);
+		OpenForm("CommonForm.RepositoryUserNameAndPasswordInput", Params, ThisForm, , WindowOpenVariant.SingleWindow);
+	EndIf; 
+	
 EndProcedure
 
 &AtClient
@@ -187,7 +248,23 @@ EndProcedure
 &AtClient
 Procedure ChoiceProcessing(SelectedValue, ChoiceSource)
 	
-	SetActionParams(SelectedValue.ActionParamsUUID, SelectedValue.DataProcessorParams);
+	If ChoiceSource.FormName = "CommonForm.RepositoryUserNameAndPasswordInput" Then
+		If TypeOf(SelectedValue) = Type("Structure") Then
+			UserName = Undefined;
+			Password = Undefined;
+			Task = Undefined;
+			SelectedValue.Property("Task", Task);
+			SelectedValue.Property("UserName", UserName);
+			SelectedValue.Property("Password", Password);	
+			Actions = New Map();
+			For Each Item In Object.Actions  Do
+				Actions.Insert(Item.LineNumber,New Structure("Action,ActionParams",Item.Action, Item.ActionParams));
+			EndDo; 
+			RunTaskInBackground(Task, UserName, Password, Actions);
+		EndIf; 
+	else
+		SetActionParams(SelectedValue.ActionParamsUUID, SelectedValue.DataProcessorParams);	
+	EndIf; 	
 	
 EndProcedure     
 
