@@ -1,26 +1,4 @@
-﻿ 
-//
-//
-Function RunTask(Task, Form, Val Repository = Undefined, Actions = Undefined, TaskDescription = Undefined) Export
-		
-	RepUserName = Undefined;
-	RepPassword = Undefined;
-	If Repository = Undefined  Then
-		Repository = RepTasks.GetRepository(Task);
-	EndIf; 
-		
-	RepTasks.GetRepPasswordAndUserName(Repository, RepUserName, RepPassword);	
-	If ValueIsFilled(RepUserName) Then
-		JobStruct = RepTasks.RunTaskInBackground(Form.UUID, Task, True, Repository, RepUserName, RepPassword, Actions, TaskDescription);
-		LongActionsClient.OpenLongActionForm(Form, JobStruct.JobID);
-	Else
-		Params = New Structure("Repository, Task", Repository, Task);
-		OpenForm("CommonForm.RepositoryUserNameAndPasswordInput", Params, Form, , WindowOpenVariant.SingleWindow);
-	EndIf; 
-	
-EndFunction
-
-// Return reference to predefined element "GetSystemEmailAccount" of "EmailAccounts" catalog
+﻿// Return reference to predefined element "GetSystemEmailAccount" of "EmailAccounts" catalog
 //
 Function GetSystemEmailAccount() Export
 		Return RepTasks.GetSystemEmailAccount();

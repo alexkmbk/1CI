@@ -107,7 +107,6 @@ Procedure RunTask(Command)
 		
 	CurData = Items.Tasks.CurrentData;
 	If CurData <> Undefined Then
-		//RepTasksClient.RunTask(CurData.Ref, ThisForm, Repository);	
 		RepUserName = Undefined;
 		RepPassword = Undefined;
 		
