@@ -33,6 +33,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.RepositoryUserNameAndPasswordInput</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RepTasksClient</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.EventsStatusRow</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.UpdateTestDB</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects>

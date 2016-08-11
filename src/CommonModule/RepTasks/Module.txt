@@ -143,7 +143,7 @@ Function RunTask(Params, StorageAddress = Undefined) Export
 	
 	TaskRunningEventRef = CreateNewTaskRunningEvent(Params.Task, Params.Repository);
 	
-	CommonParams = New Structure("Rep, RepName, Task, TaskName, FilesystemPath, PlatformPath, DBDir, RepPath, UserName, Password, DumpConfFileFullPath, WorkingDir, ConfBackupDir,TaskRunningEventRef"); 
+	CommonParams = New Structure("Rep, RepName, Task, TaskName, FilesystemPath, PlatformPath, DBDir, RepPath, UserName, Password, DumpConfFileFullPath, WorkingDir, ConfBackupDir,TaskRunningEventRef,TestDBDir,TestDBAdminName,TestDBAdminPassword"); 
 	CommonParams.TaskRunningEventRef = TaskRunningEventRef;
 	CommonParams.Rep = Params.Repository;
 	CommonParams.UserName = Params.RepUserName;
@@ -219,33 +219,39 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, Actions = Undefined, Rep
 	
 	If ValueIsFilled(Task)  Then
 		Query.Text = "SELECT
-		|	Tasks.Owner.DBDir AS DBDir,
-		|	Tasks.Owner.PlatformPath AS PlatformPath,
-		|	Tasks.Owner.WorkingDir AS WorkingDir,
-		|	Tasks.Owner.Path AS RepPath,
-		|	Tasks.Description,
-		|	Tasks.Owner.Description AS RepName,
-		|	Tasks.Owner.ConfBackupDir AS ConfBackupDir,
-		|	Tasks.Owner AS Rep
-		|FROM
-		|	Catalog.Tasks AS Tasks
-		|WHERE
-		|	Tasks.Ref = &Task";
+		             |	Tasks.Owner.DBDir AS DBDir,
+		             |	Tasks.Owner.PlatformPath AS PlatformPath,
+		             |	Tasks.Owner.WorkingDir AS WorkingDir,
+		             |	Tasks.Owner.Path AS RepPath,
+		             |	Tasks.Description,
+		             |	Tasks.Owner.Description AS RepName,
+		             |	Tasks.Owner.ConfBackupDir AS ConfBackupDir,
+		             |	Tasks.Owner AS Rep,
+		             |	Tasks.Owner.TestDBDir AS TestDBDir,
+		             |	Tasks.Owner.TestDBAdminName AS TestDBAdminName,
+		             |	Tasks.Owner.TestDBAdminPassword AS TestDBAdminPassword
+		             |FROM
+		             |	Catalog.Tasks AS Tasks
+		             |WHERE
+		             |	Tasks.Ref = &Task";
 		Query.SetParameter("Task", Task);
 	Else	
 		Query = New Query;
 		Query.Text = "SELECT
-		|	Repositories.WorkingDir,
-		|	Repositories.PlatformPath,
-		|	Repositories.DBDir,
-		|	Repositories.ConfBackupDir,
-		|	Repositories.Path AS RepPath,
-		|	Repositories.Ref AS Rep,
-		|	Repositories.Description AS RepName
-		|FROM
-		|	Catalog.Repositories AS Repositories
-		|WHERE
-		|	Repositories.Ref = &Repository";
+		             |	Repositories.WorkingDir,
+		             |	Repositories.PlatformPath,
+		             |	Repositories.DBDir,
+		             |	Repositories.ConfBackupDir,
+		             |	Repositories.Path AS RepPath,
+		             |	Repositories.Ref AS Rep,
+		             |	Repositories.Description AS RepName,
+		             |	Repositories.TestDBDir,
+		             |	Repositories.TestDBAdminName,
+		             |	Repositories.TestDBAdminPassword
+		             |FROM
+		             |	Catalog.Repositories AS Repositories
+		             |WHERE
+		             |	Repositories.Ref = &Repository";
 		Query.SetParameter("Repository", Repository);
 		
 		QueryResult = Query.Execute();
@@ -269,6 +275,9 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, Actions = Undefined, Rep
 	
 	CommonParams.RepName = TaskSelection.RepName;
 	CommonParams.Rep = TaskSelection.Rep;
+	CommonParams.TestDBDir = TaskSelection.TestDBDir;
+	CommonParams.TestDBAdminName = TaskSelection.TestDBAdminName;
+	CommonParams.TestDBAdminPassword = TaskSelection.TestDBAdminPassword;
 	
 	If Not ValueIsFilled(CommonParams.UserName)  Then
 		GetRepPasswordAndUserName(TaskSelection.Rep, CommonParams.UserName, CommonParams.Password);	

@@ -202,6 +202,42 @@
 						</InputField>
 					</ChildItems>
 				</Page>
+				<Page name="TestDB" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Test DB</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Test DB</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="TestDBExtendedTooltip" id="64"/>
+					<ChildItems>
+						<InputField name="TestDBDir" id="60">
+							<DataPath>Object.TestDBDir</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="TestDBDirContextMenu" id="61"/>
+							<ExtendedTooltip name="TestDBDirExtendedTooltip" id="62"/>
+							<Events>
+								<Event name="StartChoice">TestDBDirStartChoice</Event>
+							</Events>
+						</InputField>
+						<InputField name="TestDBAdminName" id="65">
+							<DataPath>Object.TestDBAdminName</DataPath>
+							<ContextMenu name="TestDBAdminNameContextMenu" id="66"/>
+							<ExtendedTooltip name="TestDBAdminNameExtendedTooltip" id="67"/>
+						</InputField>
+						<InputField name="TestDBAdminPassword" id="68">
+							<DataPath>Object.TestDBAdminPassword</DataPath>
+							<ContextMenu name="TestDBAdminPasswordContextMenu" id="69"/>
+							<ExtendedTooltip name="TestDBAdminPasswordExtendedTooltip" id="70"/>
+						</InputField>
+					</ChildItems>
+				</Page>
 			</ChildItems>
 		</Pages>
 	</ChildItems>

@@ -877,6 +877,8 @@ DataProcessor.StartPage.Form.Form.xml-->DataProcessor\StartPage\Form\Form.xml
 DataProcessor.StartPage.xml-->DataProcessor\StartPage\StartPage.xml
 DataProcessor.UpdateDB.ObjectModule.txt-->DataProcessor\UpdateDB\ObjectModule.txt
 DataProcessor.UpdateDB.xml-->DataProcessor\UpdateDB\UpdateDB.xml
+DataProcessor.UpdateTestDB.ObjectModule.txt-->DataProcessor\UpdateTestDB\ObjectModule.txt
+DataProcessor.UpdateTestDB.xml-->DataProcessor\UpdateTestDB\UpdateTestDB.xml
 DefinedType.SafeMode.xml-->DefinedType\SafeMode\SafeMode.xml
 Document.TaskRunningEvent.Form.DocumentForm.Form.Module.txt-->Document\TaskRunningEvent\Form\DocumentForm\Form\Module.txt
 Document.TaskRunningEvent.Form.DocumentForm.Form.xml-->Document\TaskRunningEvent\Form\DocumentForm\Form.xml

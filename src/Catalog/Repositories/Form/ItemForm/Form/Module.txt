@@ -69,3 +69,8 @@ EndProcedure
 Procedure ConfigurationPathStartChoice(Item, ChoiceData, StandardProcessing)
 	RepTasksClient.DirChoice(Object, "DBDir", "Bound database directory"); 
 EndProcedure
+
+&AtClient
+Procedure TestDBDirStartChoice(Item, ChoiceData, StandardProcessing)
+	RepTasksClient.DirChoice(Object, "TestDBDir", "Path to test-database directory"); 
+EndProcedure
