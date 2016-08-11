@@ -12,7 +12,7 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 	
 	Try
-		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.TestDBDir + """ /N " + CommonParams.TestDBAdminName + " /P " + CommonParams.TestDBAdminPassword  + " /LoadCfg """ + CommonParams.DumpConfFileFullPath + """ ",,True, ReturnCode);	
+		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.TestDBDir + """ /N " + CommonParams.TestDBAdminName + ?(ValueIsFilled(CommonParams.TestDBAdminPassword), " /P " + CommonParams.TestDBAdminPassword, "")  + " /LoadCfg """ + CommonParams.DumpConfFileFullPath + """ ",,True, ReturnCode);	
 	Except
 		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Update test database error:" + ErrorDescription(), ShowMessages);
 		Return False; 
