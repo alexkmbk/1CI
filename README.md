@@ -131,8 +131,14 @@ ConfBackupDir &lt;String&gt; - the path where should be stored dumps
 from the repository. If it is not defined, it would be used the path
 “WorkingDir\\Backup”.
 
-ScheduledJobUser &lt;CatalogRef.Users&gt; - The user from the whom name
+ScheduledJobUser &lt;CatalogRef.Users&gt; - the user from the whom name
 will execute scheduled task.
+
+TestDBDir &lt;String&gt; - path to test-database directory.
+
+TestDBAdminName &lt;String&gt; - Test DB admin name
+
+TestDBAdminPassword &lt;String&gt; - Test DB admin password
 
 Catalog “Actions”
 =================
@@ -297,7 +303,7 @@ processor.
 ```IsParamsForm()``` -returns True if there available an action parameters
 form in the data processor.
 
-At that moment, in the configuration available two internal data
+At that moment, in the configuration available several internal data
 processors:
 
 DumpConfFromRepository — making dump from repository.
@@ -317,6 +323,8 @@ CheckModules – Checking modules of the dump by standard platform
 command.
 
 ExecCommand - Starts an external application by given command and current directory
+
+UpdateTestDB - Updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
 
 Role «RepositoryUser»
 ======================
