@@ -310,7 +310,7 @@ processors:
 
 **DumpConfFromRepository** — making dump from repository.
 
-**SendEmail - sending email message to the list of predefined recipients.
+**SendEmail** - sending email message to the list of predefined recipients.
 The list of recipients and message template could be defined in a
 parameters form provided by the data processor itself. In the text
 message template it is possible to set some parameters in square
