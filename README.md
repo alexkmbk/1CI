@@ -45,7 +45,8 @@ several different ways:
 -   manually, from 1C:Enterprise client;
 -   on the schedule;
 -   from command line;
--   by http-request.
+-   by http-request;
+-   by COM connector.
 
 Each task has the list of actions that should be executed. Actions are
 running one after one according to serial number of action in the list.
@@ -419,3 +420,34 @@ print response.getcode()
 ```
 There the name of the database user is - Administrator, and the Password - password.
 
+
+Run tasks by COM connector
+=========================
+
+The common module "RepTasks" is available for external connection, so it is possible
+to call "RunTaskByCode" method by COM connector.
+
+Example for 1C: Enterprise language:
+```
+Connector = new COMObject("V83.COMConnector");
+Connection = Connector.connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;");
+Connection.RepTasks.RunTaskByCode(1,2);
+```
+there:
+	1 -  the code of repository in the catalog "Repositories"
+	2 - the code of task in the catalog "Tasks"
+
+
+Example for python 2.7:
+
+```python
+import pythoncom
+import win32com.client
+
+pythoncom.CoInitialize()
+V83 = win32com.client.Dispatch("V83.COMConnector").Connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;")
+V83.RepTasks.RunTaskByCode(1,2)
+```
+
+For this python example it needed to install "pythoncom" module:
+```pip install pypiwin32```

@@ -435,3 +435,34 @@ response = urllib2.urlopen(request)
 print response.getcode()
 ```
 Здесь имя пользователя базы данных - Administrator, а пароль - password.
+
+Run tasks by COM connector
+=========================
+
+Общий модуль "RepTasks" доступен для внешнего соединения, поэтому возможно
+вызвать метод "RunTaskByCode" с помощью COM коннектора.
+
+Пример вызова на языке 1С: Предприятие:
+```
+Connector = new COMObject("V83.COMConnector");
+Connection = Connector.connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;");
+Connection.RepTasks.RunTaskByCode(1,2);
+```
+здесь:
+	1 - код хранилища из справочника "Repositories"
+	2 - код задачи из справочника "Tasks"
+
+
+Пример на python 2.7:
+
+```python
+import pythoncom
+import win32com.client
+
+pythoncom.CoInitialize()
+V83 = win32com.client.Dispatch("V83.COMConnector").Connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;")
+V83.RepTasks.RunTaskByCode(1,2)
+```
+
+Для выполнения этого примера, необходимо установить модуль "pythoncom":
+```pip install pypiwin32```
