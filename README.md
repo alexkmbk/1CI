@@ -285,19 +285,19 @@ If a data processor is intended to be connected to “Actions” catalog, it
 should provide several export functions:
 
 ```Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```
-where
+parameters:
 
-LogLineNumber - serial number of event.
+**LogLineNumber ** - serial number of event.
 
-CommonParams - structure with common params that exist while task
+**CommonParams** - structure with common params that exist while task
 running.
 
-Action - reference to the Action catalog element.
+**Action** - reference to the Action catalog element.
 
-ActionParams - params that was set for the action only.
+**ActionParams** - params that was set for the action only.
 
-ShowMessages (bool) - determines if it is needed to show interactive
-messages .
+**StorageAddress** (string) - the address in temporary storage.
+By this adress it is possible to send messages to client (if task is running in interactive mode)
 
 ```IsRepositoryDataProcessor()``` - returns True if it is repository data
 processor.
@@ -327,6 +327,8 @@ command.
 ExecCommand - starts an external application by given command and current directory
 
 UpdateTestDB - updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
+
+Reposting - reposts all documents in test database.
 
 Role «RepositoryUser»
 ======================
