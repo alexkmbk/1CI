@@ -842,6 +842,10 @@ DataProcessor.ReferenceReplacement.ObjectModule.txt-->DataProcessor\ReferenceRep
 DataProcessor.ReferenceReplacement.Template.MainDataCompositionSchema.Template.xml-->DataProcessor\ReferenceReplacement\Template\MainDataCompositionSchema\Template.xml
 DataProcessor.ReferenceReplacement.Template.MainDataCompositionSchema.xml-->DataProcessor\ReferenceReplacement\Template\MainDataCompositionSchema.xml
 DataProcessor.ReferenceReplacement.xml-->DataProcessor\ReferenceReplacement\ReferenceReplacement.xml
+DataProcessor.Reposting.ObjectModule.txt-->DataProcessor\Reposting\ObjectModule.txt
+DataProcessor.Reposting.Template.RepostingExternalDataProcessor.Template.bin-->DataProcessor\Reposting\Template\RepostingExternalDataProcessor\Template.bin
+DataProcessor.Reposting.Template.RepostingExternalDataProcessor.xml-->DataProcessor\Reposting\Template\RepostingExternalDataProcessor.xml
+DataProcessor.Reposting.xml-->DataProcessor\Reposting\Reposting.xml
 DataProcessor.SearchAndDeletionOfDuplicates.Form.AreaToSearchForDuplicates.Form.Module.txt-->DataProcessor\SearchAndDeletionOfDuplicates\Form\AreaToSearchForDuplicates\Form\Module.txt
 DataProcessor.SearchAndDeletionOfDuplicates.Form.AreaToSearchForDuplicates.Form.xml-->DataProcessor\SearchAndDeletionOfDuplicates\Form\AreaToSearchForDuplicates\Form.xml
 DataProcessor.SearchAndDeletionOfDuplicates.Form.AreaToSearchForDuplicates.xml-->DataProcessor\SearchAndDeletionOfDuplicates\Form\AreaToSearchForDuplicates.xml

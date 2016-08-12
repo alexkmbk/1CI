@@ -471,6 +471,7 @@
 			<DataProcessor>ProgramSettings</DataProcessor>
 			<DataProcessor>ExecCommand</DataProcessor>
 			<DataProcessor>UpdateTestDB</DataProcessor>
+			<DataProcessor>Reposting</DataProcessor>
 			<InformationRegister>AdditionalDataProcessorPurposes</InformationRegister>
 			<InformationRegister>AllowedInternetResources</InformationRegister>
 			<InformationRegister>AllowedOperatingSystemApplications</InformationRegister>

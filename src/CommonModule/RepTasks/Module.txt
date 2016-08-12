@@ -355,7 +355,6 @@ Function PrepareTask(LogLineNumber, Task, CommonParams, Actions = Undefined, Rep
 	
 EndFunction
 
-
 //
 //
 Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAddress)
@@ -476,14 +475,6 @@ Function CreateEmptyDb(Dir) Export
 	
 EndFunction
 
-// Determines if directory is empty (has no files)
-// 
-Function DirIsEmpty(Dir) Export
-	
-	Files = FindFiles(Dir, "*.*");
-	return Files.Count() = 0;
-	
-EndFunction
 
 // Binds database to  repository
 // 	Params:
@@ -526,6 +517,29 @@ Function BindDbToRepository(LogLineNumber, Action, CommonParams, StorageAddress)
 	Return True;
 	
 EndFunction
+
+
+////////////////////////////////////////////////////////////////////////////////
+//File system operations
+
+// Determines if directory is empty (has no files)
+// 
+Function DirIsEmpty(Dir) Export
+	
+	Files = FindFiles(Dir, "*.*");
+	return Files.Count() = 0;
+	
+EndFunction
+
+// Determines if file or directory exists by given path
+//
+Function FileExists(Path) Export
+	
+	File = New File(Path);
+	Return File.Exist();
+	
+EndFunction
+ 
 
 ////////////////////////////////////////////////////////////////////////////////
 //Task logging
