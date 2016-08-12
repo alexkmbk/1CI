@@ -287,7 +287,7 @@ should provide several export functions:
 ```Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```
 parameters:
 
-**LogLineNumber ** - serial number of event.
+**LogLineNumber** - serial number of event.
 
 **CommonParams** - structure with common params that exist while task
 running.
@@ -308,9 +308,9 @@ form in the data processor.
 At that moment, in the configuration available several internal data
 processors:
 
-DumpConfFromRepository — making dump from repository.
+**DumpConfFromRepository** — making dump from repository.
 
-SendEmail - sending email message to the list of predefined recipients.
+**SendEmail - sending email message to the list of predefined recipients.
 The list of recipients and message template could be defined in a
 parameters form provided by the data processor itself. In the text
 message template it is possible to set some parameters in square
@@ -319,16 +319,16 @@ brackets, they will be replaced by corresponded values from
 \[DumpConfFileFullPath\] will be replaced by the path to repository dump
 file. The mechanism of message templates is still under developing.
 
-UpdateDB — updating the database in DBDir directory from repository.
+**UpdateDB** — updating the database in DBDir directory from repository.
 
-CheckModules – checking modules of the dump by standard platform
+**CheckModules** – checking modules of the dump by standard platform
 command.
 
-ExecCommand - starts an external application by given command and current directory
+**ExecCommand** - starts an external application by given command and current directory
 
-UpdateTestDB - updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
+**UpdateTestDB** - updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
 
-Reposting - reposts all documents in test database.
+**Reposting** - reposts all documents in test database.
 
 Role «RepositoryUser»
 ======================
@@ -350,13 +350,13 @@ Run tasks from command line
 ===========================
 
 In the common module “RepTasks” there is an export function
-RunTaskByCode(RepositoryCatalogCode, TaskCatalogCode),
+```RunTaskByCode(RepositoryCatalogCode, TaskCatalogCode)```,
 
-where
+parameters:
 
-RepositoryCatalogCode – code of a repository in numeric format.
+**RepositoryCatalogCode** – code of a repository in numeric format.
 
-TaskCatalogCode – code of a task in numeric format.
+**TaskCatalogCode** – code of a task in numeric format.
 
 The function runs particular task by given codes. It is possible to
 execute this function in one or another way. For example it is possible
