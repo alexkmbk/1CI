@@ -255,7 +255,7 @@ Information register “RepUsers”
 The register is intended to store repository users. For the repository
 should be defined at least one user.
 
-Periodicity: Нет.
+Periodicity: No.
 
 Write mode: Independent.
 
