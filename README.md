@@ -97,13 +97,15 @@ Testing as all others actions could be provided by various additional
 special data processors connected to the catalog “Actions”. In the
 configuration there are several internal testing data processors:
 
-- data processor for standard module checking (****CheckModules****
+- standard module checking (****CheckModules****
 command line option ).
 
-- data processor for reposting the list of documents (it is possible to
-catch some errors during reposting a document);
+- run test scripts (new testing mechanism in version 8.3).
 
-- data processor for making list of reports.
+- reposting the list of documents (it is possible to
+catch some errors during reposting a document).
+
+- making list of reports.
 
 # Metadata objects of the configuration (what is already done)
 
