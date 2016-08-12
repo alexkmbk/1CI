@@ -136,9 +136,9 @@ will execute scheduled task.
 
 TestDBDir &lt;String&gt; - path to test-database directory.
 
-TestDBAdminName &lt;String&gt; - Test DB admin name
+TestDBAdminName &lt;String&gt; - test DB admin name
 
-TestDBAdminPassword &lt;String&gt; - Test DB admin password
+TestDBAdminPassword &lt;String&gt; - test DB admin password
 
 Catalog “Actions”
 =================
@@ -319,12 +319,12 @@ file. The mechanism of message templates is still under developing.
 
 UpdateDB — updating the database in DBDir directory from repository.
 
-CheckModules – Checking modules of the dump by standard platform
+CheckModules – checking modules of the dump by standard platform
 command.
 
-ExecCommand - Starts an external application by given command and current directory
+ExecCommand - starts an external application by given command and current directory
 
-UpdateTestDB - Updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
+UpdateTestDB - updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)
 
 Role «RepositoryUser»
 ======================
