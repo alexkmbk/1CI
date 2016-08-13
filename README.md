@@ -286,6 +286,7 @@ If a data processor is intended to be connected to “Actions” catalog, it
 should provide several export functions:
 
 ```Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```
+
 parameters:
 
 **LogLineNumber** - serial number of event.
