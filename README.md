@@ -434,7 +434,7 @@ Connection = Connector.connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;");
 Connection.RepTasks.RunTaskByCode(1,2);
 ```
 there:
-	1 -  the code of repository in the catalog "Repositories"
+	1 -  the code of repository in the catalog "Repositories"  
 	2 - the code of task in the catalog "Tasks"
 
 
