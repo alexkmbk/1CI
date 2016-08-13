@@ -353,8 +353,7 @@ Run tasks from command line
 
 In the common module “RepTasks” there is an export function
 ```RunTaskByCode(RepositoryCatalogCode, TaskCatalogCode)```,
-
-parameters:
+  parameters:
 
 **RepositoryCatalogCode** – code of a repository in numeric format.
 
