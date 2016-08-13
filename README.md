@@ -113,7 +113,7 @@ catch some errors during reposting a document).
 Catalog “Repositories”
 ======================
 
-Attributes:
+**Attributes:**
 
 Path &lt;String&gt;— the path to the repository ;
 
@@ -146,7 +146,7 @@ TestDBAdminPassword &lt;String&gt; - test DB admin password
 Catalog “Actions”
 =================
 
-Attributes:
+**Attributes:**
 
 IsInternal &lt;Boolean&gt; - determines whether the data processor is
 internal or not.
@@ -161,14 +161,14 @@ catalog. It should be set if the data processor is external.
 Catalog “Tasks”
 ===============
 
-Attributes:
+**Attributes:**
 
 ScheduledJobGUID &lt;UUID&gt; - the ID of the scheduled job.
 
 RunBySchedule&lt;Boolean&gt; - determine if the task should be run by
 scheduled job.
 
-Tabular sections:
+**Tabular sections:**
 
 Actions, attributes:
 
@@ -196,7 +196,7 @@ Document “TaskRunningEvent”
 The document is intended to log task events. Each particular document
 represents one task execution.
 
-Attribute:
+**Attribute:**
 
 State &lt;Enum.TaskState&gt;- the state of task execution.
 
@@ -224,18 +224,18 @@ Information register “ActionEventsLog”
 The register is intended to log action events. One action during running
 can write several events.
 
-Periodicity: No.
+**Periodicity:** No.
 
-Write mode: Independent.
+**Write mode:** Independent.
 
-Dimensions:
+**Dimensions:**
 
 TaskRunningEvent &lt;DocumentRef.TaskRunningEvent&gt;.
 
 LineNum &lt;Number 9,0&gt; - the serial number of the event, the
 numeration is implementing through one task.
 
-Resources:
+**Resources:**
 
 Action &lt;CatalogRef.Actions&gt; - the source of event.
 
@@ -256,18 +256,18 @@ Information register “RepUsers”
 The register is intended to store repository users. For the repository
 should be defined at least one user.
 
-Periodicity: No.
+**Periodicity:** No.
 
-Write mode: Independent.
+**Write mode:** Independent.
 
-Dimensions:
+**Dimensions:**
 
 User &lt;CatalogRef.Users&gt; - the reference to the “Users” catalog
 from Users subsystem of SSL.
 
 Repository &lt;CatalogRef.Repositories&gt; - the repository.
 
-Resources:
+**Resources:**
 
 RepUserName &lt;String&gt; - the name of repository user.
 
