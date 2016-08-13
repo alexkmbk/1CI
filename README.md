@@ -196,7 +196,7 @@ Document “TaskRunningEvent”
 The document is intended to log task events. Each particular document
 represents one task execution.
 
-**Attribute:**
+**Attributes:**
 
 State &lt;Enum.TaskState&gt;- the state of task execution.
 
