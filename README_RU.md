@@ -301,7 +301,7 @@ RepPassword &lt;Строка&gt; - пароль пользователя в хр
 Обработка, предназначенная для подключения к справочнику «Actions»
 должна реализовывать в модуле объекта следующие экспортные функции:
 ```
-Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```,
+Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) ```,
 где
 
 **LogLineNumber** — порядковый номер события.
