@@ -388,7 +388,9 @@ For example, if DB is published on the web-server “localhost” under name
 
 <http://localhost/OneCI/hs/RunTask/1/2>
 
-there 1 - code of repository in the catalog, 2 – code of task in the
+there  
+	1 - code of repository in the catalog,  
+	2 – code of task in the
 catalog.
 
 The requests should be with “Basic Authentication”.
