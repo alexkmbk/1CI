@@ -6,7 +6,7 @@ Repository manager for 1C: Enterprise platform. The main idea of the project - c
 When you develop configuration in a team, you often need to do some
 routine operations, such as for example:
 
--   Everyday dumping of configuration from a repository and sending the
+-   Everyday make a dump of configuration from a repository and sending the
     result to partners;
 -   Do many different tests, standard module check for example or some
     tests that could be made by some special software;
