@@ -384,7 +384,7 @@ run\_RepTasks.RunTaskByCode(&lt;КодХранилища&gt;,&lt;КодЗада�
 ```
 "C:\\Program Files (x86)\\1cv8\\common\\1cestart.exe" Enterprise
 /F"D:\\MyDB" /N Administrator /P Password
-/C"run\_RepTasks.RunTaskByCode(1,2)"
+/C"run_RepTasks.RunTaskByCode(1,2)"
 ```
 В этом примере, будет выполнена задача под номером 2 из хранилища под
 номером 1.
