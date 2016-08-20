@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="MainGroup" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main group</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Main group</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="MainGroupExtendedTooltip" id="26"/>
+			<ChildItems>
+				<UsualGroup name="LeftGroup" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left group</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Left group</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Double</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="LeftGroupExtendedTooltip" id="20"/>
+					<ChildItems>
+						<LabelDecoration name="DecorationLabel" id="27">
+							<VerticalStretch>true</VerticalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Description:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<VerticalAlign>Bottom</VerticalAlign>
+							<TitleHeight>14</TitleHeight>
+							<ContextMenu name="DecorationLabelContextMenu" id="28"/>
+							<ExtendedTooltip name="DecorationLabelExtendedTooltip" id="29"/>
+						</LabelDecoration>
+						<CheckBoxField name="ByEmail" id="13">
+							<DataPath>Object.ByEmail</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<TitleHeight>1</TitleHeight>
+							<VerticalAlign>Center</VerticalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ByEmailContextMenu" id="14"/>
+							<ExtendedTooltip name="ByEmailExtendedTooltip" id="15"/>
+							<Events>
+								<Event name="OnChange">ByEmailOnChange</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="ByTelegram" id="16">
+							<DataPath>Object.ByTelegram</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<VerticalAlign>Center</VerticalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ByTelegramContextMenu" id="17"/>
+							<ExtendedTooltip name="ByTelegramExtendedTooltip" id="18"/>
+							<Events>
+								<Event name="OnChange">ByTelegramOnChange</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="RightGroup" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Right group</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Right group</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="RightGroupExtendedTooltip" id="22"/>
+					<ChildItems>
+						<UsualGroup name="CodeNameGroup" id="23">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Code name group</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Code name group</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="CodeNameGroupExtendedTooltip" id="24"/>
+							<ChildItems>
+								<InputField name="Description" id="4">
+									<DataPath>Object.Description</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="DescriptionContextMenu" id="5"/>
+									<ExtendedTooltip name="DescriptionExtendedTooltip" id="6"/>
+								</InputField>
+								<InputField name="Code" id="1">
+									<DataPath>Object.Code</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="CodeContextMenu" id="2"/>
+									<ExtendedTooltip name="CodeExtendedTooltip" id="3"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Email" id="7">
+							<DataPath>Object.Email</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="EmailContextMenu" id="8"/>
+							<ExtendedTooltip name="EmailExtendedTooltip" id="9"/>
+						</InputField>
+						<InputField name="TelegramUserName" id="10">
+							<DataPath>Object.TelegramUserName</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="TelegramUserNameContextMenu" id="11"/>
+							<ExtendedTooltip name="TelegramUserNameExtendedTooltip" id="12"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ReportRecipients</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

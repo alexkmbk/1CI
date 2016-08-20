@@ -436,6 +436,7 @@
 			<Catalog>Repositories</Catalog>
 			<Catalog>Actions</Catalog>
 			<Catalog>Tasks</Catalog>
+			<Catalog>ReportRecipients</Catalog>
 			<Document>TaskRunningEvent</Document>
 			<Enum>AdditionalDataProcessorCallMethods</Enum>
 			<Enum>AdditionalReportsAndDataProcessorsPermissionCompatibilityModes</Enum>

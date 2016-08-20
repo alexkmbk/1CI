@@ -361,7 +361,7 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAdd
 	
 	Query = New Query;
 	Query.Text = "SELECT
-	|	TasksFailureReportRecipients.Email AS Email
+	|	TasksFailureReportRecipients.Recipient.Email AS Email
 	|FROM
 	|	Catalog.Tasks.FailureReportRecipients AS TasksFailureReportRecipients
 	|WHERE
@@ -372,7 +372,7 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAdd
 		|UNION
 		|
 		|SELECT
-		|	TasksSuccessReportRecipients.Email
+		|	TasksSuccessReportRecipients.Recipient.Email
 		|FROM
 		|	Catalog.Tasks.SuccessReportRecipients AS TasksSuccessReportRecipients
 		|WHERE

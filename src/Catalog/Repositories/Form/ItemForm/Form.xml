@@ -24,7 +24,6 @@
 							<v8:content>Main</v8:content>
 						</v8:item>
 					</ToolTip>
-					<HorizontalStretch>true</HorizontalStretch>
 					<HorizontalAlign>Left</HorizontalAlign>
 					<ExtendedTooltip name="MainExtendedTooltip" id="13"/>
 					<ChildItems>

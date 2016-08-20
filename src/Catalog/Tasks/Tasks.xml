@@ -557,20 +557,16 @@
 				<ChildObjects>
 					<Attribute uuid="d6341f8e-8b3a-4816-8f62-56399bbdde6f">
 						<Properties>
-							<Name>Email</Name>
+							<Name>Recipient</Name>
 							<Synonym>
 								<v8:item>
 									<v8:lang>en</v8:lang>
-									<v8:content>Email</v8:content>
+									<v8:content>Recipient</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>
 							<Type>
-								<v8:Type>xs:string</v8:Type>
-								<v8:StringQualifiers>
-									<v8:Length>254</v8:Length>
-									<v8:AllowedLength>Variable</v8:AllowedLength>
-								</v8:StringQualifiers>
+								<v8:Type>cfg:CatalogRef.ReportRecipients</v8:Type>
 							</Type>
 							<PasswordMode>false</PasswordMode>
 							<Format/>
@@ -651,20 +647,16 @@
 				<ChildObjects>
 					<Attribute uuid="3ce2089b-b842-4162-ad5b-a0363dda9be2">
 						<Properties>
-							<Name>Email</Name>
+							<Name>Recipient</Name>
 							<Synonym>
 								<v8:item>
 									<v8:lang>en</v8:lang>
-									<v8:content>Email</v8:content>
+									<v8:content>Recipient</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>
 							<Type>
-								<v8:Type>xs:string</v8:Type>
-								<v8:StringQualifiers>
-									<v8:Length>254</v8:Length>
-									<v8:AllowedLength>Variable</v8:AllowedLength>
-								</v8:StringQualifiers>
+								<v8:Type>cfg:CatalogRef.ReportRecipients</v8:Type>
 							</Type>
 							<PasswordMode>false</PasswordMode>
 							<Format/>

@@ -295,7 +295,7 @@
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
 			<DefaultObjectForm>Catalog.Repositories.Form.ItemForm</DefaultObjectForm>
 			<DefaultFolderForm/>
-			<DefaultListForm/>
+			<DefaultListForm>Catalog.Repositories.Form.ListForm</DefaultListForm>
 			<DefaultChoiceForm/>
 			<DefaultFolderChoiceForm/>
 			<AuxiliaryObjectForm/>
@@ -701,6 +701,7 @@
 				</Properties>
 			</Attribute>
 			<Form>ItemForm</Form>
+			<Form>ListForm</Form>
 		</ChildObjects>
 	</Catalog>
 </MetaDataObject>

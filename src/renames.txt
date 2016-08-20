@@ -87,9 +87,17 @@ Catalog.MetadataObjectIDs.Help.xml-->Catalog\MetadataObjectIDs\Help.xml
 Catalog.MetadataObjectIDs.ManagerModule.txt-->Catalog\MetadataObjectIDs\ManagerModule.txt
 Catalog.MetadataObjectIDs.ObjectModule.txt-->Catalog\MetadataObjectIDs\ObjectModule.txt
 Catalog.MetadataObjectIDs.xml-->Catalog\MetadataObjectIDs\MetadataObjectIDs.xml
+Catalog.ReportRecipients.Form.ItemForm.Form.Module.txt-->Catalog\ReportRecipients\Form\ItemForm\Form\Module.txt
+Catalog.ReportRecipients.Form.ItemForm.Form.xml-->Catalog\ReportRecipients\Form\ItemForm\Form.xml
+Catalog.ReportRecipients.Form.ItemForm.xml-->Catalog\ReportRecipients\Form\ItemForm.xml
+Catalog.ReportRecipients.Form.ListForm.Form.xml-->Catalog\ReportRecipients\Form\ListForm\Form.xml
+Catalog.ReportRecipients.Form.ListForm.xml-->Catalog\ReportRecipients\Form\ListForm.xml
+Catalog.ReportRecipients.xml-->Catalog\ReportRecipients\ReportRecipients.xml
 Catalog.Repositories.Form.ItemForm.Form.Module.txt-->Catalog\Repositories\Form\ItemForm\Form\Module.txt
 Catalog.Repositories.Form.ItemForm.Form.xml-->Catalog\Repositories\Form\ItemForm\Form.xml
 Catalog.Repositories.Form.ItemForm.xml-->Catalog\Repositories\Form\ItemForm.xml
+Catalog.Repositories.Form.ListForm.Form.xml-->Catalog\Repositories\Form\ListForm\Form.xml
+Catalog.Repositories.Form.ListForm.xml-->Catalog\Repositories\Form\ListForm.xml
 Catalog.Repositories.ObjectModule.txt-->Catalog\Repositories\ObjectModule.txt
 Catalog.Repositories.xml-->Catalog\Repositories\Repositories.xml
 Catalog.Tasks.Form.ItemForm.Form.Module.txt-->Catalog\Tasks\Form\ItemForm\Form\Module.txt

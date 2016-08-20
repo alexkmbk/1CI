@@ -280,7 +280,7 @@
 									<ExtendedTooltip name="FailureReportRecipientsLineNumberExtendedTooltip" id="57"/>
 								</LabelField>
 								<InputField name="FailureReportRecipientsEmail" id="58">
-									<DataPath>Object.FailureReportRecipients.Email</DataPath>
+									<DataPath>Object.FailureReportRecipients.Recipient</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="FailureReportRecipientsEmailContextMenu" id="59"/>
 									<ExtendedTooltip name="FailureReportRecipientsEmailExtendedTooltip" id="60"/>
@@ -288,7 +288,6 @@
 							</ChildItems>
 						</Table>
 						<Table name="SuccessReportRecipients" id="61">
-							<Visible>false</Visible>
 							<TitleLocation>Top</TitleLocation>
 							<Height>4</Height>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -334,7 +333,7 @@
 									<ExtendedTooltip name="SuccessReportRecipientsLineNumberExtendedTooltip" id="76"/>
 								</LabelField>
 								<InputField name="SuccessReportRecipientsEmail" id="77">
-									<DataPath>Object.SuccessReportRecipients.Email</DataPath>
+									<DataPath>Object.SuccessReportRecipients.Recipient</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="SuccessReportRecipientsEmailContextMenu" id="78"/>
 									<ExtendedTooltip name="SuccessReportRecipientsEmailExtendedTooltip" id="79"/>
