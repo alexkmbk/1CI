@@ -184,19 +184,22 @@ UUID &lt;UUID&gt; - action parameters identifier.
 
 FailureReportRecipients, attributes:
 
-Recipient <CatalogRef.ReportRecipients>.  
+Recipient &lt;CatalogRef.ReportRecipients&gt;.  
 
 SuccessReportRecipients, attributes:
 
-Recipient <CatalogRef.ReportRecipients>.  
+Recipient &gt;CatalogRef.ReportRecipients&gt;.  
 
 Catalog «ReportRecipients»
 =========================
 
 **Attributes:**  
 Email <String> - recipient's email.    
+
 TelegramUserName <String> - user name in Telegram IM.    
+
 ByEmail <Boolean> - determines if task report should be sent by email.    
+
 ByTelegram <Булево> - determines if task report should be sent by Telegram.    
 
 Document “TaskRunningEvent”
