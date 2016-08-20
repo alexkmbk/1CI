@@ -196,7 +196,7 @@ Catalog «ReportRecipients»
 **Attributes:**  
 Email <String> - recipient's email.    
 TelegramUserName <String> - user name in Telegram IM.    
-ByEmail <Boolean> - - determines if task report should be sent by email.    
+ByEmail <Boolean> - determines if task report should be sent by email.    
 ByTelegram <Булево> - determines if task report should be sent by Telegram.    
 
 Document “TaskRunningEvent”
