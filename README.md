@@ -6,7 +6,7 @@ Repository manager for 1C: Enterprise platform. The main idea of the project - c
 When you develop configuration in a team, you often need to do some
 routine operations, such as for example:
 
--   Everyday dumping of configuration from a repository and sending the
+-   Everyday make a dump of configuration from a repository and sending the
     result to partners;
 -   Do many different tests, standard module check for example or some
     tests that could be made by some special software;
@@ -113,7 +113,7 @@ catch some errors during reposting a document).
 Catalog “Repositories”
 ======================
 
-Attributes:
+**Attributes:**
 
 Path &lt;String&gt;— the path to the repository ;
 
@@ -146,7 +146,7 @@ TestDBAdminPassword &lt;String&gt; - test DB admin password
 Catalog “Actions”
 =================
 
-Attributes:
+**Attributes:**
 
 IsInternal &lt;Boolean&gt; - determines whether the data processor is
 internal or not.
@@ -161,14 +161,14 @@ catalog. It should be set if the data processor is external.
 Catalog “Tasks”
 ===============
 
-Attributes:
+**Attributes:**
 
 ScheduledJobGUID &lt;UUID&gt; - the ID of the scheduled job.
 
 RunBySchedule&lt;Boolean&gt; - determine if the task should be run by
 scheduled job.
 
-Tabular sections:
+**Tabular sections:**
 
 Actions, attributes:
 
@@ -196,7 +196,7 @@ Document “TaskRunningEvent”
 The document is intended to log task events. Each particular document
 represents one task execution.
 
-Attribute:
+**Attributes:**
 
 State &lt;Enum.TaskState&gt;- the state of task execution.
 
@@ -224,18 +224,18 @@ Information register “ActionEventsLog”
 The register is intended to log action events. One action during running
 can write several events.
 
-Periodicity: No.
+**Periodicity:** No.
 
-Write mode: Independent.
+**Write mode:** Independent.
 
-Dimensions:
+**Dimensions:**
 
 TaskRunningEvent &lt;DocumentRef.TaskRunningEvent&gt;.
 
 LineNum &lt;Number 9,0&gt; - the serial number of the event, the
 numeration is implementing through one task.
 
-Resources:
+**Resources:**
 
 Action &lt;CatalogRef.Actions&gt; - the source of event.
 
@@ -256,18 +256,18 @@ Information register “RepUsers”
 The register is intended to store repository users. For the repository
 should be defined at least one user.
 
-Periodicity: No.
+**Periodicity:** No.
 
-Write mode: Independent.
+**Write mode:** Independent.
 
-Dimensions:
+**Dimensions:**
 
 User &lt;CatalogRef.Users&gt; - the reference to the “Users” catalog
 from Users subsystem of SSL.
 
 Repository &lt;CatalogRef.Repositories&gt; - the repository.
 
-Resources:
+**Resources:**
 
 RepUserName &lt;String&gt; - the name of repository user.
 
@@ -286,6 +286,7 @@ If a data processor is intended to be connected to “Actions” catalog, it
 should provide several export functions:
 
 ```Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)```
+
 parameters:
 
 **LogLineNumber** - serial number of event.
@@ -352,8 +353,7 @@ Run tasks from command line
 
 In the common module “RepTasks” there is an export function
 ```RunTaskByCode(RepositoryCatalogCode, TaskCatalogCode)```,
-
-parameters:
+  parameters:
 
 **RepositoryCatalogCode** – code of a repository in numeric format.
 
@@ -388,7 +388,9 @@ For example, if DB is published on the web-server “localhost” under name
 
 <http://localhost/OneCI/hs/RunTask/1/2>
 
-there 1 - code of repository in the catalog, 2 – code of task in the
+there  
+	1 - code of repository in the catalog,  
+	2 – code of task in the
 catalog.
 
 The requests should be with “Basic Authentication”.
@@ -433,9 +435,9 @@ Connector = new COMObject("V83.COMConnector");
 Connection = Connector.connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;");
 Connection.RepTasks.RunTaskByCode(1,2);
 ```
-there:
-	1 -  the code of repository in the catalog "Repositories"
-	2 - the code of task in the catalog "Tasks"
+there:  
+	  1 -  the code of repository in the catalog "Repositories"  
+	  2 - the code of task in the catalog "Tasks"
 
 
 Example for python 2.7:
