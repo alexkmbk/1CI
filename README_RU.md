@@ -193,11 +193,20 @@ UUID – Уникальный идентификатор параметров д
 
 FailureReportRecipients, реквизиты:
 
-Email &lt;Строка&gt;.
+Recipient <СправочникСсылка.ReportRecipients>.
 
 SuccessReportRecipients, реквизиты:
 
-Email &lt;Строка&gt;.
+Recipient <СправочникСсылка.ReportRecipients>
+
+Справочник «ReportRecipients»
+=========================
+
+**Реквизиты:**  
+Email <Строка> - email получателя.  
+TelegramUserName <Строка> - имя пользователя Telegram IM.  
+ByEmail <Булево> - определяет, следует ли отправлять отчет по электронной почте.  
+ByTelegram <Булево> - определяет, следует ли отправлять отчет через Telegram.  
 
 Документ «TaskRunningEvent»
 ===========================
