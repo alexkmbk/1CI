@@ -165,7 +165,7 @@ Catalog “Tasks”
 
 ScheduledJobGUID &lt;UUID&gt; - the ID of the scheduled job.
 
-RunBySchedule&lt;Boolean&gt; - determine if the task should be run by
+RunBySchedule&lt;Boolean&gt; - determines if the task should be run by
 scheduled job.
 
 **Tabular sections:**
@@ -184,11 +184,20 @@ UUID &lt;UUID&gt; - action parameters identifier.
 
 FailureReportRecipients, attributes:
 
-Email &lt;String&gt;.
+Recipient <CatalogRef.ReportRecipients>.  
 
 SuccessReportRecipients, attributes:
 
-Email &lt;String&gt;.
+Recipient <CatalogRef.ReportRecipients>.  
+
+Catalog «ReportRecipients»
+=========================
+
+**Attributes:**  
+Email <String> - recipient's email.    
+TelegramUserName <String> - user name in Telegram IM.    
+ByEmail <Boolean> - - determines if task report should be sent by email.    
+ByTelegram <Булево> - determines if task report should be sent by Telegram.    
 
 Document “TaskRunningEvent”
 ===========================
