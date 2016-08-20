@@ -188,19 +188,19 @@ Recipient &lt;CatalogRef.ReportRecipients&gt;.
 
 SuccessReportRecipients, attributes:
 
-Recipient &gt;CatalogRef.ReportRecipients&gt;.  
+Recipient &lt;CatalogRef.ReportRecipients&gt;.  
 
 Catalog «ReportRecipients»
 =========================
 
 **Attributes:**  
-Email &gt;String&gt; - recipient's email.    
+Email &lt;String&gt; - recipient's email.    
 
-TelegramUserName &gt;String&gt; - user name in Telegram IM.    
+TelegramUserName &lt;String&gt; - user name in Telegram IM.    
 
-ByEmail &gt;Boolean&gt; - determines if task report should be sent by email.    
+ByEmail &lt;Boolean&gt; - determines if task report should be sent by email.    
 
-ByTelegram &gt;Boolean&gt; - determines if task report should be sent by Telegram.    
+ByTelegram &lt;Boolean&gt; - determines if task report should be sent by Telegram.    
 
 Document “TaskRunningEvent”
 ===========================
