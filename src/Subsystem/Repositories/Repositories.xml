@@ -22,7 +22,6 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.EmptyDB</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RepUsers</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.StartPage</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.SendEmail</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.TaskRunningEvent</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ActionEventsLog</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ActionEventTypes</xr:Item>
