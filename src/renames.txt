@@ -680,6 +680,8 @@ Constant.InternalEventParameters.xml-->Constant\InternalEventParameters\Internal
 Constant.IsStandaloneWorkstation.xml-->Constant\IsStandaloneWorkstation\IsStandaloneWorkstation.xml
 Constant.MasterNode.xml-->Constant\MasterNode\MasterNode.xml
 Constant.SystemTitle.xml-->Constant\SystemTitle\SystemTitle.xml
+Constant.TelegramBotToken.xml-->Constant\TelegramBotToken\TelegramBotToken.xml
+Constant.TelegramBotUpdateID.xml-->Constant\TelegramBotUpdateID\TelegramBotUpdateID.xml
 Constant.UseAdditionalReportsAndDataProcessors.xml-->Constant\UseAdditionalReportsAndDataProcessors\UseAdditionalReportsAndDataProcessors.xml
 Constant.UseExternalUsers.ValueManagerModule.txt-->Constant\UseExternalUsers\ValueManagerModule.txt
 Constant.UseExternalUsers.xml-->Constant\UseExternalUsers\UseExternalUsers.xml
@@ -968,6 +970,7 @@ InformationRegister.ProgramInterfaceCache.xml-->InformationRegister\ProgramInter
 InformationRegister.RepUsers.xml-->InformationRegister\RepUsers\RepUsers.xml
 InformationRegister.RequestsForPermissionsToUseExternalResources.xml-->InformationRegister\RequestsForPermissionsToUseExternalResources\RequestsForPermissionsToUseExternalResources.xml
 InformationRegister.SubsystemVersions.xml-->InformationRegister\SubsystemVersions\SubsystemVersions.xml
+InformationRegister.TelegramUsersInfo.xml-->InformationRegister\TelegramUsersInfo\TelegramUsersInfo.xml
 InformationRegister.UserGroupContents.Form.ListForm.Form.Module.txt-->InformationRegister\UserGroupContents\Form\ListForm\Form\Module.txt
 InformationRegister.UserGroupContents.Form.ListForm.Form.xml-->InformationRegister\UserGroupContents\Form\ListForm\Form.xml
 InformationRegister.UserGroupContents.Form.ListForm.xml-->InformationRegister\UserGroupContents\Form\ListForm.xml

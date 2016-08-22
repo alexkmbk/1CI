@@ -410,6 +410,8 @@
 			<Constant>ApplicationChangeLogSections</Constant>
 			<Constant>InfobaseUpdateDetails</Constant>
 			<Constant>WriteInfobaseUpdateDetailsToEventLog</Constant>
+			<Constant>TelegramBotToken</Constant>
+			<Constant>TelegramBotUpdateID</Constant>
 			<CommonForm>AccountPasswordConfirmation</CommonForm>
 			<CommonForm>AdditionalReportsAndDataProcessors</CommonForm>
 			<CommonForm>ExchangePlanNodeSelection</CommonForm>
@@ -489,6 +491,7 @@
 			<InformationRegister>SubsystemVersions</InformationRegister>
 			<InformationRegister>RepUsers</InformationRegister>
 			<InformationRegister>ActionEventsLog</InformationRegister>
+			<InformationRegister>TelegramUsersInfo</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

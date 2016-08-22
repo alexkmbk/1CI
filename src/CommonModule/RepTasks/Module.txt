@@ -361,28 +361,56 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAdd
 	
 	Query = New Query;
 	Query.Text = "SELECT
-	|	TasksFailureReportRecipients.Recipient.Email AS Email
-	|FROM
-	|	Catalog.Tasks.FailureReportRecipients AS TasksFailureReportRecipients
-	|WHERE
-	|	TasksFailureReportRecipients.Ref = &Task";
+	             |	TasksFailureReportRecipients.Recipient.Email AS Email,
+	             |	TasksFailureReportRecipients.Recipient.ByEmail AS ByEmail,
+	             |	TasksFailureReportRecipients.Recipient.TelegramUserName AS TelegramUserName,
+	             |	TasksFailureReportRecipients.Recipient.ByTelegram AS ByTelegram,
+	             |	TelegramUsersInfo.ChatID AS TelegramChatID
+	             |FROM
+	             |	Catalog.Tasks.FailureReportRecipients AS TasksFailureReportRecipients
+	             |		LEFT JOIN InformationRegister.TelegramUsersInfo AS TelegramUsersInfo
+	             |		ON TasksFailureReportRecipients.Recipient.TelegramUserName = TelegramUsersInfo.UserName
+	             |WHERE
+	             |	TasksFailureReportRecipients.Ref = &Task";
 	
 	If TaskState = Enums.TaskState.Success Then
 		Query.Text = Query.Text + " 
 		|UNION
 		|
 		|SELECT
-		|	TasksSuccessReportRecipients.Recipient.Email
+		|	TasksSuccessReportRecipients.Recipient.Email,
+		|	TasksSuccessReportRecipients.Recipient.ByEmail,
+		|	TasksSuccessReportRecipients.Recipient.TelegramUserName,
+		|	TasksSuccessReportRecipients.Recipient.ByTelegram,
+		|	TelegramUsersInfo.ChatID AS TelegramChatID
 		|FROM
 		|	Catalog.Tasks.SuccessReportRecipients AS TasksSuccessReportRecipients
+	    |		LEFT JOIN InformationRegister.TelegramUsersInfo AS TelegramUsersInfo
+	    |		ON TasksSuccessReportRecipients.Recipient.TelegramUserName = TelegramUsersInfo.UserName		
 		|WHERE
 		|	TasksSuccessReportRecipients.Ref = &Task";	
 	EndIf; 
 	
 	Query.SetParameter("Task", Task);
 	
-	Emails = Query.Execute().Unload().UnloadColumn("Email");
-	If Emails.Count() = 0 Then
+	Emails = New Array();
+	TelegramRecipientsInfo = New ValueTable();
+	TelegramRecipientsInfo.Columns.Add("TelegramUserName");
+	TelegramRecipientsInfo.Columns.Add("TelegramChatID");
+	
+	Selection = Query.Execute().Select();
+	While Selection.Next() Do
+		If Selection.ByEmail Then
+			Emails.Add(Selection.Email);
+		EndIf; 
+		If Selection.ByTelegram Then
+			NewLine = TelegramRecipientsInfo.Add();
+			NewLine.TelegramUserName = Selection.TelegramUserName;
+			NewLine.TelegramChatID = Selection.TelegramChatID;
+		EndIf; 
+	EndDo; 
+	
+	If Emails.Count() = 0 AND TelegramRecipientsInfo.Count() = 0 Then
 		return True;
 	EndIf; 
 	
@@ -419,30 +447,62 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAdd
 	
 	Message = New TextDocument;
 	
-	Message.AddLine("<b style='font-size:large'>The task """ + CommonParams.TaskName + """ report <i><ins>" + ReportInfo.Number + "</ins></i> from <i><ins>" + ReportInfo.Date + "</ins></i></b>");
-	Message.AddLine("<p><b style='font-size:large'>Result: " + ?(TaskState = Enums.TaskState.Error, "</b><b style = 'color:red'>" + ReportInfo.TaskStatePresentation + "</b>", "<b style = 'color:green'>" + ReportInfo.TaskStatePresentation + "</b></p>"));	
-	
-	If ReportEvents.Count() > 0 Then
-		Message.AddLine("<table border = '1' cellspacing='0' width='100%' bordercolor='#000000'><tr>");
-		Message.AddLine("<th>Number</th>");
-		Message.AddLine("<th>State</th>");
-		Message.AddLine("<th>Name</th>");
-		Message.AddLine("<th>Description</th>");
-		Message.AddLine("</tr>");
+	If  Emails.Count() > 0 Then
+				
+		Message.AddLine("<b style='font-size:large'>The task """ + CommonParams.TaskName + """ report <i><ins>" + ReportInfo.Number + "</ins></i> from <i><ins>" + ReportInfo.Date + "</ins></i></b>");
+		Message.AddLine("<p><b style='font-size:large'>Result: " + ?(TaskState = Enums.TaskState.Error, "</b><b style = 'color:red'>" + ReportInfo.TaskStatePresentation + "</b>", "<b style = 'color:green'>" + ReportInfo.TaskStatePresentation + "</b></p>"));	
 		
-		While ReportEvents.Next() Do
-			Message.AddLine("<tr>");
-			Message.AddLine("<td>" + ReportEvents.LineNum + "</td>");
-			Message.AddLine("<td>" + ReportEvents.ActionStatePresentation + "</td>");
-			Message.AddLine("<td>" + ReportEvents.ActionDescription + "</td>");
-			Message.AddLine("<td>" + ReportEvents.Description + "</td>");
+		If ReportEvents.Count() > 0 Then
+			Message.AddLine("<table border = '1' cellspacing='0' width='100%' bordercolor='#000000'><tr>");
+			Message.AddLine("<th>Number</th>");
+			Message.AddLine("<th>State</th>");
+			Message.AddLine("<th>Name</th>");
+			Message.AddLine("<th>Description</th>");
 			Message.AddLine("</tr>");
-		EndDo; 
-		Message.AddLine("</table>");
+			
+			While ReportEvents.Next() Do
+				Message.AddLine("<tr>");
+				Message.AddLine("<td>" + ReportEvents.LineNum + "</td>");
+				Message.AddLine("<td>" + ReportEvents.ActionStatePresentation + "</td>");
+				Message.AddLine("<td>" + ReportEvents.ActionDescription + "</td>");
+				Message.AddLine("<td>" + ReportEvents.Description + "</td>");
+				Message.AddLine("</tr>");
+			EndDo; 
+			Message.AddLine("</table>");
+		EndIf; 
+		
+	EndIf; 
+	
+	TelegramMessage = New TextDocument;
+	
+	If TelegramRecipientsInfo.Count() > 0 Then
+		TelegramMessage.AddLine("The task <b>""" + CommonParams.TaskName + """</b> report <b>" + ReportInfo.Number + "</b> from <i>" + ReportInfo.Date + "</i>");
+		TelegramMessage.AddLine("Result: " + ?(TaskState = Enums.TaskState.Error, "<b>" + ReportInfo.TaskStatePresentation + "</b>", "<b>" + ReportInfo.TaskStatePresentation + "</b>"));	
+		
+		//If ReportEvents.Count() > 0 Then
+		//	Message.AddLine("<table border = '1' cellspacing='0' width='100%' bordercolor='#000000'><tr>");
+		//	Message.AddLine("<th>Number</th>");
+		//	Message.AddLine("<th>State</th>");
+		//	Message.AddLine("<th>Name</th>");
+		//	Message.AddLine("<th>Description</th>");
+		//	Message.AddLine("</tr>");
+		//	
+		//	While ReportEvents.Next() Do
+		//		Message.AddLine("<tr>");
+		//		Message.AddLine("<td>" + ReportEvents.LineNum + "</td>");
+		//		Message.AddLine("<td>" + ReportEvents.ActionStatePresentation + "</td>");
+		//		Message.AddLine("<td>" + ReportEvents.ActionDescription + "</td>");
+		//		Message.AddLine("<td>" + ReportEvents.Description + "</td>");
+		//		Message.AddLine("</tr>");
+		//	EndDo; 
+		//	Message.AddLine("</table>");
+		//EndIf; 		
 	EndIf; 
 	
 	WasError = False;
 	Action = Catalogs.Actions.SendTaskReport;
+	
+	// Sending emails
 	For Each Recipient In Emails Do
 		EmailParams = New Structure("Recipient,TextType,Body,Subject",Recipient,"HTML", Message.GetText(), "The task """ + CommonParams.TaskName + """ report "); 
 		Try
@@ -451,6 +511,13 @@ Function SendTaskReport(LogLineNumber, Task, CommonParams, TaskState, StorageAdd
 			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending email error:" + ErrorDescription(), StorageAddress);
 			WasError = true;
 		EndTry; 	
+	EndDo; 	
+	
+	// Sending telegram messages
+	For Each TelegramRecipientInfo In TelegramRecipientsInfo Do		
+		If Not SendTelegramMessage(LogLineNumber, Action, CommonParams, TelegramRecipientInfo.TelegramUserName, TelegramRecipientInfo.TelegramChatID, TelegramMessage.GetText(), StorageAddress) Then
+			WasError = True;
+		EndIf; 
 	EndDo; 	
 	
 	Return Not WasError;
@@ -599,6 +666,173 @@ Function WriteLog(LogLineNumber, TaskRunningEvent, Action, State, Description = 
 	EndIf; 
 	
 EndFunction
+
+
+////////////////////////////////////////////////////////////////////////////////
+//Telegram
+
+//
+//
+Function ReadTelegramMessages(Body)
+	
+	Result = New Array;
+	
+	Reader = New JSONReader();
+	Reader.SetString(Body);
+	
+	
+	Message = New Structure(); 
+	
+	IsFirst = True;
+	
+	While Reader.Read() Do
+		
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then
+			If Reader.CurrentValue = "update_id" Then
+				If Not IsFirst Тогда
+					Result.Add(Message);
+				Else 
+					IsFirst = False;
+				EndIf;
+				Message = New Structure(); 
+				Reader.Read();
+				Message.Insert("update_id", Reader.CurrentValue); 
+			EndIf;
+		EndIf;
+		
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then		
+
+			If Reader.CurrentValue = "text" Тогда
+				Reader.Read();
+				Message.Insert("text", Reader.CurrentValue); 		
+			EndIf;
+		EndIf;
+		
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then		
+
+			If Reader.CurrentValue = "username" Тогда
+				Reader.Read();
+				Message.Insert("username", Reader.CurrentValue); 		
+			EndIf;
+		EndIf;
+		
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then		
+
+			If Reader.CurrentValue = "first_name" Тогда
+				Reader.Read();
+				Message.Insert("first_name", Reader.CurrentValue); 		
+			EndIf;
+		EndIf;
+
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then		
+
+			If Reader.CurrentValue = "last_name" Тогда
+				Reader.Read();
+				Message.Insert("last_name", Reader.CurrentValue); 		
+			EndIf;
+		EndIf;
+		
+		If Reader.CurrentValueType = ТипЗначенияJSON.ИмяСвойства Then		
+
+			If Reader.CurrentValue = "chat" Тогда
+				Reader.Read();
+				Reader.Read();
+				Reader.Read();
+				Message.Insert("ChatID", Reader.CurrentValue); 		
+			EndIf;
+		EndIf;		
+		
+	EndDo;
+	
+	If IsFirst Then
+		Return Result;
+	EndIf;
+	
+	Result.Add(Message);
+	
+	Return Result;
+		
+EndFunction
+ 
+
+//
+//
+Function SendTelegramMessage(LogLineNumber, Action, CommonParams, UserName, ChatID, Message, StorageAddress = Undefined ) Export
+	
+	BotToken = Constants.TelegramBotToken.Get();
+	If Not ValueIsFilled(BotToken) Then
+		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending report by telegram error: the constant ""TelegramBotToken"" is not specified.", StorageAddress);	
+		Return False;
+	EndIf; 
+	
+	
+	SSL = New OpenSSLSecureConnection(Undefined, Undefined);	
+	Connection = New HTTPConnection("api.telegram.org/bot" + BotToken,,,,,,SSL);	
+	
+	UpdateID = Constants.TelegramBotUpdateID.Get();
+	
+	// Update ChatID info (if there was a message with new ChatID)
+	If UpdateID = 0 Then
+		Request = New HTTPRequest("/getUpdates");
+	Else
+		Request = New HTTPRequest("/getUpdates?offset=" + Формат(UpdateID + 1, "ЧГ=")); 
+	EndIf;
+	
+	Res = Connection.Get(Request);
+	If Res.StatusCode = 200 Then
+	MessageList = ReadTelegramMessages(Res.GetBodyAsString("UTF-8"));	
+	EndIf;
+		
+	IndexLastMessage = MessageList.Count() - 1;	
+	Если IndexLastMessage >=0 Тогда		
+		 Constants.TelegramBotUpdateID.Set(MessageList[IndexLastMessage].update_id);		 
+	КонецЕсли;
+	
+	TelegramUserNames = New Array();
+	
+	For Each Item In MessageList Do
+		TelegramUserNames.Add(Item.username);	
+	EndDo; 
+	
+	Query = New Query;
+	Query.Text = "SELECT
+	|	TelegramUsersInfo.UserName,
+	|	TelegramUsersInfo.ChatID
+	|FROM
+	|	InformationRegister.TelegramUsersInfo AS TelegramUsersInfo
+	|WHERE
+	|	TelegramUsersInfo.UserName IN (&TelegramUserNames)";
+	Query.SetParameter("TelegramUserNames", TelegramUserNames);
+	
+	TelegramUsersInfo = Query.Execute().Unload();
+	
+	For Each Item In MessageList Do
+		
+		TelegramUserInfo = TelegramUsersInfo.Find(Item.username, "UserName");
+		If TelegramUserInfo = Undefined OR TelegramUserInfo.ChatID <> Item.ChatID AND ValueIsFilled(Item.ChatID) Then
+			NewRecord = InformationRegisters.TelegramUsersInfo.CreateRecordManager();
+			NewRecord.UserName = Item.username;
+			NewRecord.ChatID = Item.ChatID;
+			NewRecord.Write(True);
+			If Item.username = UserName Then
+				ChatID = Item.ChatID;
+			EndIf; 
+		EndIf; 
+		
+	EndDo; 
+	
+	Request = New HTTPRequest("/sendMessage?chat_id=" + Format(ChatID,"ЧГ=") + "&text=" + Message + "&parse_mode=HTML");
+	Res = Connection.Get(Request);
+	
+	If Res.StatusCode <> 200 Then
+		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending report by telegram error: " + Res.GetBodyAsString("UTF-8"), StorageAddress);			
+		Return False;
+	EndIf;
+	
+	Return True;
+	
+EndFunction
+
 
 
 ////////////////////////////////////////////////////////////////////////////////

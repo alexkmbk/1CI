@@ -11,6 +11,8 @@ EndProcedure
 &AtServer
 Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	UseAdditionalReportsAndDataProcessors = Constants.UseAdditionalReportsAndDataProcessors.Get();
+	TelegramBotToken = Constants.TelegramBotToken.Get();
+
 EndProcedure
 
 
@@ -22,7 +24,8 @@ EndProcedure
 
 &AtServer
 Procedure OnCloseAtServer()
-	Constants.UseAdditionalReportsAndDataProcessors.Set(UseAdditionalReportsAndDataProcessors); 
+	Constants.UseAdditionalReportsAndDataProcessors.Set(UseAdditionalReportsAndDataProcessors);
+	Constants.TelegramBotToken.Set(TelegramBotToken);
 EndProcedure
 
 
