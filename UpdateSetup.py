@@ -44,6 +44,8 @@ def MakeDistr(lastReleaseDirName, nextReleaseDirName = None, update = False):
     except Exception as e:
         print "Update demo database error:" + e.message
 
+	#Open Demo DB
+    subprocess.call([AppPath, 'ENTERPRISE', '/F', DemoDBDir , '/N', DemoDBUser, '/UpdateCfg'], shell=False)
 
     #dump DemoDB archive
     try:
