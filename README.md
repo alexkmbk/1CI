@@ -80,7 +80,7 @@ There is a mechanism of notification about task execution results in the
 configuration.
 
 The report about successful done or failed task could be sent through
-email ot IM to a list of recipients. And it is possible to set two
+email or Telegram IM to a list of recipients. And it is possible to set two
 different list of recipients, the one for successfully executed task and
 the other one about failures. Because sometime it is unnecessary to
 inform everyone about successful results.
@@ -285,11 +285,40 @@ RepUserName &lt;String&gt; - the name of repository user.
 
 RepPassword &lt;String&gt; - the repository password.
 
+Information register "TelegramUsersInfo"
+===========================
+
+The register is intended to store technical information needed for sending messages by Telegrem-bot about executed tasks.
+
+**Periodicity:** No.
+
+**Write mode:** Independent.
+
+**Dimensions:**
+
+UserName &lt;String&gt; - telegram IM user name
+
+**Resources:**
+
+ChatID &lt;Number&gt; - Telegram chat ID.
+
 Data processor “StartPage”
 ==========================
 
 The data processor is the desktop for the repository subsystem, it is
 intended to provide handy access to repository tasks.
+
+Constant «TelegramBotToken»
+=====================
+
+Value type: String.
+Intended to store Telegram-bot ID.
+
+Constant «TelegramBotUpdateID»
+=====================
+
+Value type: Number.
+Intended to store ID of last message. Used by Telegram-bot to call HTTP request "GetUpdates".
 
 Action data processors
 ======================
