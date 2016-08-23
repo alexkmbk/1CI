@@ -317,8 +317,15 @@ Intended to store Telegram-bot ID.
 Constant «TelegramBotUpdateID»
 =====================
 
-Value type: Number.
+Value type: Number.  
 Intended to store ID of last message. Used by Telegram-bot to call HTTP request "GetUpdates".
+
+Constant «TelegramBotPassword»
+=====================
+
+Value type: String.  
+Intended to store password for Telegram-bot. If password is set, user should send command /connect <password> to be able to recieve task report.
+
 
 Action data processors
 ======================
