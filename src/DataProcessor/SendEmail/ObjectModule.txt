@@ -9,10 +9,10 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	
 	Var ReturnCode;
 	
-	Tasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 		
 	If Not ValueIsFilled(CommonParams.DumpConfFileFullPath) Then
-		Tasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The saving location of configuration file is undefined", ShowMessages);
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The saving location of configuration file is undefined", ShowMessages);
 		Return False; 
 	EndIf; 
 		
@@ -45,13 +45,13 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 		Try
 			EmailOperations.SendEmailMessage(EmailOperations.SystemAccount(),EmailParams);			
 		Except
-			Tasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending email error:" + ErrorDescription(), ShowMessages);
+			RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending email error:" + ErrorDescription(), ShowMessages);
 			WasError = true;
 		EndTry; 
 	EndDo; 	
 	
 	If Not WasError Then
-		Tasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
 	EndIf; 
 	
 	Return Not WasError;

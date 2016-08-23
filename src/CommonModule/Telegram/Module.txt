@@ -99,7 +99,7 @@ Function SendTelegramMessage(LogLineNumber, Action, CommonParams, UserName, Chat
 	
 	BotToken = Constants.TelegramBotToken.Get();
 	If Not ValueIsFilled(BotToken) Then
-		Tasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending report by telegram error: the constant ""TelegramBotToken"" is not specified.", StorageAddress);	
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Sending report by telegram error: the constant ""TelegramBotToken"" is not specified.", StorageAddress);	
 		Return False;
 	EndIf; 
 	
