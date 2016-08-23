@@ -47,7 +47,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Role.FullAdministrator</xr:Item>
 			</DefaultRoles>
 			<Vendor>Alexey Kostromin</Vendor>
-			<Version>1.0.0.6</Version>
+			<Version>1.0.0.7</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
