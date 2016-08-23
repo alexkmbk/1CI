@@ -1,6 +1,6 @@
 ﻿Function ReadOutFile(LogLineNumber, Path, CommonParams, Action, StorageAddress)
 	
-	If Not RepTasks.FileExists(Path) Then
+	If Not Tasks.FileExists(Path) Then
 		Return True;
 	EndIf; 
 	
@@ -14,21 +14,21 @@
 			break;
 		EndIf; 
 		If Line = "start" Then
-			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,"reposting has been started in the test DB.");	
+			RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,"reposting has been started in the test DB.");	
 		EndIf; 
 		
 		If Left(Line, 6) = "error:" Then
-			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error,Mid(Line,7), StorageAddress);	
+			RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error,Mid(Line,7), StorageAddress);	
 			WereErrors = True;
 		EndIf; 
 		
 		
 		If Left(Line, 5) = "info:" Then
-			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,Mid(Line,6), StorageAddress);	
+			RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,Mid(Line,6), StorageAddress);	
 		EndIf; 
 		
 		If Line = "done" Then
-			RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,"reposting has been done in the test DB.");	
+			RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.DetailedInfo,"reposting has been done in the test DB.");	
 			return Not WereErrors;
 		EndIf; 
 
@@ -50,7 +50,7 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, StorageAddress) 
 	
 	Var ReturnCode;
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 	
 	WereErrors = False;
 	
@@ -60,7 +60,7 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, StorageAddress) 
 	
 	Dir = CommonParams.WorkingDir + UUID + "\";
 	
-	If Not RepTasks.FileExists(Dir) Then
+	If Not Tasks.FileExists(Dir) Then
 		CreateDirectory(Dir);
 	EndIf; 
 	
@@ -71,11 +71,11 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, StorageAddress) 
 	Try
 		RunApp(CommonParams.PlatformPath + " ENTERPRISE /F """ + CommonParams.TestDBDir + """ /N " + CommonParams.TestDBAdminName + ?(ValueIsFilled(CommonParams.TestDBAdminPassword), " /P " + CommonParams.TestDBAdminPassword, "")  + " /Execute """ + ExternalDataProxessorPath + """ /C""" + Dir + """",,True, ReturnCode);	
 	Except
-		If RepTasks.FileExists(Dir + "\out.txt") Then
+		If Tasks.FileExists(Dir + "\out.txt") Then
 	Result = ReadOutFile(LogLineNumber, Dir + "\out.txt", CommonParams, Action, StorageAddress);
 		EndIf; 
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Reposting error:" + ErrorDescription(), StorageAddress);
-		If RepTasks.FileExists(Dir + "\out.txt") Then
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Reposting error:" + ErrorDescription(), StorageAddress);
+		If RepositoryTasks.FileExists(Dir + "\out.txt") Then
 			DeleteFiles(Dir);
 		EndIf;		
 		Return False; 
@@ -83,11 +83,11 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, StorageAddress) 
 	
 	
 	If (ReturnCode <> 0) Then		
-		If RepTasks.FileExists(Dir + "\out.txt") Then
+		If RepositoryTasks.FileExists(Dir + "\out.txt") Then
 			Result = ReadOutFile(LogLineNumber, Dir + "\out.txt", CommonParams, Action, StorageAddress);
 		EndIf; 
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Reposting error: the program return " + ReturnCode, StorageAddress);
-		If RepTasks.FileExists(Dir + "\out.txt") Then
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Reposting error: the program return " + ReturnCode, StorageAddress);
+		If RepositoryTasks.FileExists(Dir + "\out.txt") Then
 			DeleteFiles(Dir);
 		EndIf;
 		Return False; 
@@ -97,15 +97,15 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, StorageAddress) 
 	Result = ReadOutFile(LogLineNumber, Dir + "\out.txt", CommonParams, Action, StorageAddress);
 	
 	If Result = False Then
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error);
-		If RepTasks.FileExists(Dir + "\out.txt") Then
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error);
+		If RepositoryTasks.FileExists(Dir + "\out.txt") Then
 			DeleteFiles(Dir);
 		EndIf;		
 		Return False;
 	EndIf; 	
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
-	If RepTasks.FileExists(Dir + "\out.txt") Then
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
+	If RepositoryTasks.FileExists(Dir + "\out.txt") Then
 		DeleteFiles(Dir);
 	EndIf;
 	

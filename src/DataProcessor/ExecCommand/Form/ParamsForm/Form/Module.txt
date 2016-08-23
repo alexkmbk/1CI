@@ -21,7 +21,7 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	
 	Task = ThisForm.Parameters.Task;
 	ActionParamsUUID =  ThisForm.Parameters.ActionParamsUUID;
-	Params = RepTasks.LoadActionParams(Task, ActionParamsUUID);	
+	Params = RepositoryTasks.LoadActionParams(Task, ActionParamsUUID);	
 	If Params <> Undefined Then
 		Value = Undefined;	
 		If TypeOf(Params) <> Type("Structure") Then
@@ -39,5 +39,5 @@ EndProcedure
 
 &AtClient
 Procedure CurrentDirectoryStartChoice(Item, ChoiceData, StandardProcessing)
-	RepTasksClient.DirChoice(ThisObject, "CurrentDirectory", "Choose current directory of the command"); 
+	RepositoryTasksClient.DirChoice(ThisObject, "CurrentDirectory", "Choose current directory of the command"); 
 EndProcedure

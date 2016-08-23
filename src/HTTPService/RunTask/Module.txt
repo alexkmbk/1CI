@@ -13,7 +13,7 @@ Function RepositoryCodeTaskCodeRunTask(Request)
 	    Response = New HTTPServiceResponse(400);
 	EndTry; 
 	
-	If RepTasks.RunTaskByCode(RepositoryCode, TaskCode) Then
+	If RepositoryTasks.RunTaskByCode(RepositoryCode, TaskCode) Then
 		Response = New HTTPServiceResponse(200);
 	Else
 		Response = New HTTPServiceResponse(500);

@@ -10,7 +10,7 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<MethodName>CommonModule.RepTasks.RunScheduledTask</MethodName>
+			<MethodName>CommonModule.RepositoryTasks.RunScheduledTask</MethodName>
 			<Description/>
 			<Key/>
 			<Use>true</Use>

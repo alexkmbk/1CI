@@ -9,21 +9,21 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	
 	Var ReturnCode;
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 		
 	Try
 		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.DBDir + """ /ConfigurationRepositoryF """ + CommonParams.RepPath + """ /ConfigurationRepositoryN """ + CommonParams.UserName + """ /ConfigurationRepositoryP """ + CommonParams.Password + """ /CheckModules -ThinClient -WebClient -Server", ,true, ReturnCode);	
 	Except
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "CheckModules error:" + ErrorDescription(), ShowMessages);
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "CheckModules error:" + ErrorDescription(), ShowMessages);
 		Return False; 
 	EndTry; 
 	
 	If (ReturnCode <> 0) Then		
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "CheckModules error: the program return " + ReturnCode, ShowMessages);	
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "CheckModules error: the program return " + ReturnCode, ShowMessages);	
 		Return False;	
 	EndIf;
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
 	
 	Return true;
 	

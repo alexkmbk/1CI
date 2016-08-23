@@ -94,7 +94,7 @@ EndProcedure
 
 &AtClient
 Procedure RunTaskInBackground(Task, RepUserName, RepPassword)
-	JobStruct = RepTasks.RunTaskInBackground(ThisForm.UUID, Task, True, Repository, RepUserName, RepPassword);
+	JobStruct = RepositoryTasks.RunTaskInBackground(ThisForm.UUID, Task, True, Repository, RepUserName, RepPassword);
 	JobID = JobStruct.JobID;
 	StorageAddress = JobStruct.StorageAddress;
 	LongActioinForm = LongActionsClient.OpenLongActionForm(ThisForm, JobStruct.JobID);
@@ -110,7 +110,7 @@ Procedure RunTask(Command)
 		RepUserName = Undefined;
 		RepPassword = Undefined;
 		
-		RepTasks.GetRepPasswordAndUserName(Repository, RepUserName, RepPassword);	
+		RepositoryTasks.GetRepPasswordAndUserName(Repository, RepUserName, RepPassword);	
 		If ValueIsFilled(RepUserName) Then
 			RunTaskInBackground(CurData.Ref, RepUserName, RepPassword);
 		Else

@@ -115,6 +115,7 @@
 					<v8:content>Telegram</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Group>Vertical</Group>
 			<ExtendedTooltip name="TelegramExtendedTooltip" id="21"/>
 			<ChildItems>
 				<InputField name="TelegramBotToken" id="22">
@@ -122,6 +123,11 @@
 					<Width>29</Width>
 					<ContextMenu name="TelegramBotTokenContextMenu" id="23"/>
 					<ExtendedTooltip name="TelegramBotTokenExtendedTooltip" id="24"/>
+				</InputField>
+				<InputField name="TelegramBotPassword" id="25">
+					<DataPath>TelegramBotPassword</DataPath>
+					<ContextMenu name="TelegramBotPasswordContextMenu" id="26"/>
+					<ExtendedTooltip name="TelegramBotPasswordExtendedTooltip" id="27"/>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -150,6 +156,21 @@
 				<v8:item>
 					<v8:lang>en</v8:lang>
 					<v8:content>Telegram bot token</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="TelegramBotPassword" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Telegram bot password</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

@@ -3,7 +3,7 @@
 Procedure SaveAtServer(Repository, UserName, Password)
 	Record = InformationRegisters.RepUsers.CreateRecordManager();
 	Record.Repository = Repository;
-	Record.User = RepTasks.GetCurrentUser(Repository);
+	Record.User = Tasks.GetCurrentUser(Repository);
 	Record.RepUserName = UserName;
 	Record.RepPassword = Password;
 	Record.Write(True);

@@ -22,7 +22,7 @@ Procedure OnCreateAtServer(Cancel, StandardProcessing)
 	
 	Task = ThisForm.Parameters.Task;
 	ActionParamsUUID =  ThisForm.Parameters.ActionParamsUUID;
-	Params = RepTasks.LoadActionParams(Task, ActionParamsUUID);	
+	Params = RepositoryTasks.LoadActionParams(Task, ActionParamsUUID);	
 	If Params <> Undefined Then
 		Value = Undefined;	
 		If TypeOf(Params) <> Type("Structure") Then

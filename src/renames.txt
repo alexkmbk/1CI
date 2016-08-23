@@ -339,10 +339,10 @@ CommonModule.LongActionsClientCached.Module.txt-->CommonModule\LongActionsClient
 CommonModule.LongActionsClientCached.xml-->CommonModule\LongActionsClientCached\LongActionsClientCached.xml
 CommonModule.RegulatedDataClientServer.Module.txt-->CommonModule\RegulatedDataClientServer\Module.txt
 CommonModule.RegulatedDataClientServer.xml-->CommonModule\RegulatedDataClientServer\RegulatedDataClientServer.xml
-CommonModule.RepTasks.Module.txt-->CommonModule\RepTasks\Module.txt
-CommonModule.RepTasks.xml-->CommonModule\RepTasks\RepTasks.xml
-CommonModule.RepTasksClient.Module.txt-->CommonModule\RepTasksClient\Module.txt
-CommonModule.RepTasksClient.xml-->CommonModule\RepTasksClient\RepTasksClient.xml
+CommonModule.RepositoryTasks.Module.txt-->CommonModule\RepositoryTasks\Module.txt
+CommonModule.RepositoryTasks.xml-->CommonModule\RepositoryTasks\RepositoryTasks.xml
+CommonModule.RepositoryTasksClient.Module.txt-->CommonModule\RepositoryTasksClient\Module.txt
+CommonModule.RepositoryTasksClient.xml-->CommonModule\RepositoryTasksClient\RepositoryTasksClient.xml
 CommonModule.SafeMode.Module.txt-->CommonModule\SafeMode\Module.txt
 CommonModule.SafeMode.xml-->CommonModule\SafeMode\SafeMode.xml
 CommonModule.SafeModeClient.Module.txt-->CommonModule\SafeModeClient\Module.txt
@@ -369,6 +369,8 @@ CommonModule.StandardSubsystemsServerCall.Module.txt-->CommonModule\StandardSubs
 CommonModule.StandardSubsystemsServerCall.xml-->CommonModule\StandardSubsystemsServerCall\StandardSubsystemsServerCall.xml
 CommonModule.StringFunctionsClientServer.Module.txt-->CommonModule\StringFunctionsClientServer\Module.txt
 CommonModule.StringFunctionsClientServer.xml-->CommonModule\StringFunctionsClientServer\StringFunctionsClientServer.xml
+CommonModule.Telegram.Module.txt-->CommonModule\Telegram\Module.txt
+CommonModule.Telegram.xml-->CommonModule\Telegram\Telegram.xml
 CommonModule.Users.Module.txt-->CommonModule\Users\Module.txt
 CommonModule.Users.xml-->CommonModule\Users\Users.xml
 CommonModule.UsersClientServer.Module.txt-->CommonModule\UsersClientServer\Module.txt
@@ -680,6 +682,7 @@ Constant.InternalEventParameters.xml-->Constant\InternalEventParameters\Internal
 Constant.IsStandaloneWorkstation.xml-->Constant\IsStandaloneWorkstation\IsStandaloneWorkstation.xml
 Constant.MasterNode.xml-->Constant\MasterNode\MasterNode.xml
 Constant.SystemTitle.xml-->Constant\SystemTitle\SystemTitle.xml
+Constant.TelegramBotPassword.xml-->Constant\TelegramBotPassword\TelegramBotPassword.xml
 Constant.TelegramBotToken.xml-->Constant\TelegramBotToken\TelegramBotToken.xml
 Constant.TelegramBotUpdateID.xml-->Constant\TelegramBotUpdateID\TelegramBotUpdateID.xml
 Constant.UseAdditionalReportsAndDataProcessors.xml-->Constant\UseAdditionalReportsAndDataProcessors\UseAdditionalReportsAndDataProcessors.xml
@@ -1084,6 +1087,7 @@ StyleItem.OverdueDataColor.xml-->StyleItem\OverdueDataColor\OverdueDataColor.xml
 StyleItem.SelectedUser.xml-->StyleItem\SelectedUser\SelectedUser.xml
 StyleItem.SuccessResultColor.xml-->StyleItem\SuccessResultColor\SuccessResultColor.xml
 Subsystem.Repositories.Subsystem.InternalActionDataProcessors.xml-->Subsystem\Repositories\Subsystem\InternalActionDataProcessors.xml
+Subsystem.Repositories.Subsystem.TelegramMessenger.xml-->Subsystem\Repositories\Subsystem\TelegramMessenger.xml
 Subsystem.Repositories.xml-->Subsystem\Repositories\Repositories.xml
 Subsystem.StandardSubsystems.Subsystem.AdditionalReportsAndDataProcessors.Help.en.html-->Subsystem\StandardSubsystems\Subsystem\AdditionalReportsAndDataProcessors\Help\en.html
 Subsystem.StandardSubsystems.Subsystem.AdditionalReportsAndDataProcessors.Help.xml-->Subsystem\StandardSubsystems\Subsystem\AdditionalReportsAndDataProcessors\Help.xml

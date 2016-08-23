@@ -341,9 +341,10 @@
 			<CommonModule>InfobaseUpdateInternalCached</CommonModule>
 			<CommonModule>InfobaseUpdateOverridable</CommonModule>
 			<CommonModule>InfobaseUpdateServerCall</CommonModule>
-			<CommonModule>RepTasks</CommonModule>
-			<CommonModule>RepTasksClient</CommonModule>
 			<CommonModule>InfobaseUpdateOneCI</CommonModule>
+			<CommonModule>RepositoryTasks</CommonModule>
+			<CommonModule>RepositoryTasksClient</CommonModule>
+			<CommonModule>Telegram</CommonModule>
 			<XDTOPackage>ApplicationExtensionsManifest_1_0_0_1</XDTOPackage>
 			<XDTOPackage>ApplicationExtensionsPermissions_1_0_0_1</XDTOPackage>
 			<XDTOPackage>ApplicationPermissions_1_0_0_1</XDTOPackage>
@@ -412,6 +413,7 @@
 			<Constant>WriteInfobaseUpdateDetailsToEventLog</Constant>
 			<Constant>TelegramBotToken</Constant>
 			<Constant>TelegramBotUpdateID</Constant>
+			<Constant>TelegramBotPassword</Constant>
 			<CommonForm>AccountPasswordConfirmation</CommonForm>
 			<CommonForm>AdditionalReportsAndDataProcessors</CommonForm>
 			<CommonForm>ExchangePlanNodeSelection</CommonForm>

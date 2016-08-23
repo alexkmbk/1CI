@@ -18,7 +18,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Actions</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Tasks</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Repositories</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RepTasks</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RepositoryTasks</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.EmptyDB</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RepUsers</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.StartPage</xr:Item>
@@ -30,16 +30,14 @@
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ProgramSettings</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ProgramSettings</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.RepositoryUserNameAndPasswordInput</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RepTasksClient</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RepositoryTasksClient</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.EventsStatusRow</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ReportRecipients</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Constant.TelegramBotToken</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.TelegramUsersInfo</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Constant.TelegramBotUpdateID</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects>
 			<Subsystem>InternalActionDataProcessors</Subsystem>
+			<Subsystem>TelegramMessenger</Subsystem>
 		</ChildObjects>
 	</Subsystem>
 </MetaDataObject>

@@ -7,7 +7,7 @@ Var IdleHandlerParams;
 &AtServer
 Procedure UpdateWarnings()
 	
-	If (Object.SuccessReportRecipients.Count() <> 0 or Object.FailureReportRecipients.Count() <> 0) and Not RepTasks.SystemEmailAccountIsSet()Then
+	If (Object.SuccessReportRecipients.Count() <> 0 or Object.FailureReportRecipients.Count() <> 0) and Not RepositoryTasks.SystemEmailAccountIsSet()Then
 		Items.Warnings.Visible = True;
 		Items.Warnings.Title = "It seems like the system email account is not set.";
 	Else
@@ -59,7 +59,7 @@ EndProcedure
 
 &AtClient
 Procedure RunTaskInBackground(Task, RepUserName, RepPassword, Actions)
-	JobStruct = RepTasks.RunTaskInBackground(ThisForm.UUID, Task, True, Object.Owner, RepUserName, RepPassword, Actions, Object.Description);
+	JobStruct = RepositoryTasks.RunTaskInBackground(ThisForm.UUID, Task, True, Object.Owner, RepUserName, RepPassword, Actions, Object.Description);
 	JobID = JobStruct.JobID;
 	StorageAddress = JobStruct.StorageAddress;
 	LongActioinForm = LongActionsClient.OpenLongActionForm(ThisForm, JobStruct.JobID);
@@ -77,7 +77,7 @@ Procedure RunTask(Command)
 	RepUserName = Undefined;
 	RepPassword = Undefined;
 	
-	RepTasks.GetRepPasswordAndUserName(Object.Owner, RepUserName, RepPassword);	
+	RepositoryTasks.GetRepPasswordAndUserName(Object.Owner, RepUserName, RepPassword);	
 	If ValueIsFilled(RepUserName) Then
 		RunTaskInBackground(Object.Ref, RepUserName, RepPassword, Actions);
 	Else
@@ -92,7 +92,7 @@ Procedure OpenActionSettings(Command)
 	
 	CurData = Items.Actions.CurrentData;
 	
-	FormPath = RepTasks.GetActionsParamsFormPath(CurData.Action);
+	FormPath = RepositoryTasks.GetActionsParamsFormPath(CurData.Action);
 	If Not ValueIsFilled(FormPath) Then
 		Return; 
 	EndIf; 
@@ -104,7 +104,7 @@ EndProcedure
 &AtClient
 Procedure ActionsOnActivateRow(Item)
 	If Item.CurrentData <> Undefined Then
-		Items.OpenActionSettingsButton.Enabled = RepTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
+		Items.OpenActionSettingsButton.Enabled = RepositoryTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
 	Else
 		Items.OpenActionSettingsButton.Enabled = False;	
 	EndIf; 		
@@ -283,7 +283,7 @@ EndProcedure
    
 &AtClient
 Procedure WarningsClick(Item)
-	ShowValue(New NotifyDescription("ShowEmailAccountEditFormResult", ThisObject),RepTasksClient.GetSystemEmailAccount());
+	ShowValue(New NotifyDescription("ShowEmailAccountEditFormResult", ThisObject),RepositoryTasksClient.GetSystemEmailAccount());
 EndProcedure
 
 
@@ -307,7 +307,7 @@ EndProcedure
 Procedure ActionsBeforeEditEnd(Item, NewRow, CancelEdit, Cancel)
 	If Not CancelEdit Then		
 		If Item.CurrentData <> Undefined Then
-			Items.OpenActionSettingsButton.Enabled = RepTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
+			Items.OpenActionSettingsButton.Enabled = RepositoryTasks.ActionDataProcessorHasSettings(Item.CurrentData.Action); 
 		Else
 			Items.OpenActionSettingsButton.Enabled = False;	
 		EndIf; 		

@@ -9,38 +9,38 @@ Function Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages) Ex
 	
 	Var ReturnCode;
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Start);
 	
 	If Not ValueIsFilled(CommonParams.DumpConfFileFullPath) Then		
-		RepTasks.WriteLog(CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The saving location of configuration file is undefined", ShowMessages);
+		RepositoryTasks.WriteLog(CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "The saving location of configuration file is undefined", ShowMessages);
 		Return False; 
 	EndIf; 
 	
 	Try
 		RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.DBDir + """ /ConfigurationRepositoryN """ + CommonParams.UserName + """ /ConfigurationRepositoryP """ + CommonParams.Password + """ /ConfigurationRepositoryDumpCfg """ + CommonParams.DumpConfFileFullPath + """ ", ,true, ReturnCode);	
 	Except
-		RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Repository dump making error:" + ErrorDescription(), ShowMessages);
+		RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Repository dump making error:" + ErrorDescription(), ShowMessages);
 		Return False; 
 	EndTry; 
 	
 	
 	If (ReturnCode <> 0) Then		
 		// In case of failure, try to bind to repository first and try again
-		If RepTasks.BindDbToRepository(LogLineNumber, Action, CommonParams, ShowMessages) Then
+		If RepositoryTasks.BindDbToRepository(LogLineNumber, Action, CommonParams, ShowMessages) Then
 			Try
 				RunApp(CommonParams.PlatformPath + " DESIGNER /F """ + CommonParams.DBDir + """ /ConfigurationRepositoryN """ + CommonParams.UserName + """ /ConfigurationRepositoryP """ + CommonParams.Password + """ /ConfigurationRepositoryDumpCfg """ + CommonParams.DumpConfFileFullPath + """ ", ,true, ReturnCode);	
 			Except
-				RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Repository dump making error:" + ErrorDescription(), ShowMessages);
+				RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Repository dump making error:" + ErrorDescription(), ShowMessages);
 				Return False; 
 			EndTry; 
 			If (ReturnCode <> 0) Then
-				RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of making dump of the configuration from the repository: the program return " + ReturnCode, ShowMessages);	
+				RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Error, "Failure of making dump of the configuration from the repository: the program return " + ReturnCode, ShowMessages);	
 				Return False;	
 			EndIf;						
 		EndIf; 
 	EndIf;
 	
-	RepTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
+	RepositoryTasks.WriteLog(LogLineNumber, CommonParams.TaskRunningEventRef, Action, Enums.ActionEventTypes.Success);
 	
 	Return true;
 	

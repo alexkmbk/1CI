@@ -8,7 +8,7 @@
 	|	Catalog.Actions AS Actions";
 	
 	AlreadyAdded = Query.Execute().Unload().UnloadColumn("InternalDataProcessor");
-	InternalDataProcessors = RepTasks.GetInternalDataProcessors();
+	InternalDataProcessors = RepositoryTasks.GetInternalDataProcessors();
 	For Each Item In InternalDataProcessors Do
 		If AlreadyAdded.Find(Item.Value) = Undefined Then
 			NewItem = Catalogs.Actions.CreateItem();

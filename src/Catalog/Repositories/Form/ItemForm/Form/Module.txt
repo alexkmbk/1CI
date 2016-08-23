@@ -1,6 +1,6 @@
 ﻿&AtClient
 Procedure PathStartChoice(Item, ChoiceData, StandardProcessing)	
-	RepTasksClient.DirChoice(Object, "Path", "Repository path"); 
+	RepositoryTasksClient.DirChoice(Object, "Path", "Repository path"); 
 EndProcedure
 
 &AtServer
@@ -57,20 +57,20 @@ EndProcedure
 
 &AtClient
 Procedure WorkingDirStartChoice(Item, ChoiceData, StandardProcessing)		
-	RepTasksClient.DirChoice(Object, "WorkingDir", "Repository path"); 
+	RepositoryTasksClient.DirChoice(Object, "WorkingDir", "Repository path"); 
 EndProcedure
 
 &AtClient
 Procedure DumpDirStartChoice(Item, ChoiceData, StandardProcessing)
-	RepTasksClient.DirChoice(Object, "ConfBackupDir", "Configuration backup directory"); 
+	RepositoryTasksClient.DirChoice(Object, "ConfBackupDir", "Configuration backup directory"); 
 EndProcedure
 
 &AtClient
 Procedure ConfigurationPathStartChoice(Item, ChoiceData, StandardProcessing)
-	RepTasksClient.DirChoice(Object, "DBDir", "Bound database directory"); 
+	RepositoryTasksClient.DirChoice(Object, "DBDir", "Bound database directory"); 
 EndProcedure
 
 &AtClient
 Procedure TestDBDirStartChoice(Item, ChoiceData, StandardProcessing)
-	RepTasksClient.DirChoice(Object, "TestDBDir", "Path to test-database directory"); 
+	RepositoryTasksClient.DirChoice(Object, "TestDBDir", "Path to test-database directory"); 
 EndProcedure

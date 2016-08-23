@@ -2719,8 +2719,8 @@ Function ObjectManagerByRef(Ref) Export
 	ElsIf ChartsOfCalculationTypes.AllRefsType().ContainsType(RefType) Then
 		Return ChartsOfCalculationTypes[ObjectName];
 		
-	ElsIf RepTasks.AllRefsType().ContainsType(RefType) Then
-		Return RepTasks[ObjectName];
+	ElsIf Tasks.AllRefsType().ContainsType(RefType) Then
+		Return Tasks[ObjectName];
 		
 	ElsIf ExchangePlans.AllRefsType().ContainsType(RefType) Then
 		Return ExchangePlans[ObjectName];
@@ -2812,7 +2812,7 @@ Function ObjectKindByType(Type) Export
 	ElsIf ChartsOfCalculationTypes.AllRefsType().ContainsType(Type) Then
 		Return "ChartOfCalculationTypes";
 	
-	ElsIf RepTasks.AllRefsType().ContainsType(Type) Then
+	ElsIf Tasks.AllRefsType().ContainsType(Type) Then
 		Return "Task";
 	
 	ElsIf ExchangePlans.AllRefsType().ContainsType(Type) Then
@@ -2877,7 +2877,7 @@ Function IsReference(Type) Export
 		Or ChartsOfCalculationTypes.AllRefsType().ContainsType(Type)
 		Or BusinessProcesses.AllRefsType().ContainsType(Type)
 		Or BusinessProcesses.RoutePointsAllRefsType().ContainsType(Type)
-		Or RepTasks.AllRefsType().ContainsType(Type)
+		Or Tasks.AllRefsType().ContainsType(Type)
 		Or ExchangePlans.AllRefsType().ContainsType(Type));
 	
 EndFunction
@@ -3212,7 +3212,7 @@ Function TypePresentationString(Type) Export
 		ElsIf ChartsOfCalculationTypes.AllRefsType().ContainsType(Type) Then
 			Presentation = "ChartOfCalculationTypesRef";
 		
-		ElsIf RepTasks.AllRefsType().ContainsType(Type) Then
+		ElsIf Tasks.AllRefsType().ContainsType(Type) Then
 			Presentation = "TaskRef";
 		
 		ElsIf ExchangePlans.AllRefsType().ContainsType(Type) Then
