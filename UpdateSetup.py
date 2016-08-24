@@ -84,6 +84,18 @@ def MakeDistr(lastReleaseDirName, nextReleaseDirName = None, update = False):
         print "Create distributive error:" + e.message
         return False
 
+    # commit changes into git-repository
+    if update:
+        commitMsg = 'update release ' + nextReleaseDirName
+    else:
+        commitMsg = 'release ' + nextReleaseDirName
+
+    try:
+        subprocess.check_call(['git', 'commit', '-m',commitMsg,SetupDir], shell=False)
+    except Exception as e:
+        print "Commit changes error:" + e.message
+        return False
+
     return True
 
 def FindLastReleaseDir():
@@ -152,9 +164,9 @@ class App(Frame):
         self.nextReleaseEdit = Entry(frame3, textvariable = self.nextReleaseDirName)
         self.nextReleaseEdit.pack(fill=X, padx=5, expand=True)
 
-        closeButton = Button(self, text="Close",command=self.close_window)
+        closeButton = Button(self, text="Close",command=self.close_window, width=10)
         closeButton.pack(side=RIGHT, padx=5, pady=5)
-        okButton = Button(self, text="Run")
+        okButton = Button(self, text="Run", width=16)
         okButton.pack(side=RIGHT)
         okButton["command"] = self.makeDistr
 
