@@ -62,7 +62,7 @@ Continuous Integration, что является отсылкой к одноим
 может быть также внутренней, тогда, в справочнике «Actions» хранится
 наименование обработки из дерева объектов конфигурации.
 
-![alt tag](https://github.com/alexkmbk/1CI/blob/master/Description/TasksDiagram.png)
+![alt tag](https://github.com/alexkmbk/1CI/blob/master/docs/TasksDiagram.png)
 
 Во время выполнения задачи, в памяти создается список доступных общих
 параметров, которые могут быть использованы обработками при выполнении
