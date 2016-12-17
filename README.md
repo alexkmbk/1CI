@@ -57,7 +57,7 @@ AdditionalReportsAndDataProcessors SSL subsystem catalog. Data
 processors provide an algorithm that should be executed during task
 running.
 
-![alt tag](https://github.com/alexkmbk/1CI/blob/master/Description/TasksDiagram.png)
+![alt tag](https://github.com/alexkmbk/1CI/blob/master/docs/TasksDiagram.png)
 
 During task running process, there is a list of common parameters in a
 memory which is available for data processors and shared between them.
