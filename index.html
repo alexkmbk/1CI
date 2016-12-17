@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>1ci by alexkmbk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">1ci</h1>
+      <h2 class="project-tagline">Repository manager for 1C: Enterprise platform. The main idea of the project - continuous integration.</h2>
+      <a href="https://github.com/alexkmbk/1CI" class="btn">View on GitHub</a>
+      <a href="https://github.com/alexkmbk/1CI/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/alexkmbk/1CI/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="1ci" class="anchor" href="#1ci" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1CI</h1>
+
+<p>Repository manager for 1C: Enterprise platform. The main idea of the project - continuous integration.</p>
+
+<h1>
+<a id="the-main-idea" class="anchor" href="#the-main-idea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The main idea</h1>
+
+<p>When you develop configuration in a team, you often need to do some
+routine operations, such as for example:</p>
+
+<ul>
+<li>  Everyday make a dump of configuration from a repository and sending the
+result to partners;</li>
+<li>  Do many different tests, standard module check for example or some
+tests that could be made by some special software;</li>
+<li>  Informing your partners and coworkers about found errors in the
+configuration by email or IM like Skype or Telegram.</li>
+<li>  Load new version of the configuration into working database.</li>
+</ul>
+
+<p>So this project (configuration) is intended for automation such things.
+The part of the name of the project is abbreviation from Continuous
+Integration, which is a reference to the conception that was
+inspirational idea for the project.</p>
+
+<h1>
+<a id="general-description" class="anchor" href="#general-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General description.</h1>
+
+<p>Configuration: independent, without necessity of integration;</p>
+
+<p>Platform: 8.3;</p>
+
+<p>Interface: Taxi;</p>
+
+<p>Subsystems Library (SSL): 2.2.4.4 (English version);</p>
+
+<p>Script language: english;</p>
+
+<p>Mode: Asynchronous.</p>
+
+<p>The main functionality of the configuration is based on "Repositories"
+catalog. Each element of the catalog corresponds to a particular
+developing repository. For each element of the catalog defined list of
+users that have a permission of working with the repository.</p>
+
+<p>The list of tasks that should be automated is defined in the catalog
+“Tasks”, its owner is the catalog “Repositories”. Tasks could be run by
+several different ways:</p>
+
+<ul>
+<li>  manually, from 1C:Enterprise client;</li>
+<li>  on the schedule;</li>
+<li>  from command line;</li>
+<li>  by http-request;</li>
+<li>  by COM connector.</li>
+</ul>
+
+<p>Each task has the list of actions that should be executed. Actions are
+running one after one according to serial number of action in the list.</p>
+
+<p>Each action is an element of the catalog “Actions”. An action is
+connected to a data processor which could be internal or external, from
+AdditionalReportsAndDataProcessors SSL subsystem catalog. Data
+processors provide an algorithm that should be executed during task
+running.</p>
+
+<p><img src="1CI/Description/TasksDiagram.png" alt="alt tag"></p>
+
+<p>During task running process, there is a list of common parameters in a
+memory which is available for data processors and shared between them.
+The list exists only while a task is running. One of the most important
+parameters is a path to a dump of a configuration. The path parameter is
+being created before making a dump and it guaranties that all data
+processors would work with the same path. So, for example, if a task has
+two actions: one for making a dump and another one for making a test, you
+need to place the dumping action at a first position in an action list
+so, for another one there will be available the dump at known path.</p>
+
+<p>An information about running actions and results of their work is being
+written in the database by the logging subsystem.</p>
+
+<p>Each action is being written in independent way from the others, so if
+the whole process was crashed it is still possible to see on which step
+the crash was occurred.</p>
+
+<p>There is a mechanism of notification about task execution results in the
+configuration.</p>
+
+<p>The report about successful done or failed task could be sent through
+email or Telegram IM to a list of recipients. And it is possible to set two
+different list of recipients, the one for successfully executed task and
+the other one about failures. Because sometime it is unnecessary to
+inform everyone about successful results.</p>
+
+<p>For each action data processor, it could be defined some individual
+parameters, which will be saved in the “ActionParams” attribute of the
+“Actions” table of the “Task” catalog.</p>
+
+<p>The action parameters editing interface should be provided by a data
+processor itself.</p>
+
+<p>Email sending mechanism is provided by “EmailAccounts” subsystem of SSL.</p>
+
+<p>Testing as all others actions could be provided by various additional
+special data processors connected to the catalog “Actions”. In the
+configuration there are several internal testing data processors:</p>
+
+<ul>
+<li><p>standard module checking (*<strong><em>CheckModules</em></strong>*
+command line option ).</p></li>
+<li><p>run test scripts (new testing mechanism in version 8.3).</p></li>
+<li><p>reposting the list of documents (it is possible to
+catch some errors during reposting a document).</p></li>
+<li><p>making list of reports.</p></li>
+</ul>
+
+<h1>
+<a id="metadata-objects-of-the-configuration-what-is-already-done" class="anchor" href="#metadata-objects-of-the-configuration-what-is-already-done" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Metadata objects of the configuration (what is already done)</h1>
+
+<h1>
+<a id="catalog-repositories" class="anchor" href="#catalog-repositories" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Catalog “Repositories”</h1>
+
+<p><strong>Attributes:</strong></p>
+
+<p>Path &lt;String&gt;— the path to the repository ;</p>
+
+<p>WorkingDir &lt;String&gt; - the path to the directory where could be
+stored some files needed for working, for example there will be placed
+the database, bound to a repository. If it is not defined, it would be
+used user's temporary directory.</p>
+
+<p>PlatformPath &lt;String&gt; - the path to the platform executable file.
+If it is not defined, it would be used the path given by BinDir()
+function.</p>
+
+<p>DBDir &lt;String&gt; - the path to a database which it bound to the
+repository. If it is not defined, it would be used the path
+“WorkingDir\DB\”.</p>
+
+<p>ConfBackupDir &lt;String&gt; - the path where should be stored dumps
+from the repository. If it is not defined, it would be used the path
+“WorkingDir\Backup”.</p>
+
+<p>ScheduledJobUser &lt;CatalogRef.Users&gt; - the user from the whom name
+will execute scheduled task.</p>
+
+<p>TestDBDir &lt;String&gt; - path to test-database directory.</p>
+
+<p>TestDBAdminName &lt;String&gt; - test DB admin name</p>
+
+<p>TestDBAdminPassword &lt;String&gt; - test DB admin password</p>
+
+<h1>
+<a id="catalog-actions" class="anchor" href="#catalog-actions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Catalog “Actions”</h1>
+
+<p><strong>Attributes:</strong></p>
+
+<p>IsInternal &lt;Boolean&gt; - determines whether the data processor is
+internal or not.</p>
+
+<p>InternalDataProcessor &lt;String&gt; - the name of internal data
+processor.</p>
+
+<p>DataProcessor &lt;CatalogRef.AdditionalReportsAndDataProcessors&gt; -
+the reference to the element of “AdditionalReportsAndDataProcessors”
+catalog. It should be set if the data processor is external.</p>
+
+<h1>
+<a id="catalog-tasks" class="anchor" href="#catalog-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Catalog “Tasks”</h1>
+
+<p><strong>Attributes:</strong></p>
+
+<p>ScheduledJobGUID &lt;UUID&gt; - the ID of the scheduled job.</p>
+
+<p>RunBySchedule&lt;Boolean&gt; - determines if the task should be run by
+scheduled job.</p>
+
+<p><strong>Tabular sections:</strong></p>
+
+<p>Actions, attributes:</p>
+
+<p>Action &lt;CatalogRef.Actions&gt;.</p>
+
+<p>ActionParams &lt;String&gt; - the string of individual action parameters
+of the data processor (in case there are some in a data processor). The
+string is generated by function ValueToStringInternal</p>
+
+<p>from structure of parameters.</p>
+
+<p>UUID &lt;UUID&gt; - action parameters identifier.</p>
+
+<p>FailureReportRecipients, attributes:</p>
+
+<p>Recipient &lt;CatalogRef.ReportRecipients&gt;.  </p>
+
+<p>SuccessReportRecipients, attributes:</p>
+
+<p>Recipient &lt;CatalogRef.ReportRecipients&gt;.  </p>
+
+<h1>
+<a id="catalog-reportrecipients" class="anchor" href="#catalog-reportrecipients" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Catalog «ReportRecipients»</h1>
+
+<p><strong>Attributes:</strong><br>
+Email &lt;String&gt; - recipient's email.    </p>
+
+<p>TelegramUserName &lt;String&gt; - user name in Telegram IM.    </p>
+
+<p>ByEmail &lt;Boolean&gt; - determines if task report should be sent by email.    </p>
+
+<p>ByTelegram &lt;Boolean&gt; - determines if task report should be sent by Telegram.    </p>
+
+<h1>
+<a id="document-taskrunningevent" class="anchor" href="#document-taskrunningevent" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Document “TaskRunningEvent”</h1>
+
+<p>The document is intended to log task events. Each particular document
+represents one task execution.</p>
+
+<p><strong>Attributes:</strong></p>
+
+<p>State &lt;Enum.TaskState&gt;- the state of task execution.</p>
+
+<p>Task &lt;CatalogRef.Tasks&gt; - the reference to executing task.</p>
+
+<p>Repository &lt;CatalogRef.Repositories&gt; - the reference to the
+catalog “Repositories”. This attribute is for optimization record level
+(RLS) access restriction to “Repositories” catalog related data.</p>
+
+<p>The document doesn’t support posting. At a beginning of task execution,
+system creates and writes the document with the state “Started”. During
+task execution process, logging information could be stored in the
+information register “ActionEventsLog” (would be described further)
+where one of the dimension is a reference to TaskRunningEvent document,
+but the register and the document are not connected by posting
+mechanism.</p>
+
+<p>If all actions were executed, the value of the attribute “State” will be
+set as “Success” or “Error” it depends on whether it was successful
+execution or not.</p>
+
+<h1>
+<a id="information-register-actioneventslog" class="anchor" href="#information-register-actioneventslog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information register “ActionEventsLog”</h1>
+
+<p>The register is intended to log action events. One action during running
+can write several events.</p>
+
+<p><strong>Periodicity:</strong> No.</p>
+
+<p><strong>Write mode:</strong> Independent.</p>
+
+<p><strong>Dimensions:</strong></p>
+
+<p>TaskRunningEvent &lt;DocumentRef.TaskRunningEvent&gt;.</p>
+
+<p>LineNum &lt;Number 9,0&gt; - the serial number of the event, the
+numeration is implementing through one task.</p>
+
+<p><strong>Resources:</strong></p>
+
+<p>Action &lt;CatalogRef.Actions&gt; - the source of event.</p>
+
+<p>State &lt;EnumRef.ActionEventTypes&gt; - the type of the event
+(Start,Error,DetailedInfo,Success);</p>
+
+<p>Description &lt;String&gt; - text description of the event.</p>
+
+<p>Date &lt;DateTime&gt; - event's date and time.</p>
+
+<p>The register is not periodic because the record will be selected more
+often by reference to the TaskRunningEvent document. So, the reference
+should be at the first position.</p>
+
+<h1>
+<a id="information-register-repusers" class="anchor" href="#information-register-repusers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information register “RepUsers”</h1>
+
+<p>The register is intended to store repository users. For the repository
+should be defined at least one user.</p>
+
+<p><strong>Periodicity:</strong> No.</p>
+
+<p><strong>Write mode:</strong> Independent.</p>
+
+<p><strong>Dimensions:</strong></p>
+
+<p>User &lt;CatalogRef.Users&gt; - the reference to the “Users” catalog
+from Users subsystem of SSL.</p>
+
+<p>Repository &lt;CatalogRef.Repositories&gt; - the repository.</p>
+
+<p><strong>Resources:</strong></p>
+
+<p>RepUserName &lt;String&gt; - the name of repository user.</p>
+
+<p>RepPassword &lt;String&gt; - the repository password.</p>
+
+<h1>
+<a id="information-register-telegramusersinfo" class="anchor" href="#information-register-telegramusersinfo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Information register "TelegramUsersInfo"</h1>
+
+<p>The register is intended to store technical information needed for sending messages by Telegrem-bot about executed tasks.</p>
+
+<p><strong>Periodicity:</strong> No.</p>
+
+<p><strong>Write mode:</strong> Independent.</p>
+
+<p><strong>Dimensions:</strong></p>
+
+<p>UserName &lt;String&gt; - telegram IM user name</p>
+
+<p><strong>Resources:</strong></p>
+
+<p>ChatID &lt;Number&gt; - Telegram chat ID.</p>
+
+<h1>
+<a id="data-processor-startpage" class="anchor" href="#data-processor-startpage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data processor “StartPage”</h1>
+
+<p>The data processor is the desktop for the repository subsystem, it is
+intended to provide handy access to repository tasks.</p>
+
+<h1>
+<a id="constant-telegrambottoken" class="anchor" href="#constant-telegrambottoken" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constant «TelegramBotToken»</h1>
+
+<p>Value type: String.
+Intended to store Telegram-bot ID.</p>
+
+<h1>
+<a id="constant-telegrambotupdateid" class="anchor" href="#constant-telegrambotupdateid" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constant «TelegramBotUpdateID»</h1>
+
+<p>Value type: Number.<br>
+Intended to store ID of last message. Used by Telegram-bot to call HTTP request "GetUpdates".</p>
+
+<h1>
+<a id="constant-telegrambotpassword" class="anchor" href="#constant-telegrambotpassword" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constant «TelegramBotPassword»</h1>
+
+<p>Value type: String.<br>
+Intended to store password for Telegram-bot. If password is set, user should send command /connect  to be able to recieve task report.</p>
+
+<h1>
+<a id="action-data-processors" class="anchor" href="#action-data-processors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Action data processors</h1>
+
+<p>If a data processor is intended to be connected to “Actions” catalog, it
+should provide several export functions:</p>
+
+<p><code>Run(LogLineNumber, CommonParams, Action, ActionParams, ShowMessages)</code></p>
+
+<p>parameters:</p>
+
+<p><strong>LogLineNumber</strong> - serial number of event.</p>
+
+<p><strong>CommonParams</strong> - structure with common params that exist while task
+running.</p>
+
+<p><strong>Action</strong> - reference to the Action catalog element.</p>
+
+<p><strong>ActionParams</strong> - params that was set for the action only.</p>
+
+<p><strong>StorageAddress</strong> (string) - the address in temporary storage.
+By this adress it is possible to send messages to client (if task is running in interactive mode)</p>
+
+<p><code>IsRepositoryDataProcessor()</code> - returns True if it is repository data
+processor.</p>
+
+<p><code>IsParamsForm()</code> -returns True if there available an action parameters
+form in the data processor.</p>
+
+<p>At that moment, in the configuration available several internal data
+processors:</p>
+
+<p><strong>DumpConfFromRepository</strong> — making dump from repository.</p>
+
+<p><strong>SendEmail</strong> - sending email message to the list of predefined recipients.
+The list of recipients and message template could be defined in a
+parameters form provided by the data processor itself. In the text
+message template it is possible to set some parameters in square
+brackets, they will be replaced by corresponded values from
+“CommonParams” structure. For example, the parameter
+[DumpConfFileFullPath] will be replaced by the path to repository dump
+file. The mechanism of message templates is still under developing.</p>
+
+<p><strong>UpdateDB</strong> — updating the database in DBDir directory from repository.</p>
+
+<p><strong>CheckModules</strong> – checking modules of the dump by standard platform
+command.</p>
+
+<p><strong>ExecCommand</strong> - starts an external application by given command and current directory</p>
+
+<p><strong>UpdateTestDB</strong> - updates DB in the test DB directory from a repository dump (should be executed after the DumpConfFromRepository action)</p>
+
+<p><strong>Reposting</strong> - reposts all documents in test database.</p>
+
+<h1>
+<a id="role-repositoryuser" class="anchor" href="#role-repositoryuser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Role «RepositoryUser»</h1>
+
+<p>Provide access to objects of “Repositories” subsystem. The role has RLS
+based mechanism to implement restrictions to “Repositories” catalog and
+to other connected tables.</p>
+
+<h1>
+<a id="adopted-subsystems-from-ssl" class="anchor" href="#adopted-subsystems-from-ssl" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adopted subsystems from SSL</h1>
+
+<ul>
+<li>  AdditionalReportsAndDataProcessors</li>
+<li>  BaseFunctionality</li>
+<li>  EmailOperations</li>
+<li>  Users</li>
+<li>  InfobaseVersionUpdate</li>
+</ul>
+
+<h1>
+<a id="run-tasks-from-command-line" class="anchor" href="#run-tasks-from-command-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run tasks from command line</h1>
+
+<p>In the common module “RepTasks” there is an export function
+<code>RunTaskByCode(RepositoryCatalogCode, TaskCatalogCode)</code>,
+  parameters:</p>
+
+<p><strong>RepositoryCatalogCode</strong> – code of a repository in numeric format.</p>
+
+<p><strong>TaskCatalogCode</strong> – code of a task in numeric format.</p>
+
+<p>The function runs particular task by given codes. It is possible to
+execute this function in one or another way. For example it is possible
+to set a special parameter in command line of the platform:
+run_RepTasks.RunTaskByCode(&lt;RepositoryCatalogCode&gt;,&lt;TaskCatalogCode&gt;)</p>
+
+<p>Example:</p>
+
+<pre><code>"C:\\Program Files (x86)\\1cv8\\common\\1cestart.exe" Enterprise
+/F"D:\\MyDB" /N Administrator /P Password
+/C"run\_RepTasks.RunTaskByCode(1,2)"
+</code></pre>
+
+<p>In this example, a task with code 2 of a repository with code 1 will be
+run.</p>
+
+<h1>
+<a id="run-tasks-by-http-request" class="anchor" href="#run-tasks-by-http-request" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run tasks by HTTP-request</h1>
+
+<p>There is an HTTP-service in the configuration. The base URL of the
+service is “RunTask”.</p>
+
+<p>A task could be run by htttp-request in the format:</p>
+
+<p>hs/RunTask/&lt;RepositoryCatalogCode&gt;/&lt;TaskCatalogCode&gt;</p>
+
+<p>For example, if DB is published on the web-server “localhost” under name
+“OneCI», then the line of the http-request would looks like:</p>
+
+<p><a href="http://localhost/OneCI/hs/RunTask/1/2">http://localhost/OneCI/hs/RunTask/1/2</a></p>
+
+<p>there<br>
+    1 - code of repository in the catalog,<br>
+    2 – code of task in the
+catalog.</p>
+
+<p>The requests should be with “Basic Authentication”.</p>
+
+<p>The same request in Python 2 language:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> urllib
+
+<span class="pl-k">import</span> urllib2
+
+<span class="pl-k">import</span> base64
+
+url <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>http://localhost/OneCI/hs/RunTask/1/2<span class="pl-pds">"</span></span>
+
+authKey <span class="pl-k">=</span> base64.b64encode(<span class="pl-s"><span class="pl-pds">"</span>Administrator:password<span class="pl-pds">"</span></span>)
+
+headers <span class="pl-k">=</span> {<span class="pl-s"><span class="pl-pds">"</span>Content-Type<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>application/json<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Authorization<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>Basic <span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+authKey}
+
+request <span class="pl-k">=</span> urllib2.Request(url)
+
+<span class="pl-k">for</span> key,value <span class="pl-k">in</span> headers.items():
+
+request.add_header(key,value)
+
+response <span class="pl-k">=</span> urllib2.urlopen(request)
+
+<span class="pl-c1">print</span> response.getcode()</pre></div>
+
+<p>There the name of the database user is - Administrator, and the Password - password.</p>
+
+<h1>
+<a id="run-tasks-by-com-connector" class="anchor" href="#run-tasks-by-com-connector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run tasks by COM connector</h1>
+
+<p>The common module "RepTasks" is available for external connection, so it is possible
+to call "RunTaskByCode" method by COM connector.</p>
+
+<p>Example for 1C: Enterprise language:</p>
+
+<pre><code>Connector = new COMObject("V83.COMConnector");
+Connection = Connector.connect("file=D:\\dev\\1c\\1CI;Usr=Administrator;");
+Connection.RepTasks.RunTaskByCode(1,2);
+</code></pre>
+
+<p>there:<br>
+      1 -  the code of repository in the catalog "Repositories"<br>
+      2 - the code of task in the catalog "Tasks"</p>
+
+<p>Example for python 2.7:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">import</span> pythoncom
+<span class="pl-k">import</span> win32com.client
+
+pythoncom.CoInitialize()
+<span class="pl-c1">V83</span> <span class="pl-k">=</span> win32com.client.Dispatch(<span class="pl-s"><span class="pl-pds">"</span>V83.COMConnector<span class="pl-pds">"</span></span>).Connect(<span class="pl-s"><span class="pl-pds">"</span>file=D:<span class="pl-cce">\\</span>dev<span class="pl-cce">\\</span>1c<span class="pl-cce">\\</span>1CI;Usr=Administrator;<span class="pl-pds">"</span></span>)
+<span class="pl-c1">V83</span>.RepTasks.RunTaskByCode(<span class="pl-c1">1</span>,<span class="pl-c1">2</span>)</pre></div>
+
+<p>For this python example it needed to install "pythoncom" module:
+<code>pip install pypiwin32</code></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/alexkmbk/1CI">1ci</a> is maintained by <a href="https://github.com/alexkmbk">alexkmbk</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
