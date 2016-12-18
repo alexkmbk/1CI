@@ -1,3 +1,3 @@
 Hello this is index file
 
-[User manual]{{"_posts/UserManual.md"}}
+<a href="UserManual.html">User manual</a>
