@@ -1,6 +1,10 @@
 # 1CI
 Repository manager for 1C: Enterprise platform. The main idea of the project - continuous integration.
 
+![alt tag](https://github.com/alexkmbk/1CI/blob/master/docs/MainWindow.png)
+
+<p> <a href="https://github.com/alexkmbk/1CI/releases/download/1.0.0.7/1CI_1.0.0.7.zip">Download (ver. 1.0.0.7 )</a></p>
+
 # The main idea
 
 When you develop configuration in a team, you often need to do some

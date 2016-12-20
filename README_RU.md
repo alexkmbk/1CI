@@ -1,6 +1,10 @@
 #1CI
 Система автоматизации работы с конфигурацией подключенной к хранилищу.
 
+![alt tag](https://github.com/alexkmbk/1CI/blob/master/docs/MainWindow.png)
+
+<p> <a href="https://github.com/alexkmbk/1CI/releases/download/1.0.0.7/1CI_1.0.0.7.zip">Скачать (вер. 1.0.0.7 )</a></p>
+
 # Задача
 
 В ходе коллективной разработки, приходится выполнять ряд рутинных
