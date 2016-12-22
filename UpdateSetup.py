@@ -8,17 +8,17 @@ import fileinput
 
 #from ttk import Frame, Button, Style, Label
 
-DistrDir = "D:\\dev\\1c\\1CI\\Distr"
-SetupDir = "D:\\dev\\1c\\1CI\\Setup"
-ConfDir = "D:\\dev\\1c\\1CI\\"
+DistrDir = "C:\\Users\\Alexey\\Documents\\dev\\1c\\1CI\\Distr"
+SetupDir = "C:\\Users\\Alexey\\Documents\\dev\\1c\\1CI\\Setup"
+ConfDir = "C:\\Users\\Alexey\\Documents\\dev\\1c\\1CI\\"
 ConfUser = "Administrator"
 DemoDBUser = "Administrator"
-RepDir = "D:\\dev\\1c\\1CI\\Repository"
+RepDir = "C:\\Users\\Alexey\\Documents\\dev\\1c\\1CI\\Repository"
 RepUserName = "Administrator"
 RepPassword = "123"
 ConfPass = ""
-DemoDBDir = "D:\\dev\\1c\\1CI\\Demo\\"
-AppPath = "D:\\bin\\1cv83\\8.3.7.1873\\bin\\1cv8.exe"
+DemoDBDir = "C:\\Users\\Alexey\\Documents\\dev\\1c\\1CI\\Demo"
+AppPath = "C:\\Program Files (x86)\\1cv8\\8.3.9.1818\\bin\\1cv8.exe"
 
 def MakeDistr(lastReleaseDirName, nextReleaseDirName = None, update = False):
 
