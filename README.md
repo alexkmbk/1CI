@@ -5,17 +5,6 @@ Repository manager for 1C: Enterprise platform. The main idea of the project - c
 
 <p> <a href="https://github.com/alexkmbk/1CI/releases/download/1.0.0.7/1CI_1.0.0.7.zip">Download (ver. 1.0.0.7 )</a></p>
 
-# The main idea
-
-When you develop configuration in a team, you often need to do some
-routine operations, such as for example:
-
--   Everyday configuration dump from a repository;
--   Testing;
--   Informing your partners and coworkers about found errors in the
-    configuration by email or IM, like Skype or Telegram.
--   Load new configuration versions into working database.
-
 # General info.
 
 Platform: 8.3;
