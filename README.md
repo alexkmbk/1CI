@@ -10,22 +10,13 @@ Repository manager for 1C: Enterprise platform. The main idea of the project - c
 When you develop configuration in a team, you often need to do some
 routine operations, such as for example:
 
--   Everyday make a dump of configuration from a repository and sending the
-    result to partners;
--   Do many different tests, standard module check for example or some
-    tests that could be made by some special software;
+-   Everyday configuration dump from a repository;
+-   Testing;
 -   Informing your partners and coworkers about found errors in the
-    configuration by email or IM like Skype or Telegram.
--   Load new version of the configuration into working database.
+    configuration by email or IM, like Skype or Telegram.
+-   Load new configuration versions into working database.
 
-So this project (configuration) is intended for automation such things.
-The part of the name of the project is abbreviation from Continuous
-Integration, which is a reference to the conception that was
-inspirational idea for the project.
-
-# General description.
-
-Configuration: independent, without necessity of integration;
+# General info.
 
 Platform: 8.3;
 
